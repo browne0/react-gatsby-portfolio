@@ -41,7 +41,7 @@ class Mixmax extends Component {
           title={`${this.state.project.name} | Malik Browne`}
           description={this.state.project.description}
           image={this.state.project.image_urls.screenshots[2]}
-          url={`http://malikbrowne.com/${this.state.project.path.substr(1)}`}
+          url={`https://malikbrowne.com/${this.state.project.path.substr(1)}`}
         />
         <div className="container">
           <img

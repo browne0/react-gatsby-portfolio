@@ -121,7 +121,7 @@ class blogList extends Component {
           title="Blog | Malik Browne"
           description="Check out the latest blog posts from front end developer, Malik Browne."
           image="/selfie/about_bg3.jpg"
-          url="http://malikbrowne.com/blog"
+          url="https://malikbrowne.com/blog"
         />
         <TextField
           hintText="Enter a blog post title"
