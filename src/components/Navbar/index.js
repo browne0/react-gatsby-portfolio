@@ -21,7 +21,7 @@ class Navbar extends Component {
       <div className="logo-wrapper">
         <img
           className="logo"
-          src="https://malikbrowne.com/assets/logos/malikbrowne_logo.png"
+          src="https://malikbrowne.com/logos/malikbrowne_logo.png"
           alt=""
         />
         <div className="title">
