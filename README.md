@@ -1,4 +1,4 @@
-# malikbrowne.com
+# www.malikbrowne.com
 
 This project was created with Gatsby and Contentful.
 

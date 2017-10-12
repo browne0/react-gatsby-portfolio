@@ -26,6 +26,7 @@ class SEO extends Component {
         <meta property="og:title" content={props.title} />
         <meta property="og:description" content={props.description} />
         <meta property="og:image" content={props.image} />
+        <meta property="og:site_name" content="Malik Browne | Front End Engineer and UX Enthusiast" />
 
         {/* Twitter Card tags */}
         <meta name="twitter:card" content="summary_large_image" />

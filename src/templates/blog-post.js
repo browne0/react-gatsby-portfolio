@@ -86,7 +86,7 @@ class blogPost extends Component {
           title={this.state.blog.title.title}
           description={this.state.blog.description.description}
           image={`https:${this.state.blog.featuredImage.file.url}`}
-          url={`https://malikbrowne.com/${this.state.blog.slug}`}
+          url={`https://www.malikbrowne.com/${this.state.blog.slug}`}
         />
         <ProgressBar targetEl=".blog-post" />
         <div className="back-to-blog">
@@ -139,7 +139,7 @@ class blogPost extends Component {
           </article>
           {this.state.blog.comments && (
             <DisqusThread
-              basename="https://malikbrowne.com/blog"
+              basename="https://www.malikbrowne.com/blog"
               shortname="malik-browne"
               title={this.state.blog.title.title}
               identifier={`/${this.state.blog.slug}`}

@@ -22,7 +22,7 @@ class About extends Component {
           title="About | Malik Browne"
           description="Find out more about Malik Browne, a front end engineer with a strong desire to produce high quality websites and online tools, bundled with an exceptional user experience."
           image="/selfie/about_bg3.jpg"
-          url="https://malikbrowne.com/about"
+          url="https://www.malikbrowne.com/about"
         />
         <div className="hero-wrapper">
           <div className="hero">

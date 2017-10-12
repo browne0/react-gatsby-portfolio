@@ -59,7 +59,7 @@ class Home extends Component {
             title="Home | Malik Browne"
             description="Malik is a Front End Engineer & UX Enthusiast with a strong desire to produce high quality websites and online tools, bundled with an exceptional user experience."
             image="/selfie/about_bg3.jpg"
-            url="https://malikbrowne.com" />
+            url="https://www.malikbrowne.com" />
           <h1>
             I create <span>simple</span> and <span>intuitive</span> websites and
             applications.

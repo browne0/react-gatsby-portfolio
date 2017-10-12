@@ -26,7 +26,7 @@ class Contact extends Component {
       formData.append("name", this.state.name);
       formData.append("email", this.state.email);
       formData.append("message", this.state.message);
-      fetch("https://malikbrowne.com/contact.php", {
+      fetch("https://www.malikbrowne.com/contact.php", {
         method: "POST",
         body: formData
       })
@@ -100,7 +100,7 @@ class Contact extends Component {
           title="Contact | Malik Browne"
           description="Get in contact with Malik."
           image="/selfie/about_bg3.jpg"
-          url="https://malikbrowne.com/contact"
+          url="https://www.malikbrowne.com/contact"
         />
         <div className="hero">
           <h2>Want to get in contact?</h2>
@@ -171,8 +171,8 @@ class Contact extends Component {
                 </div>
                 <p>Email</p>
                 <h5>
-                  <a href="mailto:malik@malikbrowne.com">
-                    malik@malikbrowne.com
+                  <a href="mailto:malik@www.malikbrowne.com">
+                    malik@www.malikbrowne.com
                   </a>
                 </h5>
                 <p>Social</p>

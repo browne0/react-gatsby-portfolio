@@ -68,14 +68,14 @@
       "logo": "/logos/factsoftoday_logo.png",
       "screenshots": [
         "/project_gifs/factsoftoday.gif",
-        "https://is3.mzstatic.com/image/thumb/Purple30/v4/fa/e8/95/fae895bd-287e-3a62-0050-828ac31a348f/source/392x696bb.jpg",
-        "https://is4.mzstatic.com/image/thumb/Purple18/v4/b6/80/b0/b680b058-c5ec-98b0-d47d-252b72eba4e9/source/392x696bb.jpg",
+        "http://is3.mzstatic.com/image/thumb/Purple30/v4/fa/e8/95/fae895bd-287e-3a62-0050-828ac31a348f/source/392x696bb.jpg",
+        "http://is4.mzstatic.com/image/thumb/Purple18/v4/b6/80/b0/b680b058-c5ec-98b0-d47d-252b72eba4e9/source/392x696bb.jpg",
         "https://github.com/browne0/FactsOfToday/blob/master/wireframe.png?raw=true",
         "https://github.com/browne0/FactsOfToday/raw/master/factsoftoday-demo.gif",
         "https://github.com/browne0/FactsOfToday/raw/master/factsoftoday-demo-66%25.gif",
         "https://github.com/browne0/FactsOfToday/raw/master/factsOfToday-demo2.gif",
-        "https://is5.mzstatic.com/image/thumb/Purple20/v4/7a/50/ef/7a50efab-e4f9-dcfd-dfd8-0302c2c3b383/source/392x696bb.jpg",
-        "https://is2.mzstatic.com/image/thumb/Purple30/v4/c0/89/88/c089881f-c065-d6ef-9ff2-32d15f07a304/source/392x696bb.jpg"
+        "http://is5.mzstatic.com/image/thumb/Purple20/v4/7a/50/ef/7a50efab-e4f9-dcfd-dfd8-0302c2c3b383/source/392x696bb.jpg",
+        "http://is2.mzstatic.com/image/thumb/Purple30/v4/c0/89/88/c089881f-c065-d6ef-9ff2-32d15f07a304/source/392x696bb.jpg"
       ]
     },
     "github_url": "https://github.com/browne0/FactsOfToday",
