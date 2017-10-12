@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+}
+
+::-moz-focus-inner {
+  padding: 0;
+  border: none;
+}
+
+:focus {
+  outline: 0;
+}
+
+html {
+  font-size: 62.5%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.47;
+  color: rgba(0, 0, 0, 0.84);
+}
+
+ul,
+ol {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+table {
+  width: 100%;
+  max-width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th,
+td {
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-size: inherit;
+}
+
+p {
+  margin: 0;
+}
+
+strong {
+  font-weight: bold;
+}
+
+a,
+button,
+input,
+label,
+select,
+textarea {
+  touch-action: manipulation;
+}
+
+input,
+button {
+  overflow: visible;
+}
+
+a,
+button {
+  transition: 0.3s;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+}
+
+img {
+  border: none;
+}
+
+input,
+textarea {
+  margin: 0;
+  font: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+svg {
+  display: block;
+  fill: currentColor;
+}

@@ -1,0 +1,9 @@
+.container-bd {
+  .slick-prev {
+    left: -32px;
+  }
+  .slick-prev:before, .slick-next:before {
+    color: #21512A;
+    font-size: 30px;
+  }
+}

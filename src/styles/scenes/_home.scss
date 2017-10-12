@@ -1,0 +1,811 @@
+.Home {
+  .hero {
+    display: block;
+    position: relative;
+    background: #2a2a2a;
+    min-height: 40vh;
+    h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      transform: translate(-50%, -50%);
+      display: inline-block;
+      font-size: 1.25em;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.8);
+      span {
+        color: #ff6600;
+      }
+    }
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    h2 {
+      font-size: 1.75em;
+    }
+    p {
+      font-size: 1.25em;
+    }
+    .bigPicture {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      > div .img {
+        width: 100%;
+        height: 87.5vh;
+        background-size: cover;
+        background-position: top;
+        transform: scale(1.01);
+        transition: transform 0.55s ease;
+        background-repeat: no-repeat;
+      }
+      .overlay {
+        background: rgba(0, 0, 0, 0.25);
+        top: 0;
+        opacity: 0;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        transition: background 0.25s ease, opacity 0.25s ease;
+        .project-information {
+          position: absolute;
+          bottom: 0px;
+          padding-bottom: 15px;
+          color: #fff;
+          width: 100%;
+          align-items: end;
+          transform: translateY(59px);
+          transition: transform 0.55s ease;
+          background: rgba(0, 0, 0, 0.55);
+          padding-top: 10px;
+          .description {
+            grid-column: span 2;
+            padding: 0px 15px;
+          }
+        }
+      }
+      &:hover {
+        > div .img {
+          transform: scale(1.02);
+        }
+        .overlay {
+          opacity: 1;
+          background: rgba(0, 0, 0, 0.2);
+          .project-information {
+            transform: translateY(0px);
+          }
+        }
+      }
+    }
+    .icon {
+      display: inline-block;
+      overflow: hidden;
+      position: relative;
+      min-height: 66vh;
+      > img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 175px;
+        width: auto;
+        transition: transform 0.45s ease;
+      }
+      .overlay {
+        background: rgba(0, 0, 0, 0.25);
+        opacity: 0;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        transition: background 0.25s ease, opacity 0.25s ease;
+        .project-information {
+          position: absolute;
+          bottom: 0px;
+          padding-bottom: 15px;
+          color: #fff;
+          display: grid;
+          grid-template-columns: 1fr;
+          width: 100%;
+          align-items: end;
+          transform: translateY(100px);
+          transition: transform 0.55s ease;
+          background: rgba(0, 0, 0, 0.55);
+          padding-top: 10px;
+          .description {
+            grid-column: span 2;
+            padding: 0px 15px;
+          }
+        }
+      }
+      &:hover {
+        img {
+          transform: translate(-50%, -50%) scale(1.25);
+        }
+        .overlay {
+          opacity: 1;
+          background: rgba(0, 0, 0, 0.2);
+          .project-information {
+            transform: translateY(0px);
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 768px) {
+  .Home {
+    .hero {
+      display: block;
+      position: relative;
+      min-height: 40vh;
+      background: #2a2a2a;
+      h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+        display: inline-block;
+        font-size: 1.75em;
+        color: rgba(255, 255, 255, 0.8);
+        span {
+          color: #ff6600;
+        }
+      }
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      h2 {
+        font-size: 2.25em;
+      }
+      p {
+        font-size: 1.25em;
+      }
+      .bigPicture {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        > div .img {
+          width: 100%;
+          height: 75vh;
+          background-size: cover;
+          background-position: top;
+          transform: scale(1.01);
+          transition: transform 0.55s ease;
+          background-repeat: no-repeat;
+        }
+        .overlay {
+          background: rgba(0, 0, 0, 0.25);
+          opacity: 0;
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          transition: background 0.25s ease, opacity 0.25s ease;
+          .project-information {
+            position: absolute;
+            bottom: 0px;
+            padding-bottom: 15px;
+            color: #fff;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            width: 100%;
+            align-items: end;
+            transform: translateY(59px);
+            transition: transform 0.55s ease;
+            background: rgba(0, 0, 0, 0.55);
+            padding-top: 10px;
+            .description {
+              grid-column: span 2;
+              padding: 0px 15px;
+            }
+          }
+        }
+        &:hover {
+          > div .img {
+            transform: scale(1.02);
+          }
+          .overlay {
+            opacity: 1;
+            background: rgba(0, 0, 0, 0.2);
+            .project-information {
+              transform: translateY(0px);
+            }
+          }
+        }
+      }
+      .icon {
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+        min-height: 66vh;
+        > img {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          max-width: 175px;
+          width: auto;
+          transition: transform 0.45s ease;
+        }
+        .overlay {
+          background: rgba(0, 0, 0, 0.25);
+          opacity: 0;
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          transition: background 0.25s ease, opacity 0.25s ease;
+          .project-information {
+            position: absolute;
+            bottom: 0px;
+            padding-bottom: 15px;
+            color: #fff;
+            display: grid;
+            grid-template-columns: 1fr;
+            width: 100%;
+            align-items: end;
+            transform: translateY(100px);
+            transition: transform 0.55s ease;
+            background: rgba(0, 0, 0, 0.55);
+            padding-top: 10px;
+            .description {
+              grid-column: span 2;
+              padding: 0px 15px;
+            }
+          }
+        }
+        &:hover {
+          img {
+            transform: translate(-50%, -50%) scale(1.25);
+          }
+          .overlay {
+            opacity: 1;
+            background: rgba(0, 0, 0, 0.2);
+            .project-information {
+              transform: translateY(0px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .Home {
+    .hero {
+      display: block;
+      position: relative;
+      background: #2a2a2a;
+      min-height: 30vh;
+      h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+        display: inline-block;
+        font-size: 2.25em;
+        color: rgba(255, 255, 255, 0.8);
+        span {
+          color: #ff6600;
+        }
+      }
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      h2 {
+        font-size: 2.75em;
+      }
+      p {
+        font-size: 1.5em;
+      }
+      .bigPicture {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        > div .img {
+          width: 100%;
+          height: 75vh;
+          background-size: cover;
+          background-position: top;
+          transform: scale(1.01);
+          transition: transform 0.55s ease;
+          background-repeat: no-repeat;
+        }
+        .overlay {
+          background: rgba(0, 0, 0, 0.25);
+          opacity: 0;
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          transition: background 0.25s ease, opacity 0.25s ease;
+          .project-information {
+            position: absolute;
+            bottom: 0px;
+            padding-bottom: 15px;
+            color: #fff;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            width: 100%;
+            align-items: end;
+            transform: translateY(59px);
+            transition: transform 0.55s ease;
+            background: rgba(0, 0, 0, 0.55);
+            padding-top: 10px;
+            .description {
+              grid-column: span 2;
+              padding: 0px 15px;
+            }
+          }
+        }
+        &:hover {
+          > div .img {
+            transform: scale(1.02);
+          }
+          .overlay {
+            opacity: 1;
+            background: rgba(0, 0, 0, 0.2);
+            .project-information {
+              transform: translateY(0px);
+            }
+          }
+        }
+      }
+      .icon {
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+        min-height: 50vh;
+        > img {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          max-width: 200px;
+          width: auto;
+          transition: transform 0.45s ease;
+        }
+        .overlay {
+          background: rgba(0, 0, 0, 0.25);
+          opacity: 0;
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          transition: background 0.25s ease, opacity 0.25s ease;
+          .project-information {
+            position: absolute;
+            bottom: 0px;
+            padding-bottom: 15px;
+            color: #fff;
+            display: grid;
+            grid-template-columns: 1fr;
+            width: 100%;
+            align-items: end;
+            transform: translateY(100px);
+            transition: transform 0.55s ease;
+            background: rgba(0, 0, 0, 0.55);
+            padding-top: 10px;
+            .description {
+              grid-column: span 2;
+              padding: 0px 15px;
+            }
+          }
+        }
+        &:hover {
+          img {
+            transform: translate(-50%, -50%) scale(1.25);
+          }
+          .overlay {
+            opacity: 1;
+            background: rgba(0, 0, 0, 0.2);
+            .project-information {
+              transform: translateY(0px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@supports (object-fit: cover) {
+  .Home {
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      min-height: 100px;
+      background: #2a2a2a;
+      h1 {
+        font-size: 1.5em;
+        padding: 0px 25px;
+        color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        span {
+          color: #ff6600;
+        }
+      }
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 1fr;
+      .bigPicture {
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        position: relative;
+        height: 40vh;
+        min-height: 300px;
+        > div .img {
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: top;
+          transform: scale(1.01);
+          transition: transform 0.55s ease;
+          min-height: 300px;
+        }
+        .overlay {
+          background: rgba(0, 0, 0, 0.25);
+          opacity: 0;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          transition: background 0.25s ease, opacity 0.25s ease;
+          .project-information {
+            position: absolute;
+            bottom: 0px;
+            padding-bottom: 15px;
+            color: #fff;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            width: 100%;
+            align-items: end;
+            transform: translateY(59px);
+            transition: transform 0.55s ease;
+            background: rgba(0, 0, 0, 0.55);
+            .description {
+              grid-column: span 2;
+              padding: 0px 15px;
+            }
+          }
+        }
+        &:hover {
+          > div .img {
+            transform: scale(1.02);
+          }
+          .overlay {
+            opacity: 1;
+            background: rgba(0, 0, 0, 0.35);
+            .project-information {
+              transform: translateY(0px);
+            }
+          }
+        }
+      }
+      .icon {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        overflow: hidden;
+        position: relative;
+        min-height: 300px;
+        > img {
+          max-width: 150px;
+          width: auto;
+          transition: transform 0.45s ease;
+        }
+        .overlay {
+          background: rgba(0, 0, 0, 0.25);
+          opacity: 0;
+          bottom: 0;
+          left: 0;
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          transition: background 0.25s ease, opacity 0.25s ease;
+          .project-information {
+            position: absolute;
+            bottom: 0px;
+            padding-bottom: 15px;
+            color: #fff;
+            display: grid;
+            grid-template-columns: 1fr;
+            width: 100%;
+            align-items: end;
+            transform: translateY(100px);
+            transition: transform 0.55s ease;
+            background: rgba(0, 0, 0, 0.55);
+            .description {
+              grid-column: span 2;
+              padding: 0px 15px;
+            }
+          }
+        }
+        &:hover {
+          img {
+            transform: translate(-50%, -50%) scale(1.25, 1.25);
+          }
+          .overlay {
+            opacity: 1;
+            background: rgba(0, 0, 0, 0.35);
+            .project-information {
+              transform: translateY(0px);
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    .Home {
+      .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        min-height: 30vh;
+        background: #2a2a2a;
+        h1 {
+          font-size: 1.75em;
+          color: rgba(255, 255, 255, 0.8);
+          span {
+            color: #ff6600;
+          }
+        }
+      }
+      .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        h2 {
+          font-size: 1.65em;
+        }
+        p {
+          font-size: 1.025em;
+        }
+        .bigPicture {
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          position: relative;
+          > .img {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            transform: scale(1.01);
+            transition: transform 0.55s ease;
+            background-position: top;
+          }
+          .overlay {
+            background: rgba(0, 0, 0, 0.25);
+            opacity: 0;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            transition: background 0.25s ease, opacity 0.25s ease;
+            .project-information {
+              position: absolute;
+              bottom: 0px;
+              padding-bottom: 15px;
+              color: #fff;
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              width: 100%;
+              align-items: end;
+              transform: translateY(59px);
+              transition: transform 0.55s ease;
+              background: rgba(0, 0, 0, 0.55);
+              .description {
+                grid-column: span 2;
+                padding: 0px 15px;
+              }
+            }
+          }
+          &:hover {
+            img {
+              transform: scale(1.325, 1.325);
+            }
+            .overlay {
+              opacity: 1;
+              background: rgba(0, 0, 0, 0.45);
+              .project-information {
+                transform: translateY(0px);
+              }
+            }
+          }
+        }
+        .icon {
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          overflow: hidden;
+          position: relative;
+          min-height: 37.5vh;
+          > img {
+            max-width: 150px;
+            width: auto;
+            transition: transform 0.45s ease;
+          }
+          .overlay {
+            background: rgba(0, 0, 0, 0.25);
+            opacity: 0;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            transition: background 0.25s ease, opacity 0.25s ease;
+            .project-information {
+              position: absolute;
+              bottom: 0px;
+              padding-bottom: 15px;
+              color: #fff;
+              display: grid;
+              grid-template-columns: 1fr;
+              width: 100%;
+              align-items: end;
+              transform: translateY(100px);
+              transition: transform 0.55s ease;
+              background: rgba(0, 0, 0, 0.55);
+              .description {
+                grid-column: span 2;
+                padding: 0px 15px;
+              }
+            }
+          }
+          &:hover {
+            img {
+              transform: translate(-50%, -50%) scale(1.25, 1.25);
+            }
+            .overlay {
+              opacity: 1;
+              background: rgba(0, 0, 0, 0.35);
+              .project-information {
+                transform: translateY(0px);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 1200px) {
+    .Home {
+      .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        min-height: 150px;
+        height: 30vh;
+        background: #2a2a2a;
+        h1 {
+          font-size: 2em;
+          color: rgba(255, 255, 255, 0.8);
+          span {
+            color: #ff6600;
+          }
+        }
+      }
+      .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        h2 {
+          font-size: 1.65em;
+        }
+        p {
+          font-size: 1.125em;
+        }
+        .bigPicture {
+          grid-column: span 2;
+          grid-row: span 2;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          position: relative;
+          min-height: 300px;
+          height: auto;
+          > div .img {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: top;
+            transform: scale(1.01);
+            transition: transform 0.55s ease;
+            background-repeat: no-repeat;
+          }
+          .overlay {
+            background: rgba(0, 0, 0, 0.25);
+            opacity: 0;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            transition: background 0.25s ease, opacity 0.25s ease;
+            .project-information {
+              position: absolute;
+              bottom: 0px;
+              padding-bottom: 15px;
+              color: #fff;
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              width: 100%;
+              align-items: end;
+              transform: translateY(59px);
+              transition: transform 0.55s ease;
+              background: rgba(0, 0, 0, 0.55);
+              padding-top: 10px;
+              .description {
+                grid-column: span 2;
+                padding: 0px 15px;
+              }
+            }
+          }
+          &:hover {
+            > div .img {
+              transform: scale(1.02);
+            }
+            .overlay {
+              opacity: 1;
+              background: rgba(0, 0, 0, 0.2);
+              .project-information {
+                transform: translateY(0px);
+              }
+            }
+          }
+        }
+        .icon {
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          overflow: hidden;
+          position: relative;
+          min-height: 300px;
+          > img {
+            max-width: 150px;
+            width: auto;
+            transition: transform 0.45s ease;
+          }
+          .overlay {
+            background: rgba(0, 0, 0, 0.25);
+            opacity: 0;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            transition: background 0.25s ease, opacity 0.25s ease;
+            .project-information {
+              position: absolute;
+              bottom: 0px;
+              padding-bottom: 15px;
+              color: #fff;
+              display: grid;
+              grid-template-columns: 1fr;
+              width: 100%;
+              align-items: end;
+              transform: translateY(100px);
+              transition: transform 0.55s ease;
+              background: rgba(0, 0, 0, 0.55);
+              padding-top: 10px;
+              .description {
+                grid-column: span 2;
+                padding: 0px 15px;
+              }
+            }
+          }
+          &:hover {
+            img {
+              transform: translate(-50%, -50%) scale(1.25, 1.25);
+            }
+            .overlay {
+              opacity: 1;
+              background: rgba(0, 0, 0, 0.2);
+              .project-information {
+                transform: translateY(0px);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
