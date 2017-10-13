@@ -26,7 +26,7 @@ class Contact extends Component {
       formData.append("name", this.state.name);
       formData.append("email", this.state.email);
       formData.append("message", this.state.message);
-      fetch("https://www.malikbrowne.com/contact.php", {
+      fetch("http://dev.beesdesign.net/contact.php", {
         method: "POST",
         body: formData
       })
