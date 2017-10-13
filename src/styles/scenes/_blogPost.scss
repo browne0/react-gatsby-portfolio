@@ -34,9 +34,8 @@
     flex-direction: row;
     justify-content: space-between;
     a {
-      display: grid;
-      grid-template-columns: min-content max-content;
-      grid-gap: 5px;
+      display: flex;
+      flex-direction: row;
       width: 125px;
       align-items: center;
     }
