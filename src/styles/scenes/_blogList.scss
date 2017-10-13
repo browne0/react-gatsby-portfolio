@@ -38,14 +38,16 @@
         height: 40px;
       }
       .author {
-        display: block;
+        display: flex;
         font-size: .9em;
+        float: left;
         color: rgb(194, 77, 1);
       }
       .date {
         font-size: .8em;
         color: rgba(0, 0, 0, .44);
         margin-bottom: 15px;
+        float: left;
         span {
           display: inline-block;
           padding: 0px 4px;
