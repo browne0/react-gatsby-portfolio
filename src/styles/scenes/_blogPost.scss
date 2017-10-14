@@ -1,27 +1,5 @@
 .blog-post {
   position: relative;
-  progress {
-    appearance: none;
-    display: none;
-    border: 0;
-    position: fixed;
-    // top: 0;
-    width: 100vw;
-    height: 0.2rem;
-    border: 0;
-    background-color: transparent;
-    color: rgb(194, 77, 1);
-    z-index: 1;
-    &::-webkit-progress-bar {
-      background: #FFF;
-    }
-    &::-webkit-progress-value {
-      background: rgb(194, 77, 1);
-    }
-    &::-moz-progress-bar {
-      background-color: rgb(194, 77, 1);
-    }
-  }
   .back-to-blog {
     position: fixed;
     background-color: #fafafa;
@@ -176,28 +154,6 @@
 @media (min-width: 900px) {
   .blog-post {
     position: relative;
-    progress {
-      appearance: none;
-      display: block;
-      border: 0;
-      position: fixed;
-      // top: 0;
-      width: 100vw;
-      height: 0.2rem;
-      border: 0;
-      background-color: transparent;
-      color: rgb(194, 77, 1);
-      z-index: 1;
-      &::-webkit-progress-bar {
-        background: #FFF;
-      }
-      &::-webkit-progress-value {
-        background: rgb(194, 77, 1);
-      }
-      &::-moz-progress-bar {
-        background-color: rgb(194, 77, 1);
-      }
-    }
     .back-to-blog {
       position: fixed;
       background-color: #fafafa;

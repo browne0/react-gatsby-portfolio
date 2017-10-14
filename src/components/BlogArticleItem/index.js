@@ -13,7 +13,7 @@ class BlogArticleItem extends Component {
     super(props);
     this.state = {
       url: this.props.blog.compressedFeaturedImage.file.url
-    }
+    };
   }
 
   render() {
@@ -30,7 +30,7 @@ class BlogArticleItem extends Component {
               className="post-header-image"
               style={{
                 backgroundImage: `url(${src})`,
-                filter: loading ? 'blur(4px)' : 'blur(0px)'
+                filter: loading ? "blur(4px)" : "blur(0px)"
               }}
             />
           )}
@@ -62,20 +62,24 @@ class BlogArticleItem extends Component {
     }
     return (
       <article to={`/blog/${blog.slug}`} className="post">
-        <img
-          src={blog.author.profilePhoto.file.url}
-          alt=""
-          className="avatar"
-        />
+        <div className="post-author">
+          <img
+            src={blog.author.profilePhoto.file.url}
+            alt=""
+            className="avatar"
+          />
 
-        <p className="author">
-          <a href={blog.author.twitter}>{blog.author.name}</a>
-        </p>
-        <p className="date">
-          {date}
-          <span>&middot;</span>
-          {blogLengthString}
-        </p>
+          <div className="author-info">
+            <p className="author">
+              <a href={blog.author.twitter}>{blog.author.name}</a>
+            </p>
+            <p className="date">
+              {date}
+              <span>&middot;</span>
+              {blogLengthString}
+            </p>
+          </div>
+        </div>
         {blogHeader}
         <Link to={`/blog/${blog.slug}`} className="title">
           <h2>{blog.title.title}</h2>

@@ -90,7 +90,6 @@ class blogPost extends Component {
           image={`https:${this.state.blog.featuredImage.file.url}`}
           url={`https://www.malikbrowne.com/${this.state.blog.slug}`}
         />
-        <ProgressBar targetEl=".blog-post" />
         <div className="back-to-blog">
           <Link to="/blog">
             <i className="material-icons">arrow_back</i>
