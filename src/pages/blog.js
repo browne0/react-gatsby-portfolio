@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import Link from "gatsby-link";
-import Moment from "react-moment";
 import TextField from "material-ui/TextField";
 import FlipMove from "react-flip-move";
 import PortfolioDelegate from "../utils/PortfolioDelegate";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import SEO from "../components/SEO"
+import SEO from "../components/SEO";
+import BlogArticle from "../components/BlogArticleItem";
 
 class blogList extends Component {
   constructor(props) {
@@ -49,70 +48,7 @@ class blogList extends Component {
 
     const blogPosts = this.state.filteredBlogs.map((item, index) => {
       let blog = item.node;
-      let blogHeader = blog.featuredImage ? (
-        <Link to={`/blog/${blog.slug}`} className="post-header">
-          <div
-            className="post-header-image"
-            style={{
-              backgroundImage: `url(${blog.featuredImage.file
-                .url})`
-            }}
-          />
-        </Link>
-      ) : null;
-      let blogLength = blog.body.body
-        .replace(/[^a-zA-Z0-9']+/g, " ")
-        .trim()
-        .split(" ").length;
-      let blogLengthString =
-        blogLength / 275 < 1
-          ? (blogLength / 275 * 60).toFixed() + " sec read"
-          : (blogLength / 275).toFixed() + " min read";
-      let yearToday = new Date().getFullYear();
-      let date;
-      if (yearToday - Number(blog.date.substr(0, 4)) > 0) {
-        date = <Moment parse="YYYY-MM-DD" format="MMM YYYY">
-        {blog.date}
-      </Moment>;
-      } else {
-        date = <Moment parse="YYYY-MM-DD" format="MMM D">
-        {blog.date}
-      </Moment>
-      }
-      return (
-        <article
-          key={blog.slug}
-          to={`/blog/${blog.slug}`}
-          className="post"
-        >
-          <img
-            src={blog.author.profilePhoto.file.url}
-            alt=""
-            className="avatar"
-          />
-
-          <p className="author">
-            <a href={blog.author.twitter}>
-              {blog.author.name}
-            </a>
-          </p>
-          <p className="date">
-            {date}
-            <span>&middot;</span>
-            {blogLengthString}
-          </p>
-          {blogHeader}
-          <Link to={`/blog/${blog.slug}`} className="title">
-            <h2>{blog.title.title}</h2>
-          </Link>
-          <p className="summary">{blog.description.description}</p>
-          <div className="read-more">
-            <Link to={`/blog/${blog.slug}`} className="post-header">
-              Read more...
-            </Link>
-          </div>
-        </article>
-      );
+      return <BlogArticle key={index} blog={blog} />;
     });
     const timeout = { enter: 300, exit: 200 };
     return (
@@ -150,38 +86,43 @@ class blogList extends Component {
 export default blogList;
 
 export const pageQuery = graphql`
-query blogQuery {
-  allContentfulPost {
-    edges {
-      node {
-        title {
-          title
-        }
-        slug
-        author {
-          name
-          twitter
-          profilePhoto {
+  query blogQuery {
+    allContentfulPost {
+      edges {
+        node {
+          title {
+            title
+          }
+          slug
+          author {
+            name
+            twitter
+            profilePhoto {
+              file {
+                url
+              }
+            }
+          }
+          description {
+            description
+          }
+          body {
+            body
+          }
+          featuredImage {
             file {
               url
             }
           }
-        }
-        description {
-          description
-        }
-        body {
-          body
-        }
-        featuredImage {
-          file {
-            url
+          compressedFeaturedImage {
+            file {
+              url
+            }
           }
+          date
+          comments
         }
-        date
-        comments
       }
     }
   }
-}
 `;

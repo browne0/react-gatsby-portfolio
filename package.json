@@ -27,6 +27,7 @@
     "react-lazyload": "^2.2.7",
     "react-markdown": "^2.5.0",
     "react-moment": "^0.6.5",
+    "react-progressive-image": "^0.2.0",
     "react-slick": "^0.15.4",
     "react-syntax-highlighter": "^5.7.0",
     "react-toastr": "^2.9.5",

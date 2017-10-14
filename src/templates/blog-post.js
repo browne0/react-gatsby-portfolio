@@ -8,6 +8,7 @@ import Button from "../components/ThemedButton";
 import ProgressBar from "../components/ReadingProgressBar";
 import Markdown from "react-markdown";
 import SEO from "../components/SEO";
+import ProgressiveImage from "react-progressive-image";
 
 class blogPost extends Component {
   constructor(props) {
@@ -33,6 +34,7 @@ class blogPost extends Component {
   }
 
   render() {
+    console.log(this.state.blog)
     let prevButton = this.state.prevBlog ? (
       <Button
         containerElement={<Link to={`/blog/${this.state.prevBlog.slug}`} />}
@@ -97,12 +99,20 @@ class blogPost extends Component {
           <p>{this.state.blog.title.title}</p>
         </div>
         <div className="container">
-          <div
-            className="post-header"
-            style={{
-              backgroundImage: `url(${this.state.blog.featuredImage.file.url})`
-            }}
-          />
+        <ProgressiveImage
+          src={this.state.blog.featuredImage.file.url}
+          placeholder={this.state.blog.compressedFeaturedImage.file.url}
+        >
+          {(src, loading) => (
+            <div
+              className="post-header"
+              style={{
+                backgroundImage: `url(${src})`,
+                filter: loading ? 'blur(5px)' : 'blur(0px)'
+              }}
+            />
+          )}
+        </ProgressiveImage>
           <article className="wrapper" id="blog-article">
             <div className="post-title">
               <h1>{this.state.blog.title.title}</h1>
@@ -181,6 +191,11 @@ export const pageQuery = graphql`
           url
         }
       }
+      compressedFeaturedImage {
+        file {
+          url
+        }
+      }
       date
       comments
     }
@@ -207,6 +222,11 @@ export const pageQuery = graphql`
             body
           }
           featuredImage {
+            file {
+              url
+            }
+          }
+          compressedFeaturedImage {
             file {
               url
             }

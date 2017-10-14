@@ -21,32 +21,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             edges {
               node {
                 id
-                title {
-                  title
-                }
                 slug
-                author {
-                  name
-                  twitter
-                  profilePhoto {
-                    file {
-                      url
-                    }
-                  }
-                }
-                description {
-                  description
-                }
-                body {
-                  body
-                }
-                featuredImage {
-                  file {
-                    url
-                  }
-                }
-                date
-                comments
               }
             }
           }

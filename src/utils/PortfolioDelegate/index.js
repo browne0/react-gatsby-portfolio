@@ -1,4 +1,4 @@
-import ProjectList from "../../data/projects.json";
+import ProjectList from "../../data/projects";
 
 class PortfolioDelegate {
   projects = ProjectList;

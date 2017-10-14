@@ -5,6 +5,7 @@ import PortfolioDelegate from "../utils/PortfolioDelegate";
 import SEO from "../components/SEO";
 import Link from "gatsby-link";
 import PropTypes from "prop-types";
+import bg from "../images/selfie/about_bg3.jpg"
 
 class About extends Component {
   constructor(props) {
@@ -12,6 +13,17 @@ class About extends Component {
 
     this.state = {
       blog: this.props.data.allContentfulPost.edges[0].node
+    };
+  }
+
+  componentDidMount() {
+    let hero = this.blurredEl;
+    let img = new Image();
+
+    img.src = bg;
+    img.onload = () => {
+      hero.style.backgroundImage = `url(${bg})`;
+      hero.style.filter = "none";
     };
   }
 
@@ -25,7 +37,7 @@ class About extends Component {
           url="https://www.malikbrowne.com/about"
         />
         <div className="hero-wrapper">
-          <div className="hero">
+          <div className="hero" ref={elem => (this.blurredEl = elem)}>
             <div className="hero-text">
               <h1>
                 Hi, I'm <span>Malik.</span>

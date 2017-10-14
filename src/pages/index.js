@@ -3,7 +3,7 @@ import Link from "gatsby-link"
 
 import SEO from "../components/SEO";
 
-import projects from "../data/projects.json";
+import projects from "../data/projects";
 
 class Home extends Component {
   render() {
