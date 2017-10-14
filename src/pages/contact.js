@@ -171,7 +171,7 @@ class Contact extends Component {
                 </div>
                 <p>Email</p>
                 <h5>
-                  <a href="mailto:malik@www.malikbrowne.com">
+                  <a href="mailto:malik@malikbrowne.com">
                     malik@www.malikbrowne.com
                   </a>
                 </h5>
