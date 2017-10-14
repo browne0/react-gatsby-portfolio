@@ -32,6 +32,7 @@
     height: 43px;
     display: flex;
     flex-direction: row;
+    z-index: 3;
     justify-content: space-between;
     a {
       display: flex;

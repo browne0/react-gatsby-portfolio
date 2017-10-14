@@ -5,6 +5,7 @@ import { Tabs, Tab } from "material-ui/Tabs";
 
 import { navigateTo } from "gatsby-link"
 import { withRouter } from "react-router-dom"
+import logo from "../../images/logos/malikbrowne_logo.png"
 
 class Navbar extends Component {
   onTabClick = tab => {
@@ -21,8 +22,8 @@ class Navbar extends Component {
       <div className="logo-wrapper">
         <img
           className="logo"
-          src="https://www.malikbrowne.com/logos/malikbrowne_logo.png"
-          alt=""
+          src={logo}
+          alt="Malik Browne"
         />
         <div className="title">
           <h1>MALIK BROWNE</h1>

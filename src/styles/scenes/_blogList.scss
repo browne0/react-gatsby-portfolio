@@ -27,6 +27,7 @@
           background-size: cover;
           background-position: center;
           min-height: 175px;
+          filter: blur(3px);
           transition: filter 1s linear;
         }
       }
