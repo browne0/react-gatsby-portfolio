@@ -13,7 +13,7 @@ class blogList extends Component {
     this.state = {
       blogs: this.props.data.allContentfulPost.edges,
       filteredBlogs: this.props.data.allContentfulPost.edges.sort((a, b) => {
-        return a.node.date < b.node.date
+        return new Date(b.node.date) - new Date(a.node.date);
       }),
       search: ""
     };
