@@ -77,7 +77,6 @@ class Home extends Component {
         flip = !flip;
       }
     }
-    console.log(projectList);
     return (
       <div className="Home">
         <div className="hero">

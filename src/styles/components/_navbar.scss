@@ -80,7 +80,7 @@ header {
       align-items: center;
       height: 100%;
       color: #f1f1f1;
-      width: 375px;
+      width: 390px;
       .logo {
         min-width: 48px;
         width: 48px;
@@ -92,6 +92,7 @@ header {
         flex-direction: column;
         justify-content: center;
         line-height: normal;
+        width: 100%;
         h1 {
           font-size: 0.9em;
           display: block;

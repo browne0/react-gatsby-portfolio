@@ -34,7 +34,6 @@ class blogPost extends Component {
   }
 
   render() {
-    console.log(this.state.blog)
     let prevButton = this.state.prevBlog ? (
       <Button
         containerElement={<Link to={`/blog/${this.state.prevBlog.slug}`} />}
