@@ -39,6 +39,7 @@ module.exports = class HTML extends React.Component {
           <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
           <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
           <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
+          <script src="https://cdn.polyfill.io/v2/polyfill.min.js "></script>
           {this.props.headComponents}
           {css}
         </head>
