@@ -6,7 +6,7 @@
     width: 100%;
     padding: 10px;
     border-bottom: 1px solid rgba(34, 34, 34, 0.25);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     height: 43px;
     display: flex;
     flex-direction: row;
@@ -24,7 +24,7 @@
   }
   a {
     display: inline-block;
-    transition: color .25s ease;
+    transition: color 0.25s ease;
     &:hover {
       color: rgb(194, 77, 1);
     }
@@ -65,7 +65,7 @@
         }
         .date {
           font-size: 1em;
-          color: rgba(0, 0, 0, .44);
+          color: rgba(0, 0, 0, 0.44);
           span {
             display: inline-block;
             padding: 0px 4px;
@@ -82,7 +82,7 @@
     .wrapper {
       width: 90vw;
       margin: 40px auto 0px;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, .22);        
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.22);
     }
     .markdown-body {
       background-color: #fff;
@@ -91,9 +91,10 @@
       margin: 0px auto;
       font-size: 1.2em;
       color: #333;
-      font-family: Average, 'Times New Roman', Times, serif;      
+      font-family: Average, "Times New Roman", Times, serif;
       h1 {
-        font-family: Roboto;
+        font-family: Segoe UI, -apple-system, system-ui, BlinkMacSystemFont,
+          "Helvetica Neue", Arial, sans-serif;
       }
       pre {
         background-color: #272822;
@@ -106,7 +107,8 @@
           margin: auto;
         }
       }
-      ul, ol {
+      ul,
+      ol {
         font-size: 18px;
         font-weight: normal;
       }
@@ -132,7 +134,8 @@
       .nextButton {
         float: right;
       }
-      .buttonText, i {
+      .buttonText,
+      i {
         color: #fafafa;
         text-transform: uppercase;
       }
@@ -160,7 +163,7 @@
       width: 100%;
       padding: 10px;
       border-bottom: 1px solid rgba(34, 34, 34, 0.25);
-      box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
       height: 43px;
       display: flex;
       flex-direction: row;
@@ -181,14 +184,14 @@
     }
     a {
       display: inline-block;
-      transition: color .25s ease;
+      transition: color 0.25s ease;
       &:hover {
         color: rgb(194, 77, 1);
       }
     }
     .container {
       width: 100%;
-      background-color: #F8F8F8;
+      background-color: #f8f8f8;
       padding: 43px 0px;
       .post-title {
         background-color: #fff;
@@ -221,7 +224,7 @@
           }
           .date {
             font-size: 1em;
-            color: rgba(0, 0, 0, .44);
+            color: rgba(0, 0, 0, 0.44);
             span {
               display: inline-block;
               padding: 0px 4px;
@@ -237,7 +240,7 @@
       .wrapper {
         width: 900px;
         margin: 40px auto 0px;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, .22);        
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.22);
       }
       .markdown-body {
         background-color: #fff;
@@ -245,12 +248,13 @@
         padding: 30px;
         padding-top: 15px;
         margin: 0px auto;
-        color: rgba(0,0,0,.84);
+        color: rgba(0, 0, 0, 0.84);
         font-size: 21px;
         line-height: 1.58;
-        font-family: Average, 'Times New Roman', Times, serif;        
+        font-family: Average, "Times New Roman", Times, serif;
         h1 {
-          font-family: Roboto;
+          font-family: Segoe UI, -apple-system, system-ui, BlinkMacSystemFont,
+            "Helvetica Neue", Arial, sans-serif;
         }
         pre {
           background-color: #272822;
@@ -265,7 +269,8 @@
             margin: 20px auto;
           }
         }
-        ul, ol {
+        ul,
+        ol {
           font-size: 1em;
           font-weight: normal;
         }
@@ -290,7 +295,8 @@
         .nextButton {
           float: right;
         }
-        .buttonText, i {
+        .buttonText,
+        i {
           color: #fafafa;
           text-transform: uppercase;
         }

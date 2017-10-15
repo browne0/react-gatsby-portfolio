@@ -28,7 +28,6 @@ module.exports = {
       options: {
         fonts: [
           `average`,
-          `roboto\:300,400` // you can also specify font weights and styles
         ]
       }
     },

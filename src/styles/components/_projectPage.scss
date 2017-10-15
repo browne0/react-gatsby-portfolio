@@ -1,7 +1,8 @@
 .project {
   display: flex;
   flex-direction: column;
-  font-family: Roboto;
+  font-family: Segoe UI, -apple-system, system-ui, BlinkMacSystemFont,
+    "Helvetica Neue", Arial, sans-serif;
   .wrapper {
     min-height: calc(100vh - 52px);
   }
@@ -167,7 +168,6 @@
   .project {
     display: flex;
     flex-direction: column;
-    font-family: Roboto;
     .wrapper {
       min-height: calc(100vh - 52px);
     }
@@ -336,7 +336,6 @@
   .project {
     display: flex;
     flex-direction: column;
-    font-family: Roboto;
     .wrapper {
       min-height: calc(100vh - 52px);
     }
@@ -492,7 +491,6 @@
   .project {
     display: flex;
     flex-direction: column;
-    font-family: Roboto;
     .wrapper {
       min-height: calc(100vh - 52px);
     }
@@ -643,32 +641,31 @@
   .project {
     display: flex;
     flex-direction: column;
-    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
-      Roboto, "Helvetica Neue", Arial, sans-serif;
-      progress {
-        appearance: none;
-        display: none;
-        border: 0;
-        position: fixed;
-        // top: 0;
-        width: 100vw;
-        height: 0.4rem;
-        border: 0;
-        background-color: transparent;
-        color: rgb(194, 77, 1);
-        z-index: 1;
-        &::-webkit-progress-bar {
-          background: #FFF;
-        }
-        &::-webkit-progress-value {
-          background: rgb(194, 77, 1);
-        }
-        &::-moz-progress-bar {
-          background-color: rgb(194, 77, 1);
-        }
+    font-family: Segoe UI, -apple-system, system-ui, BlinkMacSystemFont,
+      "Helvetica Neue", Arial, sans-serif;
+    progress {
+      appearance: none;
+      display: none;
+      border: 0;
+      position: fixed;
+      // top: 0;
+      width: 100vw;
+      height: 0.4rem;
+      border: 0;
+      background-color: transparent;
+      color: rgb(194, 77, 1);
+      z-index: 1;
+      &::-webkit-progress-bar {
+        background: #fff;
       }
+      &::-webkit-progress-value {
+        background: rgb(194, 77, 1);
+      }
+      &::-moz-progress-bar {
+        background-color: rgb(194, 77, 1);
+      }
+    }
     .hero {
-      font-family: Roboto;
       margin: 0px auto 20px auto;
       width: 90%;
       h2 {
@@ -692,7 +689,7 @@
       img {
         width: 90%;
         margin: 30px 0px 10px 0px;
-        box-shadow: 3px 3px 1px rgba(153, 153, 153, .25);
+        box-shadow: 3px 3px 1px rgba(153, 153, 153, 0.25);
       }
       .project-image {
         min-height: 249px;
@@ -758,7 +755,7 @@
       img.pic {
         width: 100%;
         margin: 30px 0px 10px 0px;
-        box-shadow: 3px 3px 1px rgba(153, 153, 153, .25);
+        box-shadow: 3px 3px 1px rgba(153, 153, 153, 0.25);
         + h6 {
           margin-top: 10px;
         }
@@ -847,40 +844,41 @@
     .project {
       display: flex;
       flex-direction: column;
-      font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
-        Roboto, "Helvetica Neue", Arial, sans-serif;
-        progress {
-          appearance: none;
-          display: none;
-          border: 0;
-          position: fixed;
-          // top: 0;
-          width: 100vw;
-          height: 0.4rem;
-          border: 0;
-          background-color: transparent;
-          color: rgb(194, 77, 1);
-          z-index: 1;
-          &::-webkit-progress-bar {
-            background: #FFF;
-          }
-          &::-webkit-progress-value {
-            background: rgb(194, 77, 1);
-          }
-          &::-moz-progress-bar {
-            background-color: rgb(194, 77, 1);
-          }
+      font-family: Segoe UI, -apple-system, system-ui, BlinkMacSystemFont,
+        "Helvetica Neue", Arial, sans-serif;
+      progress {
+        appearance: none;
+        display: none;
+        border: 0;
+        position: fixed;
+        // top: 0;
+        width: 100vw;
+        height: 0.4rem;
+        border: 0;
+        background-color: transparent;
+        color: rgb(194, 77, 1);
+        z-index: 1;
+        &::-webkit-progress-bar {
+          background: #fff;
         }
+        &::-webkit-progress-value {
+          background: rgb(194, 77, 1);
+        }
+        &::-moz-progress-bar {
+          background-color: rgb(194, 77, 1);
+        }
+      }
       .hero {
-        font-family: Roboto;
+        font-family: Segoe UI, -apple-system, system-ui, BlinkMacSystemFont,
+          "Helvetica Neue", Arial, sans-serif;
         margin: 20px auto 20px auto;
         width: 90%;
         h2 {
           font-size: 2.75em;
         }
         p {
-          font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
-          Roboto, "Helvetica Neue", Arial, sans-serif;
+          font-family: Segoe UI, -apple-system, system-ui, BlinkMacSystemFont,
+            "Helvetica Neue", Arial, sans-serif;
           font-size: 1.15em;
         }
       }
@@ -955,7 +953,7 @@
         img.pic {
           width: 100%;
           margin: 30px 0px 10px 0px;
-          box-shadow: 3px 3px 1px rgba(153, 153, 153, .25);
+          box-shadow: 3px 3px 1px rgba(153, 153, 153, 0.25);
           + h6 {
             margin-top: 10px;
           }
@@ -1046,40 +1044,41 @@
     .project {
       display: flex;
       flex-direction: column;
-      font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
-        Roboto, "Helvetica Neue", Arial, sans-serif;
-        progress {
-          appearance: none;
-          display: block;
-          border: 0;
-          position: fixed;
-          // top: 0;
-          width: 100vw;
-          height: 0.4rem;
-          border: 0;
-          background-color: transparent;
-          color: rgb(194, 77, 1);
-          z-index: 1;
-          &::-webkit-progress-bar {
-            background: #FFF;
-          }
-          &::-webkit-progress-value {
-            background: rgb(194, 77, 1);
-          }
-          &::-moz-progress-bar {
-            background-color: rgb(194, 77, 1);
-          }
+      font-family: Segoe UI, -apple-system, system-ui, BlinkMacSystemFont,
+        "Helvetica Neue", Arial, sans-serif;
+      progress {
+        appearance: none;
+        display: block;
+        border: 0;
+        position: fixed;
+        // top: 0;
+        width: 100vw;
+        height: 0.4rem;
+        border: 0;
+        background-color: transparent;
+        color: rgb(194, 77, 1);
+        z-index: 1;
+        &::-webkit-progress-bar {
+          background: #fff;
         }
+        &::-webkit-progress-value {
+          background: rgb(194, 77, 1);
+        }
+        &::-moz-progress-bar {
+          background-color: rgb(194, 77, 1);
+        }
+      }
       .hero {
-        font-family: Roboto;
+        font-family: Segoe UI, -apple-system, system-ui, BlinkMacSystemFont,
+          "Helvetica Neue", Arial, sans-serif;
         margin: 20px auto 10px auto;
         width: 800px;
         h2 {
           font-size: 4em;
         }
         p {
-          font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
-          Roboto, "Helvetica Neue", Arial, sans-serif;
+          font-family: Segoe UI, -apple-system, system-ui, BlinkMacSystemFont,
+            "Helvetica Neue", Arial, sans-serif;
           font-size: 1.5em;
         }
       }
@@ -1147,7 +1146,7 @@
         img.pic {
           width: 100%;
           margin: 30px 0px 10px 0px;
-          box-shadow: 3px 3px 1px rgba(153, 153, 153, .25);
+          box-shadow: 3px 3px 1px rgba(153, 153, 153, 0.25);
           + h6 {
             margin-top: 0px;
           }
