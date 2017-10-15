@@ -79,6 +79,25 @@
   }
 }
 
+@media (min-width: 768px) {
+  .blog-wrapper {
+    .blog {
+      .post {
+        .post-header {
+          min-height: 275px;
+          margin: 15px 0px 5px 0px;
+      
+          .post-header-image {
+            background-size: cover;
+            background-position: center;
+            min-height: 275px;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media (min-width: 1200px) {
   .blog-wrapper {
     display: flex;
@@ -114,13 +133,13 @@
         }
 
         .post-header {
-          min-height: 175px;
+          min-height: 300px;
           margin: 15px 0px 5px 0px;
 
           .post-header-image {
             background-size: cover;
             background-position: center;
-            min-height: 175px;
+            min-height: 300px;
           }
         }
         .avatar {

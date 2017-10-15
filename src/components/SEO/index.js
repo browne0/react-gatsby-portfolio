@@ -29,11 +29,12 @@ class SEO extends Component {
         <meta property="og:site_name" content="Malik Browne | Front End Engineer and UX Enthusiast" />
 
         {/* Twitter Card tags */}
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary" />
         <meta
           name="twitter:creator"
           content={config.userTwitter ? config.userTwitter : ""}
         />
+        <meta name="twitter:site" content="@milkstarz" />
         <meta name="twitter:title" content={props.title} />
         <meta name="twitter:description" content={props.description} />
         <meta name="twitter:image" content={props.image} />
