@@ -12,7 +12,9 @@ class blogList extends Component {
 
     this.state = {
       blogs: this.props.data.allContentfulPost.edges,
-      filteredBlogs: this.props.data.allContentfulPost.edges,
+      filteredBlogs: this.props.data.allContentfulPost.edges.sort((a, b) => {
+        return a.node.date < b.node.date
+      }),
       search: ""
     };
     this.onFilterChange = this.onFilterChange.bind(this);
@@ -46,10 +48,21 @@ class blogList extends Component {
       }
     };
 
-    const blogPosts = this.state.filteredBlogs.map((item, index) => {
+    const blogs = this.state.filteredBlogs.map((item, index) => {
       let blog = item.node;
       return <BlogArticle key={index} blog={blog} />;
     });
+
+    let blogPosts = [];
+
+    for (let i = 0; i < blogs.length; i += 2) {
+      blogPosts.push(
+        <div className="row" key={i}>
+          {blogs[i]}
+          {blogs[i + 1]}
+        </div>
+      );
+    }
     const timeout = { enter: 300, exit: 200 };
     return (
       <div className="blog-wrapper">
@@ -61,7 +74,7 @@ class blogList extends Component {
         />
         <TextField
           hintText="Enter a blog post title"
-          floatingLabelText="Search my blog"
+          floatingLabelText="Filter blog by title"
           className="blog-filter"
           style={style.blogFilter}
           floatingLabelFocusStyle={style.blogFilter.color}
