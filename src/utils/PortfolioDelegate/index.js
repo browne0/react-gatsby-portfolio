@@ -19,6 +19,10 @@ class PortfolioDelegate {
   };
 
   getNextBlog = (blogArray, title) => {
+    blogArray = blogArray.sort((a, b) => {
+      return new Date(b.node.date) - new Date(a.node.date);
+    });
+
     let index = blogArray.findIndex(blog => blog.node.title.title === title);
 
     if (index + 1 > blogArray.length - 1) {
@@ -29,11 +33,16 @@ class PortfolioDelegate {
   };
 
   getPreviousBlog = (blogArray, title) => {
+    blogArray = blogArray.sort((a, b) => {
+      return new Date(b.node.date) - new Date(a.node.date);
+    });
+
     let index = blogArray.findIndex(blog => blog.node.title.title === title);    
 
     if (index - 1 < 0) {
       return null;
     }
+
 
     return blogArray[index - 1].node;
   };
