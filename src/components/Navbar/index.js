@@ -3,28 +3,24 @@ import React, { Component } from "react";
 import AppBar from "material-ui/AppBar";
 import { Tabs, Tab } from "material-ui/Tabs";
 
-import { navigateTo } from "gatsby-link"
-import { withRouter } from "react-router-dom"
-import logo from "../../images/logos/malikbrowne_logo.png"
+import { navigateTo } from "gatsby-link";
+import { withRouter } from "react-router-dom";
+import logo from "../../images/logos/malikbrowne_logo.png";
 
 class Navbar extends Component {
   onTabClick = tab => {
     let lowerCaseRoute = tab.props.label.toLowerCase();
-    navigateTo(lowerCaseRoute)
+    navigateTo(lowerCaseRoute);
   };
 
   onTitleClick = () => {
-    navigateTo("/")
+    navigateTo("/");
   };
 
   render() {
     const title = (
       <div className="logo-wrapper">
-        <img
-          className="logo"
-          src={logo}
-          alt="Malik Browne"
-        />
+        <img className="logo" src={logo} alt="Malik Browne" />
         <div className="title">
           <h1>MALIK BROWNE</h1>
           <h2>FRONT END ENGINEER & UX ENTHUSIAST</h2>
