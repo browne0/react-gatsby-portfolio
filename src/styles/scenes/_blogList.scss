@@ -23,6 +23,8 @@
       margin-bottom: 0px;
       padding: 15px;
       margin-bottom: 25px;
+      display: flex;
+      flex-direction: column;
 
       .post-author {
         display: flex;
@@ -74,7 +76,7 @@
         .post-header-image {
           background-size: cover;
           background-position: center;
-          min-height: 175px;
+          min-height: 225px;
           transition: opacity 0.5s ease-in;
         }
       }
@@ -103,17 +105,145 @@
         }
       }
       .summary {
-        align-self: flex-end;
         font-size: 1em;
         font-weight: 300;
         margin-bottom: 10px;
+        align-self: flex-start;
       }
       .read-more {
-        align-self: flex-end;
+        margin-top: auto;
+        align-self: flex-start;
         a {
           padding: 15px 15px 15px 0px;
           color: rgba(0, 0, 0, 0.44);
           border-radius: 3px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .blog-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin: 0px auto;
+    min-height: calc(100vh - 116px);
+    padding-top: 0px;
+    .blog-filter {
+      width: 75% !important;
+      margin: 0px auto !important;
+    }
+    .blog {
+      width: calc(100vw - 50px);
+      margin: 0px auto;
+      padding: 25px 0px;
+      min-width: 410px;
+      .post {
+        background: #fcfcfc;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+        border: 1px solid rgba(0, 0, 0, 0.09);
+        border-radius: 3px;
+        margin-bottom: 0px;
+        padding: 15px;
+        margin-bottom: 25px;
+        display: flex;
+        flex-direction: column;
+  
+        .post-author {
+          display: flex;
+          flex-direction: row;
+          padding-bottom: 15px;
+          justify-content: space-between;
+          .post-info-wrapper {
+            display: flex;
+          }
+          .share-links {
+            display: flex;
+            .link {
+              width: 40px;
+              font-size: 2rem;
+              color: #fff;
+              margin: 0px 7.5px;
+              height: 40px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              &:last-child {
+                margin-right: 0px;
+              }
+              &.facebook {
+                background-color: #3b5998;
+                &:hover {
+                  background-color: #223458;
+                }
+              }
+              &.twitter {
+                background-color: #1da1f2;
+                &:hover {
+                  background-color: #0E4C72;
+                }
+              }
+              &.linkedin {
+                background-color: #00a0dc;
+                &:hover {
+                  background-color: #00729C;
+                }
+              }
+            }
+          }
+        }
+        .post-header {
+          min-height: 175px;
+          margin: 15px 0px 5px 0px;
+          .post-header-image {
+            background-size: cover;
+            background-position: center;
+            min-height: 500px;
+            transition: opacity 0.5s ease-in;
+          }
+        }
+        .avatar {
+          border-radius: 50%;
+          margin-right: 10px;
+          height: 40px;
+        }
+        .author {
+          font-size: 0.9em;
+          color: rgb(194, 77, 1);
+        }
+        .date {
+          font-size: 0.8em;
+          color: rgba(0, 0, 0, 0.44);
+          span {
+            display: inline-block;
+            padding: 0px 4px;
+          }
+        }
+        .title {
+          font-size: 1.5em;
+          line-height: 1.25em;
+          h2 {
+            padding: 10px 0px;
+          }
+        }
+        .summary {
+          font-size: 1em;
+          font-weight: 300;
+          margin-bottom: 10px;
+          align-self: flex-start;
+        }
+        .read-more {
+          margin-top: auto;
+          align-self: flex-start;
+          a {
+            padding: 15px 15px 15px 0px;
+            color: rgba(0, 0, 0, 0.44);
+            border-radius: 3px;
+          }
         }
       }
     }
@@ -148,6 +278,8 @@
           padding: 15px;
           margin: 0px 1%;
           width: 48%;
+          display: flex;
+          flex-direction: column;
           margin-bottom: 0px;
           .post-author {
             display: flex;
@@ -201,7 +333,7 @@
             .post-header-image {
               background-size: cover;
               background-position: center;
-              min-height: 325px;
+              min-height: 350px;
             }
           }
           .avatar {
@@ -229,13 +361,14 @@
             }
           }
           .summary {
-            align-self: flex-start;
             font-size: 1.1em;
             font-weight: 300;
             margin-bottom: 10px;
+            align-self: flex-start;
           }
           .read-more {
-            align-self: flex-end;
+            margin-top: auto;
+            align-self: flex-start;
             a {
               padding: 15px 15px 15px 0px;
               color: rgba(0, 0, 0, 0.44);
