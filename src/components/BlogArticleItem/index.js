@@ -30,7 +30,7 @@ class BlogArticleItem extends Component {
               className="post-header-image"
               style={{
                 backgroundImage: `url(${src})`,
-                filter: loading ? "blur(4px)" : "blur(0px)"
+                opacity: loading ? 0 : 1
               }}
             />
           )}
@@ -60,24 +60,56 @@ class BlogArticleItem extends Component {
         </Moment>
       );
     }
+
+    let twitterURI = encodeURI(
+      `"${blog.title
+        .title}" by @milkstarz \nhttps://malikbrowne.com/blog/${blog.slug}/`
+    );
     return (
       <article to={`/blog/${blog.slug}`} className="post">
         <div className="post-author">
-          <img
-            src={blog.author.profilePhoto.file.url}
-            alt=""
-            className="avatar"
-          />
+          <div className="post-info-wrapper">
+            <img
+              src={blog.author.profilePhoto.file.url}
+              alt=""
+              className="avatar"
+            />
 
-          <div className="author-info">
-            <p className="author">
-              <a href={blog.author.twitter}>{blog.author.name}</a>
-            </p>
-            <p className="date">
-              {date}
-              <span>&middot;</span>
-              {blogLengthString}
-            </p>
+            <div className="author-info">
+              <p className="author">
+                <a href={blog.author.twitter}>{blog.author.name}</a>
+              </p>
+              <p className="date">
+                {date}
+                <span>&middot;</span>
+                {blogLengthString}
+              </p>
+            </div>
+          </div>
+          <div className="share-links">
+            <a
+              className="link facebook"
+              href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//malikbrowne.com/blog/${blog.slug}/`}
+              target="_blank"
+            >
+              <i className="icon ion-social-facebook" />
+            </a>
+            <a
+              className="link twitter"
+              href={`https://twitter.com/home?status=${twitterURI}`}
+              target="_blank"
+            >
+              <i className="icon ion-social-twitter" />
+            </a>
+            <a
+              className="link linkedin"
+              href={`https://www.linkedin.com/shareArticle?mini=true&url=https://malikbrowne.com/blog/${blog.slug}/&title=${encodeURI(
+                blog.title.title
+              )}&summary=${blog.description.description}`}
+              target="_blank"
+            >
+              <i className="icon ion-social-linkedin" />
+            </a>
           </div>
         </div>
         {blogHeader}

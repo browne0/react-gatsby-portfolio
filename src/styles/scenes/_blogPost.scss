@@ -25,6 +25,7 @@
   a {
     display: inline-block;
     transition: color 0.25s ease;
+    transition: background-color 0.25s ease;
     &:hover {
       color: rgb(194, 77, 1);
     }
@@ -36,21 +37,63 @@
     .post-title {
       background-color: #fff;
       width: 90vw;
+      min-width: 410px;
       padding: 20px;
       padding-bottom: 10px;
       margin: 0px auto;
-      font-size: 2em;
+      font-size: 1.75em;
     }
     .post-author {
       background-color: #fff;
       width: 90vw;
+      min-width: 410px;
       padding: 5px 20px 20px 20px;
       margin: 0px auto;
       display: flex;
       flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      .post-info-wrapper {
+        display: flex;
+      }
+      .share-links {
+        display: flex;
+        .link {
+          width: 40px;
+          font-size: 2rem;
+          color: #fff;
+          margin: 0px 7.5px;
+          height: 40px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          &:last-child {
+            margin-right: 0px;
+          }
+          &.facebook {
+            background-color: #3b5998;
+            &:hover {
+              background-color: #223458;
+            }
+          }
+          &.twitter {
+            background-color: #1da1f2;
+            &:hover {
+              background-color: #0E4C72;
+            }
+          }
+          &.linkedin {
+            background-color: #00a0dc;
+            &:hover {
+              background-color: #00729C;
+            }
+          }
+        }
+      }
       .avatar {
-        width: 60px;
-        height: 60px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
         margin-right: 12.5px;
       }
@@ -59,12 +102,12 @@
         flex-direction: column;
         justify-content: center;
         .author-name {
-          font-size: 1.2em;
+          font-size: 1em;
           font-weight: normal;
           color: rgb(194, 77, 1);
         }
         .date {
-          font-size: 1em;
+          font-size: .9em;
           color: rgba(0, 0, 0, 0.44);
           span {
             display: inline-block;
@@ -75,18 +118,21 @@
     }
     .post-header {
       min-height: 250px;
+      min-width: 410px;
       background-size: cover;
       background-position: center;
-      transition: filter 1s linear;
+      transition: filter 1s ease-in;
     }
     .wrapper {
       width: 90vw;
+      min-width: 410px;
       margin: 40px auto 0px;
       box-shadow: 0 1px 4px rgba(0, 0, 0, 0.22);
     }
     .markdown-body {
       background-color: #fff;
       width: 90vw;
+      min-width: 410px;
       padding: 20px;
       margin: 0px auto;
       font-size: 1.2em;
@@ -193,6 +239,7 @@
     a {
       display: inline-block;
       transition: color 0.25s ease;
+      transition: background-color 0.25s ease;
       &:hover {
         color: rgb(194, 77, 1);
       }
@@ -215,6 +262,46 @@
         margin: 0px auto;
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        .post-info-wrapper {
+          display: flex;
+        }
+        .share-links {
+          display: flex;
+          .link {
+            width: 120px;
+            font-size: 2rem;
+            color: #fff;
+            margin: 0px 7.5px;
+            height: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            &:last-child {
+              margin-right: 0px;
+            }
+            &.facebook {
+              background-color: #3b5998;
+              &:hover {
+                background-color: #223458;
+              }
+            }
+            &.twitter {
+              background-color: #1da1f2;
+              &:hover {
+                background-color: #0E4C72;
+              }
+            }
+            &.linkedin {
+              background-color: #00a0dc;
+              &:hover {
+                background-color: #00729C;
+              }
+            }
+          }
+        }
         .avatar {
           width: 60px;
           height: 60px;
@@ -241,9 +328,9 @@
         }
       }
       .post-header {
-        min-height: 500px;
+        min-height: 673px;
         background-size: cover;
-        background-position: center;
+        background-position: top;
       }
       .wrapper {
         width: 900px;

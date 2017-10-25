@@ -81,6 +81,10 @@ class blogPost extends Component {
         </Moment>
       );
     }
+    let twitterURI = encodeURI(
+      `"${this.state.blog.title
+        .title}" by @milkstarz \nhttps://malikbrowne.com/blog/${this.state.blog.slug}/`
+    );
     return (
       <div className="blog-post">
         <SEO
@@ -97,41 +101,68 @@ class blogPost extends Component {
           <p>{this.state.blog.title.title}</p>
         </div>
         <div className="container">
-        <ProgressiveImage
-          src={this.state.blog.featuredImage.file.url}
-          placeholder={this.state.blog.compressedFeaturedImage.file.url}
-        >
-          {(src, loading) => (
-            <div
-              className="post-header"
-              style={{
-                backgroundImage: `url(${src})`,
-                filter: loading ? 'blur(5px)' : 'blur(0px)'
-              }}
-            />
-          )}
-        </ProgressiveImage>
+          <ProgressiveImage
+            src={this.state.blog.featuredImage.file.url}
+            placeholder={this.state.blog.compressedFeaturedImage.file.url}
+          >
+            {(src, loading) => (
+              <div
+                className="post-header"
+                style={{
+                  backgroundImage: `url(${src})`,
+                  filter: loading ? "blur(5px)" : "blur(0px)"
+                }}
+              />
+            )}
+          </ProgressiveImage>
           <article className="wrapper" id="blog-article">
             <div className="post-title">
               <h1>{this.state.blog.title.title}</h1>
             </div>
             <div className="post-author">
-              <img
-                src={this.state.blog.author.profilePhoto.file.url}
-                alt={this.state.blog.author.name}
-                className="avatar"
-              />
-              <div className="avatar-info">
-                <p className="author-name">
-                  <a href={this.state.blog.author.twitter}>
-                    {this.state.blog.author.name}
-                  </a>
-                </p>
-                <p className="date">
-                  {date}
-                  <span>&middot;</span>
-                  {blogLengthString}
-                </p>
+              <div className="post-info-wrapper">
+                <img
+                  src={this.state.blog.author.profilePhoto.file.url}
+                  alt={this.state.blog.author.name}
+                  className="avatar"
+                />
+                <div className="avatar-info">
+                  <p className="author-name">
+                    <a href={this.state.blog.author.twitter}>
+                      {this.state.blog.author.name}
+                    </a>
+                  </p>
+                  <p className="date">
+                    {date}
+                    <span>&middot;</span>
+                    {blogLengthString}
+                  </p>
+                </div>
+              </div>
+              <div className="share-links">
+                <a
+                  className="link facebook"
+                  href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//malikbrowne.com/blog/${this.state.blog.slug}/`}
+                  target="_blank"
+                >
+                  <i className="icon ion-social-facebook" />
+                </a>
+                <a
+                  className="link twitter"
+                  href={`https://twitter.com/home?status=${twitterURI}`}
+                  target="_blank"
+                >
+                  <i className="icon ion-social-twitter" />
+                </a>
+                <a
+                  className="link linkedin"
+                  href={`https://www.linkedin.com/shareArticle?mini=true&url=https://malikbrowne.com/blog/${this.state.blog.slug}/&title=${encodeURI(
+                    this.state.blog.title.title
+                  )}&summary=${this.state.blog.description.description}`}
+                  target="_blank"
+                >
+                  <i className="icon ion-social-linkedin" />
+                </a>
               </div>
             </div>
             <Markdown

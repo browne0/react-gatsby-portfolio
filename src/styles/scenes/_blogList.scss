@@ -14,6 +14,7 @@
     width: calc(100vw - 50px);
     margin: 0px auto;
     padding: 25px 0px;
+    min-width: 410px;
     .post {
       background: #fcfcfc;
       box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
@@ -27,6 +28,45 @@
         display: flex;
         flex-direction: row;
         padding-bottom: 15px;
+        justify-content: space-between;
+        .post-info-wrapper {
+          display: flex;
+        }
+        .share-links {
+          display: flex;
+          .link {
+            width: 40px;
+            font-size: 2rem;
+            color: #fff;
+            margin: 0px 7.5px;
+            height: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            &:last-child {
+              margin-right: 0px;
+            }
+            &.facebook {
+              background-color: #3b5998;
+              &:hover {
+                background-color: #223458;
+              }
+            }
+            &.twitter {
+              background-color: #1da1f2;
+              &:hover {
+                background-color: #0E4C72;
+              }
+            }
+            &.linkedin {
+              background-color: #00a0dc;
+              &:hover {
+                background-color: #00729C;
+              }
+            }
+          }
+        }
       }
       .post-header {
         min-height: 175px;
@@ -35,6 +75,7 @@
           background-size: cover;
           background-position: center;
           min-height: 175px;
+          transition: opacity 0.5s ease-in;
         }
       }
       .avatar {
@@ -111,17 +152,56 @@
           .post-author {
             display: flex;
             flex-direction: row;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
+            justify-content: space-between;
+            .post-info-wrapper {
+              display: flex;
+            }
+            .share-links {
+              display: flex;
+              .link {
+                width: 60px;
+                font-size: 2rem;
+                color: #fff;
+                margin: 0px 7.5px;
+                height: 40px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                &:last-child {
+                  margin-right: 0px;
+                }
+                &.facebook {
+                  background-color: #3b5998;
+                  &:hover {
+                    background-color: #223458;
+                  }
+                }
+                &.twitter {
+                  background-color: #1da1f2;
+                  &:hover {
+                    background-color: #0E4C72;
+                  }
+                }
+                &.linkedin {
+                  background-color: #00a0dc;
+                  &:hover {
+                    background-color: #00729C;
+                  }
+                }
+              }
+            }
           }
-  
+
           .post-header {
             min-height: 275px;
             margin: 15px 0px 5px 0px;
-  
+
             .post-header-image {
               background-size: cover;
               background-position: center;
-              min-height: 275px;
+              min-height: 325px;
             }
           }
           .avatar {
