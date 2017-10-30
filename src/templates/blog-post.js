@@ -88,7 +88,7 @@ class blogPost extends Component {
     return (
       <div className="blog-post">
         <SEO
-          title={this.state.blog.title.title}
+          title={`${this.state.blog.title.title} | Malik Browne`}
           description={this.state.blog.description.description}
           image={`https:${this.state.blog.featuredImage.file.url}`}
           url={`https://www.malikbrowne.com/${this.state.blog.slug}`}
