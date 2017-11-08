@@ -3,7 +3,8 @@
   .back-to-blog {
     position: fixed;
     background-color: #fafafa;
-    width: 100%;
+    width: 100vw;
+    min-width: 100vw;
     padding: 10px;
     border-bottom: 1px solid rgba(34, 34, 34, 0.25);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -16,6 +17,7 @@
       display: flex;
       flex-direction: row;
       width: 125px;
+      height: 100%;
       align-items: center;
     }
     p {
@@ -137,7 +139,7 @@
       margin: 0px auto;
       font-size: 1.2em;
       color: #333;
-      font-family: Average, "Times New Roman", Times, serif;
+      font-family: Source Sans Pro, "Times New Roman", Times, serif;
 
       div {
         iframe {
@@ -146,8 +148,8 @@
         }
       }
 
-      h1 {
-        font-family: Segoe UI, -apple-system, system-ui, BlinkMacSystemFont,
+      h1, h2 {
+        font-family: Merriweather, -apple-system, system-ui, BlinkMacSystemFont,
           "Helvetica Neue", Arial, sans-serif;
       }
       pre {
@@ -237,7 +239,6 @@
       }
     }
     a {
-      display: inline-block;
       transition: color 0.25s ease;
       transition: background-color 0.25s ease;
       &:hover {
@@ -345,8 +346,12 @@
         margin: 0px auto;
         color: rgba(0, 0, 0, 0.84);
         font-size: 21px;
-        line-height: 1.58;
-        font-family: Average, "Times New Roman", Times, serif;
+        line-height: 2;
+        font-family: Source Sans Pro, "Times New Roman", Times, serif;
+
+        strong {
+          font-weight: bold;
+        }
 
         div {
           iframe {
@@ -356,7 +361,7 @@
         }
 
         h1 {
-          font-family: Segoe UI, -apple-system, system-ui, BlinkMacSystemFont,
+          font-family: Source Sans Pro, -apple-system, system-ui, BlinkMacSystemFont,
             "Helvetica Neue", Arial, sans-serif;
         }
         pre {

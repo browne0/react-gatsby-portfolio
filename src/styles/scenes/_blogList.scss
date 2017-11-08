@@ -110,15 +110,18 @@
       .title {
         font-size: 1.5em;
         line-height: 1.25em;
+        font-family: Segoe UI, -apple-system, system-ui, BlinkMacSystemFont,
+        "Helvetica Neue", Arial, sans-serif;
         h2 {
           padding: 10px 0px;
         }
       }
       .summary {
-        font-size: 1em;
+        font-size: 1.1em;
         font-weight: 300;
         margin-bottom: 10px;
         align-self: flex-start;
+        font-family: Source Sans Pro;
       }
       .read-more {
         margin-top: auto;
@@ -254,7 +257,7 @@
             }
           }
           .summary {
-            font-size: 1.1em;
+            font-size: 1.3em;
             font-weight: 300;
             margin-bottom: 10px;
             align-self: flex-start;

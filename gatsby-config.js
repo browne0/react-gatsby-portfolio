@@ -28,6 +28,8 @@ module.exports = {
       options: {
         fonts: [
           `average`,
+          `source sans pro`,
+          `merriweather`
         ]
       }
     },
