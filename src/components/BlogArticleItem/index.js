@@ -66,7 +66,7 @@ class BlogArticleItem extends Component {
         .title}" by @milkstarz \nhttps://malikbrowne.com/blog/${blog.slug}/`
     );
     return (
-      <article to={`/blog/${blog.slug}`} className="post">
+      <div to={`/blog/${blog.slug}`} className="post">
         <div className="post-author">
           <div className="post-info-wrapper">
             <img
@@ -122,7 +122,7 @@ class BlogArticleItem extends Component {
             Read more...
           </Link>
         </div>
-      </article>
+      </div>
     );
   }
 }

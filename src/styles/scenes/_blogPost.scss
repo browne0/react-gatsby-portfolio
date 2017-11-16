@@ -123,7 +123,7 @@
       min-width: 410px;
       background-size: cover;
       background-position: center;
-      transition: filter 1s ease-in;
+      transition: filter .5s ease-in;
     }
     .wrapper {
       width: 90vw;
@@ -236,6 +236,7 @@
       p {
         font-weight: bold;
         display: block;
+        margin-right: 15px;
       }
     }
     a {
@@ -346,7 +347,7 @@
         margin: 0px auto;
         color: rgba(0, 0, 0, 0.84);
         font-size: 21px;
-        line-height: 2;
+        line-height: 1.95;
         font-family: Source Sans Pro, "Times New Roman", Times, serif;
 
         strong {
@@ -370,7 +371,7 @@
           font-size: 16px;
         }
         p {
-          margin: 30px auto;
+          margin: 24px auto 16px auto;
           font-size: 1em;
           img {
             display: block;

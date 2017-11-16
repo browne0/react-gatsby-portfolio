@@ -110,7 +110,7 @@ class blogPost extends Component {
                 className="post-header"
                 style={{
                   backgroundImage: `url(${src})`,
-                  filter: loading ? "blur(5px)" : "blur(0px)"
+                  filter: loading ? "blur(15px)" : "blur(0px)"
                 }}
               />
             )}
