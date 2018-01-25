@@ -42,7 +42,7 @@ class About extends Component {
               <h1>
                 Hi, I'm <span>Malik.</span>
               </h1>
-              <h2>I'm a Full Stack Engineer at AT&T,</h2>
+              <h2>I'm a Full Stack Engineer at Meetup,</h2>
               <h2>and a UX/Mobile Development hobbyist.</h2>
             </div>
           </div>
@@ -57,7 +57,7 @@ class About extends Component {
         </Section>
         <Section title="A little about me">
           <p>
-            I am currently a <b>Full Stack Engineer at AT&T</b>. I work on a
+            I am currently a <b>Full Stack Engineer at Meetup</b>. I work on a
             team that creates tools and services to support developers inside
             our organization.
           </p>
