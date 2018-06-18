@@ -5,14 +5,14 @@ import PortfolioDelegate from "../utils/PortfolioDelegate";
 import SEO from "../components/SEO";
 import Link from "gatsby-link";
 import PropTypes from "prop-types";
-import bg from "../images/selfie/about_bg3.jpg"
+import bg from "../images/selfie/about_bg3.jpg";
 
 class About extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      blog: this.props.data.allContentfulPost.edges[0].node
+      blog: this.props.data.allContentfulPost.edges[0].node,
     };
   }
 
@@ -57,9 +57,10 @@ class About extends Component {
         </Section>
         <Section title="A little about me">
           <p>
-            I am currently a <b>Full Stack Engineer at Meetup</b>. I work on a
-            team that creates tools and services to support developers inside
-            our organization.
+            I am currently a <b>Full Stack Engineer at Meetup</b>. I work on the
+            core Meetup product - aka the Groups team, and work on everything
+            from new product features to exploring new platform integrations for
+            our web engineers.
           </p>
           <p>
             The story of how I came across web development is actually quite
@@ -76,26 +77,9 @@ class About extends Component {
           />
 
           <p>
-            Outside of that, I love to read, cook <b>(mainly barbeque)</b>, and
-            play intramural sports. As of late, I am exploring the daunting
-            world of writing.
-          </p>
-        </Section>
-        <Section title="Spare Time">
-          <p>
-            I am also a mentor at{" "}
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="http://mood.gg/join"
-            >
-              TeamMood
-            </a>, a small mentorship group that takes students from all over the
-            world, and places them under the guidance of software engineers in
-            big tech companies such as Google, Twitch, AT&T, Apple and much
-            more. If you're interested in hearing more about the program, or
-            maybe you're interested in becoming a mentor yourself, feel free to{" "}
-            <Link to="/contact">shoot me a message.</Link>
+            Outside of that, I love to read, play my ukulele, and play
+            intramural sports. As of late, I am exploring the daunting world of
+            writing.
           </p>
         </Section>
         <Section title="Technologies and Mantra">
@@ -117,7 +101,7 @@ class About extends Component {
             >
               functional programming
             </a>{" "}
-            even more which has led me to explore languages like Haskell and
+            even more which has led me to explore languages like Scala and
             Elixir.
           </p>
 
@@ -186,7 +170,7 @@ class About extends Component {
 }
 
 About.propTypes = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired,
 };
 
 export default About;
