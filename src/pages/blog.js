@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import TextField from "material-ui/TextField";
 import FlipMove from "react-flip-move";
+import debounce from "lodash/debounce";
 import SEO from "../components/SEO";
 import BlogArticle from "../components/BlogArticleItem";
 
@@ -14,25 +15,21 @@ class BlogList extends Component {
       filteredBlogs: this.props.data.allContentfulPost.edges.sort(
         (a, b) => new Date(b.node.date) - new Date(a.node.date)
       ),
-      search: "",
     };
-    this.onFilterChange = this.onFilterChange.bind(this);
-    this.filterBlogs = this.filterBlogs.bind(this);
   }
-  filterBlogs() {
-    const { blogs, search } = this.state;
-    const { query } = search;
 
+  filterBlogs = debounce(search => {
+    const { blogs } = this.state;
     const filteredBlogs = blogs.filter(blog =>
-      blog.node.title.title.toLowerCase().includes(query)
+      blog.node.title.title.toLowerCase().includes(search)
     );
-    this.setState({ filteredBlogs });
-  }
+    this.setState(() => ({ filteredBlogs }));
+  }, 200);
 
-  onFilterChange(e) {
+  onFilterChange = e => {
     const search = e.target.value.toLowerCase();
-    this.setState({ search }, () => this.filterBlogs());
-  }
+    this.filterBlogs(search);
+  };
   render() {
     const style = {
       blogFilter: {
@@ -77,14 +74,11 @@ class BlogList extends Component {
           floatingLabelFocusStyle={style.blogFilter.color}
           underlineFocusStyle={style.blogFilter.bgcolor}
           onChange={this.onFilterChange}
-          value={this.state.search}
         />
         <FlipMove
           duration={400}
-          easing="ease"
-          className="blog"
-          enterAnimation="fade"
-          leaveAnimation="fade"
+		  className="blog"
+		  maintainContainerHeight
         >
           {blogPosts}
         </FlipMove>
