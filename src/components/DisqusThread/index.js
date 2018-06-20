@@ -85,8 +85,8 @@ class DisqusThread extends Component {
   
 
   handleScroll(event) {
-    let rootHeight = document.getElementById('___gatsby').scrollHeight - document.body.clientHeight;
-    let windowHeight = window.pageYOffset;
+    const rootHeight = document.getElementById('___gatsby').scrollHeight - document.body.clientHeight;
+    const windowHeight = window.pageYOffset;
     if (this.state.flag === false && windowHeight > rootHeight - 427) {
       this.renderDisqus();
       this.setState({
@@ -103,7 +103,7 @@ class DisqusThread extends Component {
   renderDisqus() {
     if (this.props.basename && this.props.identifier) {
       if (window.DISQUS === undefined) {
-        let script = document.createElement('script');
+        const script = document.createElement('script');
         script.async = true;
         script.src = `https://${this.props.shortname}.disqus.com/embed.js`;
         document.getElementsByTagName('head')[0].appendChild(script);
@@ -114,7 +114,7 @@ class DisqusThread extends Component {
   }
 
   render() {
-    let { identifier, title, url, shortname, className } = this.props;
+    const { identifier, title, url, shortname, className } = this.props;
 
     if (process.env.BROWSER) {
       window.disqus_shortname = shortname;

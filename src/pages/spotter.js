@@ -10,14 +10,14 @@ class Spotter extends Component {
 
     const delegate = new PortfolioDelegate();
 
-    let index = delegate.getProjectIndex("Spotter");
+    const index = delegate.getProjectIndex("Spotter");
 
     this.state = {
       project: delegate.projects[index]
     };
   }
   render() {
-    let style = {
+    const style = {
       title: {
         color: this.state.project.background_color,
         fontWeight: "bold"

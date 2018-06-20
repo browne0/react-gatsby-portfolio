@@ -23,6 +23,7 @@
     "material-ui": "^0.19.4",
     "moment": "^2.19.0",
     "prismjs": "^1.8.1",
+    "react": "^16.4.1",
     "react-flip-move": "^2.9.15",
     "react-lazyload": "^2.2.7",
     "react-markdown": "^2.5.0",
@@ -36,6 +37,14 @@
     "typography": "^0.15.8",
     "typography-breakpoint-constants": "^0.14.0"
   },
+  "devDependencies": {
+    "babel-eslint": "8.2.3",
+    "eslint": "4.9.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-react": "^7.9.1"
+  },
   "keywords": [
     "gatsby"
   ],
@@ -44,6 +53,7 @@
   "scripts": {
     "develop": "gatsby develop",
     "build": "gatsby build",
-    "start": "gatsby serve"
+    "start": "gatsby serve",
+    "lint": "yarn eslint --fix src/"
   }
 }

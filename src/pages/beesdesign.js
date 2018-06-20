@@ -13,20 +13,20 @@ class BeesDesign extends Component {
 
     const delegate = new PortfolioDelegate();
 
-    let index = delegate.getProjectIndex("Bee's Design");
+    const index = delegate.getProjectIndex("Bee's Design");
 
     this.state = {
       project: delegate.projects[index]
     };
   }
   render() {
-    let style = {
+    const style = {
       title: {
         color: this.state.project.background_color,
         fontWeight: "bold"
       }
     };
-    let settings = {
+    const settings = {
       dots: false,
       arrows: false,
       infinite: true,
@@ -37,15 +37,13 @@ class BeesDesign extends Component {
       autoplay: true
     };
 
-    const screenshots = this.state.project.image_urls.screenshots.map(img => {
-      return (
+    const screenshots = this.state.project.image_urls.screenshots.map(img => (
         <div
           key={img}
           className="project-image"
           style={{ backgroundImage: `url(${img})` }}
         />
-      );
-    });
+      ));
     return (
       <ProjectPage
         name={this.state.project.name}

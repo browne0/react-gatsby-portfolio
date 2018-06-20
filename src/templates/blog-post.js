@@ -14,7 +14,7 @@ class blogPost extends Component {
   constructor(props) {
     super(props);
 
-    let delegate = new PortfolioDelegate();
+    const delegate = new PortfolioDelegate();
 
     this.state = {
       blog: this.props.data.blog,
@@ -34,7 +34,7 @@ class blogPost extends Component {
   }
 
   render() {
-    let prevButton = this.state.prevBlog ? (
+    const prevButton = this.state.prevBlog ? (
       <Button
         containerElement={<Link to={`/blog/${this.state.prevBlog.slug}`} />}
         className="prevButton"
@@ -44,7 +44,7 @@ class blogPost extends Component {
         </span>
       </Button>
     ) : null;
-    let nextButton = this.state.nextBlog ? (
+    const nextButton = this.state.nextBlog ? (
       <Button
         containerElement={<Link to={`/blog/${this.state.nextBlog.slug}`} />}
         className="nextButton"
@@ -53,20 +53,20 @@ class blogPost extends Component {
         <i className="icon ion-arrow-right-b" />
       </Button>
     ) : null;
-    let blogLength = this.state.blog.body.body
+    const blogLength = this.state.blog.body.body
       .replace(/[^a-zA-Z0-9']+/g, " ")
       .trim()
       .split(" ").length;
 
-    let blogLengthString =
+    const blogLengthString =
       blogLength / 275 < 1
-        ? (blogLength / 275 * 60).toFixed() + " sec read"
-        : (blogLength / 275).toFixed() + " min read";
+        ? `${(blogLength / 275 * 60).toFixed()  } sec read`
+        : `${(blogLength / 275).toFixed()  } min read`;
 
-    let keywords =
+    const keywords =
       "web development blogs, blog, coding blogs, front end development, ui/ux, web development, full stack development, malik browne, malik";
 
-    let yearToday = new Date().getFullYear();
+    const yearToday = new Date().getFullYear();
     let date;
     if (yearToday - Number(this.state.blog.date.substr(0, 4)) > 0) {
       date = (
@@ -81,7 +81,7 @@ class blogPost extends Component {
         </Moment>
       );
     }
-    let twitterURI = encodeURI(
+    const twitterURI = encodeURI(
       `"${this.state.blog.title
         .title}" by @milkstarz \nhttps://malikbrowne.com/blog/${this.state.blog.slug}/`
     );

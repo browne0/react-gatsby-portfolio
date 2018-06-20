@@ -1,7 +1,7 @@
 import React from "react";
 
 const AboutSection = props => {
-  let className = props.className
+  const className = props.className
     ? `about-section ${props.className}`
     : "about-section";
   return (

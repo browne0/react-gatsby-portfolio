@@ -12,14 +12,14 @@ class Mixmax extends Component {
 
     const delegate = new PortfolioDelegate();
 
-    let index = delegate.getProjectIndex("Spotify Mixmax Integration");
+    const index = delegate.getProjectIndex("Spotify Mixmax Integration");
 
     this.state = {
       project: delegate.projects[index]
     };
   }
   render() {
-    let style = {
+    const style = {
       title: {
         color: this.state.project.background_color,
         fontWeight: "bold"

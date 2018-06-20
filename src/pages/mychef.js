@@ -13,21 +13,21 @@ class myChef extends Component {
 
     const delegate = new PortfolioDelegate();
 
-    let index = delegate.getProjectIndex("myChef");
+    const index = delegate.getProjectIndex("myChef");
 
     this.state = {
       project: delegate.projects[index]
     };
   }
   render() {
-    let style = {
+    const style = {
       title: {
         color: this.state.project.background_color,
         fontWeight: "bold"
       }
     };
 
-    let settings = {
+    const settings = {
       dots: false,
       arrows: false,
       infinite: true,

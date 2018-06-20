@@ -12,7 +12,7 @@ class SEO extends Component {
   };
 
   render() {
-    let { props } = this;
+    const { props } = this;
     return (
       <Helmet>
         {/* General tags */}

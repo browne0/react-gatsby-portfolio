@@ -4,7 +4,7 @@ import RaisedButton from "material-ui/RaisedButton";
 import { ToastContainer, ToastMessage } from "react-toastr";
 import SEO from "../components/SEO"
 
-let ToastMessageFactory = React.createFactory(ToastMessage.animation);
+const ToastMessageFactory = React.createFactory(ToastMessage.animation);
 
 class Contact extends Component {
   constructor() {
@@ -22,7 +22,7 @@ class Contact extends Component {
       this.state.email !== "" &&
       this.state.message !== ""
     ) {
-      let formData = new FormData();
+      const formData = new FormData();
       formData.append("name", this.state.name);
       formData.append("email", this.state.email);
       formData.append("message", this.state.message);
@@ -30,9 +30,7 @@ class Contact extends Component {
         method: "POST",
         body: formData
       })
-        .then(response => {
-          return response.json();
-        })
+        .then(response => response.json())
         .then(result => {
           if (result.inputOK) {
             this.container.success(result.message, "Success!", {
@@ -80,7 +78,7 @@ class Contact extends Component {
   }
 
   render() {
-    let style = {
+    const style = {
       contactFilter: {
         margin: "auto",
         color: {

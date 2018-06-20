@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 class NotFound extends Component {
   render() {
-    let style = {
+    const style = {
       button: {
         display: "inline-block",
         padding: "10px 10px 10px 0px"

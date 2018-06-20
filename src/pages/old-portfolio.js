@@ -12,7 +12,7 @@ class OldPortfolio extends Component {
 
     const delegate = new PortfolioDelegate();
 
-    let index = delegate.getProjectIndex("Post Grad Portfolio");
+    const index = delegate.getProjectIndex("Post Grad Portfolio");
 
     this.state = {
       project: delegate.projects[index]

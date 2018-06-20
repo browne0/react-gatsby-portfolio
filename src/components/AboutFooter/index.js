@@ -3,14 +3,14 @@ import PropTypes from "prop-types";
 import Link from "gatsby-link";
 
 const AboutFooter = props => {
-  let style = {
+  const style = {
     container: {
       backgroundColor: 'rgb(194, 77, 1)',
       minHeight: "30vh"
     }
   };
-  let className = "pic";
-  let path = `/blog/${props.blog.slug}`
+  const className = "pic";
+  const path = `/blog/${props.blog.slug}`
   return (
     <div className="about-footer" style={style.container}>
       <div className="footer-container">

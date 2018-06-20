@@ -3,7 +3,7 @@ import RaisedButton from "material-ui/RaisedButton";
 import PropTypes from "prop-types";
 
 const ThemedButton = props => {
-  let style = {
+  const style = {
     button: {
       minWidth: '94px'
     },

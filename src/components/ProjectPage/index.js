@@ -28,13 +28,11 @@ class ProjectPage extends Component {
   };
 
   componentDidMount() {
-    document.title = this.props.title + " | Malik Browne";
+    document.title = `${this.props.title  } | Malik Browne`;
   }
 
   render(props) {
-    const technologies = this.props.technologies.map(tech => {
-      return <li key={tech}>{tech}</li>;
-    });
+    const technologies = this.props.technologies.map(tech => <li key={tech}>{tech}</li>);
     const style = {
       button: {
         display: "inline-block",
@@ -44,21 +42,21 @@ class ProjectPage extends Component {
         maxHeight: "500px"
       }
     };
-    let githubButton = this.props.github ? (
+    const githubButton = this.props.github ? (
       <div style={style.button}>
         <Button target="_blank" label="Github" url={this.props.github} />
       </div>
     ) : null;
-    let liveUrlButton = this.props.liveUrl ? (
+    const liveUrlButton = this.props.liveUrl ? (
       <div style={style.button}>
         <Button target="_blank" label="Live Demo" url={this.props.liveUrl} />
       </div>
     ) : null;
-    let screenshotClass = this.props.bigPicture
+    const screenshotClass = this.props.bigPicture
       ? "screenshot-big-picture"
       : null;
     
-    let color = this.props.color !== undefined ? this.props.color : this.props.bgColor;
+    const color = this.props.color !== undefined ? this.props.color : this.props.bgColor;
 
     return (
       <div className={`project`}>

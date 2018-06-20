@@ -17,8 +17,8 @@ class About extends Component {
   }
 
   componentDidMount() {
-    let hero = this.blurredEl;
-    let img = new Image();
+    const hero = this.blurredEl;
+    const img = new Image();
 
     img.src = bg;
     img.onload = () => {

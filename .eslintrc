@@ -1,8 +1,19 @@
 {
+  "parser": "babel-eslint",
+  "extends": ["airbnb-base", "prettier", "plugin:react/recommended"],
   "env": {
-    "browser": true
+    "browser": true,
+    "es6": true
   },
   "globals": {
     "graphql": false
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-tabs": 0,
+    "linebreak-style": 0
   }
 }

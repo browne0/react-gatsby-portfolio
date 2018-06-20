@@ -9,7 +9,7 @@ import logo from "../../images/logos/malikbrowne_logo.png";
 
 class Navbar extends Component {
   onTabClick = tab => {
-    let lowerCaseRoute = tab.props.label.toLowerCase();
+    const lowerCaseRoute = tab.props.label.toLowerCase();
     navigateTo(lowerCaseRoute);
   };
 
@@ -48,7 +48,7 @@ class Navbar extends Component {
       }
     };
 
-    let { location } = this.props;
+    const { location } = this.props;
 
     return (
       <header>

@@ -12,14 +12,14 @@ class FactsOfToday extends Component {
 
     const delegate = new PortfolioDelegate();
 
-    let index = delegate.getProjectIndex("Facts of Today");
+    const index = delegate.getProjectIndex("Facts of Today");
 
     this.state = {
       project: delegate.projects[index]
     };
   }
   render() {
-    let style = {
+    const style = {
       title: {
         color: this.state.project.color,
         fontWeight: "bold"

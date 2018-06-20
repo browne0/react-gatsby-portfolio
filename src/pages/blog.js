@@ -2,58 +2,56 @@ import React, { Component } from "react";
 import TextField from "material-ui/TextField";
 import FlipMove from "react-flip-move";
 import PortfolioDelegate from "../utils/PortfolioDelegate";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
 import SEO from "../components/SEO";
 import BlogArticle from "../components/BlogArticleItem";
 
-class blogList extends Component {
+class BlogList extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       blogs: this.props.data.allContentfulPost.edges,
-      filteredBlogs: this.props.data.allContentfulPost.edges.sort((a, b) => {
-        return new Date(b.node.date) - new Date(a.node.date);
-      }),
-      search: ""
+      filteredBlogs: this.props.data.allContentfulPost.edges.sort(
+        (a, b) => new Date(b.node.date) - new Date(a.node.date)
+      ),
+      search: "",
     };
     this.onFilterChange = this.onFilterChange.bind(this);
     this.filterBlogs = this.filterBlogs.bind(this);
   }
   filterBlogs() {
-    let blogs = this.state.blogs;
-    let query = this.state.search;
+    const { blogs, search } = this.state;
+    const { query } = search;
 
-    blogs = blogs.filter(blog => {
-      return blog.node.title.title.toLowerCase().includes(query);
-    });
-    this.setState({ filteredBlogs: blogs });
+    const filteredBlogs = blogs.filter(blog =>
+      blog.node.title.title.toLowerCase().includes(query)
+    );
+    this.setState({ filteredBlogs });
   }
 
   onFilterChange(e) {
-    let search = e.target.value.toLowerCase();
+    const search = e.target.value.toLowerCase();
     this.setState({ search }, () => this.filterBlogs());
   }
   render() {
-    let { match, location } = this.props;
-    let style = {
+    const style = {
       blogFilter: {
         margin: "auto",
         color: {
-          color: "#c24d01"
+          color: "#c24d01",
         },
         bgcolor: {
-          borderColor: "#c24d01"
-        }
-      }
+          borderColor: "#c24d01",
+        },
+      },
     };
 
     const blogs = this.state.filteredBlogs.map((item, index) => {
-      let blog = item.node;
+      const blog = item.node;
       return <BlogArticle key={index} blog={blog} />;
     });
 
-    let blogPosts = [];
+    const blogPosts = [];
 
     for (let i = 0; i < blogs.length; i += 2) {
       blogPosts.push(
@@ -63,7 +61,6 @@ class blogList extends Component {
         </div>
       );
     }
-    const timeout = { enter: 300, exit: 200 };
     return (
       <div className="blog-wrapper">
         <SEO
@@ -96,7 +93,7 @@ class blogList extends Component {
   }
 }
 
-export default blogList;
+export default BlogList;
 
 export const pageQuery = graphql`
   query blogQuery {

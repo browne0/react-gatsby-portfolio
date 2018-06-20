@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Link from "gatsby-link";
 
 const ProjectFooter = props => {
-  let style = {
+  const style = {
     container: {
       backgroundColor: props.currentProject.color
         ? props.currentProject.color
@@ -11,7 +11,7 @@ const ProjectFooter = props => {
       minHeight: props.currentProject.name === "Spotter" ? "40vh" : "30vh"
     }
   };
-  let className =
+  const className =
     props.nextProject.name === "Spotify Mixmax Integration" ? null : "pic";
   return (
     <div className="project-footer" style={style.container}>

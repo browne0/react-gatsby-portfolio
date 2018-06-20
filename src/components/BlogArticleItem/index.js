@@ -17,9 +17,9 @@ class BlogArticleItem extends Component {
   }
 
   render() {
-    let blog = this.props.blog;
+    const blog = this.props.blog;
 
-    let blogHeader = blog.featuredImage ? (
+    const blogHeader = blog.featuredImage ? (
       <Link to={`/blog/${blog.slug}`} className="post-header">
         <ProgressiveImage
           src={this.props.blog.featuredImage.file.url}
@@ -37,15 +37,15 @@ class BlogArticleItem extends Component {
         </ProgressiveImage>
       </Link>
     ) : null;
-    let blogLength = blog.body.body
+    const blogLength = blog.body.body
       .replace(/[^a-zA-Z0-9']+/g, " ")
       .trim()
       .split(" ").length;
-    let blogLengthString =
+    const blogLengthString =
       blogLength / 275 < 1
-        ? (blogLength / 275 * 60).toFixed() + " sec read"
-        : (blogLength / 275).toFixed() + " min read";
-    let yearToday = new Date().getFullYear();
+        ? `${(blogLength / 275 * 60).toFixed()  } sec read`
+        : `${(blogLength / 275).toFixed()  } min read`;
+    const yearToday = new Date().getFullYear();
     let date;
     if (yearToday - Number(blog.date.substr(0, 4)) > 0) {
       date = (
@@ -61,7 +61,7 @@ class BlogArticleItem extends Component {
       );
     }
 
-    let twitterURI = encodeURI(
+    const twitterURI = encodeURI(
       `"${blog.title
         .title}" by @milkstarz \nhttps://malikbrowne.com/blog/${blog.slug}/`
     );

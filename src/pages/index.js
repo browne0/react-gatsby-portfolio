@@ -7,9 +7,9 @@ import projects from "../data/projects";
 
 class Home extends Component {
   render() {
-    let projectList = [];
+    const projectList = [];
     let flip = false;
-    let projectListItems = projects.map((project, index) => {
+    const projectListItems = projects.map((project, index) => {
       if (project.big_picture) {
         return (
           <Link key={index} to={project.path} className="bigPicture">
@@ -31,7 +31,7 @@ class Home extends Component {
             </div>
           </Link>
         );
-      } else {
+      } 
         return (
           <Link
             key={index}
@@ -50,7 +50,7 @@ class Home extends Component {
             </div>
           </Link>
         );
-      }
+      
     });
     for (let i = 0; i < projectListItems.length; i += 3) {
       if (!flip) {
