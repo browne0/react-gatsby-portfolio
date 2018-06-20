@@ -93,16 +93,16 @@ class BlogArticleItem extends Component {
               href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//malikbrowne.com/blog/${
                 blog.slug
               }/`}
-			  target="_blank"
-			  rel="noopener noreferrer"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <i className="icon ion-social-facebook" />
             </a>
             <a
               className="link twitter"
               href={`https://twitter.com/home?status=${twitterURI}`}
-			  target="_blank"
-			  rel="noopener noreferrer"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <i className="icon ion-social-twitter" />
             </a>
@@ -113,8 +113,8 @@ class BlogArticleItem extends Component {
               }/&title=${encodeURI(blog.title.title)}&summary=${
                 blog.description.description
               }`}
-			  target="_blank"
-			  rel="noopener noreferrer"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <i className="icon ion-social-linkedin" />
             </a>
@@ -125,10 +125,15 @@ class BlogArticleItem extends Component {
           <h2>{blog.title.title}</h2>
         </Link>
         <p className="summary">{blog.description.description}</p>
-        <div className="read-more">
-          <Link to={`/blog/${blog.slug}`} className="post-header">
-            Read more...
-          </Link>
+        <div className="bloglist--footer">
+          <div className="read-more">
+            <Link to={`/blog/${blog.slug}`} className="post-header">
+              Read more...
+            </Link>
+          </div>
+          {blog.containsAffiliateLinks && (
+            <div className="affiliate-links"><b>* Contains affiliate links</b></div>
+          )}
         </div>
       </div>
     );

@@ -58,13 +58,13 @@
             &.twitter {
               background-color: #1da1f2;
               &:hover {
-                background-color: #0E4C72;
+                background-color: #0e4c72;
               }
             }
             &.linkedin {
               background-color: #00a0dc;
               &:hover {
-                background-color: #00729C;
+                background-color: #00729c;
               }
             }
           }
@@ -74,7 +74,7 @@
         height: 0;
         padding-bottom: 56%;
         width: 100%;
-        position:relative;
+        position: relative;
         .post-header-image {
           background-size: 100%;
           background-position: top;
@@ -88,7 +88,7 @@
           width: 100%;
           height: 100%;
           margin: 0 auto;
-          transition: opacity .5s ease;
+          transition: opacity 0.5s ease;
         }
       }
       .avatar {
@@ -112,7 +112,7 @@
         font-size: 1.5em;
         line-height: 1.25em;
         font-family: Segoe UI, -apple-system, system-ui, BlinkMacSystemFont,
-        "Helvetica Neue", Arial, sans-serif;
+          "Helvetica Neue", Arial, sans-serif;
         h2 {
           padding: 10px 0px;
         }
@@ -124,13 +124,18 @@
         align-self: flex-start;
         font-family: Source Sans Pro;
       }
-      .read-more {
-        margin-top: auto;
-        align-self: flex-start;
-        a {
-          padding: 15px 15px 15px 0px;
-          color: rgba(0, 0, 0, 0.44);
-          border-radius: 3px;
+      .bloglist--footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .read-more {
+          margin-top: auto;
+          align-self: flex-start;
+          a {
+            padding: 15px 15px 15px 0px;
+            color: rgba(0, 0, 0, 0.44);
+            border-radius: 3px;
+          }
         }
       }
     }
@@ -200,13 +205,13 @@
                 &.twitter {
                   background-color: #1da1f2;
                   &:hover {
-                    background-color: #0E4C72;
+                    background-color: #0e4c72;
                   }
                 }
                 &.linkedin {
                   background-color: #00a0dc;
                   &:hover {
-                    background-color: #00729C;
+                    background-color: #00729c;
                   }
                 }
               }
@@ -217,7 +222,7 @@
             height: 0;
             padding-bottom: 56%;
             width: 100%;
-            position:relative;
+            position: relative;
             .post-header-image {
               background-size: 100%;
               background-position: top;
@@ -263,13 +268,18 @@
             margin-bottom: 10px;
             align-self: flex-start;
           }
-          .read-more {
-            margin-top: auto;
-            align-self: flex-start;
-            a {
-              padding: 15px 15px 15px 0px;
-              color: rgba(0, 0, 0, 0.44);
-              border-radius: 3px;
+          .bloglist--footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .read-more {
+              margin-top: auto;
+              align-self: flex-start;
+              a {
+                padding: 15px 15px 15px 0px;
+                color: rgba(0, 0, 0, 0.44);
+                border-radius: 3px;
+              }
             }
           }
         }

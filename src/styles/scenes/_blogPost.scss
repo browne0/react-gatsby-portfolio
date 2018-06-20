@@ -82,13 +82,13 @@
           &.twitter {
             background-color: #1da1f2;
             &:hover {
-              background-color: #0E4C72;
+              background-color: #0e4c72;
             }
           }
           &.linkedin {
             background-color: #00a0dc;
             &:hover {
-              background-color: #00729C;
+              background-color: #00729c;
             }
           }
         }
@@ -109,7 +109,7 @@
           color: rgb(194, 77, 1);
         }
         .date {
-          font-size: .9em;
+          font-size: 0.9em;
           color: rgba(0, 0, 0, 0.44);
           span {
             display: inline-block;
@@ -123,13 +123,52 @@
       min-width: 410px;
       background-size: cover;
       background-position: center;
-      transition: filter .5s ease-in;
+      transition: filter 0.5s ease-in;
     }
     .wrapper {
       width: 90vw;
       min-width: 410px;
       margin: 40px auto 0px;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.22);
+	  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.22);
+	  .affiliate-disclosure {
+		width: 90%;
+		margin: auto;
+		margin-top: 30px;
+		margin-bottom: 15px;
+		min-width: 410px;
+		.banner--head {
+		  display: flex;
+		  align-items: center;
+		  width: 100%;
+		  border-width: 2px 2px 0px 2px;
+		  border-style: solid solid solid solid;
+		  -webkit-border-top-left-radius: 4px;
+		  -webkit-border-top-right-radius: 4px;
+		  -moz-border-radius-topleft: 4px;
+		  -moz-border-radius-topright: 4px;
+		  border-top-left-radius: 4px;
+		  border-top-right-radius: 4px;
+		  border-color: $off-black $off-black $off-black $off-black;
+		  background-color: rgba(0, 0, 0, 0.1);
+		  padding-left: 10px;
+		  height: 40px;
+		  font-size: 20px;
+		}
+		.banner--body {
+		  background: $off-black;
+		  padding: 10px;
+		  padding-bottom: 15px;
+		  padding-left: 20px;
+		  color: $white;
+		  font-size: 1em;
+		  .banner--spacing {
+			margin-top: 10px;
+		  }
+		  .ad {
+			  margin-top: 2px;
+		  }
+		}
+	  }
     }
     .markdown-body {
       background-color: #fff;
@@ -143,12 +182,13 @@
 
       div {
         iframe {
-          width: 100%; 
+          width: 100%;
           height: 300px;
         }
       }
 
-      h1, h2 {
+      h1,
+      h2 {
         font-family: Merriweather, -apple-system, system-ui, BlinkMacSystemFont,
           "Helvetica Neue", Arial, sans-serif;
       }
@@ -293,13 +333,13 @@
             &.twitter {
               background-color: #1da1f2;
               &:hover {
-                background-color: #0E4C72;
+                background-color: #0e4c72;
               }
             }
             &.linkedin {
               background-color: #00a0dc;
               &:hover {
-                background-color: #00729C;
+                background-color: #00729c;
               }
             }
           }
@@ -338,6 +378,45 @@
         width: 900px;
         margin: 40px auto 0px;
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.22);
+        background: #fff;
+        .affiliate-disclosure {
+          width: calc(100% * 3 / 5);
+          margin: auto;
+		  margin-top: 30px;
+		  margin-bottom: 15px;
+          .banner--head {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            border-width: 2px 2px 0px 2px;
+            border-style: solid solid solid solid;
+            -webkit-border-top-left-radius: 4px;
+            -webkit-border-top-right-radius: 4px;
+            -moz-border-radius-topleft: 4px;
+            -moz-border-radius-topright: 4px;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            border-color: $off-black $off-black $off-black $off-black;
+            background-color: rgba(0, 0, 0, 0.1);
+            padding-left: 10px;
+            height: 40px;
+            font-size: 20px;
+          }
+          .banner--body {
+            background: $off-black;
+            padding: 10px;
+            padding-bottom: 15px;
+            padding-left: 20px;
+            color: $white;
+            font-size: 1em;
+            .banner--spacing {
+              margin-top: 10px;
+			}
+			.ad {
+				margin-top: 2px;
+			}
+          }
+        }
       }
       .markdown-body {
         background-color: #fff;
@@ -356,14 +435,14 @@
 
         div {
           iframe {
-            width: 100%; 
+            width: 100%;
             height: 450px;
           }
         }
 
         h1 {
-          font-family: Source Sans Pro, -apple-system, system-ui, BlinkMacSystemFont,
-            "Helvetica Neue", Arial, sans-serif;
+          font-family: Source Sans Pro, -apple-system, system-ui,
+            BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
         }
         pre {
           background-color: #272822;

@@ -41,7 +41,7 @@ ThemedButton.propTypes = {
   containerElement: PropTypes.element,
   className: PropTypes.string,
   target: PropTypes.string,
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
 };
 
 ThemedButton.defaultProps = {

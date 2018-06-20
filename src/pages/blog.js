@@ -6,6 +6,30 @@ import debounce from "lodash/debounce";
 import SEO from "../components/SEO";
 import BlogArticle from "../components/BlogArticleItem";
 
+/**
+ * IDEA FOR NEXT BLOG LIST PAGE:
+ *
+ * MAIN PHOTO REALLY BIG ON TOP WITH THE SAME 2x2 GRID BELOW
+ *
+ * Right hand side will have:
+ * - Search
+ * - Newsletter
+ * - Editor's Picks
+ * - Most Popular Articles
+ *
+ * On mobile the right hand column will not be there, and will stick
+ * with the original design we have now.
+ *
+ * Probably gonna have to render new components based on width, but
+ * that shouldn't be too bad.
+ *
+ * Check image here:
+ * https://gyazo.com/befdd314ed22a908d0f48e46b1d87acb
+ *
+ * Idea came from here:
+ * https://www.impactbnd.com/blog/blog-layout-best-practices-2016
+ */
+
 class BlogList extends Component {
   constructor(props) {
     super(props);
@@ -75,11 +99,7 @@ class BlogList extends Component {
           underlineFocusStyle={style.blogFilter.bgcolor}
           onChange={this.onFilterChange}
         />
-        <FlipMove
-          duration={400}
-		  className="blog"
-		  maintainContainerHeight
-        >
+        <FlipMove duration={400} className="blog" maintainContainerHeight>
           {blogPosts}
         </FlipMove>
       </div>
@@ -97,6 +117,7 @@ export const pageQuery = graphql`
           title {
             title
           }
+          containsAffiliateLinks
           slug
           author {
             name

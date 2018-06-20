@@ -1,0 +1,17 @@
+// Standard constants
+$link-color: #c24d01;
+$text-color: rgba(0, 0, 0, 0.84);
+$subtitle-text-color: rgba(0, 0, 0, 0.44);
+
+// Theme colors
+$off-black: rgb(33, 35, 41);
+$bright-orange: #ff6600;
+$off-white: rgba(255, 255, 255, 0.8);
+$white: #fff;
+
+// Used for banners, buttons, etc
+$dark-orange: rgb(194, 77, 1);
+
+.highlight {
+	color: $link-color;
+}

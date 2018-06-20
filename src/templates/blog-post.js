@@ -8,9 +8,44 @@ import ProgressiveImage from "react-progressive-image";
 import DisqusThread from "../components/DisqusThread";
 import PortfolioDelegate from "../utils/PortfolioDelegate";
 import Button from "../components/ThemedButton";
-// import ProgressBar from "../components/ReadingProgressBar";
+import ProgressBar from "../components/ReadingProgressBar";
 import SEO from "../components/SEO";
 
+const disclosureMessages = [
+  "Just a friendly neighborhood disclosure,",
+  "Disclosure Time!",
+  "Just a heads up,",
+  "Just so you know...",
+  "Disclosure & Other Legal Mumbo-jumbo.",
+];
+
+const rand = Math.floor(Math.random() * disclosureMessages.length);
+
+const AffiliateDisclosureBanner = () => (
+  <div className="affiliate-disclosure">
+    <div className="banner">
+      <div className="banner--head">
+        <h2>{disclosureMessages[rand]}</h2>
+      </div>
+      <div className="banner--body">
+        <p>
+          This post contains <span className="highlight">affiliate links.</span>{" "}
+        </p>
+        <p className="banner--spacing">
+          This means that if you decide to check out or buy something I
+          recommend in this article, I may receive compensation, some dope swag,
+          or some <i>sweet</i> brownie points.
+        </p>
+        <p className="banner--spacing">
+          Please know your trust means{" "}
+          <span className="highlight">everything to me</span>, and I would never
+          recommend anything I haven't tried and liked myself.
+        </p>
+		<p className="banner--spacing">Enjoy the post.</p>
+      </div>
+    </div>
+  </div>
+);
 class blogPost extends Component {
   static propTypes = {
     data: PropTypes.object,
@@ -174,6 +209,9 @@ class blogPost extends Component {
                 </a>
               </div>
             </div>
+            {this.state.blog.containsAffiliateLinks && (
+              <AffiliateDisclosureBanner />
+            )}
             <Markdown
               className="markdown-body"
               source={this.state.blog.body.body}
@@ -236,6 +274,7 @@ export const pageQuery = graphql`
       }
       date
       comments
+      containsAffiliateLinks
     }
     blogs: allContentfulPost {
       edges {
