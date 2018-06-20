@@ -6,18 +6,18 @@ import ProgressiveImage from "react-progressive-image";
 
 class BlogArticleItem extends Component {
   static propTypes = {
-    blog: PropTypes.object.isRequired
+    blog: PropTypes.object.isRequired,
   };
 
   constructor(props) {
     super(props);
     this.state = {
-      url: this.props.blog.compressedFeaturedImage.file.url
+      url: this.props.blog.compressedFeaturedImage.file.url,
     };
   }
 
   render() {
-    const blog = this.props.blog;
+    const { blog } = this.props;
 
     const blogHeader = blog.featuredImage ? (
       <Link to={`/blog/${blog.slug}`} className="post-header">
@@ -30,7 +30,7 @@ class BlogArticleItem extends Component {
               className="post-header-image"
               style={{
                 backgroundImage: `url(${src})`,
-                opacity: loading ? 0 : 1
+                opacity: loading ? 0 : 1,
               }}
             />
           )}
@@ -43,8 +43,8 @@ class BlogArticleItem extends Component {
       .split(" ").length;
     const blogLengthString =
       blogLength / 275 < 1
-        ? `${(blogLength / 275 * 60).toFixed()  } sec read`
-        : `${(blogLength / 275).toFixed()  } min read`;
+        ? `${((blogLength / 275) * 60).toFixed()} sec read`
+        : `${(blogLength / 275).toFixed()} min read`;
     const yearToday = new Date().getFullYear();
     let date;
     if (yearToday - Number(blog.date.substr(0, 4)) > 0) {
@@ -62,8 +62,9 @@ class BlogArticleItem extends Component {
     }
 
     const twitterURI = encodeURI(
-      `"${blog.title
-        .title}" by @milkstarz \nhttps://malikbrowne.com/blog/${blog.slug}/`
+      `"${blog.title.title}" by @milkstarz \nhttps://malikbrowne.com/blog/${
+        blog.slug
+      }/`
     );
     return (
       <div to={`/blog/${blog.slug}`} className="post">
@@ -89,24 +90,31 @@ class BlogArticleItem extends Component {
           <div className="share-links">
             <a
               className="link facebook"
-              href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//malikbrowne.com/blog/${blog.slug}/`}
-              target="_blank"
+              href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//malikbrowne.com/blog/${
+                blog.slug
+              }/`}
+			  target="_blank"
+			  rel="noopener noreferrer"
             >
               <i className="icon ion-social-facebook" />
             </a>
             <a
               className="link twitter"
               href={`https://twitter.com/home?status=${twitterURI}`}
-              target="_blank"
+			  target="_blank"
+			  rel="noopener noreferrer"
             >
               <i className="icon ion-social-twitter" />
             </a>
             <a
               className="link linkedin"
-              href={`https://www.linkedin.com/shareArticle?mini=true&url=https://malikbrowne.com/blog/${blog.slug}/&title=${encodeURI(
-                blog.title.title
-              )}&summary=${blog.description.description}`}
-              target="_blank"
+              href={`https://www.linkedin.com/shareArticle?mini=true&url=https://malikbrowne.com/blog/${
+                blog.slug
+              }/&title=${encodeURI(blog.title.title)}&summary=${
+                blog.description.description
+              }`}
+			  target="_blank"
+			  rel="noopener noreferrer"
             >
               <i className="icon ion-social-linkedin" />
             </a>

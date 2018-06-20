@@ -1,7 +1,7 @@
+/* eslint-disable */
 import React, { Component } from "react";
 import TextField from "material-ui/TextField";
 import FlipMove from "react-flip-move";
-import PortfolioDelegate from "../utils/PortfolioDelegate";
 import SEO from "../components/SEO";
 import BlogArticle from "../components/BlogArticleItem";
 

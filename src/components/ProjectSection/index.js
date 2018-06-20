@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const ProjectSection = props => {
   const className = props.className
@@ -12,7 +13,14 @@ const ProjectSection = props => {
   );
 };
 
+ProjectSection.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
+  title: PropTypes.string,
+  children: PropTypes.element,
+};
+
 ProjectSection.defaultProps = {
-  className: ""
+  className: "",
 };
 export default ProjectSection;

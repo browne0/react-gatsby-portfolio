@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react"
 import appleicon from "./images/favicons/apple-touch-icon.png"
 import favicon1 from "./images/favicons/favicon-32x32.png"

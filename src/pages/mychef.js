@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import ProjectPage from "../components/ProjectPage";
-import ProjectSection from "../components/ProjectSection";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { obsidian } from "react-syntax-highlighter/dist/styles";
 import Slider from "react-slick";
+import ProjectPage from "../components/ProjectPage";
+import ProjectSection from "../components/ProjectSection";
 import PortfolioDelegate from "../utils/PortfolioDelegate";
 import SEO from "../components/SEO";
 

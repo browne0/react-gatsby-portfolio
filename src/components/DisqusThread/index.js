@@ -84,7 +84,7 @@ class DisqusThread extends Component {
   }
   
 
-  handleScroll(event) {
+  handleScroll() {
     const rootHeight = document.getElementById('___gatsby').scrollHeight - document.body.clientHeight;
     const windowHeight = window.pageYOffset;
     if (this.state.flag === false && windowHeight > rootHeight - 427) {
@@ -95,7 +95,7 @@ class DisqusThread extends Component {
     }
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate() {
     this.renderDisqus();
   }
   

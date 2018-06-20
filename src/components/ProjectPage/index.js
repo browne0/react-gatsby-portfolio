@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import PortfolioDelegate from "../../utils/PortfolioDelegate";
 import PropTypes from "prop-types";
+import PortfolioDelegate from "../../utils/PortfolioDelegate";
 import Button from "../../components/ThemedButton";
 import ProjectSection from "../../components/ProjectSection";
 import ProjectFooter from "../../components/ProjectFooter";
@@ -12,51 +12,71 @@ class ProjectPage extends Component {
     const projects = new PortfolioDelegate();
 
     this.state = {
-      nextProj: projects.getNextProject(this.props.name)
+      nextProj: projects.getNextProject(this.props.name),
     };
   }
   static propTypes = {
     name: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired
+    description: PropTypes.string.isRequired,
+    title: PropTypes.string,
+    technologies: PropTypes.array,
+    github: PropTypes.string,
+    liveUrl: PropTypes.string,
+    bigPicture: PropTypes.bool,
+    color: PropTypes.string,
+    bgColor: PropTypes.string,
+    images: PropTypes.array,
+    children: PropTypes.element,
   };
 
   static defaultProps = {
     name: "",
     description: undefined,
     github: undefined,
-    liveUrl: undefined
+    liveUrl: undefined,
   };
 
   componentDidMount() {
-    document.title = `${this.props.title  } | Malik Browne`;
+    document.title = `${this.props.title} | Malik Browne`;
   }
 
-  render(props) {
-    const technologies = this.props.technologies.map(tech => <li key={tech}>{tech}</li>);
+  render() {
+    const {
+      technologies,
+      github,
+      liveUrl,
+      bigPicture,
+      color,
+      bgColor,
+      description,
+      name,
+      images,
+      children,
+	} = this.props;
+	
+    const listOfTechnologies = technologies.map(tech => (
+      <li key={tech}>{tech}</li>
+    ));
     const style = {
       button: {
         display: "inline-block",
-        padding: "10px 10px 10px 0px"
+        padding: "10px 10px 10px 0px",
       },
       img: {
-        maxHeight: "500px"
-      }
+        maxHeight: "500px",
+      },
     };
-    const githubButton = this.props.github ? (
+    const githubButton = github ? (
       <div style={style.button}>
-        <Button target="_blank" label="Github" url={this.props.github} />
+        <Button target="_blank" label="Github" url={github} />
       </div>
     ) : null;
-    const liveUrlButton = this.props.liveUrl ? (
+    const liveUrlButton = liveUrl ? (
       <div style={style.button}>
-        <Button target="_blank" label="Live Demo" url={this.props.liveUrl} />
+        <Button target="_blank" label="Live Demo" url={liveUrl} />
       </div>
     ) : null;
-    const screenshotClass = this.props.bigPicture
-      ? "screenshot-big-picture"
-      : null;
-    
-    const color = this.props.color !== undefined ? this.props.color : this.props.bgColor;
+    const screenshotClass = bigPicture ? "screenshot-big-picture" : null;
 
     return (
       <div className={`project`}>
@@ -64,24 +84,26 @@ class ProjectPage extends Component {
           <div className="hero">
             <h2
               style={{
-                color: this.props.color ? this.props.color : this.props.bgColor
+                color: color || bgColor,
               }}
             >
-              {this.props.name}
+              {name}
             </h2>
-            <p>{this.props.description}</p>
+            <p>{description}</p>
           </div>
           <ProjectSection style={{ margin: "0px auto 20px auto" }}>
             {githubButton}
             {liveUrlButton}
           </ProjectSection>
-          {this.props.bigPicture && <div
-            className={screenshotClass}
-            style={{ backgroundImage: `url(${this.props.images[0]})` }}
-          />}
-          {this.props.children}
+          {bigPicture && (
+            <div
+              className={screenshotClass}
+              style={{ backgroundImage: `url(${images[0]})` }}
+            />
+          )}
+          {children}
           <ProjectSection title="Technologies Used">
-            <ul>{technologies}</ul>
+            <ul>{listOfTechnologies}</ul>
           </ProjectSection>
           <ProjectSection
             className="project-section-last"

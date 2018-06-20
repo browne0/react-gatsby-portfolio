@@ -2,12 +2,15 @@ import React, { Component } from "react";
 
 import AppBar from "material-ui/AppBar";
 import { Tabs, Tab } from "material-ui/Tabs";
-
+import PropTypes from "prop-types";
 import { navigateTo } from "gatsby-link";
 import { withRouter } from "react-router-dom";
 import logo from "../../images/logos/malikbrowne_logo.png";
 
 class Navbar extends Component {
+  static propTypes = {
+    location: PropTypes.object,
+  };
   onTabClick = tab => {
     const lowerCaseRoute = tab.props.label.toLowerCase();
     navigateTo(lowerCaseRoute);
@@ -23,7 +26,7 @@ class Navbar extends Component {
         <img className="logo" src={logo} alt="Malik Browne" />
         <div className="title">
           <h1>MALIK BROWNE</h1>
-          <h2>FRONT END ENGINEER & UX ENTHUSIAST</h2>
+          <h2>FRONT END ENGINEER &amp; UX ENTHUSIAST</h2>
         </div>
       </div>
     );
@@ -35,17 +38,17 @@ class Navbar extends Component {
           "rgba(0, 0, 0, 0.24) 0px 1px 6px, rgba(0, 0, 0, 0.24) 0px 1px 4px",
         overflow: "hidden",
         title: {
-          width: "400px"
+          width: "400px",
         },
         tab: {
           gridColumn: "",
           height: "100%",
-          backgroundColor: "rgba(33,35,41,1)"
+          backgroundColor: "rgba(33,35,41,1)",
         },
         inkBar: {
-          backgroundColor: "#ff6000"
-        }
-      }
+          backgroundColor: "#ff6000",
+        },
+      },
     };
 
     const { location } = this.props;

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import TextField from "material-ui/TextField";
 import RaisedButton from "material-ui/RaisedButton";
 import { ToastContainer, ToastMessage } from "react-toastr";
-import SEO from "../components/SEO"
+import SEO from "../components/SEO";
 
 const ToastMessageFactory = React.createFactory(ToastMessage.animation);
 
@@ -12,7 +12,7 @@ class Contact extends Component {
     this.state = {
       name: "",
       email: "",
-      message: ""
+      message: "",
     };
   }
 
@@ -28,7 +28,7 @@ class Contact extends Component {
       formData.append("message", this.state.message);
       fetch("http://dev.beesdesign.net/contact.php", {
         method: "POST",
-        body: formData
+        body: formData,
       })
         .then(response => response.json())
         .then(result => {
@@ -39,12 +39,12 @@ class Contact extends Component {
               preventDuplicates: true,
               positionClass: "toast-bottom-right",
               showMethod: "fadeIn",
-              hideMethod: "fadeOut"
+              hideMethod: "fadeOut",
             });
             this.setState({
               name: "",
               email: "",
-              message: ""
+              message: "",
             });
           } else {
             this.container.error(result.message, "Error!", {
@@ -53,10 +53,10 @@ class Contact extends Component {
               preventDuplicates: true,
               positionClass: "toast-bottom-right",
               showMethod: "fadeIn",
-              hideMethod: "fadeOut"
+              hideMethod: "fadeOut",
             });
             this.setState({
-              message: ""
+              message: "",
             });
           }
         })
@@ -67,30 +67,30 @@ class Contact extends Component {
             preventDuplicates: true,
             positionClass: "toast-bottom-right",
             showMethod: "fadeIn",
-            hideMethod: "fadeOut"
+            hideMethod: "fadeOut",
           });
         });
     }
-  }
+  };
 
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
-  }
+  };
 
   render() {
     const style = {
       contactFilter: {
         margin: "auto",
         color: {
-          color: "rgb(194, 77, 1)"
+          color: "rgb(194, 77, 1)",
         },
         bgcolor: {
-          borderColor: "rgb(194, 77, 1)"
-        }
+          borderColor: "rgb(194, 77, 1)",
+        },
       },
       sendButton: {
-        color: "rgb(194, 77, 1)"
-      }
+        color: "rgb(194, 77, 1)",
+      },
     };
     return (
       <div className="contact">
@@ -216,7 +216,9 @@ class Contact extends Component {
           </div>
         </div>
         <ToastContainer
-          ref={container => (this.container = container)}
+          ref={container => {
+            this.container = container;
+          }}
           toastMessageFactory={ToastMessageFactory}
           className="toast-bottom-right"
         />

@@ -5,16 +5,16 @@ import PropTypes from "prop-types";
 const ThemedButton = props => {
   const style = {
     button: {
-      minWidth: '94px'
+      minWidth: "94px",
     },
     label: {
-      fontSize: '1.1em'
+      fontSize: "1.1em",
     },
     buttonContainer: {
-      padding: '5px 0px',
-      height: 'auto',
-    }
-  }
+      padding: "5px 0px",
+      height: "auto",
+    },
+  };
   return (
     <RaisedButton
       style={style.button}
@@ -37,11 +37,15 @@ const ThemedButton = props => {
 ThemedButton.propTypes = {
   label: PropTypes.string,
   url: PropTypes.string,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  containerElement: PropTypes.element,
+  className: PropTypes.string,
+  target: PropTypes.string,
+  children: PropTypes.element,
 };
 
 ThemedButton.defaultProps = {
-  label: ""
+  label: "",
 };
 
 export default ThemedButton;

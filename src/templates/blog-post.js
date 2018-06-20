@@ -2,15 +2,19 @@ import React, { Component } from "react";
 import Link from "gatsby-link";
 import Moment from "react-moment";
 import Prism from "prismjs";
+import Markdown from "react-markdown";
+import PropTypes from "prop-types";
+import ProgressiveImage from "react-progressive-image";
 import DisqusThread from "../components/DisqusThread";
 import PortfolioDelegate from "../utils/PortfolioDelegate";
 import Button from "../components/ThemedButton";
-import ProgressBar from "../components/ReadingProgressBar";
-import Markdown from "react-markdown";
+// import ProgressBar from "../components/ReadingProgressBar";
 import SEO from "../components/SEO";
-import ProgressiveImage from "react-progressive-image";
 
 class blogPost extends Component {
+  static propTypes = {
+    data: PropTypes.object,
+  };
   constructor(props) {
     super(props);
 
@@ -25,7 +29,7 @@ class blogPost extends Component {
       prevBlog: delegate.getPreviousBlog(
         this.props.data.blogs.edges,
         this.props.data.blog.title.title
-      )
+      ),
     };
   }
 
@@ -60,11 +64,8 @@ class blogPost extends Component {
 
     const blogLengthString =
       blogLength / 275 < 1
-        ? `${(blogLength / 275 * 60).toFixed()  } sec read`
-        : `${(blogLength / 275).toFixed()  } min read`;
-
-    const keywords =
-      "web development blogs, blog, coding blogs, front end development, ui/ux, web development, full stack development, malik browne, malik";
+        ? `${((blogLength / 275) * 60).toFixed()} sec read`
+        : `${(blogLength / 275).toFixed()} min read`;
 
     const yearToday = new Date().getFullYear();
     let date;
@@ -82,8 +83,9 @@ class blogPost extends Component {
       );
     }
     const twitterURI = encodeURI(
-      `"${this.state.blog.title
-        .title}" by @milkstarz \nhttps://malikbrowne.com/blog/${this.state.blog.slug}/`
+      `"${
+        this.state.blog.title.title
+      }" by @milkstarz \nhttps://malikbrowne.com/blog/${this.state.blog.slug}/`
     );
     return (
       <div className="blog-post">
@@ -110,7 +112,7 @@ class blogPost extends Component {
                 className="post-header"
                 style={{
                   backgroundImage: `url(${src})`,
-                  filter: loading ? "blur(15px)" : "blur(0px)"
+                  filter: loading ? "blur(15px)" : "blur(0px)",
                 }}
               />
             )}
@@ -142,8 +144,11 @@ class blogPost extends Component {
               <div className="share-links">
                 <a
                   className="link facebook"
-                  href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//malikbrowne.com/blog/${this.state.blog.slug}/`}
+                  href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//malikbrowne.com/blog/${
+                    this.state.blog.slug
+                  }/`}
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className="icon ion-social-facebook" />
                 </a>
@@ -151,15 +156,19 @@ class blogPost extends Component {
                   className="link twitter"
                   href={`https://twitter.com/home?status=${twitterURI}`}
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className="icon ion-social-twitter" />
                 </a>
                 <a
                   className="link linkedin"
-                  href={`https://www.linkedin.com/shareArticle?mini=true&url=https://malikbrowne.com/blog/${this.state.blog.slug}/&title=${encodeURI(
-                    this.state.blog.title.title
-                  )}&summary=${this.state.blog.description.description}`}
+                  href={`https://www.linkedin.com/shareArticle?mini=true&url=https://malikbrowne.com/blog/${
+                    this.state.blog.slug
+                  }/&title=${encodeURI(this.state.blog.title.title)}&summary=${
+                    this.state.blog.description.description
+                  }`}
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className="icon ion-social-linkedin" />
                 </a>

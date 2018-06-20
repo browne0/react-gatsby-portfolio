@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import ProjectPage from "../components/ProjectPage/index";
-import ProjectSection from "../components/ProjectSection/index";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { obsidian } from "react-syntax-highlighter/dist/styles";
+import ProjectPage from "../components/ProjectPage/index";
+import ProjectSection from "../components/ProjectSection/index";
 import PortfolioDelegate from "../utils/PortfolioDelegate";
 import SEO from "../components/SEO";
 
@@ -15,15 +15,15 @@ class FactsOfToday extends Component {
     const index = delegate.getProjectIndex("Facts of Today");
 
     this.state = {
-      project: delegate.projects[index]
+      project: delegate.projects[index],
     };
   }
   render() {
     const style = {
       title: {
         color: this.state.project.color,
-        fontWeight: "bold"
-      }
+        fontWeight: "bold",
+      },
     };
     return (
       <ProjectPage
@@ -42,7 +42,9 @@ class FactsOfToday extends Component {
           title={`${this.state.project.name} | Malik Browne`}
           description={this.state.project.description}
           image={this.state.project.image_urls.screenshots[0]}
-          url={`https://www.malikbrowne.com/${this.state.project.path.substr(1)}`}
+          url={`https://www.malikbrowne.com/${this.state.project.path.substr(
+            1
+          )}`}
         />
         <div className="container">
           <img

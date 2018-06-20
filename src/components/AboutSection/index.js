@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const AboutSection = props => {
   const className = props.className
@@ -13,6 +14,12 @@ const AboutSection = props => {
 };
 
 AboutSection.defaultProps = {
-  className: ""
+  className: "",
+};
+
+AboutSection.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.element,
+  title: PropTypes.string,
 };
 export default AboutSection;

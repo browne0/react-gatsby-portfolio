@@ -4,7 +4,9 @@ import throttle from "./throttle";
 
 export default class ProgressBar extends Component {
   static propTypes = {
-    targetEl: PropTypes.string.isRequired
+	targetEl: PropTypes.string.isRequired,
+	rootEl: PropTypes.string,
+	className: PropTypes.string,
   };
 
   static defaultProps = {};

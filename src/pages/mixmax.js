@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { obsidian } from "react-syntax-highlighter/dist/styles";
+
 import ProjectPage from "../components/ProjectPage/index";
 import ProjectSection from "../components/ProjectSection/index";
-import SyntaxHighlighter from "react-syntax-highlighter";
 import PortfolioDelegate from "../utils/PortfolioDelegate";
-import { obsidian } from "react-syntax-highlighter/dist/styles";
 import SEO from "../components/SEO";
 
 class Mixmax extends Component {
