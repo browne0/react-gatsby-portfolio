@@ -19,7 +19,7 @@ AboutSection.defaultProps = {
 
 AboutSection.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   title: PropTypes.string,
 };
 export default AboutSection;

@@ -17,7 +17,7 @@ ProjectSection.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   title: PropTypes.string,
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };
 
 ProjectSection.defaultProps = {

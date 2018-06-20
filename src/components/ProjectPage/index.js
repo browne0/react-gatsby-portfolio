@@ -26,7 +26,7 @@ class ProjectPage extends Component {
     color: PropTypes.string,
     bgColor: PropTypes.string,
     images: PropTypes.array,
-    children: PropTypes.element,
+    children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   };
 
   static defaultProps = {
