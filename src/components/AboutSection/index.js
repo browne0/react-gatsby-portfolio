@@ -1,25 +1,25 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const AboutSection = props => {
-  const className = props.className
-    ? `about-section ${props.className}`
-    : "about-section";
-  return (
-    <section className={className}>
-      <h4>{props.title}</h4>
-      <div className="section-content">{props.children}</div>
-    </section>
-  );
+	const className = props.className
+		? `about-section ${props.className}`
+		: 'about-section';
+	return (
+		<section className={className}>
+			<h4>{props.title}</h4>
+			<div className="section-content">{props.children}</div>
+		</section>
+	);
 };
 
 AboutSection.defaultProps = {
-  className: "",
+	className: '',
 };
 
 AboutSection.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  title: PropTypes.string,
+	className: PropTypes.string,
+	children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+	title: PropTypes.string,
 };
 export default AboutSection;

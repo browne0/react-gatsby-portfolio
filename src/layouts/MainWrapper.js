@@ -1,7 +1,7 @@
 /* eslint-disable */
-import React from "react";
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import React from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 export default ({ children }) => (
-  <MuiThemeProvider>{children}</MuiThemeProvider>
+	<MuiThemeProvider>{children}</MuiThemeProvider>
 );
