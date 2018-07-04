@@ -1,1233 +1,1233 @@
 .project {
-  display: flex;
-  flex-direction: column;
-  font-family: Source Sans Pro, -apple-system, system-ui, BlinkMacSystemFont,
-    "Helvetica Neue", Arial, sans-serif;
-  .wrapper {
-    min-height: calc(100vh - 52px);
-  }
-  .hero {
-    margin: 64px auto 20px auto;
-    width: 90%;
-    h2 {
-      font-size: 3em;
-    }
-    p {
-      font-family: Average, "Times New Roman", Times, serif;
-      font-size: 1.15em;
-    }
-  }
-  .screenshot-big-picture {
-    height: 35vh;
-    background-position-y: calc(50% + 30px);
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  .container-bd {
-    width: 90%;
-    margin: 0 auto;
-    display: none;
-    .project-image {
-      min-height: 249px;
-      width: 100%;
-      background-size: cover;
-      background-position: center;
-    }
-  }
-  .container {
-    width: 90%;
-    margin: 0 auto;
-    text-align: center;
-    .project-image {
-      min-height: 249px;
-      width: 100%;
-      background-size: cover;
-      background-position: center;
-    }
-  }
-  .project-section {
-    width: 90%;
-    margin: 20px auto 0px auto;
-    h4 {
-      font-size: 2.25em;
-      padding: 10px 0px;
-    }
+	display: flex;
+	flex-direction: column;
+	font-family: Source Sans Pro, -apple-system, system-ui, BlinkMacSystemFont,
+		'Helvetica Neue', Arial, sans-serif;
+	.wrapper {
+		min-height: calc(100vh - 52px);
+	}
+	.hero {
+		margin: 64px auto 20px auto;
+		width: 90%;
+		h2 {
+			font-size: 3em;
+		}
+		p {
+			font-family: Average, 'Times New Roman', Times, serif;
+			font-size: 1.15em;
+		}
+	}
+	.screenshot-big-picture {
+		height: 35vh;
+		background-position-y: calc(50% + 30px);
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	.container-bd {
+		width: 90%;
+		margin: 0 auto;
+		display: none;
+		.project-image {
+			min-height: 249px;
+			width: 100%;
+			background-size: cover;
+			background-position: center;
+		}
+	}
+	.container {
+		width: 90%;
+		margin: 0 auto;
+		text-align: center;
+		.project-image {
+			min-height: 249px;
+			width: 100%;
+			background-size: cover;
+			background-position: center;
+		}
+	}
+	.project-section {
+		width: 90%;
+		margin: 20px auto 0px auto;
+		h4 {
+			font-size: 2.25em;
+			padding: 10px 0px;
+		}
 
-    hr {
-      margin-top: 0px;
-      opacity: 0.85;
-    }
+		hr {
+			margin-top: 0px;
+			opacity: 0.85;
+		}
 
-    h6 {
-      font-size: 1.7em;
-      padding: 5px 0px;
-    }
+		h6 {
+			font-size: 1.7em;
+			padding: 5px 0px;
+		}
 
-    a {
-      font-family: Average, "Times New Roman", Times, serif;
-      color: rgb(194, 77, 1);
-    }
-    p {
-      margin-top: 15px;
-      margin-bottom: 10px;
-      font-size: 1.3em;
-      font-family: Average, "Times New Roman", Times, serif;
-    }
+		a {
+			font-family: Average, 'Times New Roman', Times, serif;
+			color: rgb(194, 77, 1);
+		}
+		p {
+			margin-top: 15px;
+			margin-bottom: 10px;
+			font-size: 1.3em;
+			font-family: Average, 'Times New Roman', Times, serif;
+		}
 
-    li {
-      font-family: Average, "Times New Roman", Times, serif;
-      font-weight: normal;
-      padding-left: 7.5px;
-    }
-    img {
-      width: 100%;
-    }
-  }
-  .project-section-last {
-    margin-bottom: 20px;
+		li {
+			font-family: Average, 'Times New Roman', Times, serif;
+			font-weight: normal;
+			padding-left: 7.5px;
+		}
+		img {
+			width: 100%;
+		}
+	}
+	.project-section-last {
+		margin-bottom: 20px;
 
-    hr {
-      margin-bottom: 20px;
-    }
-  }
-  .project-footer {
-    color: #fafafa;
-    padding: 20px 0px;
-    .footer-container {
-      display: flex;
-      flex-direction: column;
-      width: 90%;
-      justify-content: space-around;
-      margin: 0px auto;
-      height: 100%;
-      .next-project-info {
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-        justify-content: center;
-        overflow: hidden;
-        h2 {
-          font-size: 1.5em;
-          margin-bottom: 15px;
-          text-align: center;
-        }
-        h3 {
-          font-size: 1.5em;
-          text-align: center;
-          font-family: Average, "Times New Roman", Times, serif;
-        }
-        h4 {
-          font-size: 1.4em;
-          text-align: center;
-          font-family: Average, "Times New Roman", Times, serif;
-          font-weight: normal;
-        }
-      }
-      .next-project-image {
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        .inner {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          overflow: hidden;
-          p {
-            text-align: center;
-            font-size: 1.6em;
-            font-weight: bold;
-            margin-bottom: 10px;
-          }
-          a {
-            width: 310px;
-            border-radius: 3px;
-            border: 3px solid #fafafa;
-            overflow: hidden;
-          }
-          img {
-            padding: 3px;
-            width: 100%;
-            vertical-align: top;
-            transition: transform 0.25s ease;
-          }
-          &:hover {
-            .pic {
-              transform: scale(1.1);
-            }
-          }
-        }
-      }
-    }
-  }
+		hr {
+			margin-bottom: 20px;
+		}
+	}
+	.project-footer {
+		color: #fafafa;
+		padding: 20px 0px;
+		.footer-container {
+			display: flex;
+			flex-direction: column;
+			width: 90%;
+			justify-content: space-around;
+			margin: 0px auto;
+			height: 100%;
+			.next-project-info {
+				display: flex;
+				width: 100%;
+				flex-direction: column;
+				justify-content: center;
+				overflow: hidden;
+				h2 {
+					font-size: 1.5em;
+					margin-bottom: 15px;
+					text-align: center;
+				}
+				h3 {
+					font-size: 1.5em;
+					text-align: center;
+					font-family: Average, 'Times New Roman', Times, serif;
+				}
+				h4 {
+					font-size: 1.4em;
+					text-align: center;
+					font-family: Average, 'Times New Roman', Times, serif;
+					font-weight: normal;
+				}
+			}
+			.next-project-image {
+				display: flex;
+				width: 100%;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				overflow: hidden;
+				.inner {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					overflow: hidden;
+					p {
+						text-align: center;
+						font-size: 1.6em;
+						font-weight: bold;
+						margin-bottom: 10px;
+					}
+					a {
+						width: 310px;
+						border-radius: 3px;
+						border: 3px solid #fafafa;
+						overflow: hidden;
+					}
+					img {
+						padding: 3px;
+						width: 100%;
+						vertical-align: top;
+						transition: transform 0.25s ease;
+					}
+					&:hover {
+						.pic {
+							transform: scale(1.1);
+						}
+					}
+				}
+			}
+		}
+	}
 }
 @media (min-width: 320px) {
-  .project {
-    display: flex;
-    flex-direction: column;
-    .wrapper {
-      min-height: calc(100vh - 52px);
-    }
-    .hero {
-      margin: 64px auto 20px auto;
-      width: 90%;
-      h2 {
-        font-size: 2.75em;
-      }
-      p {
-        font-family: Average, "Times New Roman", Times, serif;
-        font-size: 1.15em;
-      }
-    }
-    .screenshot-big-picture {
-      height: 35vh;
-      background-position-y: calc(50% + 30px);
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-    .container {
-      width: 90%;
-      margin: 0 auto;
-      text-align: center;
-      .project-image {
-        min-height: 249px;
-        width: 100%;
-        background-size: cover;
-        background-position: center;
-      }
-    }
-    .container-bd {
-      width: 90%;
-      margin: 0 auto;
-      display: none;
-      text-align: center;
-      .project-image {
-        min-height: 249px;
-        width: 100%;
-        background-size: cover;
-        background-position: center;
-      }
-    }
-    .project-section {
-      width: 90%;
-      margin: 20px auto 0px auto;
-      h4 {
-        font-size: 1.75em;
-        padding: 10px 0px;
-      }
+	.project {
+		display: flex;
+		flex-direction: column;
+		.wrapper {
+			min-height: calc(100vh - 52px);
+		}
+		.hero {
+			margin: 64px auto 20px auto;
+			width: 90%;
+			h2 {
+				font-size: 2.75em;
+			}
+			p {
+				font-family: Average, 'Times New Roman', Times, serif;
+				font-size: 1.15em;
+			}
+		}
+		.screenshot-big-picture {
+			height: 35vh;
+			background-position-y: calc(50% + 30px);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		.container {
+			width: 90%;
+			margin: 0 auto;
+			text-align: center;
+			.project-image {
+				min-height: 249px;
+				width: 100%;
+				background-size: cover;
+				background-position: center;
+			}
+		}
+		.container-bd {
+			width: 90%;
+			margin: 0 auto;
+			display: none;
+			text-align: center;
+			.project-image {
+				min-height: 249px;
+				width: 100%;
+				background-size: cover;
+				background-position: center;
+			}
+		}
+		.project-section {
+			width: 90%;
+			margin: 20px auto 0px auto;
+			h4 {
+				font-size: 1.75em;
+				padding: 10px 0px;
+			}
 
-      hr {
-        margin-top: 0px;
-        opacity: 0.85;
-      }
+			hr {
+				margin-top: 0px;
+				opacity: 0.85;
+			}
 
-      h6 {
-        font-size: 1.7em;
-        padding: 5px 0px;
-      }
+			h6 {
+				font-size: 1.7em;
+				padding: 5px 0px;
+			}
 
-      a {
-        font-family: Average, "Times New Roman", Times, serif;
-        color: rgb(194, 77, 1);
-      }
-      p {
-        margin-top: 15px;
-        margin-bottom: 10px;
-        font-size: 1.3em;
-        font-family: Average, "Times New Roman", Times, serif;
-      }
+			a {
+				font-family: Average, 'Times New Roman', Times, serif;
+				color: rgb(194, 77, 1);
+			}
+			p {
+				margin-top: 15px;
+				margin-bottom: 10px;
+				font-size: 1.3em;
+				font-family: Average, 'Times New Roman', Times, serif;
+			}
 
-      li {
-        font-family: Average, "Times New Roman", Times, serif;
-        font-weight: normal;
-        padding-left: 7.5px;
-      }
-      img {
-        width: 100%;
-      }
-    }
-    .project-section-last {
-      margin-bottom: 20px;
+			li {
+				font-family: Average, 'Times New Roman', Times, serif;
+				font-weight: normal;
+				padding-left: 7.5px;
+			}
+			img {
+				width: 100%;
+			}
+		}
+		.project-section-last {
+			margin-bottom: 20px;
 
-      hr {
-        margin-bottom: 20px;
-      }
-    }
-    .project-footer {
-      color: #fafafa;
-      padding: 20px 0px;
-      .footer-container {
-        display: flex;
-        flex-direction: column;
-        width: 90%;
-        justify-content: space-around;
-        margin: 0px auto;
-        height: 100%;
-        .next-project-info {
-          display: flex;
-          width: 100%;
-          flex-direction: column;
-          justify-content: center;
-          overflow: hidden;
-          h2 {
-            font-size: 1.5em;
-            margin-bottom: 15px;
-            text-align: center;
-          }
-          h3 {
-            font-size: 1.5em;
-            text-align: center;
-            font-family: Average, "Times New Roman", Times, serif;
-          }
-          h4 {
-            font-size: 1.4em;
-            text-align: center;
-            font-family: Average, "Times New Roman", Times, serif;
-            font-weight: normal;
-          }
-        }
-        .next-project-image {
-          display: flex;
-          width: 100%;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          overflow: hidden;
-          .inner {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            p {
-              text-align: center;
-              font-size: 1.6em;
-              font-weight: bold;
-              margin-bottom: 10px;
-            }
-            a {
-              width: 310px;
-              border-radius: 3px;
-              border: 3px solid #fafafa;
-              overflow: hidden;
-            }
-            img {
-              padding: 3px;
-              width: 100%;
-              vertical-align: top;
-              transition: transform 0.25s ease;
-            }
-            &:hover {
-              .pic {
-                transform: scale(1.1);
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+			hr {
+				margin-bottom: 20px;
+			}
+		}
+		.project-footer {
+			color: #fafafa;
+			padding: 20px 0px;
+			.footer-container {
+				display: flex;
+				flex-direction: column;
+				width: 90%;
+				justify-content: space-around;
+				margin: 0px auto;
+				height: 100%;
+				.next-project-info {
+					display: flex;
+					width: 100%;
+					flex-direction: column;
+					justify-content: center;
+					overflow: hidden;
+					h2 {
+						font-size: 1.5em;
+						margin-bottom: 15px;
+						text-align: center;
+					}
+					h3 {
+						font-size: 1.5em;
+						text-align: center;
+						font-family: Average, 'Times New Roman', Times, serif;
+					}
+					h4 {
+						font-size: 1.4em;
+						text-align: center;
+						font-family: Average, 'Times New Roman', Times, serif;
+						font-weight: normal;
+					}
+				}
+				.next-project-image {
+					display: flex;
+					width: 100%;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					overflow: hidden;
+					.inner {
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+						overflow: hidden;
+						p {
+							text-align: center;
+							font-size: 1.6em;
+							font-weight: bold;
+							margin-bottom: 10px;
+						}
+						a {
+							width: 310px;
+							border-radius: 3px;
+							border: 3px solid #fafafa;
+							overflow: hidden;
+						}
+						img {
+							padding: 3px;
+							width: 100%;
+							vertical-align: top;
+							transition: transform 0.25s ease;
+						}
+						&:hover {
+							.pic {
+								transform: scale(1.1);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 @media (min-width: 800px) {
-  .project {
-    display: flex;
-    flex-direction: column;
-    .wrapper {
-      min-height: calc(100vh - 52px);
-    }
-    .hero {
-      margin: 64px auto 20px auto;
-      width: 90%;
-      h2 {
-        font-size: 3.5em;
-      }
-      p {
-        font-family: Average, "Times New Roman", Times, serif;
-        font-size: 1.25em;
-      }
-    }
-    .screenshot-big-picture {
-      height: 35vh;
-      background-position-y: calc(50% + 30px);
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-    .container {
-      width: 90%;
-      margin: 0 auto;
-      display: block;
-      .project-image {
-        min-height: 600px;
-        width: 100%;
-        background-size: cover;
-        background-position: center;
-      }
-    }
-    .project-section {
-      width: 90%;
-      margin: 20px auto 0px auto;
-      h4 {
-        font-size: 2.25em;
-        padding: 10px 0px;
-      }
+	.project {
+		display: flex;
+		flex-direction: column;
+		.wrapper {
+			min-height: calc(100vh - 52px);
+		}
+		.hero {
+			margin: 64px auto 20px auto;
+			width: 90%;
+			h2 {
+				font-size: 3.5em;
+			}
+			p {
+				font-family: Average, 'Times New Roman', Times, serif;
+				font-size: 1.25em;
+			}
+		}
+		.screenshot-big-picture {
+			height: 35vh;
+			background-position-y: calc(50% + 30px);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		.container {
+			width: 90%;
+			margin: 0 auto;
+			display: block;
+			.project-image {
+				min-height: 600px;
+				width: 100%;
+				background-size: cover;
+				background-position: center;
+			}
+		}
+		.project-section {
+			width: 90%;
+			margin: 20px auto 0px auto;
+			h4 {
+				font-size: 2.25em;
+				padding: 10px 0px;
+			}
 
-      hr {
-        margin-top: 0px;
-        opacity: 0.85;
-      }
+			hr {
+				margin-top: 0px;
+				opacity: 0.85;
+			}
 
-      h6 {
-        font-size: 1.7em;
-        padding: 5px 0px;
-      }
+			h6 {
+				font-size: 1.7em;
+				padding: 5px 0px;
+			}
 
-      a {
-        font-family: Average, "Times New Roman", Times, serif;
-        color: rgb(194, 77, 1);
-      }
-      p {
-        margin-top: 15px;
-        margin-bottom: 10px;
-        font-size: 1.3em;
-        font-family: Average, "Times New Roman", Times, serif;
-      }
+			a {
+				font-family: Average, 'Times New Roman', Times, serif;
+				color: rgb(194, 77, 1);
+			}
+			p {
+				margin-top: 15px;
+				margin-bottom: 10px;
+				font-size: 1.3em;
+				font-family: Average, 'Times New Roman', Times, serif;
+			}
 
-      li {
-        font-family: Average, "Times New Roman", Times, serif;
-        font-weight: normal;
-        padding-left: 7.5px;
-      }
-      img {
-        width: 100%;
-      }
-    }
-    .project-section-last {
-      margin-bottom: 20px;
+			li {
+				font-family: Average, 'Times New Roman', Times, serif;
+				font-weight: normal;
+				padding-left: 7.5px;
+			}
+			img {
+				width: 100%;
+			}
+		}
+		.project-section-last {
+			margin-bottom: 20px;
 
-      hr {
-        margin-bottom: 20px;
-      }
-    }
-    .project-footer {
-      color: #fafafa;
-      padding: 20px 0px;
-      .footer-container {
-        display: flex;
-        flex-direction: row;
-        width: 90%;
-        justify-content: space-around;
-        margin: 0px auto;
-        height: 100%;
-        .next-project-info {
-          display: flex;
-          width: 60%;
-          flex-direction: column;
-          justify-content: center;
-          h2 {
-            font-size: 1.75em;
-            margin-bottom: 15px;
-            text-align: left;
-          }
-          h3 {
-            font-size: 1.5em;
-            font-family: Average, "Times New Roman", Times, serif;
-            text-align: left;
-          }
-          h4 {
-            font-size: 1.4em;
-            font-family: Average, "Times New Roman", Times, serif;
-            font-weight: normal;
-            text-align: left;
-          }
-        }
-        .next-project-image {
-          display: flex;
-          width: 450px;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          overflow: hidden;
-          .inner {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            p {
-              text-align: center;
-              font-size: 1.6em;
-              font-weight: bold;
-              margin-bottom: 10px;
-            }
-            a {
-              width: 310px;
-              border-radius: 3px;
-              border: 3px solid #fafafa;
-              overflow: hidden;
-            }
-            img {
-              padding: 3px;
-              width: 100%;
-              vertical-align: top;
-              transition: transform 0.25s ease;
-            }
-            &:hover {
-              .pic {
-                transform: scale(1.1);
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+			hr {
+				margin-bottom: 20px;
+			}
+		}
+		.project-footer {
+			color: #fafafa;
+			padding: 20px 0px;
+			.footer-container {
+				display: flex;
+				flex-direction: row;
+				width: 90%;
+				justify-content: space-around;
+				margin: 0px auto;
+				height: 100%;
+				.next-project-info {
+					display: flex;
+					width: 60%;
+					flex-direction: column;
+					justify-content: center;
+					h2 {
+						font-size: 1.75em;
+						margin-bottom: 15px;
+						text-align: left;
+					}
+					h3 {
+						font-size: 1.5em;
+						font-family: Average, 'Times New Roman', Times, serif;
+						text-align: left;
+					}
+					h4 {
+						font-size: 1.4em;
+						font-family: Average, 'Times New Roman', Times, serif;
+						font-weight: normal;
+						text-align: left;
+					}
+				}
+				.next-project-image {
+					display: flex;
+					width: 450px;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					overflow: hidden;
+					.inner {
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+						overflow: hidden;
+						p {
+							text-align: center;
+							font-size: 1.6em;
+							font-weight: bold;
+							margin-bottom: 10px;
+						}
+						a {
+							width: 310px;
+							border-radius: 3px;
+							border: 3px solid #fafafa;
+							overflow: hidden;
+						}
+						img {
+							padding: 3px;
+							width: 100%;
+							vertical-align: top;
+							transition: transform 0.25s ease;
+						}
+						&:hover {
+							.pic {
+								transform: scale(1.1);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 @media (min-width: 1280px) {
-  .project {
-    display: flex;
-    flex-direction: column;
-    .wrapper {
-      min-height: calc(100vh - 52px);
-    }
-    .hero {
-      margin: 64px auto 20px auto;
-      width: 50vw;
-      h2 {
-        font-size: 4em;
-      }
-      p {
-        font-family: Average, "Times New Roman", Times, serif;
-        font-size: 1.5em;
-      }
-    }
-    .screenshot-big-picture {
-      height: 35vh;
-      background-position-y: calc(50% + 30px);
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-    .container {
-      width: 60%;
-      margin: 0 auto;
-      .project-image {
-        min-height: 600px;
-        width: 100%;
-        background-size: cover;
-        background-position: center;
-      }
-    }
-    .project-section {
-      width: 50vw;
-      margin: 20px auto 0px auto;
-      h4 {
-        font-size: 2.25em;
-        padding: 10px 0px;
-      }
+	.project {
+		display: flex;
+		flex-direction: column;
+		.wrapper {
+			min-height: calc(100vh - 52px);
+		}
+		.hero {
+			margin: 64px auto 20px auto;
+			width: 50vw;
+			h2 {
+				font-size: 4em;
+			}
+			p {
+				font-family: Average, 'Times New Roman', Times, serif;
+				font-size: 1.5em;
+			}
+		}
+		.screenshot-big-picture {
+			height: 35vh;
+			background-position-y: calc(50% + 30px);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		.container {
+			width: 60%;
+			margin: 0 auto;
+			.project-image {
+				min-height: 600px;
+				width: 100%;
+				background-size: cover;
+				background-position: center;
+			}
+		}
+		.project-section {
+			width: 50vw;
+			margin: 20px auto 0px auto;
+			h4 {
+				font-size: 2.25em;
+				padding: 10px 0px;
+			}
 
-      hr {
-        margin-top: 0px;
-        opacity: 0.85;
-      }
+			hr {
+				margin-top: 0px;
+				opacity: 0.85;
+			}
 
-      h6 {
-        font-size: 1.7em;
-        padding: 5px 0px;
-      }
+			h6 {
+				font-size: 1.7em;
+				padding: 5px 0px;
+			}
 
-      a {
-        font-family: Average, "Times New Roman", Times, serif;
-        color: rgb(194, 77, 1);
-      }
-      p {
-        margin-top: 15px;
-        margin-bottom: 10px;
-        font-size: 1.3em;
-        font-family: Average, "Times New Roman", Times, serif;
-      }
+			a {
+				font-family: Average, 'Times New Roman', Times, serif;
+				color: rgb(194, 77, 1);
+			}
+			p {
+				margin-top: 15px;
+				margin-bottom: 10px;
+				font-size: 1.3em;
+				font-family: Average, 'Times New Roman', Times, serif;
+			}
 
-      li {
-        font-family: Average, "Times New Roman", Times, serif;
-        font-weight: normal;
-        padding-left: 7.5px;
-      }
-      img {
-        width: 100%;
-      }
-    }
-    .project-section-last {
-      margin-bottom: 20px;
+			li {
+				font-family: Average, 'Times New Roman', Times, serif;
+				font-weight: normal;
+				padding-left: 7.5px;
+			}
+			img {
+				width: 100%;
+			}
+		}
+		.project-section-last {
+			margin-bottom: 20px;
 
-      hr {
-        margin-bottom: 20px;
-      }
-    }
-    .project-footer {
-      color: #fafafa;
-      padding: 20px 0px;
-      .footer-container {
-        display: flex;
-        flex-direction: row;
-        width: 75%;
-        justify-content: space-around;
-        margin: 0px auto;
-        .next-project-info {
-          display: flex;
-          width: 60%;
-          flex-direction: column;
-          justify-content: center;
-          h2 {
-            font-size: 2.25em;
-            margin-bottom: 15px;
-          }
-          h3 {
-            font-size: 1.9em;
-            font-family: Average, "Times New Roman", Times, serif;
-          }
-          h4 {
-            font-size: 1.6em;
-            font-family: Average, "Times New Roman", Times, serif;
-            font-weight: normal;
-          }
-        }
-        .next-project-image {
-          display: flex;
-          width: 450px;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          overflow: hidden;
-          .inner {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            p {
-              text-align: center;
-              font-size: 1.6em;
-              font-weight: bold;
-              margin-bottom: 10px;
-            }
-            a {
-              width: 310px;
-              border-radius: 3px;
-              border: 3px solid #fafafa;
-              overflow: hidden;
-            }
-            img {
-              padding: 3px;
-              width: 100%;
-              vertical-align: top;
-              transition: transform 0.25s ease;
-            }
-            &:hover {
-              .pic {
-                transform: scale(1.1);
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+			hr {
+				margin-bottom: 20px;
+			}
+		}
+		.project-footer {
+			color: #fafafa;
+			padding: 20px 0px;
+			.footer-container {
+				display: flex;
+				flex-direction: row;
+				width: 75%;
+				justify-content: space-around;
+				margin: 0px auto;
+				.next-project-info {
+					display: flex;
+					width: 60%;
+					flex-direction: column;
+					justify-content: center;
+					h2 {
+						font-size: 2.25em;
+						margin-bottom: 15px;
+					}
+					h3 {
+						font-size: 1.9em;
+						font-family: Average, 'Times New Roman', Times, serif;
+					}
+					h4 {
+						font-size: 1.6em;
+						font-family: Average, 'Times New Roman', Times, serif;
+						font-weight: normal;
+					}
+				}
+				.next-project-image {
+					display: flex;
+					width: 450px;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					overflow: hidden;
+					.inner {
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+						overflow: hidden;
+						p {
+							text-align: center;
+							font-size: 1.6em;
+							font-weight: bold;
+							margin-bottom: 10px;
+						}
+						a {
+							width: 310px;
+							border-radius: 3px;
+							border: 3px solid #fafafa;
+							overflow: hidden;
+						}
+						img {
+							padding: 3px;
+							width: 100%;
+							vertical-align: top;
+							transition: transform 0.25s ease;
+						}
+						&:hover {
+							.pic {
+								transform: scale(1.1);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 @supports (object-fit: cover) {
-  .project {
-    display: flex;
-    flex-direction: column;
-    font-family: Source Sans Pro, -apple-system, system-ui, BlinkMacSystemFont,
-      "Helvetica Neue", Arial, sans-serif;
-    progress {
-      appearance: none;
-      display: none;
-      border: 0;
-      position: fixed;
-      // top: 0;
-      width: 100vw;
-      height: 0.4rem;
-      border: 0;
-      background-color: transparent;
-      color: rgb(194, 77, 1);
-      z-index: 1;
-      &::-webkit-progress-bar {
-        background: #fff;
-      }
-      &::-webkit-progress-value {
-        background: rgb(194, 77, 1);
-      }
-      &::-moz-progress-bar {
-        background-color: rgb(194, 77, 1);
-      }
-    }
-    .hero {
-      margin: 0px auto 20px auto;
-      width: 90%;
-      h2 {
-        font-size: 3em;
-      }
-      p {
-        font-family: Average, "Times New Roman", Times, serif;
-        font-size: 1.15em;
-      }
-    }
-    .screenshot-big-picture {
-      height: 35vh;
-      background-position-y: center;
-      background-position-x: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-    .container {
-      width: 90%;
-      margin: 0 auto;
-      img {
-        width: 90%;
-        margin: 30px 0px 10px 0px;
-        box-shadow: 3px 3px 1px rgba(153, 153, 153, 0.25);
-      }
-      .project-image {
-        min-height: 249px;
-        width: 100%;
-        background-size: cover;
-        background-position: center;
-      }
-    }
-    .container-bd {
-      width: 90%;
-      margin: 0 auto;
-      display: none;
-      .project-image {
-        min-height: 249px;
-        width: 100%;
-        background-size: cover;
-        background-position: center;
-      }
-    }
-    .project-section {
-      width: 90%;
-      margin: 20px auto 0px auto;
-      h4 {
-        font-size: 1.75em;
-        padding: 10px 0px;
-        margin-top: 20px;
-      }
+	.project {
+		display: flex;
+		flex-direction: column;
+		font-family: Source Sans Pro, -apple-system, system-ui, BlinkMacSystemFont,
+			'Helvetica Neue', Arial, sans-serif;
+		progress {
+			appearance: none;
+			display: none;
+			border: 0;
+			position: fixed;
+			// top: 0;
+			width: 100vw;
+			height: 0.4rem;
+			border: 0;
+			background-color: transparent;
+			color: rgb(194, 77, 1);
+			z-index: 1;
+			&::-webkit-progress-bar {
+				background: #fff;
+			}
+			&::-webkit-progress-value {
+				background: rgb(194, 77, 1);
+			}
+			&::-moz-progress-bar {
+				background-color: rgb(194, 77, 1);
+			}
+		}
+		.hero {
+			margin: 0px auto 20px auto;
+			width: 90%;
+			h2 {
+				font-size: 3em;
+			}
+			p {
+				font-family: Average, 'Times New Roman', Times, serif;
+				font-size: 1.15em;
+			}
+		}
+		.screenshot-big-picture {
+			height: 35vh;
+			background-position-y: center;
+			background-position-x: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		.container {
+			width: 90%;
+			margin: 0 auto;
+			img {
+				width: 90%;
+				margin: 30px 0px 10px 0px;
+				box-shadow: 3px 3px 1px rgba(153, 153, 153, 0.25);
+			}
+			.project-image {
+				min-height: 249px;
+				width: 100%;
+				background-size: cover;
+				background-position: center;
+			}
+		}
+		.container-bd {
+			width: 90%;
+			margin: 0 auto;
+			display: none;
+			.project-image {
+				min-height: 249px;
+				width: 100%;
+				background-size: cover;
+				background-position: center;
+			}
+		}
+		.project-section {
+			width: 90%;
+			margin: 20px auto 0px auto;
+			h4 {
+				font-size: 1.75em;
+				padding: 10px 0px;
+				margin-top: 20px;
+			}
 
-      hr {
-        margin-top: 0px;
-        opacity: 0.85;
-      }
+			hr {
+				margin-top: 0px;
+				opacity: 0.85;
+			}
 
-      h6 {
-        font-size: 1.7em;
-        padding: 5px 0px;
-        margin-top: 0px;
-      }
+			h6 {
+				font-size: 1.7em;
+				padding: 5px 0px;
+				margin-top: 0px;
+			}
 
-      a {
-        font-family: Average, "Times New Roman", Times, serif;
-        color: rgb(194, 77, 1);
-      }
-      p {
-        margin-top: 15px;
-        margin-bottom: 10px;
-        line-height: 1.8;
-        font-size: 16px;
-        font-family: Average, "Times New Roman", Times, serif;
-      }
+			a {
+				font-family: Average, 'Times New Roman', Times, serif;
+				color: rgb(194, 77, 1);
+			}
+			p {
+				margin-top: 15px;
+				margin-bottom: 10px;
+				line-height: 1.8;
+				font-size: 16px;
+				font-family: Average, 'Times New Roman', Times, serif;
+			}
 
-      pre {
-        margin-top: 30px;
-      }
+			pre {
+				margin-top: 30px;
+			}
 
-      li {
-        font-family: Average, "Times New Roman", Times, serif;
-        font-weight: normal;
-        padding-left: 7.5px;
-        line-height: 1.6;
-        font-size: 16px;
-      }
-      img.pic {
-        width: 100%;
-        margin: 30px 0px 10px 0px;
-        box-shadow: 3px 3px 1px rgba(153, 153, 153, 0.25);
-        + h6 {
-          margin-top: 10px;
-        }
-      }
-    }
-    .project-section-last {
-      margin-bottom: 40px;
-    }
-    .project-footer {
-      color: #fafafa;
-      padding: 20px 0px;
-      .footer-container {
-        display: flex;
-        flex-direction: column;
-        width: 90%;
-        justify-content: space-around;
-        margin: 0px auto;
-        height: 100%;
-        .next-project-info {
-          display: flex;
-          width: 90%;
-          margin: 0px auto;
-          flex-direction: column;
-          justify-content: center;
-          h2 {
-            font-size: 1.5em;
-            margin-bottom: 15px;
-            text-align: left;
-          }
-          h3 {
-            font-size: 1.5em;
-            text-align: left;
-            font-family: Average, "Times New Roman", Times, serif;
-          }
-          h4 {
-            font-size: 1.4em;
-            text-align: left;
-            font-family: Average, "Times New Roman", Times, serif;
-            font-weight: normal;
-          }
-        }
-        .next-project-image {
-          display: flex;
-          width: 90%;
-          margin: 0px auto;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          .inner {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            p {
-              text-align: center;
-              font-size: 1.6em;
-              font-weight: bold;
-              margin-bottom: 10px;
-              margin-top: 15px;
-              align-self: left;
-            }
-            a {
-              width: 100%;
-              border-radius: 3px;
-              border: 3px solid #fafafa;
-              overflow: hidden;
-            }
-            img {
-              padding: 3px;
-              width: 100%;
-              vertical-align: top;
-              transition: transform 0.25s ease;
-            }
-            &:hover {
-              .pic {
-                transform: scale(1.1);
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  @media (min-width: 320px) {
-    .project {
-      display: flex;
-      flex-direction: column;
-      font-family: Source Sans Pro, -apple-system, system-ui, BlinkMacSystemFont,
-        "Helvetica Neue", Arial, sans-serif;
-      progress {
-        appearance: none;
-        display: none;
-        border: 0;
-        position: fixed;
-        // top: 0;
-        width: 100vw;
-        height: 0.4rem;
-        border: 0;
-        background-color: transparent;
-        color: rgb(194, 77, 1);
-        z-index: 1;
-        &::-webkit-progress-bar {
-          background: #fff;
-        }
-        &::-webkit-progress-value {
-          background: rgb(194, 77, 1);
-        }
-        &::-moz-progress-bar {
-          background-color: rgb(194, 77, 1);
-        }
-      }
-      .hero {
-        font-family: Source Sans Pro, -apple-system, system-ui, BlinkMacSystemFont,
-          "Helvetica Neue", Arial, sans-serif;
-        margin: 20px auto 20px auto;
-        width: 90%;
-        h2 {
-          font-size: 2.75em;
-        }
-        p {
-          font-family: Source Sans Pro, -apple-system, system-ui, BlinkMacSystemFont,
-            "Helvetica Neue", Arial, sans-serif;
-          font-size: 1.15em;
-        }
-      }
-      .screenshot-big-picture {
-        height: 35vh;
-        background-position-y: calc(50% + 30px);
-        background-size: cover;
-        background-repeat: no-repeat;
-      }
-      .container-bd {
-        width: 90%;
-        margin: 0 auto 40px auto;
-        display: none;
-        .project-image {
-          min-height: 249px;
-          width: 100%;
-          background-size: cover;
-          background-position: center;
-        }
-      }
-      .container {
-        width: 90%;
-        margin: 0 auto 40px auto;
-        img {
-          width: 90%;
-        }
-        .project-image {
-          min-height: 249px;
-          width: 100%;
-          background-size: cover;
-          background-position: center;
-        }
-      }
-      .project-section {
-        width: 90%;
-        margin: 20px auto 0px auto;
-        h4 {
-          font-size: 1.75em;
-          padding: 10px 0px;
-          margin-top: 20px;
-        }
+			li {
+				font-family: Average, 'Times New Roman', Times, serif;
+				font-weight: normal;
+				padding-left: 7.5px;
+				line-height: 1.6;
+				font-size: 16px;
+			}
+			img.pic {
+				width: 100%;
+				margin: 30px 0px 10px 0px;
+				box-shadow: 3px 3px 1px rgba(153, 153, 153, 0.25);
+				+ h6 {
+					margin-top: 10px;
+				}
+			}
+		}
+		.project-section-last {
+			margin-bottom: 40px;
+		}
+		.project-footer {
+			color: #fafafa;
+			padding: 20px 0px;
+			.footer-container {
+				display: flex;
+				flex-direction: column;
+				width: 90%;
+				justify-content: space-around;
+				margin: 0px auto;
+				height: 100%;
+				.next-project-info {
+					display: flex;
+					width: 90%;
+					margin: 0px auto;
+					flex-direction: column;
+					justify-content: center;
+					h2 {
+						font-size: 1.5em;
+						margin-bottom: 15px;
+						text-align: left;
+					}
+					h3 {
+						font-size: 1.5em;
+						text-align: left;
+						font-family: Average, 'Times New Roman', Times, serif;
+					}
+					h4 {
+						font-size: 1.4em;
+						text-align: left;
+						font-family: Average, 'Times New Roman', Times, serif;
+						font-weight: normal;
+					}
+				}
+				.next-project-image {
+					display: flex;
+					width: 90%;
+					margin: 0px auto;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					.inner {
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+						overflow: hidden;
+						p {
+							text-align: center;
+							font-size: 1.6em;
+							font-weight: bold;
+							margin-bottom: 10px;
+							margin-top: 15px;
+							align-self: left;
+						}
+						a {
+							width: 100%;
+							border-radius: 3px;
+							border: 3px solid #fafafa;
+							overflow: hidden;
+						}
+						img {
+							padding: 3px;
+							width: 100%;
+							vertical-align: top;
+							transition: transform 0.25s ease;
+						}
+						&:hover {
+							.pic {
+								transform: scale(1.1);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	@media (min-width: 320px) {
+		.project {
+			display: flex;
+			flex-direction: column;
+			font-family: Source Sans Pro, -apple-system, system-ui, BlinkMacSystemFont,
+				'Helvetica Neue', Arial, sans-serif;
+			progress {
+				appearance: none;
+				display: none;
+				border: 0;
+				position: fixed;
+				// top: 0;
+				width: 100vw;
+				height: 0.4rem;
+				border: 0;
+				background-color: transparent;
+				color: rgb(194, 77, 1);
+				z-index: 1;
+				&::-webkit-progress-bar {
+					background: #fff;
+				}
+				&::-webkit-progress-value {
+					background: rgb(194, 77, 1);
+				}
+				&::-moz-progress-bar {
+					background-color: rgb(194, 77, 1);
+				}
+			}
+			.hero {
+				font-family: Source Sans Pro, -apple-system, system-ui,
+					BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+				margin: 20px auto 20px auto;
+				width: 90%;
+				h2 {
+					font-size: 2.75em;
+				}
+				p {
+					font-family: Source Sans Pro, -apple-system, system-ui,
+						BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+					font-size: 1.15em;
+				}
+			}
+			.screenshot-big-picture {
+				height: 35vh;
+				background-position-y: calc(50% + 30px);
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+			.container-bd {
+				width: 90%;
+				margin: 0 auto 40px auto;
+				display: none;
+				.project-image {
+					min-height: 249px;
+					width: 100%;
+					background-size: cover;
+					background-position: center;
+				}
+			}
+			.container {
+				width: 90%;
+				margin: 0 auto 40px auto;
+				img {
+					width: 90%;
+				}
+				.project-image {
+					min-height: 249px;
+					width: 100%;
+					background-size: cover;
+					background-position: center;
+				}
+			}
+			.project-section {
+				width: 90%;
+				margin: 20px auto 0px auto;
+				h4 {
+					font-size: 1.75em;
+					padding: 10px 0px;
+					margin-top: 20px;
+				}
 
-        hr {
-          margin-top: 0px;
-          opacity: 0.85;
-        }
+				hr {
+					margin-top: 0px;
+					opacity: 0.85;
+				}
 
-        h6 {
-          font-size: 1.7em;
-          padding: 5px 0px;
-          margin-top: 0px;
-        }
+				h6 {
+					font-size: 1.7em;
+					padding: 5px 0px;
+					margin-top: 0px;
+				}
 
-        a {
-          font-family: Average, "Times New Roman", Times, serif;
-          color: rgb(194, 77, 1);
-        }
-        p {
-          margin-top: 15px;
-          margin-bottom: 10px;
-          line-height: 1.8;
-          font-size: 18px;
-          font-family: Average, "Times New Roman", Times, serif;
-        }
+				a {
+					font-family: Average, 'Times New Roman', Times, serif;
+					color: rgb(194, 77, 1);
+				}
+				p {
+					margin-top: 15px;
+					margin-bottom: 10px;
+					line-height: 1.8;
+					font-size: 18px;
+					font-family: Average, 'Times New Roman', Times, serif;
+				}
 
-        li {
-          font-family: Average, "Times New Roman", Times, serif;
-          font-weight: normal;
-          padding-left: 7.5px;
-          font-size: 18px;
-        }
-        img.pic {
-          width: 100%;
-          margin: 30px 0px 10px 0px;
-          box-shadow: 3px 3px 1px rgba(153, 153, 153, 0.25);
-          + h6 {
-            margin-top: 10px;
-          }
-        }
-      }
-      .project-section-last {
-        margin-bottom: 40px;
-      }
-      .project-footer {
-        color: #fafafa;
-        padding: 20px 0px;
-        .footer-container {
-          display: flex;
-          flex-direction: column;
-          width: 90%;
-          justify-content: space-around;
-          margin: 0px auto;
-          height: 100%;
-          .next-project-info {
-            display: flex;
-            width: 90%;
-            margin: 0px auto;
-            flex-direction: column;
-            justify-content: center;
-            h2 {
-              font-size: 1.5em;
-              margin-bottom: 15px;
-              text-align: left;
-            }
-            h3 {
-              font-size: 1.5em;
-              text-align: left;
-              font-family: Average, "Times New Roman", Times, serif;
-            }
-            h4 {
-              font-size: 1.4em;
-              text-align: left;
-              font-family: Average, "Times New Roman", Times, serif;
-              font-weight: normal;
-            }
-          }
-          .next-project-image {
-            display: flex;
-            width: 90%;
-            margin: 0px auto;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            .inner {
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-              overflow: hidden;
-              p {
-                text-align: center;
-                font-size: 1.6em;
-                font-weight: bold;
-                margin-bottom: 10px;
-                margin-top: 0px;
-                align-self: left;
-              }
-              a {
-                width: 100%;
-                border-radius: 3px;
-                border: 3px solid #fafafa;
-                overflow: hidden;
-              }
-              img {
-                padding: 3px;
-                width: 100%;
-                vertical-align: top;
-                transition: transform 0.25s ease;
-              }
-              &:hover {
-                .pic {
-                  transform: scale(1.1);
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+				li {
+					font-family: Average, 'Times New Roman', Times, serif;
+					font-weight: normal;
+					padding-left: 7.5px;
+					font-size: 18px;
+				}
+				img.pic {
+					width: 100%;
+					margin: 30px 0px 10px 0px;
+					box-shadow: 3px 3px 1px rgba(153, 153, 153, 0.25);
+					+ h6 {
+						margin-top: 10px;
+					}
+				}
+			}
+			.project-section-last {
+				margin-bottom: 40px;
+			}
+			.project-footer {
+				color: #fafafa;
+				padding: 20px 0px;
+				.footer-container {
+					display: flex;
+					flex-direction: column;
+					width: 90%;
+					justify-content: space-around;
+					margin: 0px auto;
+					height: 100%;
+					.next-project-info {
+						display: flex;
+						width: 90%;
+						margin: 0px auto;
+						flex-direction: column;
+						justify-content: center;
+						h2 {
+							font-size: 1.5em;
+							margin-bottom: 15px;
+							text-align: left;
+						}
+						h3 {
+							font-size: 1.5em;
+							text-align: left;
+							font-family: Average, 'Times New Roman', Times, serif;
+						}
+						h4 {
+							font-size: 1.4em;
+							text-align: left;
+							font-family: Average, 'Times New Roman', Times, serif;
+							font-weight: normal;
+						}
+					}
+					.next-project-image {
+						display: flex;
+						width: 90%;
+						margin: 0px auto;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+						.inner {
+							display: flex;
+							flex-direction: column;
+							justify-content: center;
+							align-items: center;
+							overflow: hidden;
+							p {
+								text-align: center;
+								font-size: 1.6em;
+								font-weight: bold;
+								margin-bottom: 10px;
+								margin-top: 0px;
+								align-self: left;
+							}
+							a {
+								width: 100%;
+								border-radius: 3px;
+								border: 3px solid #fafafa;
+								overflow: hidden;
+							}
+							img {
+								padding: 3px;
+								width: 100%;
+								vertical-align: top;
+								transition: transform 0.25s ease;
+							}
+							&:hover {
+								.pic {
+									transform: scale(1.1);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 
-  @media (min-width: 800px) {
-    .project {
-      display: flex;
-      flex-direction: column;
-      font-family: Source Sans Pro, -apple-system, system-ui, BlinkMacSystemFont,
-        "Helvetica Neue", Arial, sans-serif;
-      progress {
-        appearance: none;
-        display: block;
-        border: 0;
-        position: fixed;
-        // top: 0;
-        width: 100vw;
-        height: 0.4rem;
-        border: 0;
-        background-color: transparent;
-        color: rgb(194, 77, 1);
-        z-index: 1;
-        &::-webkit-progress-bar {
-          background: #fff;
-        }
-        &::-webkit-progress-value {
-          background: rgb(194, 77, 1);
-        }
-        &::-moz-progress-bar {
-          background-color: rgb(194, 77, 1);
-        }
-      }
-      .hero {
-        font-family: Source Sans Pro, -apple-system, system-ui, BlinkMacSystemFont,
-          "Helvetica Neue", Arial, sans-serif;
-        margin: 20px auto 10px auto;
-        width: 800px;
-        h2 {
-          font-size: 4em;
-        }
-        p {
-          font-family: Source Sans Pro, -apple-system, system-ui, BlinkMacSystemFont,
-            "Helvetica Neue", Arial, sans-serif;
-          font-size: 1.5em;
-        }
-      }
-      .screenshot-big-picture {
-        height: 35vh;
-        background-position-y: calc(50% + 30px);
-        background-size: cover;
-        background-repeat: no-repeat;
-      }
-      .container {
-        width: 800px;
-        margin: 20px auto 40px auto;
-        img {
-          max-width: 100%;
-          width: auto;
-          margin: 10px auto;
-        }
-        .project-image {
-          min-height: 600px;
-          width: 100%;
-          background-size: cover;
-          background-position: center;
-        }
-      }
-      .container-bd {
-        display: block;
-      }
-      .project-section {
-        width: 800px;
-        margin: 0px auto;
-        h4 {
-          font-size: 2.25em;
-          padding: 0px;
-        }
+	@media (min-width: 800px) {
+		.project {
+			display: flex;
+			flex-direction: column;
+			font-family: Source Sans Pro, -apple-system, system-ui, BlinkMacSystemFont,
+				'Helvetica Neue', Arial, sans-serif;
+			progress {
+				appearance: none;
+				display: block;
+				border: 0;
+				position: fixed;
+				// top: 0;
+				width: 100vw;
+				height: 0.4rem;
+				border: 0;
+				background-color: transparent;
+				color: rgb(194, 77, 1);
+				z-index: 1;
+				&::-webkit-progress-bar {
+					background: #fff;
+				}
+				&::-webkit-progress-value {
+					background: rgb(194, 77, 1);
+				}
+				&::-moz-progress-bar {
+					background-color: rgb(194, 77, 1);
+				}
+			}
+			.hero {
+				font-family: Source Sans Pro, -apple-system, system-ui,
+					BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+				margin: 20px auto 10px auto;
+				width: 800px;
+				h2 {
+					font-size: 4em;
+				}
+				p {
+					font-family: Source Sans Pro, -apple-system, system-ui,
+						BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+					font-size: 1.5em;
+				}
+			}
+			.screenshot-big-picture {
+				height: 35vh;
+				background-position-y: calc(50% + 30px);
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+			.container {
+				width: 800px;
+				margin: 20px auto 40px auto;
+				img {
+					max-width: 100%;
+					width: auto;
+					margin: 10px auto;
+				}
+				.project-image {
+					min-height: 600px;
+					width: 100%;
+					background-size: cover;
+					background-position: center;
+				}
+			}
+			.container-bd {
+				display: block;
+			}
+			.project-section {
+				width: 800px;
+				margin: 0px auto;
+				h4 {
+					font-size: 2.25em;
+					padding: 0px;
+				}
 
-        hr {
-          margin-top: 0px;
-          opacity: 0.85;
-        }
+				hr {
+					margin-top: 0px;
+					opacity: 0.85;
+				}
 
-        h6 {
-          font-size: 1.7em;
-          padding: 5px 0px;
-          margin-top: 20px;
-        }
+				h6 {
+					font-size: 1.7em;
+					padding: 5px 0px;
+					margin-top: 20px;
+				}
 
-        a {
-          font-family: Average, "Times New Roman", Times, serif;
-          color: rgb(194, 77, 1);
-        }
-        p {
-          margin-top: 30px;
-          margin-bottom: 0px;
-          font-size: 21px;
-          line-height: 1.8;
-          font-family: Average, "Times New Roman", Times, serif;
-        }
+				a {
+					font-family: Average, 'Times New Roman', Times, serif;
+					color: rgb(194, 77, 1);
+				}
+				p {
+					margin-top: 30px;
+					margin-bottom: 0px;
+					font-size: 21px;
+					line-height: 1.8;
+					font-family: Average, 'Times New Roman', Times, serif;
+				}
 
-        li {
-          font-family: Average, "Times New Roman", Times, serif;
-          font-weight: normal;
-          padding-left: 7.5px;
-          font-size: 21px;
-        }
-        img.pic {
-          width: 100%;
-          margin: 30px 0px 10px 0px;
-          box-shadow: 3px 3px 1px rgba(153, 153, 153, 0.25);
-          + h6 {
-            margin-top: 0px;
-          }
-        }
-      }
-      .project-section-last {
-        margin-bottom: 100px;
+				li {
+					font-family: Average, 'Times New Roman', Times, serif;
+					font-weight: normal;
+					padding-left: 7.5px;
+					font-size: 21px;
+				}
+				img.pic {
+					width: 100%;
+					margin: 30px 0px 10px 0px;
+					box-shadow: 3px 3px 1px rgba(153, 153, 153, 0.25);
+					+ h6 {
+						margin-top: 0px;
+					}
+				}
+			}
+			.project-section-last {
+				margin-bottom: 100px;
 
-        hr {
-          margin-bottom: 20px;
-        }
-      }
-      .project-footer {
-        color: #fafafa;
-        padding: 20px 0px;
-        .footer-container {
-          display: flex;
-          flex-direction: row;
-          width: 75%;
-          justify-content: space-around;
-          margin: 0px auto;
-          .next-project-info {
-            display: flex;
-            width: 60%;
-            flex-direction: column;
-            justify-content: center;
-            h2 {
-              font-size: 2.25em;
-              margin-bottom: 15px;
-            }
-            h3 {
-              font-size: 1.9em;
-              font-family: Average, "Times New Roman", Times, serif;
-            }
-            h4 {
-              font-size: 1.6em;
-              font-family: Average, "Times New Roman", Times, serif;
-              font-weight: normal;
-            }
-          }
-          .next-project-image {
-            display: flex;
-            width: 450px;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            .inner {
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-              overflow: hidden;
-              p {
-                text-align: center;
-                font-size: 1.6em;
-                font-weight: bold;
-                margin-bottom: 10px;
-                margin-top: 0px;
-              }
-              a {
-                width: 310px;
-                border-radius: 3px;
-                border: 3px solid #fafafa;
-                overflow: hidden;
-              }
-              img {
-                padding: 3px;
-                width: 100%;
-                vertical-align: top;
-                transition: transform 0.25s ease;
-              }
-              &:hover {
-                .pic {
-                  transform: scale(1.1);
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+				hr {
+					margin-bottom: 20px;
+				}
+			}
+			.project-footer {
+				color: #fafafa;
+				padding: 20px 0px;
+				.footer-container {
+					display: flex;
+					flex-direction: row;
+					width: 75%;
+					justify-content: space-around;
+					margin: 0px auto;
+					.next-project-info {
+						display: flex;
+						width: 60%;
+						flex-direction: column;
+						justify-content: center;
+						h2 {
+							font-size: 2.25em;
+							margin-bottom: 15px;
+						}
+						h3 {
+							font-size: 1.9em;
+							font-family: Average, 'Times New Roman', Times, serif;
+						}
+						h4 {
+							font-size: 1.6em;
+							font-family: Average, 'Times New Roman', Times, serif;
+							font-weight: normal;
+						}
+					}
+					.next-project-image {
+						display: flex;
+						width: 450px;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+						overflow: hidden;
+						.inner {
+							display: flex;
+							flex-direction: column;
+							justify-content: center;
+							align-items: center;
+							overflow: hidden;
+							p {
+								text-align: center;
+								font-size: 1.6em;
+								font-weight: bold;
+								margin-bottom: 10px;
+								margin-top: 0px;
+							}
+							a {
+								width: 310px;
+								border-radius: 3px;
+								border: 3px solid #fafafa;
+								overflow: hidden;
+							}
+							img {
+								padding: 3px;
+								width: 100%;
+								vertical-align: top;
+								transition: transform 0.25s ease;
+							}
+							&:hover {
+								.pic {
+									transform: scale(1.1);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }

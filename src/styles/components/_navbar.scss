@@ -1,121 +1,123 @@
 header {
-  position: fixed;
-  width: 100%;
-  z-index: 2;
-  .navbar {
-    height: 64px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    > div:first-child {
-      flex: 0 1 auto !important;
-    }
-  }
-  .logo-wrapper {
-    display: flex;
-    cursor: pointer;
-    flex-direction: row;
-    align-items: center;
-    height: 100%;
-    color: #f1f1f1;
-    width: 48px;
-    .logo {
-      max-width: 48px;
-      width: 48px;
-      height: 48px;
-    }
-    .title {
-      display: none;
-      height: 100%;
-      flex-direction: column;
-      justify-content: center;
-      line-height: normal;
-      font-family: Segoe UI, -apple-system, system-ui, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-      h1 {
-        font-size: 1em;
-        display: none;
-        margin-left: 12px;
-      }
-      h2 {
-        font-size: 0.65em;
-        display: none;
-        margin-left: 12px;
-        margin-top: -2px;
-      }
-    }
-  }
+	position: fixed;
+	width: 100%;
+	z-index: 2;
+	.navbar {
+		height: 64px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		> div:first-child {
+			flex: 0 1 auto !important;
+		}
+	}
+	.logo-wrapper {
+		display: flex;
+		cursor: pointer;
+		flex-direction: row;
+		align-items: center;
+		height: 100%;
+		color: #f1f1f1;
+		width: 48px;
+		.logo {
+			max-width: 48px;
+			width: 48px;
+			height: 48px;
+		}
+		.title {
+			display: none;
+			height: 100%;
+			flex-direction: column;
+			justify-content: center;
+			line-height: normal;
+			font-family: Segoe UI, -apple-system, system-ui, BlinkMacSystemFont,
+				'Helvetica Neue', Arial, sans-serif;
+			h1 {
+				font-size: 1em;
+				display: none;
+				margin-left: 12px;
+			}
+			h2 {
+				font-size: 0.65em;
+				display: none;
+				margin-left: 12px;
+				margin-top: -2px;
+			}
+		}
+	}
 }
 .nav-items {
-  width: 210px;
-  .nav-item {
-    color: #f1f1f1 !important;
-    height: 64px;
-    div:first-child {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: Segoe UI, -apple-system, system-ui, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-    }
-  }
+	width: 210px;
+	.nav-item {
+		color: #f1f1f1 !important;
+		height: 64px;
+		div:first-child {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-family: Segoe UI, -apple-system, system-ui, BlinkMacSystemFont,
+				'Helvetica Neue', Arial, sans-serif;
+		}
+	}
 }
 
 @media (min-width: 737px) {
-  header {
-    position: fixed;
-    width: 100%;
-    z-index: 2;
-    .navbar {
-      height: 64px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      > div:first-child {
-        flex: 0 1 auto !important;
-      }
-    }
-    .logo-wrapper {
-      display: flex;
-      cursor: pointer;
-      flex-direction: row;
-      align-items: center;
-      height: 100%;
-      color: #f1f1f1;
-      width: 390px;
-      .logo {
-        min-width: 48px;
-        width: 48px;
-        height: 48px;
-      }
-      .title {
-        display: flex;
-        height: 100%;
-        flex-direction: column;
-        justify-content: center;
-        line-height: normal;
-        width: 100%;
-        h1 {
-          font-size: 0.9em;
-          display: block;
-          margin-left: 12px;
-        }
-        h2 {
-          font-size: 0.65em;
-          display: block;
-          margin-left: 12px;
-        }
-      }
-    }
-  }
-  .nav-items {
-    width: 240px !important;
-    display: inline-block;
-    .nav-item {
-      color: #f1f1f1 !important;
-      div:first-child {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
-  }
+	header {
+		position: fixed;
+		width: 100%;
+		z-index: 2;
+		.navbar {
+			height: 64px;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			> div:first-child {
+				flex: 0 1 auto !important;
+			}
+		}
+		.logo-wrapper {
+			display: flex;
+			cursor: pointer;
+			flex-direction: row;
+			align-items: center;
+			height: 100%;
+			color: #f1f1f1;
+			width: 390px;
+			.logo {
+				min-width: 48px;
+				width: 48px;
+				height: 48px;
+			}
+			.title {
+				display: flex;
+				height: 100%;
+				flex-direction: column;
+				justify-content: center;
+				line-height: normal;
+				width: 100%;
+				h1 {
+					font-size: 0.9em;
+					display: block;
+					margin-left: 12px;
+				}
+				h2 {
+					font-size: 0.65em;
+					display: block;
+					margin-left: 12px;
+				}
+			}
+		}
+	}
+	.nav-items {
+		width: 240px !important;
+		display: inline-block;
+		.nav-item {
+			color: #f1f1f1 !important;
+			div:first-child {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+	}
 }

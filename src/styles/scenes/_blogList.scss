@@ -1,289 +1,289 @@
 .blog-wrapper {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-  margin: 0px auto;
-  min-height: calc(100vh - 116px);
-  padding-top: 0px;
-  .blog-filter {
-    width: 75% !important;
-    margin: 0px auto !important;
-  }
-  .blog {
-    width: calc(100vw - 50px);
-    margin: 0px auto;
-    padding: 25px 0px;
-    min-width: 380px;
-    .post {
-      background: #fcfcfc;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
-      border: 1px solid rgba(0, 0, 0, 0.09);
-      border-radius: 3px;
-      margin-bottom: 0px;
-      padding: 15px;
-      margin-bottom: 25px;
-      display: flex;
-      flex-direction: column;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	align-items: center;
+	margin: 0px auto;
+	min-height: calc(100vh - 116px);
+	padding-top: 0px;
+	.blog-filter {
+		width: 75% !important;
+		margin: 0px auto !important;
+	}
+	.blog {
+		width: calc(100vw - 50px);
+		margin: 0px auto;
+		padding: 25px 0px;
+		min-width: 380px;
+		.post {
+			background: #fcfcfc;
+			box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+			border: 1px solid rgba(0, 0, 0, 0.09);
+			border-radius: 3px;
+			margin-bottom: 0px;
+			padding: 15px;
+			margin-bottom: 25px;
+			display: flex;
+			flex-direction: column;
 
-      .post-author {
-        display: flex;
-        flex-direction: row;
-        padding-bottom: 15px;
-        justify-content: space-between;
-        .post-info-wrapper {
-          display: flex;
-        }
-        .share-links {
-          display: flex;
-          .link {
-            width: 40px;
-            font-size: 2rem;
-            color: #fff;
-            margin: 0px 7.5px;
-            height: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            &:last-child {
-              margin-right: 0px;
-            }
-            &.facebook {
-              background-color: #3b5998;
-              &:hover {
-                background-color: #223458;
-              }
-            }
-            &.twitter {
-              background-color: #1da1f2;
-              &:hover {
-                background-color: #0e4c72;
-              }
-            }
-            &.linkedin {
-              background-color: #00a0dc;
-              &:hover {
-                background-color: #00729c;
-              }
-            }
-          }
-        }
-      }
-      .post-header {
-        height: 0;
-        padding-bottom: 56%;
-        width: 100%;
-        position: relative;
-        .post-header-image {
-          background-size: 100%;
-          background-position: top;
-          width: 1200px;
-          height: 673px;
-          position: absolute;
-          top: 0;
-          left: 0;
-          max-width: 100%;
-          background-repeat: no-repeat;
-          width: 100%;
-          height: 100%;
-          margin: 0 auto;
-          transition: opacity 0.5s ease;
-        }
-      }
-      .avatar {
-        border-radius: 50%;
-        margin-right: 10px;
-        height: 40px;
-      }
-      .author {
-        font-size: 0.9em;
-        color: rgb(194, 77, 1);
-      }
-      .date {
-        font-size: 0.8em;
-        color: rgba(0, 0, 0, 0.44);
-        span {
-          display: inline-block;
-          padding: 0px 4px;
-        }
-      }
-      .title {
-        font-size: 1.5em;
-        line-height: 1.25em;
-        font-family: Segoe UI, -apple-system, system-ui, BlinkMacSystemFont,
-          "Helvetica Neue", Arial, sans-serif;
-        h2 {
-          padding: 10px 0px;
-        }
-      }
-      .summary {
-        font-size: 1.1em;
-        font-weight: 300;
-        margin-bottom: 10px;
-        align-self: flex-start;
-        font-family: Source Sans Pro;
-      }
-      .bloglist--footer {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        .read-more {
-          margin-top: auto;
-          align-self: flex-start;
-          a {
-            padding: 15px 15px 15px 0px;
-            color: rgba(0, 0, 0, 0.44);
-            border-radius: 3px;
-          }
-        }
-      }
-    }
-  }
+			.post-author {
+				display: flex;
+				flex-direction: row;
+				padding-bottom: 15px;
+				justify-content: space-between;
+				.post-info-wrapper {
+					display: flex;
+				}
+				.share-links {
+					display: flex;
+					.link {
+						width: 40px;
+						font-size: 2rem;
+						color: #fff;
+						margin: 0px 7.5px;
+						height: 40px;
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+						&:last-child {
+							margin-right: 0px;
+						}
+						&.facebook {
+							background-color: #3b5998;
+							&:hover {
+								background-color: #223458;
+							}
+						}
+						&.twitter {
+							background-color: #1da1f2;
+							&:hover {
+								background-color: #0e4c72;
+							}
+						}
+						&.linkedin {
+							background-color: #00a0dc;
+							&:hover {
+								background-color: #00729c;
+							}
+						}
+					}
+				}
+			}
+			.post-header {
+				height: 0;
+				padding-bottom: 56%;
+				width: 100%;
+				position: relative;
+				.post-header-image {
+					background-size: 100%;
+					background-position: top;
+					width: 1200px;
+					height: 673px;
+					position: absolute;
+					top: 0;
+					left: 0;
+					max-width: 100%;
+					background-repeat: no-repeat;
+					width: 100%;
+					height: 100%;
+					margin: 0 auto;
+					transition: opacity 0.5s ease;
+				}
+			}
+			.avatar {
+				border-radius: 50%;
+				margin-right: 10px;
+				height: 40px;
+			}
+			.author {
+				font-size: 0.9em;
+				color: rgb(194, 77, 1);
+			}
+			.date {
+				font-size: 0.8em;
+				color: rgba(0, 0, 0, 0.44);
+				span {
+					display: inline-block;
+					padding: 0px 4px;
+				}
+			}
+			.title {
+				font-size: 1.5em;
+				line-height: 1.25em;
+				font-family: Segoe UI, -apple-system, system-ui, BlinkMacSystemFont,
+					'Helvetica Neue', Arial, sans-serif;
+				h2 {
+					padding: 10px 0px;
+				}
+			}
+			.summary {
+				font-size: 1.1em;
+				font-weight: 300;
+				margin-bottom: 10px;
+				align-self: flex-start;
+				font-family: Source Sans Pro;
+			}
+			.bloglist--footer {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				.read-more {
+					margin-top: auto;
+					align-self: flex-start;
+					a {
+						padding: 15px 15px 15px 0px;
+						color: rgba(0, 0, 0, 0.44);
+						border-radius: 3px;
+					}
+				}
+			}
+		}
+	}
 }
 
 @media (min-width: 1200px) {
-  .blog-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: calc(75vw - 50px);
-    min-height: calc(100vh - 116px);
-    margin: 0px auto;
-    padding-top: 0px;
-    .blog-filter {
-      width: 55vw !important;
-      margin: 0px auto !important;
-    }
-    .blog {
-      width: 100%;
-      padding: 25px 0px;
-      .row {
-        display: flex;
-        flex-direction: row;
-        margin-bottom: 25px;
-        .post {
-          background: #fcfcfc;
-          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
-          border: 1px solid rgba(0, 0, 0, 0.09);
-          border-radius: 3px;
-          padding: 15px;
-          margin: 0px 1%;
-          width: 48%;
-          display: flex;
-          flex-direction: column;
-          margin-bottom: 0px;
-          .post-author {
-            display: flex;
-            flex-direction: row;
-            padding-bottom: 15px;
-            justify-content: space-between;
-            .post-info-wrapper {
-              display: flex;
-            }
-            .share-links {
-              display: flex;
-              .link {
-                width: 60px;
-                font-size: 2rem;
-                color: #fff;
-                margin: 0px 7.5px;
-                height: 40px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                &:last-child {
-                  margin-right: 0px;
-                }
-                &.facebook {
-                  background-color: #3b5998;
-                  &:hover {
-                    background-color: #223458;
-                  }
-                }
-                &.twitter {
-                  background-color: #1da1f2;
-                  &:hover {
-                    background-color: #0e4c72;
-                  }
-                }
-                &.linkedin {
-                  background-color: #00a0dc;
-                  &:hover {
-                    background-color: #00729c;
-                  }
-                }
-              }
-            }
-          }
+	.blog-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: calc(75vw - 50px);
+		min-height: calc(100vh - 116px);
+		margin: 0px auto;
+		padding-top: 0px;
+		.blog-filter {
+			width: 55vw !important;
+			margin: 0px auto !important;
+		}
+		.blog {
+			width: 100%;
+			padding: 25px 0px;
+			.row {
+				display: flex;
+				flex-direction: row;
+				margin-bottom: 25px;
+				.post {
+					background: #fcfcfc;
+					box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+					border: 1px solid rgba(0, 0, 0, 0.09);
+					border-radius: 3px;
+					padding: 15px;
+					margin: 0px 1%;
+					width: 48%;
+					display: flex;
+					flex-direction: column;
+					margin-bottom: 0px;
+					.post-author {
+						display: flex;
+						flex-direction: row;
+						padding-bottom: 15px;
+						justify-content: space-between;
+						.post-info-wrapper {
+							display: flex;
+						}
+						.share-links {
+							display: flex;
+							.link {
+								width: 60px;
+								font-size: 2rem;
+								color: #fff;
+								margin: 0px 7.5px;
+								height: 40px;
+								display: flex;
+								flex-direction: column;
+								justify-content: center;
+								align-items: center;
+								&:last-child {
+									margin-right: 0px;
+								}
+								&.facebook {
+									background-color: #3b5998;
+									&:hover {
+										background-color: #223458;
+									}
+								}
+								&.twitter {
+									background-color: #1da1f2;
+									&:hover {
+										background-color: #0e4c72;
+									}
+								}
+								&.linkedin {
+									background-color: #00a0dc;
+									&:hover {
+										background-color: #00729c;
+									}
+								}
+							}
+						}
+					}
 
-          .post-header {
-            height: 0;
-            padding-bottom: 56%;
-            width: 100%;
-            position: relative;
-            .post-header-image {
-              background-size: 100%;
-              background-position: top;
-              width: 1200px;
-              height: 673px;
-              position: absolute;
-              top: 0;
-              left: 0;
-              max-width: 100%;
-              background-repeat: no-repeat;
-              width: 100%;
-              height: 100%;
-              margin: 0 auto;
-            }
-          }
-          .avatar {
-            border-radius: 50%;
-            margin-right: 10px;
-            height: 40px;
-          }
-          .author {
-            font-size: 1.1em;
-            color: rgb(194, 77, 1);
-          }
-          .date {
-            font-size: 0.9em;
-            color: rgba(0, 0, 0, 0.44);
-            span {
-              display: inline-block;
-              padding: 0px 4px;
-            }
-          }
-          .title {
-            font-size: 1.65em;
-            line-height: 1.25em;
-            h2 {
-              padding: 10px 0px;
-            }
-          }
-          .summary {
-            font-size: 1.3em;
-            font-weight: 300;
-            margin-bottom: 10px;
-            align-self: flex-start;
-          }
-          .bloglist--footer {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            .read-more {
-              margin-top: auto;
-              align-self: flex-start;
-              a {
-                padding: 15px 15px 15px 0px;
-                color: rgba(0, 0, 0, 0.44);
-                border-radius: 3px;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+					.post-header {
+						height: 0;
+						padding-bottom: 56%;
+						width: 100%;
+						position: relative;
+						.post-header-image {
+							background-size: 100%;
+							background-position: top;
+							width: 1200px;
+							height: 673px;
+							position: absolute;
+							top: 0;
+							left: 0;
+							max-width: 100%;
+							background-repeat: no-repeat;
+							width: 100%;
+							height: 100%;
+							margin: 0 auto;
+						}
+					}
+					.avatar {
+						border-radius: 50%;
+						margin-right: 10px;
+						height: 40px;
+					}
+					.author {
+						font-size: 1.1em;
+						color: rgb(194, 77, 1);
+					}
+					.date {
+						font-size: 0.9em;
+						color: rgba(0, 0, 0, 0.44);
+						span {
+							display: inline-block;
+							padding: 0px 4px;
+						}
+					}
+					.title {
+						font-size: 1.65em;
+						line-height: 1.25em;
+						h2 {
+							padding: 10px 0px;
+						}
+					}
+					.summary {
+						font-size: 1.3em;
+						font-weight: 300;
+						margin-bottom: 10px;
+						align-self: flex-start;
+					}
+					.bloglist--footer {
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+						.read-more {
+							margin-top: auto;
+							align-self: flex-start;
+							a {
+								padding: 15px 15px 15px 0px;
+								color: rgba(0, 0, 0, 0.44);
+								border-radius: 3px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }

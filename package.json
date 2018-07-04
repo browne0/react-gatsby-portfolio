@@ -56,6 +56,6 @@
     "start": "gatsby serve",
 	"lint": "yarn eslint --fix src/",
 	"lint:prettier": "prettier -l src/**/*.{js,jsx}",
-	"lint:prettier:write": "prettier --write src/**/*.{js,jsx}"
+	"lint:prettier:write": "prettier --write src/**/*.{js,jsx,scss}"
   }
 }
