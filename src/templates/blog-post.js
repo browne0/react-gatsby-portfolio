@@ -139,27 +139,29 @@ class blogPost extends Component {
 				<div className="container">
 					<article className="wrapper" id="blog-article">
 						<div className="post-header">
-							<div className="post-title">
-								<h1>{this.state.blog.title.title}</h1>
-							</div>
-							<div className="post-author">
-								<div className="post-info-wrapper">
-									<img
-										src={this.state.blog.author.profilePhoto.file.url}
-										alt={this.state.blog.author.name}
-										className="avatar"
-									/>
-									<div className="avatar-info">
-										<p className="author-name">
-											<a href={this.state.blog.author.twitter}>
-												{this.state.blog.author.name}
-											</a>
-										</p>
-										<p className="date">
-											{date}
-											<span>&middot;</span>
-											{blogLengthString}
-										</p>
+							<div className="post-header__left">
+								<div className="post-title">
+									<h1>{this.state.blog.title.title}</h1>
+								</div>
+								<div className="post-author">
+									<div className="post-info-wrapper">
+										<img
+											src={this.state.blog.author.profilePhoto.file.url}
+											alt={this.state.blog.author.name}
+											className="avatar"
+										/>
+										<div className="avatar-info">
+											<p className="author-name">
+												<a href={this.state.blog.author.twitter}>
+													{this.state.blog.author.name}
+												</a>
+											</p>
+											<p className="date">
+												{date}
+												<span>&middot;</span>
+												{blogLengthString}
+											</p>
+										</div>
 									</div>
 								</div>
 								<div className="share-links">
@@ -194,6 +196,13 @@ class blogPost extends Component {
 										<i className="icon ion-social-linkedin" />
 									</a>
 								</div>
+							</div>
+							<div className="post-header__right">
+								<img
+									src={this.state.blog.featuredImage.file.url}
+									alt={this.state.blog.title.title}
+									className="post-header__featuredImage"
+								/>
 							</div>
 						</div>
 
