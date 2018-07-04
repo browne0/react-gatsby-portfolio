@@ -22,14 +22,15 @@ module.exports = {
     },
     `gatsby-transformer-remark`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sass`,
+	`gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
           `average`,
           `source sans pro`,
-          `merriweather`
+		  `merriweather`,
+		  `lato`
         ]
       }
     },

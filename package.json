@@ -33,9 +33,7 @@
     "react-slick": "^0.15.4",
     "react-syntax-highlighter": "^5.7.0",
     "react-toastr": "^2.9.5",
-    "react-typography": "^0.15.0",
     "slash": "^1.0.0",
-    "typography": "^0.15.8",
     "typography-breakpoint-constants": "^0.14.0"
   },
   "devDependencies": {
