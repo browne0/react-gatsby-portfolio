@@ -150,6 +150,7 @@
 			.affiliate-disclosure {
 				width: 90%;
 				margin: auto;
+				max-width: 600px;
 				margin-top: 30px;
 				margin-bottom: 15px;
 				min-width: 410px;
@@ -315,7 +316,7 @@
 				.post-header {
 					max-width: 1080px;
 					margin: auto;
-					padding: 50px 0px 25px;
+					padding: 25px;
 					display: flex;
 					flex-direction: row;
 					&__left,
@@ -419,8 +420,10 @@
 					}
 				}
 				.affiliate-disclosure {
-					width: calc(100% * 3 / 5);
+					max-width: none;
+					width: 700px;
 					margin: auto;
+					padding: 0 30px;
 					.banner--head {
 						display: flex;
 						align-items: center;
