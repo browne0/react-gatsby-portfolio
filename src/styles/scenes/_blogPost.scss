@@ -37,11 +37,13 @@
 		padding: 43px 0px;
 		background-color: $off-white;
 		.wrapper {
+			position: relative;
 			.post-header {
 				max-width: 90vw;
 				min-width: 410px;
 				margin: auto;
-				padding: 30px 0px;
+				padding: 20px;
+				padding-bottom: 0px;
 				display: flex;
 				flex-direction: column-reverse;
 				&__left,
@@ -64,7 +66,7 @@
 						flex-direction: row;
 						justify-content: space-between;
 						align-items: center;
-						padding: 10px 0px 20px;
+						padding: 5px 0px 15px;
 						.post-info-wrapper {
 							display: flex;
 						}
@@ -150,6 +152,7 @@
 				margin-top: 30px;
 				margin-bottom: 15px;
 				min-width: 410px;
+				padding: 0px 20px;
 				.banner--head {
 					display: flex;
 					align-items: center;
@@ -193,7 +196,7 @@
 			margin: 0px auto;
 			font-size: 1.2em;
 			color: #333;
-			font-family: Arial, 'Times New Roman', Times, serif;
+			font-family: Lato, 'Times New Roman', Times, serif;
 
 			div {
 				iframe {
@@ -204,7 +207,7 @@
 
 			h1,
 			h2 {
-				font-family: Merriweather, -apple-system, system-ui, BlinkMacSystemFont,
+				font-family: Lato, -apple-system, system-ui, BlinkMacSystemFont,
 					'Helvetica Neue', Arial, sans-serif;
 			}
 			pre {
@@ -311,7 +314,7 @@
 				.post-header {
 					max-width: 1080px;
 					margin: auto;
-					padding: 50px 0px;
+					padding: 50px 0px 25px;
 					display: flex;
 					flex-direction: row;
 					&__left,
@@ -417,8 +420,6 @@
 				.affiliate-disclosure {
 					width: calc(100% * 3 / 5);
 					margin: auto;
-					margin-top: 30px;
-					margin-bottom: 15px;
 					.banner--head {
 						display: flex;
 						align-items: center;
@@ -457,11 +458,10 @@
 				background-color: $off-white;
 				width: 700px;
 				padding: 30px;
-				padding-top: 15px;
+				padding-top: 25px;
 				margin: 0px auto;
 				color: rgba(0, 0, 0, 0.84);
 				font-size: 19px;
-				font-family: Lato, 'Times New Roman', Times, serif;
 				line-height: 1.75em;
 
 				strong {
@@ -478,7 +478,7 @@
 				h1,
 				h3,
 				h4 {
-					font-family: Source Sans Pro, -apple-system, system-ui,
+					font-family: Lato, -apple-system, system-ui,
 						BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
 				}
 				pre {

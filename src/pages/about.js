@@ -9,9 +9,9 @@ import bg from '../images/selfie/about_bg3.jpg';
 class About extends Component {
 	constructor(props) {
 		super(props);
-
+		const lastIndex = props.data.allContentfulPost.edges.length - 1;
 		this.state = {
-			blog: this.props.data.allContentfulPost.edges[0].node,
+			blog: props.data.allContentfulPost.edges[lastIndex].node,
 		};
 	}
 
