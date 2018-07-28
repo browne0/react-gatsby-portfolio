@@ -1,22 +1,21 @@
 {
-  "name": "gatsby-example-using-contentful",
+  "name": "react-gatsby-portfolio",
   "private": true,
-  "description": "Gatsby example site using the Contentful source plugin",
+  "description": "Malik Browne's gatsby portfolio",
   "version": "1.0.0",
-  "author": "Marcus Ericsson <mericsson@gmail.com> (mericsson.com)",
+  "author": "Malik Browne <malik.browne3@gmail.com> (malikbrowne.com)",
   "dependencies": {
-    "gatsby": "latest",
-    "gatsby-link": "latest",
+    "gatsby": "1.9.277",
+    "gatsby-link": "1.6.20",
     "gatsby-plugin-google-analytics": "^1.0.8",
     "gatsby-plugin-google-fonts": "^0.0.3",
     "gatsby-plugin-manifest": "^1.0.8",
-    "gatsby-plugin-offline": "latest",
+    "gatsby-plugin-nprogress": "^1.0.14",
     "gatsby-plugin-react-helmet": "^1.0.2",
     "gatsby-plugin-sass": "^1.0.2",
     "gatsby-plugin-sitemap": "^1.2.5",
     "gatsby-plugin-twitter": "^1.0.6",
     "gatsby-source-contentful": "^1.3.16",
-    "gatsby-transformer-remark": "latest",
     "github-markdown-css": "^2.8.0",
     "lodash": "^4.16.4",
     "material-design-icons-iconfont": "^3.0.3",
@@ -54,8 +53,8 @@
     "develop": "gatsby develop",
     "build": "gatsby build",
     "start": "gatsby serve",
-	"lint": "yarn eslint --fix src/",
-	"lint:prettier": "prettier -l src/**/*.{js,jsx}",
-	"lint:prettier:write": "prettier --write src/**/*.{js,jsx,scss}"
+    "lint": "yarn eslint --fix src/",
+    "lint:prettier": "prettier -l src/**/*.{js,jsx}",
+    "lint:prettier:write": "prettier --write src/**/*.{js,jsx,scss}"
   }
 }

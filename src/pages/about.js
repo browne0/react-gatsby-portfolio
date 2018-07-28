@@ -15,17 +15,6 @@ class About extends Component {
 		};
 	}
 
-	componentDidMount() {
-		const hero = this.blurredEl;
-		const img = new Image();
-
-		img.src = bg;
-		img.onload = () => {
-			hero.style.backgroundImage = `url(${bg})`;
-			hero.style.filter = 'none';
-		};
-	}
-
 	render() {
 		return (
 			<div className="About">
