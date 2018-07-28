@@ -43,7 +43,6 @@
 				min-width: 410px;
 				margin: auto;
 				padding: 20px;
-				padding-bottom: 0px;
 				display: flex;
 				flex-direction: column-reverse;
 				&__left,
@@ -461,8 +460,7 @@
 			.markdown-body {
 				background-color: $off-white;
 				width: 700px;
-				padding: 30px;
-				padding-top: 25px;
+				padding: 25px;
 				margin: 0px auto;
 				color: rgba(0, 0, 0, 0.84);
 				font-size: 19px;
