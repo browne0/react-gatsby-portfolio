@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => (
 	<footer className="footer">
-		<p>&copy; Malik Browne 2017. All rights reserved.</p>
+		<p>&copy; Malik Browne 2018. All rights reserved.</p>
 
 		<div className="social">
 			<a
