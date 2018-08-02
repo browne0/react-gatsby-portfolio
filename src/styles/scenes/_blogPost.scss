@@ -189,7 +189,6 @@
 			}
 		}
 		.markdown-body {
-			background-color: $off-white;
 			width: 90vw;
 			min-width: 410px;
 			padding: 20px;
@@ -231,6 +230,10 @@
 				color: rgb(194, 77, 1);
 				text-decoration: none;
 				display: inline;
+			}
+
+			p code {
+				margin: 0 3px;
 			}
 		}
 		.comments {
@@ -308,7 +311,7 @@
 		.container {
 			width: 100%;
 			background-color: #f8f8f8;
-			padding: 43px 0px;
+			padding: 43px 0px  20px 0px;
 			.wrapper {
 				background: $off-white;
 				padding: 0px 50px;
@@ -458,7 +461,6 @@
 				}
 			}
 			.markdown-body {
-				background-color: $off-white;
 				width: 700px;
 				padding: 25px;
 				margin: 0px auto;
@@ -509,7 +511,7 @@
 			}
 			.comments {
 				width: 700px;
-				padding: 20px 0px 0px 20px;
+				padding: 20px 20px 0px 20px;
 				margin: 0px auto;
 				min-height: 404px;
 			}
