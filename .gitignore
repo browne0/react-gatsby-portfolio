@@ -57,3 +57,6 @@ public/
 
 # Bundle stats
 bundle-stats.json
+
+# Contentful Cleaning JSON file
+contentful-config.json

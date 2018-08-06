@@ -25,15 +25,26 @@ class BlogArticleItem extends Component {
 					src={this.props.blog.featuredImage.file.url}
 					placeholder={this.state.url}
 				>
-					{(src, loading) => (
-						<div
-							className="post-header-image"
-							style={{
-								backgroundImage: `url(${src})`,
-								opacity: loading ? 0 : 1,
-							}}
-						/>
-					)}
+					{(src, loading) => {
+						if (loading) {
+							return (
+								<div
+									className="post-header-image"
+									style={{
+										backgroundImage: `url(${this.state.url})`,
+									}}
+								/>
+							);
+						}
+						return (
+							<div
+								className="post-header-image"
+								style={{
+									backgroundImage: `url(${src})`,
+								}}
+							/>
+						);
+					}}
 				</ProgressiveImage>
 			</Link>
 		) : null;

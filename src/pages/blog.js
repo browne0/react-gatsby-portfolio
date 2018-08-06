@@ -33,12 +33,14 @@ import BlogArticle from '../components/BlogArticleItem';
 class BlogList extends Component {
 	constructor(props) {
 		super(props);
-
+		
+		const blogs = props.data.allContentfulPost.edges.filter(edge => {
+			const blog = edge.node;
+			return new Date(blog.date) < Date.now()
+		})
 		this.state = {
-			blogs: this.props.data.allContentfulPost.edges,
-			filteredBlogs: this.props.data.allContentfulPost.edges.sort(
-				(a, b) => new Date(b.node.date) - new Date(a.node.date)
-			),
+			blogs,
+			filteredBlogs: blogs
 		};
 	}
 
@@ -111,7 +113,9 @@ export default BlogList;
 
 export const pageQuery = graphql`
 	query blogQuery {
-		allContentfulPost {
+		allContentfulPost (
+			sort: { fields: [date], order: DESC}
+		) {
 			edges {
 				node {
 					title {
