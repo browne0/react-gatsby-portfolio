@@ -23,8 +23,8 @@ const NotFound = () => {
 					alt="Not found"
 				/>
 
-				<div style={style.button}>
-					<Button containerElement={<Link to="/" />} label="Back to Home" />
+				<div className="back-to-home" style={style.button}>
+					<Link to="/">Back to Home</Link>
 				</div>
 			</div>
 		</div>
