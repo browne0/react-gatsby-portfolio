@@ -33,14 +33,15 @@ import BlogArticle from '../components/BlogArticleItem';
 class BlogList extends Component {
 	constructor(props) {
 		super(props);
-		
+
 		const blogs = props.data.allContentfulPost.edges.filter(edge => {
 			const blog = edge.node;
-			return new Date(blog.date) < Date.now()
-		})
+			return new Date(blog.date) < Date.now();
+		});
 		this.state = {
 			blogs,
-			filteredBlogs: blogs
+			filteredBlogs: blogs,
+			email: '',
 		};
 	}
 
@@ -52,9 +53,24 @@ class BlogList extends Component {
 		this.setState(() => ({ filteredBlogs }));
 	}, 200);
 
+	onNewsletterSubmit = e => {
+		e.preventDefault();
+		window.open(
+			'https://tinyletter.com/malikbrowne',
+			'popupwindow',
+			'scrollbars=yes,width=800,height=600'
+		);
+	};
+
 	onFilterChange = e => {
 		const search = e.target.value.toLowerCase();
 		this.filterBlogs(search);
+	};
+
+	onEmailChange = e => {
+		this.setState(() => ({
+			email: e.target.value,
+		}));
 	};
 	render() {
 		const style = {
@@ -92,18 +108,60 @@ class BlogList extends Component {
 					image="/selfie/about_bg3.jpg"
 					url="https://www.malikbrowne.com/blog"
 				/>
-				<TextField
-					hintText="Enter a blog post title"
-					floatingLabelText="Filter blog by title"
-					className="blog-filter"
-					style={style.blogFilter}
-					floatingLabelFocusStyle={style.blogFilter.color}
-					underlineFocusStyle={style.blogFilter.bgcolor}
-					onChange={this.onFilterChange}
-				/>
-				<FlipMove duration={400} className="blog" maintainContainerHeight>
-					{blogPosts}
-				</FlipMove>
+				<div className="blog-posts">
+					<FlipMove
+						duration={400}
+						enterAnimation="fade"
+						leaveAnimation="fade"
+						className="blog"
+						maintainContainerHeight
+					>
+						{blogPosts}
+					</FlipMove>
+				</div>
+				<div className="more-info">
+					<TextField
+						hintText="Enter a blog post title"
+						floatingLabelText="Filter blog by title"
+						className="blog-filter"
+						style={style.blogFilter}
+						floatingLabelFocusStyle={style.blogFilter.color}
+						underlineFocusStyle={style.blogFilter.bgcolor}
+						onChange={this.onFilterChange}
+					/>
+					<form
+						action="https://tinyletter.com/malikbrowne"
+						method="post"
+						target="popupwindow"
+					>
+						<p>
+							<span>
+								We all know newsletters can get <b>super</b> spammy.
+							</span>
+							<span>This one's different.</span>
+							<span>
+								Stay up to date with my weekly posts and videos, as well as my
+								favorite links about the JavaScript world.
+							</span>
+						</p>
+						<input
+							value={this.state.email}
+							onChange={this.onEmailChange}
+							type="text"
+							name="email"
+							id="tlemail"
+							placeholder="Email"
+						/>
+						<input type="hidden" value="1" name="embed" />
+						<button
+							disabled={!this.state.email}
+							onClick={this.onNewsletterSubmit}
+						>
+							Subscribe
+						</button>
+					</form>
+					<div className="top-posts">Top Posts</div>
+				</div>
 			</div>
 		);
 	}
@@ -113,9 +171,7 @@ export default BlogList;
 
 export const pageQuery = graphql`
 	query blogQuery {
-		allContentfulPost (
-			sort: { fields: [date], order: DESC}
-		) {
+		allContentfulPost(sort: { fields: [date], order: DESC }) {
 			edges {
 				node {
 					title {
