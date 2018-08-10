@@ -144,7 +144,7 @@ class BlogArticleItem extends Component {
 					</div>
 					{blog.containsAffiliateLinks && (
 						<div className="affiliate-links">
-							<b>* Contains affiliate links</b>
+							<b>Contains affiliate links</b>
 						</div>
 					)}
 				</div>

@@ -4,7 +4,9 @@ import TextField from 'material-ui/TextField';
 import FlipMove from 'react-flip-move';
 import debounce from 'lodash/debounce';
 import SEO from '../components/SEO';
+import Newsletter from '../components/Newsletter';
 import BlogArticle from '../components/BlogArticleItem';
+import withSizes from 'react-sizes';
 
 /**
  * IDEA FOR NEXT BLOG LIST PAGE:
@@ -41,7 +43,7 @@ class BlogList extends Component {
 		this.state = {
 			blogs,
 			filteredBlogs: blogs,
-			email: '',
+			searchValue: '',
 		};
 	}
 
@@ -53,25 +55,19 @@ class BlogList extends Component {
 		this.setState(() => ({ filteredBlogs }));
 	}, 200);
 
-	onNewsletterSubmit = e => {
-		e.preventDefault();
-		window.open(
-			'https://tinyletter.com/malikbrowne',
-			'popupwindow',
-			'scrollbars=yes,width=800,height=600'
-		);
-	};
-
 	onFilterChange = e => {
+		e.persist();
+
+		if (this.state.searchValue !== e.target.value) {
+			console.log('hi')
+			this.setState(() => ({
+				searchValue: e.target.value,
+			}));
+		}
 		const search = e.target.value.toLowerCase();
 		this.filterBlogs(search);
 	};
 
-	onEmailChange = e => {
-		this.setState(() => ({
-			email: e.target.value,
-		}));
-	};
 	render() {
 		const style = {
 			blogFilter: {
@@ -109,6 +105,19 @@ class BlogList extends Component {
 					url="https://www.malikbrowne.com/blog"
 				/>
 				<div className="blog-posts">
+					{this.props.isMobile && (
+						<TextField
+							hintText="Enter a blog post title"
+							floatingLabelText="Filter blog by title"
+							className="blog-filter"
+							style={style.blogFilter}
+							floatingLabelFocusStyle={style.blogFilter.color}
+							underlineFocusStyle={style.blogFilter.bgcolor}
+							onChange={this.onFilterChange}
+							value={this.state.searchValue}
+						/>
+					)}
+
 					<FlipMove
 						duration={400}
 						enterAnimation="fade"
@@ -120,54 +129,32 @@ class BlogList extends Component {
 					</FlipMove>
 				</div>
 				<div className="more-info">
-					<TextField
-						hintText="Enter a blog post title"
-						floatingLabelText="Filter blog by title"
-						className="blog-filter"
-						style={style.blogFilter}
-						floatingLabelFocusStyle={style.blogFilter.color}
-						underlineFocusStyle={style.blogFilter.bgcolor}
-						onChange={this.onFilterChange}
-					/>
-					<form
-						action="https://tinyletter.com/malikbrowne"
-						method="post"
-						target="popupwindow"
-					>
-						<p>
-							<span>
-								We all know newsletters can get <b>super</b> spammy.
-							</span>
-							<span>This one's different.</span>
-							<span>
-								Stay up to date with my weekly posts and videos, as well as my
-								favorite links about the JavaScript world.
-							</span>
-						</p>
-						<input
-							value={this.state.email}
-							onChange={this.onEmailChange}
-							type="text"
-							name="email"
-							id="tlemail"
-							placeholder="Email"
+					{!this.props.isMobile && (
+						<TextField
+							hintText="Enter a blog post title"
+							floatingLabelText="Filter blog by title"
+							className="blog-filter"
+							style={style.blogFilter}
+							floatingLabelFocusStyle={style.blogFilter.color}
+							underlineFocusStyle={style.blogFilter.bgcolor}
+							onChange={this.onFilterChange}
+							value={this.state.searchValue}
 						/>
-						<input type="hidden" value="1" name="embed" />
-						<button
-							disabled={!this.state.email}
-							onClick={this.onNewsletterSubmit}
-						>
-							Subscribe
-						</button>
-					</form>
+					)}
+					<Newsletter />
 					<div className="top-posts">Top Posts</div>
+					
 				</div>
 			</div>
 		);
 	}
 }
 
-export default BlogList;
+const mapSizesToProps = ({ width }) => ({
+	isMobile: width <= 768,
+});
+
+export default withSizes(mapSizesToProps)(BlogList);
 
 export const pageQuery = graphql`
 	query blogQuery {
