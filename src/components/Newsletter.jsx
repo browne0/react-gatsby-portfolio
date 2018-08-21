@@ -13,7 +13,6 @@ class Newsletter extends PureComponent {
 	};
 
 	onNewsletterSubmit = e => {
-		e.preventDefault();
 		if (this.state.email) {
 			window.open(
 				'https://tinyletter.com/malikbrowne',
@@ -29,14 +28,11 @@ class Newsletter extends PureComponent {
 				method="post"
 				target="popupwindow"
 			>
+				<h3>Join the Newsletter!</h3>
 				<p>
 					<span>
-						We all know newsletters can get <b>super</b> spammy.
-					</span>
-					<span>This one's different.</span>
-					<span>
-						Stay up to date with my weekly posts and videos, as well as my
-						favorite links about the JavaScript world.
+						Stay up to date with my bi-weekly posts and videos, as well as other
+						interesting links I've read about the JavaScript world.
 					</span>
 				</p>
 				<input

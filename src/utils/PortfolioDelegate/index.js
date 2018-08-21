@@ -1,5 +1,11 @@
 import ProjectList from '../../data/projects';
 
+const getRandomBlogIndex = (min, max) => {
+	const newMin = Math.ceil(min);
+	const newMax = Math.floor(max);
+	return Math.floor(Math.random() * (newMax - newMin + 1)) + newMin;
+};
+
 class PortfolioDelegate {
 	projects = ProjectList;
 
@@ -28,7 +34,11 @@ class PortfolioDelegate {
 		);
 
 		if (index + 1 > sortedBlogArray.length - 1) {
-			return null;
+			const rand = getRandomBlogIndex(0, sortedBlogArray.length - 1);
+			if (rand === index || rand === index - 1) {
+				return this.getNextBlog(blogArray, title);
+			}
+			return sortedBlogArray[rand].node;
 		}
 
 		return sortedBlogArray[index + 1].node;
@@ -44,7 +54,11 @@ class PortfolioDelegate {
 		);
 
 		if (index - 1 < 0) {
-			return null;
+			const rand = getRandomBlogIndex(0, sortedBlogArray.length - 1);
+			if (rand === index || rand === index - 1) {
+				return this.getPreviousBlog(blogArray, title);
+			}
+			return sortedBlogArray[rand].node;
 		}
 
 		return sortedBlogArray[index - 1].node;

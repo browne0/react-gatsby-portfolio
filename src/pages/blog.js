@@ -59,7 +59,7 @@ class BlogList extends Component {
 		e.persist();
 
 		if (this.state.searchValue !== e.target.value) {
-			console.log('hi')
+			console.log('hi');
 			this.setState(() => ({
 				searchValue: e.target.value,
 			}));
@@ -88,7 +88,7 @@ class BlogList extends Component {
 
 		const blogPosts = [];
 
-		for (let i = 0; i < blogs.length; i += 2) {
+		for (let i = this.state.searchValue ? 0 : 1; i < blogs.length; i += 2) {
 			blogPosts.push(
 				<div className="row" key={i}>
 					{blogs[i]}
@@ -117,7 +117,6 @@ class BlogList extends Component {
 							value={this.state.searchValue}
 						/>
 					)}
-
 					<FlipMove
 						duration={400}
 						enterAnimation="fade"
@@ -125,6 +124,11 @@ class BlogList extends Component {
 						className="blog"
 						maintainContainerHeight
 					>
+						{!this.state.searchValue && (
+							<div className="row">
+								<BlogArticle main blog={this.state.filteredBlogs[0].node} />
+							</div>
+						)}
 						{blogPosts}
 					</FlipMove>
 				</div>
@@ -142,8 +146,7 @@ class BlogList extends Component {
 						/>
 					)}
 					<Newsletter />
-					<div className="top-posts">Top Posts</div>
-					
+					{/* <div className="top-posts">Top Posts</div> */}
 				</div>
 			</div>
 		);

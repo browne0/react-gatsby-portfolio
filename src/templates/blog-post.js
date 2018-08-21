@@ -4,10 +4,8 @@ import Moment from 'react-moment';
 import Prism from 'prismjs';
 import Markdown from 'react-markdown';
 import PropTypes from 'prop-types';
-import ProgressiveImage from 'react-progressive-image';
 import DisqusThread from '../components/DisqusThread';
 import PortfolioDelegate from '../utils/PortfolioDelegate';
-import Button from '../components/ThemedButton';
 import SEO from '../components/SEO';
 
 const disclosureMessages = [
@@ -45,6 +43,22 @@ const AffiliateDisclosureBanner = () => (
 		</div>
 	</div>
 );
+
+const generateDate = date => {
+	const yearToday = new Date().getFullYear();
+	if (yearToday - Number(date.substr(0, 4)) > 0) {
+		return (
+			<Moment parse="YYYY-MM-DD" format="MMM YYYY">
+				{date}
+			</Moment>
+		);
+	}
+	return (
+		<Moment parse="YYYY-MM-DD" format="MMM D">
+			{date}
+		</Moment>
+	);
+};
 class blogPost extends Component {
 	static propTypes = {
 		data: PropTypes.object,
@@ -72,25 +86,6 @@ class blogPost extends Component {
 	}
 
 	render() {
-		const prevButton = this.state.prevBlog ? (
-			<Button
-				containerElement={<Link to={`/blog/${this.state.prevBlog.slug}`} />}
-				className="prevButton"
-			>
-				<span className="buttonText">
-					<i className="icon ion-arrow-left-b" /> Prev Post
-				</span>
-			</Button>
-		) : null;
-		const nextButton = this.state.nextBlog ? (
-			<Button
-				containerElement={<Link to={`/blog/${this.state.nextBlog.slug}`} />}
-				className="nextButton"
-			>
-				<span className="buttonText">Next Post</span>{' '}
-				<i className="icon ion-arrow-right-b" />
-			</Button>
-		) : null;
 		const blogLength = this.state.blog.body.body
 			.replace(/[^a-zA-Z0-9']+/g, ' ')
 			.trim()
@@ -101,25 +96,54 @@ class blogPost extends Component {
 				? `${((blogLength / 275) * 60).toFixed()} sec read`
 				: `${(blogLength / 275).toFixed()} min read`;
 
-		const yearToday = new Date().getFullYear();
-		let date;
-		if (yearToday - Number(this.state.blog.date.substr(0, 4)) > 0) {
-			date = (
-				<Moment parse="YYYY-MM-DD" format="MMM YYYY">
-					{this.state.blog.date}
-				</Moment>
-			);
-		} else {
-			date = (
-				<Moment parse="YYYY-MM-DD" format="MMM D">
-					{this.state.blog.date}
-				</Moment>
-			);
-		}
+		const date = generateDate(this.state.blog.date);
 		const twitterURI = encodeURI(
 			`"${
 				this.state.blog.title.title
 			}" by @milkstarz \nhttps://malikbrowne.com/blog/${this.state.blog.slug}/`
+		);
+
+		const prevButton = (
+			<div className="article">
+				<h2>
+					<Link to={`/blog/${this.state.prevBlog.slug}`}>
+						{this.state.prevBlog.title.title}
+					</Link>
+				</h2>
+				<p>{this.state.prevBlog.description.description}</p>
+				<p>
+					By{' '}
+					<a
+						href={this.state.prevBlog.author.twitter}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						{this.state.prevBlog.author.name}
+					</a>{' '}
+					&middot; {generateDate(this.state.prevBlog.date)}
+				</p>
+			</div>
+		);
+		const nextButton = (
+			<div className="article">
+				<h2>
+					<Link to={`/blog/${this.state.nextBlog.slug}`}>
+						{this.state.nextBlog.title.title}
+					</Link>
+				</h2>
+				<p>{this.state.nextBlog.description.description}</p>
+				<p>
+					By{' '}
+					<a
+						href={this.state.nextBlog.author.twitter}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						{this.state.nextBlog.author.name}
+					</a>{' '}
+					&middot; {generateDate(this.state.nextBlog.date)}
+				</p>
+			</div>
 		);
 		return (
 			<div className="blog-post">
@@ -213,12 +237,10 @@ class blogPost extends Component {
 							className="markdown-body"
 							source={this.state.blog.body.body}
 						/>
-						{(prevButton || nextButton) && (
-							<div className="blog-guide">
-								{prevButton}
-								{nextButton}
-							</div>
-						)}
+						<div className="blog-guide">
+							{nextButton}
+							{prevButton}
+						</div>
 					</article>
 					{this.state.blog.comments && (
 						<DisqusThread
