@@ -4,7 +4,9 @@ import TextField from 'material-ui/TextField';
 import FlipMove from 'react-flip-move';
 import debounce from 'lodash/debounce';
 import SEO from '../components/SEO';
+import Newsletter from '../components/Newsletter';
 import BlogArticle from '../components/BlogArticleItem';
+import withSizes from 'react-sizes';
 
 /**
  * IDEA FOR NEXT BLOG LIST PAGE:
@@ -33,14 +35,15 @@ import BlogArticle from '../components/BlogArticleItem';
 class BlogList extends Component {
 	constructor(props) {
 		super(props);
-		
+
 		const blogs = props.data.allContentfulPost.edges.filter(edge => {
 			const blog = edge.node;
-			return new Date(blog.date) < Date.now()
-		})
+			return new Date(blog.date) < Date.now();
+		});
 		this.state = {
 			blogs,
-			filteredBlogs: blogs
+			filteredBlogs: blogs,
+			searchValue: '',
 		};
 	}
 
@@ -53,9 +56,18 @@ class BlogList extends Component {
 	}, 200);
 
 	onFilterChange = e => {
+		e.persist();
+
+		if (this.state.searchValue !== e.target.value) {
+			console.log('hi');
+			this.setState(() => ({
+				searchValue: e.target.value,
+			}));
+		}
 		const search = e.target.value.toLowerCase();
 		this.filterBlogs(search);
 	};
+
 	render() {
 		const style = {
 			blogFilter: {
@@ -76,7 +88,7 @@ class BlogList extends Component {
 
 		const blogPosts = [];
 
-		for (let i = 0; i < blogs.length; i += 2) {
+		for (let i = this.state.searchValue ? 0 : 1; i < blogs.length; i += 2) {
 			blogPosts.push(
 				<div className="row" key={i}>
 					{blogs[i]}
@@ -92,30 +104,64 @@ class BlogList extends Component {
 					image="/selfie/about_bg3.jpg"
 					url="https://www.malikbrowne.com/blog"
 				/>
-				<TextField
-					hintText="Enter a blog post title"
-					floatingLabelText="Filter blog by title"
-					className="blog-filter"
-					style={style.blogFilter}
-					floatingLabelFocusStyle={style.blogFilter.color}
-					underlineFocusStyle={style.blogFilter.bgcolor}
-					onChange={this.onFilterChange}
-				/>
-				<FlipMove duration={400} className="blog" maintainContainerHeight>
-					{blogPosts}
-				</FlipMove>
+				<div className="blog-posts">
+					{this.props.isMobile && (
+						<TextField
+							hintText="Enter a blog post title"
+							floatingLabelText="Filter blog by title"
+							className="blog-filter"
+							style={style.blogFilter}
+							floatingLabelFocusStyle={style.blogFilter.color}
+							underlineFocusStyle={style.blogFilter.bgcolor}
+							onChange={this.onFilterChange}
+							value={this.state.searchValue}
+						/>
+					)}
+					<FlipMove
+						duration={400}
+						enterAnimation="fade"
+						leaveAnimation="fade"
+						className="blog"
+						maintainContainerHeight
+					>
+						{!this.state.searchValue && (
+							<div className="row">
+								<BlogArticle main blog={this.state.filteredBlogs[0].node} />
+							</div>
+						)}
+						{blogPosts}
+					</FlipMove>
+				</div>
+				<div className="more-info">
+					{!this.props.isMobile && (
+						<TextField
+							hintText="Enter a blog post title"
+							floatingLabelText="Filter blog by title"
+							className="blog-filter"
+							style={style.blogFilter}
+							floatingLabelFocusStyle={style.blogFilter.color}
+							underlineFocusStyle={style.blogFilter.bgcolor}
+							onChange={this.onFilterChange}
+							value={this.state.searchValue}
+						/>
+					)}
+					<Newsletter />
+					{/* <div className="top-posts">Top Posts</div> */}
+				</div>
 			</div>
 		);
 	}
 }
 
-export default BlogList;
+const mapSizesToProps = ({ width }) => ({
+	isMobile: width <= 768,
+});
+
+export default withSizes(mapSizesToProps)(BlogList);
 
 export const pageQuery = graphql`
 	query blogQuery {
-		allContentfulPost (
-			sort: { fields: [date], order: DESC}
-		) {
+		allContentfulPost(sort: { fields: [date], order: DESC }) {
 			edges {
 				node {
 					title {

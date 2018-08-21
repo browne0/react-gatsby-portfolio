@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import Moment from 'react-moment';
 import ProgressiveImage from 'react-progressive-image';
+import cx from 'classnames';
 
 class BlogArticleItem extends Component {
 	static propTypes = {
 		blog: PropTypes.object.isRequired,
+		main: PropTypes.bool,
 	};
 
 	constructor(props) {
@@ -17,7 +19,7 @@ class BlogArticleItem extends Component {
 	}
 
 	render() {
-		const { blog } = this.props;
+		const { blog, main } = this.props;
 
 		const blogHeader = blog.featuredImage ? (
 			<Link to={`/blog/${blog.slug}`} className="post-header">
@@ -78,7 +80,7 @@ class BlogArticleItem extends Component {
 			}/`
 		);
 		return (
-			<div to={`/blog/${blog.slug}`} className="post">
+			<div to={`/blog/${blog.slug}`} className={cx("post", {"post--main": main})}>
 				<div className="post-author">
 					<div className="post-info-wrapper">
 						<img
@@ -144,7 +146,7 @@ class BlogArticleItem extends Component {
 					</div>
 					{blog.containsAffiliateLinks && (
 						<div className="affiliate-links">
-							<b>* Contains affiliate links</b>
+							<b>Contains affiliate links</b>
 						</div>
 					)}
 				</div>

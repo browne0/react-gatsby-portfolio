@@ -25,8 +25,7 @@
 	}
 	a {
 		display: inline-block;
-		transition: color 0.25s ease;
-		transition: background-color 0.25s ease;
+		transition: background-color 0.25s ease, color 0.15s ease;
 		&:hover {
 			color: rgb(194, 77, 1);
 		}
@@ -193,7 +192,8 @@
 			padding: 20px;
 			padding-top: 0px;
 			margin: 0px auto;
-			font-size: 1.2em;
+			font-size: 18px;
+			line-height: 1.75em;
 			color: #333;
 			font-family: Lato, 'Times New Roman', Times, serif;
 
@@ -246,26 +246,45 @@
 			width: 90vw;
 			background-color: #fff;
 			margin: 0px auto;
-			padding: 20px;
+			padding: 0px 20px 20px 20px;
 			overflow: auto;
-			.nextButton {
-				float: right;
-			}
-			.buttonText,
-			i {
-				color: #fafafa;
-				text-transform: uppercase;
-			}
-			.buttonText {
-				padding: 0px 15px;
-			}
-			.ion-arrow-right-b {
-				margin-right: 15px;
-				margin-left: -3px;
-			}
-			.ion-arrow-left-b {
-				margin-right: 11px;
-				margin-left: 0px;
+			display: flex;
+			min-width: 410px;
+			flex-direction: column;
+			.article {
+				width: 100%;
+				box-shadow: 0 2px 4px 0 rgba(14, 30, 37, 0.12);
+				padding: 1.618em;
+				position: relative;
+				border-radius: 8px;
+				overflow: hidden;
+				display: flex;
+				height: 100%;
+				min-height: 250px;
+				flex-direction: column;
+				justify-content: space-evenly;
+				&:before {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					height: calc(1.618em * 2 / 3);
+					background: $dark-orange;
+				}
+				h2 {
+					font-size: 1.5em;
+					a {
+						text-decoration: none;
+					}
+				}
+				p {
+					font-size: 17px;
+				}
+				&:last-child {
+					margin-top: 20px;
+				}
 			}
 		}
 	}
@@ -301,8 +320,6 @@
 			}
 		}
 		a {
-			transition: color 0.25s ease;
-			transition: background-color 0.25s ease;
 			&:hover {
 				color: rgb(194, 77, 1);
 			}
@@ -310,7 +327,7 @@
 		.container {
 			width: 100%;
 			background-color: #f8f8f8;
-			padding: 43px 0px  20px 0px;
+			padding: 43px 0px 20px 0px;
 			.wrapper {
 				background: $off-white;
 				padding: 0px 50px;
@@ -327,7 +344,7 @@
 					}
 					&__left {
 						max-width: 40%;
-						min-width: 26%;
+						min-width: 33%;
 						justify-content: center;
 						.post-title {
 							margin-top: 0px;
@@ -481,8 +498,8 @@
 				h1,
 				h3,
 				h4 {
-					font-family: Lato, -apple-system, system-ui,
-						BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+					font-family: Lato, -apple-system, system-ui, BlinkMacSystemFont,
+						'Helvetica Neue', Arial, sans-serif;
 				}
 				pre {
 					background-color: #272822;
@@ -516,28 +533,23 @@
 			}
 			.blog-guide {
 				background-color: #fff;
-				width: 700px;
+				max-width: 1080px;
 				margin: 0px auto;
-				padding: 20px;
+				padding: 25px;
 				overflow: auto;
-				.nextButton {
-					float: right;
-				}
-				.buttonText,
-				i {
-					color: #fafafa;
-					text-transform: uppercase;
-				}
-				.buttonText {
-					padding: 0px 15px;
-				}
-				.ion-arrow-right-b {
-					margin-right: 15px;
-					margin-left: -3px;
-				}
-				.ion-arrow-left-b {
-					margin-right: 11px;
-					margin-left: 0px;
+				display: flex;
+				flex-direction: row;
+				.article {
+					margin: 0px 2%;
+					width: 50%;
+					box-shadow: 0 2px 4px 0 rgba(14, 30, 37, 0.12);
+					padding: 1.618em;
+					a {
+						text-decoration: underline;
+					}
+					&:last-child {
+						margin-top: 0px;
+					}
 				}
 			}
 		}
