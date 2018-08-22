@@ -105,7 +105,7 @@ class BlogList extends Component {
 					url="https://www.malikbrowne.com/blog"
 				/>
 				<div className="blog-posts">
-					{this.props.isMobile && (
+					{this.props.isTablet && (
 						<TextField
 							hintText="Enter a blog post title"
 							floatingLabelText="Filter blog by title"
@@ -133,7 +133,7 @@ class BlogList extends Component {
 					</FlipMove>
 				</div>
 				<div className="more-info">
-					{!this.props.isMobile && (
+					{!this.props.isTablet && (
 						<TextField
 							hintText="Enter a blog post title"
 							floatingLabelText="Filter blog by title"
@@ -154,7 +154,7 @@ class BlogList extends Component {
 }
 
 const mapSizesToProps = ({ width }) => ({
-	isMobile: width <= 768,
+	isTablet: width < 768,
 });
 
 export default withSizes(mapSizesToProps)(BlogList);
