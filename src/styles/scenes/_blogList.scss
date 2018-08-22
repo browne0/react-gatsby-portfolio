@@ -306,6 +306,11 @@
 			display: block;
 			align-self: flex-start;
 			width: 260px;
+			padding-right: 20px;
+			position: -webkit-sticky;
+			position: -moz-sticky;
+			position: -ms-sticky;
+			position: -o-sticky;
 			position: sticky;
 			top: 60px;
 			margin: 0px;
@@ -337,10 +342,10 @@
 				}
 				button {
 					padding: 5px 0px;
-					width: 160px;
+					width: 100%;
 					height: 50px;
 					text-transform: uppercase;
-					font-size: 18px;
+					font-size: 16px;
 					margin: auto;
 					display: block;
 					background-color: rgb(194, 77, 1);
@@ -510,6 +515,10 @@
 			display: block;
 			align-self: flex-start;
 			width: 260px;
+			position: -webkit-sticky;
+			position: -moz-sticky;
+			position: -ms-sticky;
+			position: -o-sticky;
 			position: sticky;
 			top: 60px;
 			margin: 0 15px;
