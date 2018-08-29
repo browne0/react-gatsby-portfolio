@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import Section from '../components/AboutSection';
 import Footer from '../components/AboutFooter';
 import SEO from '../components/SEO';
-import bg from '../images/selfie/about_bg3.jpg';
 
 class About extends Component {
 	constructor(props) {
