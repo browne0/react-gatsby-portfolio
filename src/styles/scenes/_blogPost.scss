@@ -27,7 +27,7 @@
 		display: inline-block;
 		transition: background-color 0.25s ease, color 0.15s ease;
 		&:hover {
-			color: rgb(194, 77, 1);
+			color: $dark-orange;
 		}
 	}
 	.container {
@@ -81,11 +81,11 @@
 							.author-name {
 								font-size: 1.2em;
 								font-weight: normal;
-								color: rgb(194, 77, 1);
+								color: $dark-orange;
 							}
 							.date {
 								font-size: 1em;
-								color: rgba(0, 0, 0, 0.44);
+								color: $text-secondary;
 								span {
 									display: inline-block;
 									padding: 0px 4px;
@@ -219,6 +219,12 @@
 					display: block;
 					margin: auto;
 				}
+				& img + em {
+					text-align: center;
+					color: $text-secondary;
+					font-size: 14px;
+					display: block;
+				}
 			}
 			ul,
 			ol {
@@ -226,7 +232,7 @@
 				font-weight: normal;
 			}
 			a {
-				color: rgb(194, 77, 1);
+				color: $dark-orange;
 				text-decoration: none;
 				display: inline;
 			}
@@ -321,7 +327,7 @@
 		}
 		a {
 			&:hover {
-				color: rgb(194, 77, 1);
+				color: $dark-orange;
 			}
 		}
 		.container {
@@ -374,11 +380,11 @@
 								.author-name {
 									font-size: 1.2em;
 									font-weight: normal;
-									color: rgb(194, 77, 1);
+									color: $dark-orange;
 								}
 								.date {
 									font-size: 1em;
-									color: rgba(0, 0, 0, 0.44);
+									color: $text-secondary;
 									span {
 										display: inline-block;
 										padding: 0px 4px;
@@ -480,7 +486,7 @@
 				width: 700px;
 				padding: 25px;
 				margin: 0px auto;
-				color: rgba(0, 0, 0, 0.84);
+				color: $text-primary;
 				font-size: 19px;
 				line-height: 1.75em;
 
@@ -520,7 +526,7 @@
 					font-weight: normal;
 				}
 				a {
-					color: rgb(194, 77, 1);
+					color: $dark-orange;
 					text-decoration: none;
 					display: inline;
 				}

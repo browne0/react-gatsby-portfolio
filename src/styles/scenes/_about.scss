@@ -1,7 +1,7 @@
 .About {
 	padding-top: 64px;
 	.hero-wrapper {
-		background-color: rgb(33, 35, 41);
+		background-color: $off-black;
 	}
 	.hero {
 		background-image: url('../images/selfie/about_bg3.jpg');
@@ -17,7 +17,7 @@
 			margin: 0px 10px;
 			padding-right: 0px;
 			padding-bottom: 250px;
-			color: rgba(255, 255, 255, 0.9);
+			color: $off-white;
 			text-align: center;
 		}
 		span {
@@ -49,7 +49,7 @@
 			.hero-text {
 				padding-right: 0px;
 				padding-bottom: 200px;
-				color: rgba(255, 255, 255, 0.9);
+				color: $off-white;
 			}
 			span {
 				color: #ff6000;
@@ -82,7 +82,7 @@
 			.hero-text {
 				padding-right: 0px;
 				padding-bottom: 250px;
-				color: rgba(255, 255, 255, 0.9);
+				color: $off-white;
 				text-align: left;
 			}
 			span {
@@ -113,7 +113,7 @@
 			.hero-text {
 				padding-right: 50px;
 				padding-bottom: 400px;
-				color: rgba(255, 255, 255, 0.9);
+				color: $off-white;
 				text-align: left;
 			}
 			span {
@@ -143,7 +143,7 @@
 			.hero-text {
 				padding-right: 50px;
 				padding-bottom: 400px;
-				color: rgba(255, 255, 255, 0.9);
+				color: $off-white;
 				text-align: left;
 			}
 			span {
@@ -173,7 +173,7 @@
 			.hero-text {
 				padding-right: 100px;
 				padding-bottom: 400px;
-				color: rgba(255, 255, 255, 0.9);
+				color: $off-white;
 				text-align: left;
 			}
 			span {
@@ -194,7 +194,7 @@
 	.About {
 		padding-top: 0px;
 		.hero-wrapper {
-			background-color: rgb(33, 35, 41);
+			background-color: $off-black;
 		}
 		.hero {
 			background-position-x: -225px;
@@ -209,7 +209,7 @@
 				padding-left: 0px;
 				padding-right: 0px;
 				padding-bottom: 150px;
-				color: rgba(255, 255, 255, 0.9);
+				color: $off-white;
 				text-align: center;
 			}
 			span {
@@ -243,7 +243,7 @@
 
 			a {
 				font-family: Average, 'Times New Roman', Times, serif;
-				color: rgb(194, 77, 1);
+				color: $dark-orange;
 			}
 			p {
 				margin-top: 15px;
@@ -375,7 +375,7 @@
 				.hero-text {
 					padding-right: 0px;
 					padding-bottom: 10%;
-					color: rgba(255, 255, 255, 0.9);
+					color: $off-white;
 				}
 				span {
 					color: #ff6000;
@@ -408,7 +408,7 @@
 
 				a {
 					font-family: Average, 'Times New Roman', Times, serif;
-					color: rgb(194, 77, 1);
+					color: $dark-orange;
 				}
 				p {
 					margin-top: 15px;
@@ -528,7 +528,7 @@
 				.hero-text {
 					padding-right: 0px;
 					padding-bottom: 10%;
-					color: rgba(255, 255, 255, 0.9);
+					color: $off-white;
 					text-align: center;
 				}
 				span {
@@ -558,7 +558,7 @@
 
 				a {
 					font-family: Average, 'Times New Roman', Times, serif;
-					color: rgb(194, 77, 1);
+					color: $dark-orange;
 				}
 				p {
 					margin-top: 30px;
@@ -674,7 +674,7 @@
 				.hero-text {
 					padding-right: 50px;
 					padding-bottom: 200px;
-					color: rgba(255, 255, 255, 0.9);
+					color: $off-white;
 					text-align: left;
 				}
 				span {
@@ -709,7 +709,7 @@
 
 				a {
 					font-family: Average, 'Times New Roman', Times, serif;
-					color: rgb(194, 77, 1);
+					color: $dark-orange;
 				}
 				p {
 					margin-top: 30px;
@@ -824,7 +824,7 @@
 				.hero-text {
 					padding-right: 100px;
 					padding-bottom: 200px;
-					color: rgba(255, 255, 255, 0.9);
+					color: $off-white;
 					text-align: left;
 				}
 				span {
@@ -859,7 +859,7 @@
 
 				a {
 					font-family: Average, 'Times New Roman', Times, serif;
-					color: rgb(194, 77, 1);
+					color: $dark-orange;
 				}
 				p {
 					margin-top: 30px;
@@ -972,7 +972,7 @@
 				.hero-text {
 					padding-right: 200px;
 					padding-bottom: 200px;
-					color: rgba(255, 255, 255, 0.9);
+					color: $off-white;
 					text-align: left;
 				}
 				span {
@@ -1005,7 +1005,7 @@
 
 				a {
 					font-family: Average, 'Times New Roman', Times, serif;
-					color: rgb(194, 77, 1);
+					color: $dark-orange;
 				}
 				p {
 					margin-top: 30px;

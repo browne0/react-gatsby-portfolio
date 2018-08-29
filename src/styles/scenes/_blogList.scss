@@ -111,11 +111,11 @@
 			}
 			.author {
 				font-size: 0.9em;
-				color: rgb(194, 77, 1);
+				color: $dark-orange;
 			}
 			.date {
 				font-size: 0.8em;
-				color: rgba(0, 0, 0, 0.44);
+				color: $text-secondary;
 				span {
 					display: inline-block;
 					padding: 0px 4px;
@@ -146,7 +146,7 @@
 					align-self: flex-start;
 					a {
 						padding: 15px 15px 15px 0px;
-						color: rgba(0, 0, 0, 0.44);
+						color: $text-secondary;
 						border-radius: 3px;
 					}
 				}
@@ -261,11 +261,11 @@
 						}
 						.author {
 							font-size: 1.1em;
-							color: rgb(194, 77, 1);
+							color: $dark-orange;
 						}
 						.date {
 							font-size: 0.9em;
-							color: rgba(0, 0, 0, 0.44);
+							color: $text-secondary;
 							span {
 								display: inline-block;
 								padding: 0px 4px;
@@ -293,7 +293,7 @@
 								align-self: flex-start;
 								a {
 									padding: 15px 15px 15px 0px;
-									color: rgba(0, 0, 0, 0.44);
+									color: $text-secondary;
 									border-radius: 3px;
 								}
 							}
@@ -348,7 +348,7 @@
 					font-size: 16px;
 					margin: auto;
 					display: block;
-					background-color: rgb(194, 77, 1);
+					background-color: $dark-orange;
 					color: white;
 					&:hover {
 						background-color: rgba(194, 77, 1, 0.8);
@@ -469,11 +469,11 @@
 						}
 						.author {
 							font-size: 1.1em;
-							color: rgb(194, 77, 1);
+							color: $dark-orange;
 						}
 						.date {
 							font-size: 0.9em;
-							color: rgba(0, 0, 0, 0.44);
+							color: $text-secondary;
 							span {
 								display: inline-block;
 								padding: 0px 4px;
@@ -502,7 +502,7 @@
 								align-self: flex-start;
 								a {
 									padding: 15px 15px 15px 0px;
-									color: rgba(0, 0, 0, 0.44);
+									color: $text-secondary;
 									border-radius: 3px;
 								}
 							}
@@ -553,7 +553,7 @@
 					font-size: 18px;
 					margin: auto;
 					display: block;
-					background-color: rgb(194, 77, 1);
+					background-color: $dark-orange;
 					color: white;
 					&:hover {
 						background-color: rgba(194, 77, 1, 0.8);

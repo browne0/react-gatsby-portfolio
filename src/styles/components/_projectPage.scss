@@ -65,7 +65,7 @@
 
 		a {
 			font-family: Average, 'Times New Roman', Times, serif;
-			color: rgb(194, 77, 1);
+			color: $dark-orange;
 		}
 		p {
 			margin-top: 15px;
@@ -231,7 +231,7 @@
 
 			a {
 				font-family: Average, 'Times New Roman', Times, serif;
-				color: rgb(194, 77, 1);
+				color: $dark-orange;
 			}
 			p {
 				margin-top: 15px;
@@ -387,7 +387,7 @@
 
 			a {
 				font-family: Average, 'Times New Roman', Times, serif;
-				color: rgb(194, 77, 1);
+				color: $dark-orange;
 			}
 			p {
 				margin-top: 15px;
@@ -541,7 +541,7 @@
 
 			a {
 				font-family: Average, 'Times New Roman', Times, serif;
-				color: rgb(194, 77, 1);
+				color: $dark-orange;
 			}
 			p {
 				margin-top: 15px;
@@ -653,16 +653,16 @@
 			height: 0.4rem;
 			border: 0;
 			background-color: transparent;
-			color: rgb(194, 77, 1);
+			color: $dark-orange;
 			z-index: 1;
 			&::-webkit-progress-bar {
 				background: #fff;
 			}
 			&::-webkit-progress-value {
-				background: rgb(194, 77, 1);
+				background: $dark-orange;
 			}
 			&::-moz-progress-bar {
-				background-color: rgb(194, 77, 1);
+				background-color: $dark-orange;
 			}
 		}
 		.hero {
@@ -731,7 +731,7 @@
 
 			a {
 				font-family: Average, 'Times New Roman', Times, serif;
-				color: rgb(194, 77, 1);
+				color: $dark-orange;
 			}
 			p {
 				margin-top: 15px;
@@ -856,16 +856,16 @@
 				height: 0.4rem;
 				border: 0;
 				background-color: transparent;
-				color: rgb(194, 77, 1);
+				color: $dark-orange;
 				z-index: 1;
 				&::-webkit-progress-bar {
 					background: #fff;
 				}
 				&::-webkit-progress-value {
-					background: rgb(194, 77, 1);
+					background: $dark-orange;
 				}
 				&::-moz-progress-bar {
-					background-color: rgb(194, 77, 1);
+					background-color: $dark-orange;
 				}
 			}
 			.hero {
@@ -934,7 +934,7 @@
 
 				a {
 					font-family: Average, 'Times New Roman', Times, serif;
-					color: rgb(194, 77, 1);
+					color: $dark-orange;
 				}
 				p {
 					margin-top: 15px;
@@ -1056,16 +1056,16 @@
 				height: 0.4rem;
 				border: 0;
 				background-color: transparent;
-				color: rgb(194, 77, 1);
+				color: $dark-orange;
 				z-index: 1;
 				&::-webkit-progress-bar {
 					background: #fff;
 				}
 				&::-webkit-progress-value {
-					background: rgb(194, 77, 1);
+					background: $dark-orange;
 				}
 				&::-moz-progress-bar {
-					background-color: rgb(194, 77, 1);
+					background-color: $dark-orange;
 				}
 			}
 			.hero {
@@ -1127,7 +1127,7 @@
 
 				a {
 					font-family: Average, 'Times New Roman', Times, serif;
-					color: rgb(194, 77, 1);
+					color: $dark-orange;
 				}
 				p {
 					margin-top: 30px;

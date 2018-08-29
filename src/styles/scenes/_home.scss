@@ -11,7 +11,7 @@
 			color: rgba(255, 255, 255, 0.8);
 			text-align: center;
 			span {
-				color: #ff6600;
+				color: $bright-orange;
 			}
 		}
 	}
@@ -142,7 +142,7 @@
 				font-size: 1.75em;
 				color: rgba(255, 255, 255, 0.8);
 				span {
-					color: #ff6600;
+					color: $bright-orange;
 				}
 			}
 		}
@@ -270,7 +270,7 @@
 				font-size: 2em;
 				color: rgba(255, 255, 255, 0.8);
 				span {
-					color: #ff6600;
+					color: $bright-orange;
 				}
 			}
 		}
