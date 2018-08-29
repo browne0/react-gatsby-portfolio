@@ -1,11 +1,12 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import Layout from '../components/layout';
 
 import SEO from '../components/SEO';
 
 import projects from '../data/projects';
 
-const Home = () => {
+const Home = props => {
 	const projectList = [];
 	let flip = false;
 	const projectListItems = projects.map((project, index) => {
@@ -75,22 +76,25 @@ const Home = () => {
 			flip = !flip;
 		}
 	}
+	const { location } = props;
 	return (
-		<div className="Home">
-			<div className="hero">
-				<SEO
-					title="Home | Malik Browne"
-					description="Malik is a Front End Engineer & UX Enthusiast with a strong desire to produce high quality websites and online tools, bundled with an exceptional user experience."
-					image="/selfie/about_bg3.jpg"
-					url="https://www.malikbrowne.com"
-				/>
-				<h1>
-					I create <span>simple</span> and <span>intuitive</span> websites and
-					applications.
-				</h1>
+		<Layout location={location}>
+			<div className="Home">
+				<div className="hero">
+					<SEO
+						title="Home | Malik Browne"
+						description="Malik is a Front End Engineer & UX Enthusiast with a strong desire to produce high quality websites and online tools, bundled with an exceptional user experience."
+						image="/selfie/about_bg3.jpg"
+						url="https://www.malikbrowne.com"
+					/>
+					<h1>
+						I create <span>simple</span> and <span>intuitive</span> websites and
+						applications.
+					</h1>
+				</div>
+				{projectList}
 			</div>
-			{projectList}
-		</div>
+		</Layout>
 	);
 };
 

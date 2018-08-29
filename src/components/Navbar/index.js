@@ -4,7 +4,6 @@ import AppBar from 'material-ui/AppBar';
 import { Tabs, Tab } from 'material-ui/Tabs';
 import PropTypes from 'prop-types';
 import { navigateTo } from 'gatsby-link';
-import { withRouter } from 'react-router-dom';
 import logo from '../../images/logos/malikbrowne_logo.png';
 
 class Navbar extends Component {
@@ -94,4 +93,4 @@ class Navbar extends Component {
 	}
 }
 
-export default withRouter(Navbar);
+export default Navbar;

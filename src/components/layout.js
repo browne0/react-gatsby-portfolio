@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import * as PropTypes from 'prop-types';
 import 'github-markdown-css';
 
+import '../styles/base.scss';
+
 import MaterialTheme from './MainWrapper';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-import '../styles/base.scss';
 
 const propTypes = {
-	children: PropTypes.func.isRequired,
+	children: PropTypes.object.isRequired,
 };
 
 class DefaultLayout extends Component {
@@ -17,7 +18,7 @@ class DefaultLayout extends Component {
 		return (
 			<MaterialTheme>
 				<div className="site">
-					<Navbar />
+					<Navbar location={this.props.location} />
 					<main>{this.props.children}</main>
 					<Footer />
 				</div>
