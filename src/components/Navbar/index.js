@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
 import { Tabs, Tab } from 'material-ui/Tabs';
 import PropTypes from 'prop-types';
-import { navigateTo } from 'gatsby-link';
+import { navigate } from 'gatsby-link';
 import logo from '../../images/logos/malikbrowne_logo.png';
 
 class Navbar extends Component {
@@ -12,11 +12,11 @@ class Navbar extends Component {
 	};
 	onTabClick = tab => {
 		const lowerCaseRoute = tab.props.label.toLowerCase();
-		navigateTo(lowerCaseRoute);
+		navigate(lowerCaseRoute);
 	};
 
 	onTitleClick = () => {
-		navigateTo('/');
+		navigate('/');
 	};
 
 	render() {

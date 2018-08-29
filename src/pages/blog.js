@@ -1,10 +1,11 @@
 /* eslint-disable */
 import React, { Component } from 'react';
-import { graphql } from 'gatsby'
+import { graphql } from 'gatsby';
 import TextField from 'material-ui/TextField';
 import FlipMove from 'react-flip-move';
 import debounce from 'lodash/debounce';
 import SEO from '../components/SEO';
+import Layout from '../components/layout';
 import Newsletter from '../components/Newsletter';
 import BlogArticle from '../components/BlogArticleItem';
 import withSizes from 'react-sizes';
@@ -98,58 +99,60 @@ class BlogList extends Component {
 			);
 		}
 		return (
-			<div className="blog-wrapper">
-				<SEO
-					title="Blog | Malik Browne"
-					description="Check out the latest blog posts from front end developer, Malik Browne."
-					image="/selfie/about_bg3.jpg"
-					url="https://www.malikbrowne.com/blog"
-				/>
-				<div className="blog-posts">
-					{this.props.isTablet && (
-						<TextField
-							hintText="Enter a blog post title"
-							floatingLabelText="Filter blog by title"
-							className="blog-filter"
-							style={style.blogFilter}
-							floatingLabelFocusStyle={style.blogFilter.color}
-							underlineFocusStyle={style.blogFilter.bgcolor}
-							onChange={this.onFilterChange}
-							value={this.state.searchValue}
-						/>
-					)}
-					<FlipMove
-						duration={400}
-						enterAnimation="fade"
-						leaveAnimation="fade"
-						className="blog"
-						maintainContainerHeight
-					>
-						{!this.state.searchValue && (
-							<div className="row">
-								<BlogArticle main blog={this.state.filteredBlogs[0].node} />
-							</div>
+			<Layout location={this.props.location}>
+				<div className="blog-wrapper">
+					<SEO
+						title="Blog | Malik Browne"
+						description="Check out the latest blog posts from front end developer, Malik Browne."
+						image="/selfie/about_bg3.jpg"
+						url="https://www.malikbrowne.com/blog"
+					/>
+					<div className="blog-posts">
+						{this.props.isTablet && (
+							<TextField
+								hintText="Enter a blog post title"
+								floatingLabelText="Filter blog by title"
+								className="blog-filter"
+								style={style.blogFilter}
+								floatingLabelFocusStyle={style.blogFilter.color}
+								underlineFocusStyle={style.blogFilter.bgcolor}
+								onChange={this.onFilterChange}
+								value={this.state.searchValue}
+							/>
 						)}
-						{blogPosts}
-					</FlipMove>
+						<FlipMove
+							duration={400}
+							enterAnimation="fade"
+							leaveAnimation="fade"
+							className="blog"
+							maintainContainerHeight
+						>
+							{!this.state.searchValue && (
+								<div className="row">
+									<BlogArticle main blog={this.state.filteredBlogs[0].node} />
+								</div>
+							)}
+							{blogPosts}
+						</FlipMove>
+					</div>
+					<div className="more-info">
+						{!this.props.isTablet && (
+							<TextField
+								hintText="Enter a blog post title"
+								floatingLabelText="Filter blog by title"
+								className="blog-filter"
+								style={style.blogFilter}
+								floatingLabelFocusStyle={style.blogFilter.color}
+								underlineFocusStyle={style.blogFilter.bgcolor}
+								onChange={this.onFilterChange}
+								value={this.state.searchValue}
+							/>
+						)}
+						<Newsletter />
+						{/* <div className="top-posts">Top Posts</div> */}
+					</div>
 				</div>
-				<div className="more-info">
-					{!this.props.isTablet && (
-						<TextField
-							hintText="Enter a blog post title"
-							floatingLabelText="Filter blog by title"
-							className="blog-filter"
-							style={style.blogFilter}
-							floatingLabelFocusStyle={style.blogFilter.color}
-							underlineFocusStyle={style.blogFilter.bgcolor}
-							onChange={this.onFilterChange}
-							value={this.state.searchValue}
-						/>
-					)}
-					<Newsletter />
-					{/* <div className="top-posts">Top Posts</div> */}
-				</div>
-			</div>
+			</Layout>
 		);
 	}
 }

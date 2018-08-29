@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { graphql } from 'gatsby'
+import { graphql } from 'gatsby';
 import Link from 'gatsby-link';
 import Moment from 'react-moment';
 import Prism from 'prismjs';
@@ -7,6 +7,7 @@ import Markdown from 'react-markdown';
 import PropTypes from 'prop-types';
 import DisqusThread from '../components/DisqusThread';
 import PortfolioDelegate from '../utils/PortfolioDelegate';
+import Layout from '../components/layout';
 import SEO from '../components/SEO';
 
 const disclosureMessages = [
@@ -147,113 +148,115 @@ class blogPost extends Component {
 			</div>
 		);
 		return (
-			<div className="blog-post">
-				<SEO
-					title={`${this.state.blog.title.title} | Malik Browne`}
-					description={this.state.blog.description.description}
-					image={`https:${this.state.blog.featuredImage.file.url}`}
-					url={`https://www.malikbrowne.com/${this.state.blog.slug}`}
-				/>
-				<div className="back-to-blog">
-					<Link to="/blog">
-						<i className="material-icons">arrow_back</i>
-						<span>Back to blog</span>
-					</Link>
-					<p>{this.state.blog.title.title}</p>
-				</div>
-				<div className="container">
-					<article className="wrapper" id="blog-article">
-						<div className="post-header">
-							<div className="post-header__left">
-								<div className="post-title">
-									<h1>{this.state.blog.title.title}</h1>
-								</div>
-								<div className="post-author">
-									<div className="post-info-wrapper">
-										<img
-											src={this.state.blog.author.profilePhoto.file.url}
-											alt={this.state.blog.author.name}
-											className="avatar"
-										/>
-										<div className="avatar-info">
-											<p className="author-name">
-												<a href={this.state.blog.author.twitter}>
-													{this.state.blog.author.name}
-												</a>
-											</p>
-											<p className="date">
-												{date}
-												<span>&middot;</span>
-												{blogLengthString}
-											</p>
+			<Layout location={this.props.location}>
+				<div className="blog-post">
+					<SEO
+						title={`${this.state.blog.title.title} | Malik Browne`}
+						description={this.state.blog.description.description}
+						image={`https:${this.state.blog.featuredImage.file.url}`}
+						url={`https://www.malikbrowne.com/${this.state.blog.slug}`}
+					/>
+					<div className="back-to-blog">
+						<Link to="/blog">
+							<i className="material-icons">arrow_back</i>
+							<span>Back to blog</span>
+						</Link>
+						<p>{this.state.blog.title.title}</p>
+					</div>
+					<div className="container">
+						<article className="wrapper" id="blog-article">
+							<div className="post-header">
+								<div className="post-header__left">
+									<div className="post-title">
+										<h1>{this.state.blog.title.title}</h1>
+									</div>
+									<div className="post-author">
+										<div className="post-info-wrapper">
+											<img
+												src={this.state.blog.author.profilePhoto.file.url}
+												alt={this.state.blog.author.name}
+												className="avatar"
+											/>
+											<div className="avatar-info">
+												<p className="author-name">
+													<a href={this.state.blog.author.twitter}>
+														{this.state.blog.author.name}
+													</a>
+												</p>
+												<p className="date">
+													{date}
+													<span>&middot;</span>
+													{blogLengthString}
+												</p>
+											</div>
 										</div>
 									</div>
+									<div className="share-links">
+										<a
+											className="link facebook"
+											href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//malikbrowne.com/blog/${
+												this.state.blog.slug
+											}/`}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<i className="icon ion-social-facebook" />
+										</a>
+										<a
+											className="link twitter"
+											href={`https://twitter.com/home?status=${twitterURI}`}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<i className="icon ion-social-twitter" />
+										</a>
+										<a
+											className="link linkedin"
+											href={`https://www.linkedin.com/shareArticle?mini=true&url=https://malikbrowne.com/blog/${
+												this.state.blog.slug
+											}/&title=${encodeURI(
+												this.state.blog.title.title
+											)}&summary=${this.state.blog.description.description}`}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<i className="icon ion-social-linkedin" />
+										</a>
+									</div>
 								</div>
-								<div className="share-links">
-									<a
-										className="link facebook"
-										href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//malikbrowne.com/blog/${
-											this.state.blog.slug
-										}/`}
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										<i className="icon ion-social-facebook" />
-									</a>
-									<a
-										className="link twitter"
-										href={`https://twitter.com/home?status=${twitterURI}`}
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										<i className="icon ion-social-twitter" />
-									</a>
-									<a
-										className="link linkedin"
-										href={`https://www.linkedin.com/shareArticle?mini=true&url=https://malikbrowne.com/blog/${
-											this.state.blog.slug
-										}/&title=${encodeURI(
-											this.state.blog.title.title
-										)}&summary=${this.state.blog.description.description}`}
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										<i className="icon ion-social-linkedin" />
-									</a>
+								<div className="post-header__right">
+									<img
+										src={this.state.blog.featuredImage.file.url}
+										alt={this.state.blog.title.title}
+										className="post-header__featuredImage"
+									/>
 								</div>
 							</div>
-							<div className="post-header__right">
-								<img
-									src={this.state.blog.featuredImage.file.url}
-									alt={this.state.blog.title.title}
-									className="post-header__featuredImage"
-								/>
-							</div>
-						</div>
 
-						{this.state.blog.containsAffiliateLinks && (
-							<AffiliateDisclosureBanner />
+							{this.state.blog.containsAffiliateLinks && (
+								<AffiliateDisclosureBanner />
+							)}
+							<Markdown
+								className="markdown-body"
+								source={this.state.blog.body.body}
+							/>
+							<div className="blog-guide">
+								{nextButton}
+								{prevButton}
+							</div>
+						</article>
+						{this.state.blog.comments && (
+							<DisqusThread
+								basename="https://www.malikbrowne.com/blog"
+								shortname="malik-browne"
+								title={this.state.blog.title.title}
+								identifier={`/${this.state.blog.slug}`}
+								className="comments"
+							/>
 						)}
-						<Markdown
-							className="markdown-body"
-							source={this.state.blog.body.body}
-						/>
-						<div className="blog-guide">
-							{nextButton}
-							{prevButton}
-						</div>
-					</article>
-					{this.state.blog.comments && (
-						<DisqusThread
-							basename="https://www.malikbrowne.com/blog"
-							shortname="malik-browne"
-							title={this.state.blog.title.title}
-							identifier={`/${this.state.blog.slug}`}
-							className="comments"
-						/>
-					)}
+					</div>
 				</div>
-			</div>
+			</Layout>
 		);
 	}
 }
