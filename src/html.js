@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === `production`) {
 	}
 }
 
-module.exports = class HTML extends React.Component {
+export default class HTML extends React.Component {
 	render() {
 		let css;
 		if (process.env.NODE_ENV === `production`) {

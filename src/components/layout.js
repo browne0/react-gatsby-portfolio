@@ -6,7 +6,7 @@ import MaterialTheme from './MainWrapper';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-import './base.scss';
+import '../styles/base.scss';
 
 const propTypes = {
 	children: PropTypes.func.isRequired,
@@ -18,7 +18,7 @@ class DefaultLayout extends Component {
 			<MaterialTheme>
 				<div className="site">
 					<Navbar />
-					<main>{this.props.children()}</main>
+					<main>{this.props.children}</main>
 					<Footer />
 				</div>
 			</MaterialTheme>

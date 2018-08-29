@@ -1,5 +1,6 @@
 /* eslint-disable */
 import React, { Component } from 'react';
+import { graphql } from 'gatsby'
 import TextField from 'material-ui/TextField';
 import FlipMove from 'react-flip-move';
 import debounce from 'lodash/debounce';
