@@ -209,6 +209,13 @@
 				font-family: Lato, -apple-system, system-ui, BlinkMacSystemFont,
 					'Helvetica Neue', Arial, sans-serif;
 			}
+			ul + pre {
+				margin-top: 16px;
+			}
+
+			li p {
+				margin-top: 16px;
+			}
 			pre {
 				background-color: #272822;
 				color: #fafafa;
@@ -254,12 +261,11 @@
 			.article {
 				width: 100%;
 				box-shadow: 0 2px 4px 0 rgba(14, 30, 37, 0.12);
-				padding: 1.618em;
+				padding: 1.618em 1.618em 0 1.618em;
 				position: relative;
 				border-radius: 8px;
 				overflow: hidden;
 				display: flex;
-				height: 100%;
 				min-height: 250px;
 				flex-direction: column;
 				justify-content: space-evenly;
@@ -280,7 +286,8 @@
 					}
 				}
 				p {
-					font-size: 17px;
+					font-size: 16px;
+					padding: 16px 0px;
 				}
 				&:last-child {
 					margin-top: 20px;
@@ -549,6 +556,9 @@
 					}
 					&:last-child {
 						margin-top: 0px;
+					}
+					p {
+						font-size: 17px;
 					}
 				}
 			}

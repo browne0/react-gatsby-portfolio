@@ -52,10 +52,13 @@ class PortfolioDelegate {
 		const index = sortedBlogArray.findIndex(
 			blog => blog.node.title.title === title
 		);
+		// console.log(index)
 
 		if (index - 1 < 0) {
 			const rand = getRandomBlogIndex(0, sortedBlogArray.length - 1);
-			if (rand === index || rand === index - 1) {
+			console.log(`rand: ${rand}`);
+			console.log(`index: ${index}`);
+			if (rand === index || rand === index + 1) {
 				return this.getPreviousBlog(blogArray, title);
 			}
 			return sortedBlogArray[rand].node;
