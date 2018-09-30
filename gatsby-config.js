@@ -54,6 +54,57 @@ module.exports = {
 				],
 			},
 		},
+		// {
+		// 	resolve: `gatsby-plugin-feed`,
+		// 	options: {
+		// 		query: `
+		// 			{
+		// 				site {
+		// 					siteMetadata {
+		// 						rssMetadata: {
+		// 							site_url
+		// 							title
+		// 							description
+		// 							author
+		// 						},
+		// 					}
+		// 				}
+		// 				allContentfulPost(sort: { fields: [date], order: DESC }) {
+		// 					edges {
+		// 						node {
+		// 							title {
+		// 								title
+		// 							}
+		// 							slug
+		// 							author {
+		// 								name
+		// 								twitter
+		// 								profilePhoto {
+		// 									file {
+		// 										url
+		// 									}
+		// 								}
+		// 							}
+		// 							description {
+		// 								description
+		// 							}
+		// 							body {
+		// 								body
+		// 							}
+		// 							featuredImage {
+		// 								file {
+		// 									url
+		// 								}
+		// 							}
+		// 							date
+		// 						}
+		// 					}
+		// 				}
+		// 			}
+		// 		`,
+		// 		output: "/rss.xml"
+		// 	}
+		// },
 		{
 			resolve: `gatsby-plugin-nprogress`,
 			options: {
