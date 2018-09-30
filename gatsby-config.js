@@ -7,7 +7,7 @@ module.exports = {
 			site_url: config.siteUrl,
 			title: config.siteTitle,
 			description: config.siteDescription,
-			image_url: `${config.siteUrl}/logos/malikbrowne_logo.png`,
+			image_url: `${config.siteUrl}logos/malikbrowne_logo.png`,
 			author: 'Malik Browne',
 			copyright: 'Copyright © 2018. Malik Browne',
 		},

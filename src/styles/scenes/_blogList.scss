@@ -32,12 +32,17 @@
 			margin-bottom: 25px;
 			display: flex;
 			flex-direction: column;
-			.affiliate-links {
+			.tag {
 				color: $off-white;
-				padding: 5px 10px;
+				padding: 2.5px 10px;
 				border-radius: 3px;
-				font-size: 15px;
+				font-size: 14px;
 				background-color: $off-black;
+				display: inline-block;
+				margin-left: 7.5px;
+				&:first-child {
+					margin-left: 0px;
+				}
 			}
 			.post-author {
 				display: flex;
@@ -371,7 +376,7 @@
 		min-height: calc(100vh - 116px);
 		padding-top: 0px;
 		.blog-posts {
-			width: 1000px;
+			width: 925px;
 			display: flex;
 			flex-direction: column;
 			align-items: center;

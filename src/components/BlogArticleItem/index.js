@@ -80,7 +80,10 @@ class BlogArticleItem extends Component {
 			}/`
 		);
 		return (
-			<div to={`/blog/${blog.slug}`} className={cx("post", {"post--main": main})}>
+			<div
+				to={`/blog/${blog.slug}`}
+				className={cx('post', { 'post--main': main })}
+			>
 				<div className="post-author">
 					<div className="post-info-wrapper">
 						<img
@@ -144,11 +147,18 @@ class BlogArticleItem extends Component {
 							Read more...
 						</Link>
 					</div>
-					{blog.containsAffiliateLinks && (
-						<div className="affiliate-links">
-							<b>Contains affiliate links</b>
-						</div>
-					)}
+					<div className="tags">
+						{blog.containsAffiliateLinks && (
+							<div className="tag">
+								<b>Contains affiliate links</b>
+							</div>
+						)}
+						{blog.podcast && (
+							<div className="tag">
+								<b>Podcast</b>
+							</div>
+						)}
+					</div>
 				</div>
 			</div>
 		);
