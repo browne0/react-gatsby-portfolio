@@ -201,6 +201,9 @@
 				iframe {
 					width: 100%;
 					height: 300px;
+					&.podcast {
+						height: auto;
+					}
 				}
 			}
 
@@ -499,6 +502,9 @@
 					iframe {
 						width: 100%;
 						height: 450px;
+						&.podcast {
+							height: auto;
+						}
 					}
 				}
 
