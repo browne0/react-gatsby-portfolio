@@ -58,6 +58,8 @@ class SEO extends Component {
 					/>
 				)}
 
+				<meta name="google-site-verification" content="0ZQ1_A7uOwomESRDEoD2m3zDVbpvOC4MMloA9HECfWo" />
+
 				{/* Twitter Card tags */}
 				<meta name="twitter:card" content="summary" />
 				<meta
