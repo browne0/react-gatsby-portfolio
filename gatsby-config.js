@@ -91,11 +91,6 @@ module.exports = {
 		// 							body {
 		// 								body
 		// 							}
-		// 							featuredImage {
-		// 								file {
-		// 									url
-		// 								}
-		// 							}
 		// 							date
 		// 						}
 		// 					}

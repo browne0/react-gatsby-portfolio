@@ -70,11 +70,11 @@ class blogPost extends Component {
 
 		this.state = {
 			blog: this.props.data.blog,
-			nextBlog: delegate.getNextBlog(
+			nextBlog: delegate.getPodcast(
 				this.props.data.blogs.edges,
 				this.props.data.blog.title.title
 			),
-			prevBlog: delegate.getPreviousBlog(
+			prevBlog: delegate.getBlogPost(
 				this.props.data.blogs.edges,
 				this.props.data.blog.title.title
 			),
@@ -152,6 +152,10 @@ class blogPost extends Component {
 					description={this.state.blog.description.description}
 					image={`https:${this.state.blog.featuredImage.file.url}`}
 					url={`https://www.malikbrowne.com/${this.state.blog.slug}`}
+					type="article"
+					article
+					articlePublishTime={new Date(this.state.blog.date).toISOString()}
+					articleModifiedTime={this.state.blog.updatedAt}
 				/>
 				<div className="back-to-blog">
 					<Link to="/blog">
@@ -294,6 +298,8 @@ export const pageQuery = graphql`
 			date
 			comments
 			containsAffiliateLinks
+			podcast
+			updatedAt
 		}
 		blogs: allContentfulPost {
 			edges {
@@ -329,6 +335,7 @@ export const pageQuery = graphql`
 					}
 					date
 					comments
+					podcast
 				}
 			}
 		}

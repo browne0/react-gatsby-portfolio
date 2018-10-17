@@ -9,6 +9,11 @@ class SEO extends Component {
 		description: PropTypes.string.isRequired,
 		image: PropTypes.string.isRequired,
 		url: PropTypes.string.isRequired,
+		article: PropTypes.bool,
+	};
+
+	static defaultProps = {
+		type: 'website',
 	};
 
 	render() {
@@ -17,12 +22,13 @@ class SEO extends Component {
 			<Helmet>
 				{/* General tags */}
 				<title>{props.title}</title>
+				<link rel="canonical" href={props.url} />
 				<meta name="description" content={props.description} />
 				<meta name="image" content={props.image} />
 
 				{/* OpenGraph tags */}
 				<meta property="og:url" content={props.url} />
-				<meta property="og:type" content="website" />
+				<meta property="og:type" content={props.type} />
 				<meta property="og:title" content={props.title} />
 				<meta property="og:description" content={props.description} />
 				<meta property="og:image" content={props.image} />
@@ -30,6 +36,27 @@ class SEO extends Component {
 					property="og:site_name"
 					content="Malik Browne | Front End Engineer and UX Enthusiast"
 				/>
+
+				{props.article && (
+					<meta
+						property="article:published_time"
+						content={props.articlePublishTime}
+					/>
+				)}
+
+				{props.article && (
+					<meta
+						property="article:modified_time"
+						content={props.articleModifiedTime}
+					/>
+				)}
+
+				{props.article && (
+					<meta
+						property="article:updated_time"
+						content={props.articleModifiedTime}
+					/>
+				)}
 
 				{/* Twitter Card tags */}
 				<meta name="twitter:card" content="summary" />
