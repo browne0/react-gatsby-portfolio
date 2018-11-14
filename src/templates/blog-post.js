@@ -101,17 +101,15 @@ class blogPost extends Component {
 
 		const date = generateDate(blog.date);
 		const twitterURI = encodeURI(
-			`"${
-				blog.title.title
-			}" by @milkstarz \nhttps://malikbrowne.com/blog/${blog.slug}/`
+			`"${blog.title.title}" by @milkstarz \nhttps://malikbrowne.com/blog/${
+				blog.slug
+			}/`
 		);
 
 		const prevButton = (
 			<div className="article">
 				<h2>
-					<Link to={`/blog/${prevBlog.slug}`}>
-						{prevBlog.title.title}
-					</Link>
+					<Link to={`/blog/${prevBlog.slug}`}>{prevBlog.title.title}</Link>
 				</h2>
 				<p>{prevBlog.description.description}</p>
 				<p>
@@ -130,9 +128,7 @@ class blogPost extends Component {
 		const nextButton = (
 			<div className="article">
 				<h2>
-					<Link to={`/blog/${nextBlog.slug}`}>
-						{nextBlog.title.title}
-					</Link>
+					<Link to={`/blog/${nextBlog.slug}`}>{nextBlog.title.title}</Link>
 				</h2>
 				<p>{nextBlog.description.description}</p>
 				<p>
@@ -183,9 +179,7 @@ class blogPost extends Component {
 										/>
 										<div className="avatar-info">
 											<p className="author-name">
-												<a href={blog.author.twitter}>
-													{blog.author.name}
-												</a>
+												<a href={blog.author.twitter}>{blog.author.name}</a>
 											</p>
 											<p className="date">
 												{date}
@@ -220,9 +214,9 @@ class blogPost extends Component {
 										className="link linkedin"
 										href={`https://www.linkedin.com/shareArticle?mini=true&url=https://malikbrowne.com/blog/${
 											blog.slug
-										}/&title=${encodeURI(
-											blog.title.title
-										)}&summary=${blog.description.description}`}
+										}/&title=${encodeURI(blog.title.title)}&summary=${
+											blog.description.description
+										}`}
 										target="_blank"
 										rel="noopener noreferrer"
 										aria-label="linkedin"
@@ -233,7 +227,13 @@ class blogPost extends Component {
 							</div>
 							<div className="post-header__right">
 								{isFeaturedImageVideo ? (
-									<video loop autoPlay muted className="post-header__featuredImage">
+									<video
+										loop
+										poster={blog.compressedFeaturedImage.file.url}
+										autoPlay
+										muted
+										className="post-header__featuredImage"
+									>
 										<source
 											src={blog.featuredImage.file.url}
 											type="video/webm"
@@ -249,13 +249,8 @@ class blogPost extends Component {
 							</div>
 						</div>
 
-						{blog.containsAffiliateLinks && (
-							<AffiliateDisclosureBanner />
-						)}
-						<Markdown
-							className="markdown-body"
-							source={blog.body.body}
-						/>
+						{blog.containsAffiliateLinks && <AffiliateDisclosureBanner />}
+						<Markdown className="markdown-body" source={blog.body.body} />
 						<div className="blog-guide">
 							{nextButton}
 							{prevButton}
