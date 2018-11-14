@@ -70,11 +70,11 @@ class blogPost extends Component {
 
 		this.state = {
 			blog: this.props.data.blog,
-			nextBlog: delegate.getPodcast(
+			nextBlog: delegate.getNextBlog(
 				this.props.data.blogs.edges,
 				this.props.data.blog.title.title
 			),
-			prevBlog: delegate.getBlogPost(
+			prevBlog: delegate.getPreviousBlog(
 				this.props.data.blogs.edges,
 				this.props.data.blog.title.title
 			),
@@ -298,7 +298,6 @@ export const pageQuery = graphql`
 			date
 			comments
 			containsAffiliateLinks
-			podcast
 			updatedAt
 		}
 		blogs: allContentfulPost {
@@ -335,7 +334,6 @@ export const pageQuery = graphql`
 					}
 					date
 					comments
-					podcast
 				}
 			}
 		}

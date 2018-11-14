@@ -153,11 +153,6 @@ class BlogArticleItem extends Component {
 								<b>Contains affiliate links</b>
 							</div>
 						)}
-						{blog.podcast && (
-							<div className="tag">
-								<b>Podcast</b>
-							</div>
-						)}
 					</div>
 				</div>
 			</div>
