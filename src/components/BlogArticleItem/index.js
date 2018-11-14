@@ -22,7 +22,11 @@ class BlogArticleItem extends Component {
 		const { blog, main } = this.props;
 
 		const blogHeader = blog.featuredImage ? (
-			<Link to={`/blog/${blog.slug}`} className="post-header">
+			<Link
+				to={`/blog/${blog.slug}`}
+				className="post-header"
+				aria-label={blog.title.title}
+			>
 				<ProgressiveImage
 					src={this.props.blog.featuredImage.file.url}
 					placeholder={this.state.url}
