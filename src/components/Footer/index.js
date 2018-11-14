@@ -9,6 +9,7 @@ const Footer = () => (
 				href="https://github.com/browne0"
 				target="_blank"
 				rel="noopener noreferrer"
+				aria-label="github"
 			>
 				<i className="icon ion-social-github" />
 			</a>
@@ -16,6 +17,7 @@ const Footer = () => (
 				href="https://twitter.com/milkstarz"
 				target="_blank"
 				rel="noopener noreferrer"
+				aria-label="twitter"
 			>
 				<i className="icon ion-social-twitter" />
 			</a>
@@ -23,6 +25,7 @@ const Footer = () => (
 				href="https://youtube.com/milkstarz"
 				target="_blank"
 				rel="noopener noreferrer"
+				aria-label="youtube"
 			>
 				<i className="icon ion-social-youtube" />
 			</a>
@@ -30,6 +33,7 @@ const Footer = () => (
 				href="https://linkedin.com/in/malikbrowne"
 				target="_blank"
 				rel="noopener noreferrer"
+				aria-label="linkedin"
 			>
 				<i className="icon ion-social-linkedin" />
 			</a>
@@ -37,6 +41,7 @@ const Footer = () => (
 				href="https://instagram.com/milkstarz"
 				target="_blank"
 				rel="noopener noreferrer"
+				aria-label="instagram"
 			>
 				<i className="icon ion-social-instagram" />
 			</a>

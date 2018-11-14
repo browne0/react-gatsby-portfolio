@@ -111,6 +111,7 @@ class BlogArticleItem extends Component {
 							}/`}
 							target="_blank"
 							rel="noopener noreferrer"
+							aria-label="facebook"
 						>
 							<i className="icon ion-social-facebook" />
 						</a>
@@ -119,6 +120,7 @@ class BlogArticleItem extends Component {
 							href={`https://twitter.com/home?status=${twitterURI}`}
 							target="_blank"
 							rel="noopener noreferrer"
+							aria-label="twitter"
 						>
 							<i className="icon ion-social-twitter" />
 						</a>
@@ -131,6 +133,7 @@ class BlogArticleItem extends Component {
 							}`}
 							target="_blank"
 							rel="noopener noreferrer"
+							aria-label="linkedin"
 						>
 							<i className="icon ion-social-linkedin" />
 						</a>
@@ -143,7 +146,11 @@ class BlogArticleItem extends Component {
 				<p className="summary">{blog.description.description}</p>
 				<div className="bloglist--footer">
 					<div className="read-more">
-						<Link to={`/blog/${blog.slug}`} className="post-header">
+						<Link
+							to={`/blog/${blog.slug}`}
+							className="post-header"
+							aria-label={blog.title.title}
+						>
 							Read more...
 						</Link>
 					</div>

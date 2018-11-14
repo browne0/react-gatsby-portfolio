@@ -85,7 +85,7 @@
 							}
 							.date {
 								font-size: 1em;
-								color: rgba(0, 0, 0, 0.44);
+								color: $subtitle-text-color;
 								span {
 									display: inline-block;
 									padding: 0px 4px;
@@ -388,7 +388,7 @@
 								}
 								.date {
 									font-size: 1em;
-									color: rgba(0, 0, 0, 0.44);
+									color: $subtitle-text-color;
 									span {
 										display: inline-block;
 										padding: 0px 4px;

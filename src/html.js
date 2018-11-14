@@ -25,7 +25,7 @@ module.exports = class HTML extends React.Component {
 			);
 		}
 		return (
-			<html>
+			<html lang="en">
 				<head>
 					<meta charSet="utf-8" />
 					<meta httpEquiv="x-ua-compatible" content="ie=edge" />
@@ -40,20 +40,24 @@ module.exports = class HTML extends React.Component {
 						href="https://fonts.googleapis.com/icon?family=Material+Icons"
 						rel="stylesheet"
 						type="text/css"
+						defer
 					/>
 					<link
 						rel="stylesheet"
 						href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+						defer
 					/>
 					<link
 						rel="stylesheet"
 						type="text/css"
 						href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+						defer
 					/>
 					<link
 						rel="stylesheet"
 						type="text/css"
 						href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+						defer
 					/>
 					<script src="https://cdn.polyfill.io/v2/polyfill.min.js " />
 					{this.props.headComponents}
