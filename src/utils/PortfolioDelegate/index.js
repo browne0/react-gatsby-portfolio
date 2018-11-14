@@ -24,39 +24,44 @@ class PortfolioDelegate {
 		return this.projects[index + 1];
 	};
 
-	getPodcast = (blogArray, title) => {
-		const sortedPodcastArray = blogArray
-			.filter(blog => blog.node.podcast)
-			.map(blog => blog.node)
-			.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-		const index = sortedPodcastArray.findIndex(
-			blog => blog.title.title === title
+	getNextBlog = (blogArray, title) => {
+		const sortedBlogArray = blogArray.sort(
+			(a, b) => new Date(b.node.date) - new Date(a.node.date)
 		);
-		let rand;
-		do {
-			rand = getRandomBlogIndex(0, sortedPodcastArray.length - 1);
-		} while (rand === index);
-
-		return sortedPodcastArray[rand];
-	};
-
-	getBlogPost = (blogArray, title) => {
-		const sortedBlogArray = blogArray
-			.filter(blog => !blog.node.podcast)
-			.map(blog => blog.node)
-			.sort((a, b) => new Date(b.date) - new Date(a.date));
 
 		const index = sortedBlogArray.findIndex(
-			blog => blog.title.title === title
+			blog => blog.node.title.title === title
 		);
 
-		let rand;
-		do {
-			rand = getRandomBlogIndex(0, sortedBlogArray.length - 1);
-		} while (rand === index);
+		if (index + 1 > sortedBlogArray.length - 1) {
+			const rand = getRandomBlogIndex(0, sortedBlogArray.length - 1);
+			if (rand === index || rand === index - 1) {
+				return this.getNextBlog(blogArray, title);
+			}
+			return sortedBlogArray[rand].node;
+		}
 
-		return sortedBlogArray[rand];
+		return sortedBlogArray[index + 1].node;
+	};
+
+	getPreviousBlog = (blogArray, title) => {
+		const sortedBlogArray = blogArray.sort(
+			(a, b) => new Date(b.node.date) - new Date(a.node.date)
+		);
+
+		const index = sortedBlogArray.findIndex(
+			blog => blog.node.title.title === title
+		);
+
+		if (index - 1 < 0) {
+			const rand = getRandomBlogIndex(0, sortedBlogArray.length - 1);
+			if (rand === index || rand === index + 1) {
+				return this.getPreviousBlog(blogArray, title);
+			}
+			return sortedBlogArray[rand].node;
+		}
+
+		return sortedBlogArray[index - 1].node;
 	};
 }
 
