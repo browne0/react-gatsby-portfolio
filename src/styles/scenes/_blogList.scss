@@ -93,9 +93,6 @@
 				padding-bottom: 56%;
 				width: 100%;
 				position: relative;
-				&-video-wrapper {
-					padding-bottom: 50% !important;
-				}
 				.post-header-image {
 					background-size: 100%;
 					background-position: top;
@@ -141,9 +138,6 @@
 					'Helvetica Neue', Arial, sans-serif;
 				h2 {
 					padding: 10px 0px;
-				}
-				&-video {
-					padding-top: 23px;
 				}
 			}
 			.summary {

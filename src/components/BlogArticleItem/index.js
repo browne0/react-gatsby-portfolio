@@ -29,38 +29,37 @@ class BlogArticleItem extends Component {
 				})}
 				aria-label={blog.title.title}
 			>
-				<ProgressiveImage
-					src={blog.featuredImage.file.url}
-					placeholder={this.state.url}
-				>
-					{(src, loading) => {
-						if (loading) {
+				{blog.isFeaturedImageVideo ? (
+					<video loop autoPlay className="post-header-video">
+						<source src={blog.featuredImage.file.url} type="video/webm" />
+					</video>
+				) : (
+					<ProgressiveImage
+						src={blog.featuredImage.file.url}
+						placeholder={this.state.url}
+					>
+						{(src, loading) => {
+							if (loading) {
+								return (
+									<div
+										className="post-header-image"
+										style={{
+											backgroundImage: `url(${this.state.url})`,
+										}}
+									/>
+								);
+							}
 							return (
 								<div
 									className="post-header-image"
 									style={{
-										backgroundImage: `url(${this.state.url})`,
+										backgroundImage: `url(${src})`,
 									}}
 								/>
 							);
-						}
-						if (blog.isFeaturedImageVideo) {
-							return (
-								<video loop autoPlay className="post-header-video">
-									<source src={src} type="video/webm" />
-								</video>
-							);
-						}
-						return (
-							<div
-								className="post-header-image"
-								style={{
-									backgroundImage: `url(${src})`,
-								}}
-							/>
-						);
-					}}
-				</ProgressiveImage>
+						}}
+					</ProgressiveImage>
+				)}
 			</Link>
 		) : null;
 		const blogLength = blog.body.body
