@@ -24,11 +24,13 @@ class BlogArticleItem extends Component {
 		const blogHeader = blog.featuredImage ? (
 			<Link
 				to={`/blog/${blog.slug}`}
-				className="post-header"
+				className={cx('post-header', {
+					'post-header-video-wrapper': blog.isFeaturedImageVideo,
+				})}
 				aria-label={blog.title.title}
 			>
 				<ProgressiveImage
-					src={this.props.blog.featuredImage.file.url}
+					src={blog.featuredImage.file.url}
 					placeholder={this.state.url}
 				>
 					{(src, loading) => {
@@ -40,6 +42,13 @@ class BlogArticleItem extends Component {
 										backgroundImage: `url(${this.state.url})`,
 									}}
 								/>
+							);
+						}
+						if (blog.isFeaturedImageVideo) {
+							return (
+								<video loop autoPlay className="post-header-video">
+									<source src={src} type="video/webm" />
+								</video>
 							);
 						}
 						return (
@@ -144,7 +153,12 @@ class BlogArticleItem extends Component {
 					</div>
 				</div>
 				{blogHeader}
-				<Link to={`/blog/${blog.slug}`} className="title">
+				<Link
+					to={`/blog/${blog.slug}`}
+					className={cx('title', {
+						'title-video': !main && blog.isFeaturedImageVideo,
+					})}
+				>
 					<h2>{blog.title.title}</h2>
 				</Link>
 				<p className="summary">{blog.description.description}</p>

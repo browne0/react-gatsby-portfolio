@@ -4,6 +4,7 @@ import Moment from 'react-moment';
 import Prism from 'prismjs';
 import Markdown from 'react-markdown';
 import PropTypes from 'prop-types';
+
 import DisqusThread from '../components/DisqusThread';
 import PortfolioDelegate from '../utils/PortfolioDelegate';
 import SEO from '../components/SEO';
@@ -86,7 +87,9 @@ class blogPost extends Component {
 	}
 
 	render() {
-		const blogLength = this.state.blog.body.body
+		const { blog, nextBlog, prevBlog } = this.state;
+		const { isFeaturedImageVideo } = blog;
+		const blogLength = blog.body.body
 			.replace(/[^a-zA-Z0-9']+/g, ' ')
 			.trim()
 			.split(' ').length;
@@ -96,92 +99,92 @@ class blogPost extends Component {
 				? `${((blogLength / 275) * 60).toFixed()} sec read`
 				: `${(blogLength / 275).toFixed()} min read`;
 
-		const date = generateDate(this.state.blog.date);
+		const date = generateDate(blog.date);
 		const twitterURI = encodeURI(
 			`"${
-				this.state.blog.title.title
-			}" by @milkstarz \nhttps://malikbrowne.com/blog/${this.state.blog.slug}/`
+				blog.title.title
+			}" by @milkstarz \nhttps://malikbrowne.com/blog/${blog.slug}/`
 		);
 
 		const prevButton = (
 			<div className="article">
 				<h2>
-					<Link to={`/blog/${this.state.prevBlog.slug}`}>
-						{this.state.prevBlog.title.title}
+					<Link to={`/blog/${prevBlog.slug}`}>
+						{prevBlog.title.title}
 					</Link>
 				</h2>
-				<p>{this.state.prevBlog.description.description}</p>
+				<p>{prevBlog.description.description}</p>
 				<p>
 					By{' '}
 					<a
-						href={this.state.prevBlog.author.twitter}
+						href={prevBlog.author.twitter}
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						{this.state.prevBlog.author.name}
+						{prevBlog.author.name}
 					</a>{' '}
-					&middot; {generateDate(this.state.prevBlog.date)}
+					&middot; {generateDate(prevBlog.date)}
 				</p>
 			</div>
 		);
 		const nextButton = (
 			<div className="article">
 				<h2>
-					<Link to={`/blog/${this.state.nextBlog.slug}`}>
-						{this.state.nextBlog.title.title}
+					<Link to={`/blog/${nextBlog.slug}`}>
+						{nextBlog.title.title}
 					</Link>
 				</h2>
-				<p>{this.state.nextBlog.description.description}</p>
+				<p>{nextBlog.description.description}</p>
 				<p>
 					By{' '}
 					<a
-						href={this.state.nextBlog.author.twitter}
+						href={nextBlog.author.twitter}
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						{this.state.nextBlog.author.name}
+						{nextBlog.author.name}
 					</a>{' '}
-					&middot; {generateDate(this.state.nextBlog.date)}
+					&middot; {generateDate(nextBlog.date)}
 				</p>
 			</div>
 		);
 		return (
 			<div className="blog-post">
 				<SEO
-					title={`${this.state.blog.title.title} | Malik Browne`}
-					description={this.state.blog.description.description}
-					image={`https:${this.state.blog.featuredImage.file.url}`}
-					url={`https://www.malikbrowne.com/${this.state.blog.slug}`}
+					title={`${blog.title.title} | Malik Browne`}
+					description={blog.description.description}
+					image={`https:${blog.featuredImage.file.url}`}
+					url={`https://www.malikbrowne.com/${blog.slug}`}
 					type="article"
 					article
-					articlePublishTime={new Date(this.state.blog.date).toISOString()}
-					articleModifiedTime={this.state.blog.updatedAt}
+					articlePublishTime={new Date(blog.date).toISOString()}
+					articleModifiedTime={blog.updatedAt}
 				/>
 				<div className="back-to-blog">
 					<Link to="/blog">
 						<i className="material-icons">arrow_back</i>
 						<span>Back to blog</span>
 					</Link>
-					<p>{this.state.blog.title.title}</p>
+					<p>{blog.title.title}</p>
 				</div>
 				<div className="container">
 					<article className="wrapper" id="blog-article">
 						<div className="post-header">
 							<div className="post-header__left">
 								<div className="post-title">
-									<h1>{this.state.blog.title.title}</h1>
+									<h1>{blog.title.title}</h1>
 								</div>
 								<div className="post-author">
 									<div className="post-info-wrapper">
 										<img
-											src={this.state.blog.author.profilePhoto.file.url}
-											alt={this.state.blog.author.name}
+											src={blog.author.profilePhoto.file.url}
+											alt={blog.author.name}
 											className="avatar"
 										/>
 										<div className="avatar-info">
 											<p className="author-name">
-												<a href={this.state.blog.author.twitter}>
-													{this.state.blog.author.name}
+												<a href={blog.author.twitter}>
+													{blog.author.name}
 												</a>
 											</p>
 											<p className="date">
@@ -196,7 +199,7 @@ class blogPost extends Component {
 									<a
 										className="link facebook"
 										href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//malikbrowne.com/blog/${
-											this.state.blog.slug
+											blog.slug
 										}/`}
 										target="_blank"
 										rel="noopener noreferrer"
@@ -216,10 +219,10 @@ class blogPost extends Component {
 									<a
 										className="link linkedin"
 										href={`https://www.linkedin.com/shareArticle?mini=true&url=https://malikbrowne.com/blog/${
-											this.state.blog.slug
+											blog.slug
 										}/&title=${encodeURI(
-											this.state.blog.title.title
-										)}&summary=${this.state.blog.description.description}`}
+											blog.title.title
+										)}&summary=${blog.description.description}`}
 										target="_blank"
 										rel="noopener noreferrer"
 										aria-label="linkedin"
@@ -229,32 +232,41 @@ class blogPost extends Component {
 								</div>
 							</div>
 							<div className="post-header__right">
-								<img
-									src={this.state.blog.featuredImage.file.url}
-									alt={this.state.blog.title.title}
-									className="post-header__featuredImage"
-								/>
+								{isFeaturedImageVideo ? (
+									<video loop autoPlay className="post-header__featuredImage">
+										<source
+											src={blog.featuredImage.file.url}
+											type="video/webm"
+										/>
+									</video>
+								) : (
+									<img
+										src={blog.featuredImage.file.url}
+										alt={blog.title.title}
+										className="post-header__featuredImage"
+									/>
+								)}
 							</div>
 						</div>
 
-						{this.state.blog.containsAffiliateLinks && (
+						{blog.containsAffiliateLinks && (
 							<AffiliateDisclosureBanner />
 						)}
 						<Markdown
 							className="markdown-body"
-							source={this.state.blog.body.body}
+							source={blog.body.body}
 						/>
 						<div className="blog-guide">
 							{nextButton}
 							{prevButton}
 						</div>
 					</article>
-					{this.state.blog.comments && (
+					{blog.comments && (
 						<DisqusThread
 							basename="https://www.malikbrowne.com/blog"
 							shortname="malik-browne"
-							title={this.state.blog.title.title}
-							identifier={`/${this.state.blog.slug}`}
+							title={blog.title.title}
+							identifier={`/${blog.slug}`}
 							className="comments"
 						/>
 					)}
@@ -302,6 +314,7 @@ export const pageQuery = graphql`
 			comments
 			containsAffiliateLinks
 			updatedAt
+			isFeaturedImageVideo
 		}
 		blogs: allContentfulPost {
 			edges {
@@ -337,6 +350,7 @@ export const pageQuery = graphql`
 					}
 					date
 					comments
+					isFeaturedImageVideo
 				}
 			}
 		}

@@ -196,7 +196,7 @@ export const pageQuery = graphql`
 					}
 					date
 					comments
-					podcast
+					isFeaturedImageVideo
 				}
 			}
 		}

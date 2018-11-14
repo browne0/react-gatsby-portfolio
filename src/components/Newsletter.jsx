@@ -12,7 +12,7 @@ class Newsletter extends PureComponent {
 		}));
 	};
 
-	onNewsletterSubmit = e => {
+	onNewsletterSubmit = () => {
 		if (this.state.email) {
 			window.open(
 				'https://tinyletter.com/malikbrowne',
@@ -42,6 +42,7 @@ class Newsletter extends PureComponent {
 					name="email"
 					id="tlemail"
 					placeholder="Email"
+					aria-label="Email"
 				/>
 				<input type="hidden" value="1" name="embed" />
 				<button disabled={!this.state.email} onClick={this.onNewsletterSubmit}>
