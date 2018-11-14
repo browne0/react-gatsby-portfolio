@@ -30,7 +30,7 @@ class BlogArticleItem extends Component {
 				aria-label={blog.title.title}
 			>
 				{blog.isFeaturedImageVideo ? (
-					<video loop autoPlay className="post-header-video">
+					<video loop autoPlay muted className="post-header-video">
 						<source src={blog.featuredImage.file.url} type="video/webm" />
 					</video>
 				) : (

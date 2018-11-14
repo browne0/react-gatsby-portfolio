@@ -233,7 +233,7 @@ class blogPost extends Component {
 							</div>
 							<div className="post-header__right">
 								{isFeaturedImageVideo ? (
-									<video loop autoPlay className="post-header__featuredImage">
+									<video loop autoPlay muted className="post-header__featuredImage">
 										<source
 											src={blog.featuredImage.file.url}
 											type="video/webm"
