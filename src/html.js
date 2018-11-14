@@ -48,29 +48,6 @@ module.exports = class HTML extends React.Component {
 						dangerouslySetInnerHTML={{ __html: this.props.body }}
 					/>
 					{this.props.postBodyComponents}
-					<link
-						href="https://fonts.googleapis.com/icon?family=Material+Icons"
-						rel="stylesheet"
-						type="text/css"
-						
-					/>
-					<link
-						rel="stylesheet"
-						href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
-						
-					/>
-					<link
-						rel="stylesheet"
-						type="text/css"
-						href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-						
-					/>
-					<link
-						rel="stylesheet"
-						type="text/css"
-						href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
-						
-					/>
 				</body>
 			</html>
 		);
