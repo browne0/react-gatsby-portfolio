@@ -34,6 +34,7 @@ class BlogArticleItem extends Component {
 						loop
 						autoPlay
 						muted
+						playsInline
 						poster={blog.compressedFeaturedImage.file.url}
 						className="post-header-video"
 					>

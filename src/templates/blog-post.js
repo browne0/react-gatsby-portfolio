@@ -232,6 +232,7 @@ class blogPost extends Component {
 										poster={blog.compressedFeaturedImage.file.url}
 										autoPlay
 										muted
+										playsInline
 										className="post-header__featuredImage"
 									>
 										<source
