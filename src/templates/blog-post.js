@@ -110,15 +110,16 @@ class blogPost extends Component {
 				</h2>
 				<p>{prevBlog.description.description}</p>
 				<p>
-					By{' '}
-					<a
-						href={prevBlog.author.twitter}
-						target="_blank"
-						rel="noopener noreferrer"
-					>
+					<span>By <a
+							href={prevBlog.author.twitter}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
 						{prevBlog.author.name}
 					</a>{' '}
-					&middot; {generateDate(prevBlog.date)}
+						&middot; {generateDate(prevBlog.date)}
+					</span>
+
 				</p>
 			</div>
 		);
@@ -129,15 +130,18 @@ class blogPost extends Component {
 				</h2>
 				<p>{nextBlog.description.description}</p>
 				<p>
-					By{' '}
-					<a
-						href={nextBlog.author.twitter}
-						target="_blank"
-						rel="noopener noreferrer"
-					>
+					<span>
+						By{' '}
+						<a
+							href={nextBlog.author.twitter}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
 						{nextBlog.author.name}
 					</a>{' '}
-					&middot; {generateDate(nextBlog.date)}
+						&middot; {generateDate(nextBlog.date)}
+					</span>
+
 				</p>
 			</div>
 		);

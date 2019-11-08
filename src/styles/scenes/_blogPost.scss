@@ -227,7 +227,7 @@
 				display: flex;
 				min-height: 250px;
 				flex-direction: column;
-				justify-content: space-evenly;
+				justify-content: space-between;
 				&:before {
 					content: '';
 					display: block;
@@ -240,13 +240,21 @@
 				}
 				h2 {
 					font-size: 1.5em;
+					flex-grow: 2;
 					a {
 						text-decoration: none;
+						&:hover {
+							color: rgb(194, 77, 1);
+						}
 					}
 				}
 				p {
 					font-size: 16px;
 					padding: 16px 0px;
+					flex-shrink: 1;
+					&:last-of-type {
+						flex-shrink: 1;
+					}
 				}
 				&:last-child {
 					margin-top: 25px;
@@ -293,7 +301,8 @@
 		.container {
 			width: 100%;
 			background-color: #f8f8f8;
-			padding: 43px 0px 25px 0px;
+			padding: 43px 0px 0px 0px;
+			margin-bottom: 25px;
 			.wrapper {
 				background: $off-white;
 				padding: 0px 50px;
