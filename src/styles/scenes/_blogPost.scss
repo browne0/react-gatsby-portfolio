@@ -240,7 +240,6 @@
 				}
 				h2 {
 					font-size: 1.5em;
-					flex-grow: 2;
 					a {
 						text-decoration: none;
 						&:hover {
@@ -251,10 +250,6 @@
 				p {
 					font-size: 16px;
 					padding: 16px 0px;
-					flex-shrink: 1;
-					&:last-of-type {
-						flex-shrink: 1;
-					}
 				}
 				&:last-child {
 					margin-top: 25px;
