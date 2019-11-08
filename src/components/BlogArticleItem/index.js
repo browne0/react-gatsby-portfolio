@@ -4,6 +4,7 @@ import Link from 'gatsby-link';
 import Moment from 'react-moment';
 import ProgressiveImage from 'react-progressive-image';
 import cx from 'classnames';
+import getBlogLengthString from "../../utils/getBlogLengthString";
 
 class BlogArticleItem extends Component {
 	static propTypes = {
@@ -69,14 +70,7 @@ class BlogArticleItem extends Component {
 				)}
 			</Link>
 		) : null;
-		const blogLength = blog.body.body
-			.replace(/[^a-zA-Z0-9']+/g, ' ')
-			.trim()
-			.split(' ').length;
-		const blogLengthString =
-			blogLength / 275 < 1
-				? `${((blogLength / 275) * 60).toFixed()} sec read`
-				: `${(blogLength / 275).toFixed()} min read`;
+
 		const yearToday = new Date().getFullYear();
 		let date;
 		if (yearToday - Number(blog.date.substr(0, 4)) > 0) {
@@ -94,7 +88,7 @@ class BlogArticleItem extends Component {
 		}
 
 		const twitterURI = encodeURI(
-			`"${blog.title.title}" by @milkstarz \nhttps://malikbrowne.com/blog/${
+			`"${blog.title.title}" by @${blog.author.twitter} \nhttps://malikbrowne.com/blog/${
 				blog.slug
 			}/`
 		);
@@ -118,7 +112,7 @@ class BlogArticleItem extends Component {
 							<p className="date">
 								{date}
 								<span>&middot;</span>
-								{blogLengthString}
+								{getBlogLengthString(blog.body.body)}
 							</p>
 						</div>
 					</div>
@@ -136,7 +130,7 @@ class BlogArticleItem extends Component {
 						</a>
 						<a
 							className="link twitter"
-							href={`https://twitter.com/home?status=${twitterURI}`}
+							href={`https://twitter.com/intent/tweet?text=${twitterURI}`}
 							target="_blank"
 							rel="noopener noreferrer"
 							aria-label="twitter"

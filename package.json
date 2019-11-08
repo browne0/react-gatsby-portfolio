@@ -6,7 +6,7 @@
   "author": "Malik Browne <malik.browne3@gmail.com> (malikbrowne.com)",
   "dependencies": {
     "gatsby": "1.9.277",
-    "gatsby-link": "1.6.20",
+    "gatsby-link": "1.6.46",
     "gatsby-plugin-feed": "^2.0.5",
     "gatsby-plugin-google-analytics": "^1.0.8",
     "gatsby-plugin-google-fonts": "^0.0.3",

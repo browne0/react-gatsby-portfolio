@@ -63,6 +63,10 @@ class PortfolioDelegate {
 
 		return sortedBlogArray[index - 1].node;
 	};
+
+	getMostPopularBlogs = (blogArray) => {
+		return blogArray.filter(blog => blog.node.popularPost)
+	}
 }
 
 export default PortfolioDelegate;

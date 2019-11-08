@@ -328,47 +328,44 @@
 			font-size: 16px;
 			.blog-filter {
 				width: 100% !important;
-				margin: 0px auto !important;
-			}
-			form {
-				width: 100%;
-				margin-top: 15px;
-				h3 {
-					font-size: 1.5em;
-				}
-				input {
-					display: block;
-					margin: 15px auto;
-					&[type='text'] {
-						width: 100%;
-						padding: 5px;
-						font-size: 16px;
-					}
-				}
-				p {
-					span {
-						display: block;
-						margin: 15px 0px;
-					}
-				}
-				button {
-					padding: 5px 0px;
-					width: 100%;
-					height: 50px;
-					text-transform: uppercase;
-					font-size: 16px;
-					margin: auto;
-					display: block;
-					background-color: rgb(194, 77, 1);
-					color: white;
-					&:hover {
-						background-color: rgba(194, 77, 1, 0.8);
-					}
-				}
+				margin: -15px auto 0 auto !important;
 			}
 			.top-posts {
 				margin-top: 15px;
 			}
+		}
+	}
+}
+
+// Global styles for sidebar recommended posts
+.most-popular-posts {
+	width: 100%;
+	h3 {
+		font-size: 1.1em;
+		background-color: $dark-orange;
+		color: white;
+		padding: 4px 16px;
+		display: inline-block
+	}
+
+	.most-popular-post {
+		background-color: rgba(0, 0, 0, 0.09);
+		margin: 12.5px 0px;
+		padding: 8px 16px;
+		display: block;
+		border-radius: 4px;
+
+		h4 {
+			font-size: 0.9em;
+		}
+
+		p {
+			font-size: 0.8em;
+		}
+
+		&:hover {
+			background-color: rgba(0, 0, 0, 0.12);
+			transform: scale(1.05, 1.05);
 		}
 	}
 }
@@ -531,16 +528,15 @@
 			position: -ms-sticky;
 			position: -o-sticky;
 			position: sticky;
-			top: 60px;
-			margin: 0 15px;
+			top: 89px;
+			margin-left: 15px;
+			margin-top: 25px;
 			font-size: 16px;
 			.blog-filter {
 				width: 100% !important;
-				margin: 0px auto !important;
 			}
-			form {
+			.most-popular-posts {
 				width: 100%;
-				margin-top: 15px;
 				input {
 					display: block;
 					margin: 15px auto;
@@ -570,9 +566,6 @@
 						background-color: rgba(194, 77, 1, 0.8);
 					}
 				}
-			}
-			.top-posts {
-				margin-top: 15px;
 			}
 		}
 	}

@@ -15,3 +15,40 @@ $dark-orange: rgb(194, 77, 1);
 .highlight {
 	color: $link-color;
 }
+
+// Used for share links
+.link {
+	width: 120px;
+	font-size: 2rem;
+	color: #fff;
+	margin: 0px 10px;
+	height: 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	&:first-child {
+		margin-left: 0px;
+	}
+	&:last-child {
+		margin-right: 0px;
+	}
+	&.facebook {
+		background-color: #3b5998;
+		&:hover {
+			background-color: #223458;
+		}
+	}
+	&.twitter {
+		background-color: #1da1f2;
+		&:hover {
+			background-color: #0e4c72;
+		}
+	}
+	&.linkedin {
+		background-color: #00a0dc;
+		&:hover {
+			background-color: #00729c;
+		}
+	}
+}

@@ -1,13 +1,18 @@
+/* eslint-disable react/prop-types */
+
 import React, { Component } from 'react';
 import Link from 'gatsby-link';
 import Moment from 'react-moment';
 import Prism from 'prismjs';
 import Markdown from 'react-markdown';
-import PropTypes from 'prop-types';
+import withSizes from "react-sizes";
 
+import PropTypes from 'prop-types';
 import DisqusThread from '../components/DisqusThread';
 import PortfolioDelegate from '../utils/PortfolioDelegate';
 import SEO from '../components/SEO';
+import getBlogLengthString from "../utils/getBlogLengthString";
+import {BlogHighlights} from "../pages/blog";
 
 const disclosureMessages = [
 	'Just a friendly neighborhood disclosure,',
@@ -75,6 +80,7 @@ class blogPost extends Component {
 				this.props.data.blogs.edges,
 				this.props.data.blog.title.title
 			),
+			mostPopularBlogs: delegate.getMostPopularBlogs(this.props.data.blogs.edges),
 			prevBlog: delegate.getPreviousBlog(
 				this.props.data.blogs.edges,
 				this.props.data.blog.title.title
@@ -89,19 +95,10 @@ class blogPost extends Component {
 	render() {
 		const { blog, nextBlog, prevBlog } = this.state;
 		const { isFeaturedImageVideo } = blog;
-		const blogLength = blog.body.body
-			.replace(/[^a-zA-Z0-9']+/g, ' ')
-			.trim()
-			.split(' ').length;
-
-		const blogLengthString =
-			blogLength / 275 < 1
-				? `${((blogLength / 275) * 60).toFixed()} sec read`
-				: `${(blogLength / 275).toFixed()} min read`;
 
 		const date = generateDate(blog.date);
 		const twitterURI = encodeURI(
-			`"${blog.title.title}" by @milkstarz \nhttps://malikbrowne.com/blog/${
+			`"${blog.title.title}" by @${blog.author.twitter} \nhttps://malikbrowne.com/blog/${
 				blog.slug
 			}/`
 		);
@@ -184,7 +181,7 @@ class blogPost extends Component {
 											<p className="date">
 												{date}
 												<span>&middot;</span>
-												{blogLengthString}
+												{getBlogLengthString(blog.body.body)}
 											</p>
 										</div>
 									</div>
@@ -203,7 +200,7 @@ class blogPost extends Component {
 									</a>
 									<a
 										className="link twitter"
-										href={`https://twitter.com/home?status=${twitterURI}`}
+										href={`https://twitter.com/intent/tweet?text=${twitterURI}`}
 										target="_blank"
 										rel="noopener noreferrer"
 										aria-label="twitter"
@@ -251,7 +248,32 @@ class blogPost extends Component {
 						</div>
 
 						{blog.containsAffiliateLinks && <AffiliateDisclosureBanner />}
-						<Markdown className="markdown-body" source={blog.body.body} />
+						<div className={blog.containsAffiliateLinks ? "post-body post-body--with-margin" : "post-body"}>
+							<Markdown className="markdown-body" source={blog.body.body} />
+							{!this.props.isTablet && (
+								<div className="blog-post-sidebar">
+									<BlogHighlights blogs={this.state.mostPopularBlogs}>
+										<div className="author-card">
+											<img
+												src={blog.author.profilePhoto.file.url}
+												alt={blog.author.name}
+											/>
+											<p>{blog.author.description}</p>
+											<a
+												className="link twitter"
+												href={`https://twitter.com/${blog.author.twitter}`}
+												target="_blank"
+												rel="noopener noreferrer"
+												aria-label="twitter"
+												style={{ height: "30px", width: "calc(100% - 32px)", margin: "8px auto 0px auto"}}
+											>
+												<i className="icon ion-social-twitter" />
+											</a>
+										</div>
+									</BlogHighlights>
+								</div>
+							)}
+						</div>
 						<div className="blog-guide">
 							{nextButton}
 							{prevButton}
@@ -272,7 +294,11 @@ class blogPost extends Component {
 	}
 }
 
-export default blogPost;
+const mapSizesToProps = ({ width }) => ({
+	isTablet: width < 768,
+});
+
+export default withSizes(mapSizesToProps)(blogPost);
 
 export const pageQuery = graphql`
 	query blogPostQuery($id: String!) {
@@ -289,6 +315,7 @@ export const pageQuery = graphql`
 						url
 					}
 				}
+				description
 			}
 			description {
 				description
@@ -347,6 +374,7 @@ export const pageQuery = graphql`
 					date
 					comments
 					isFeaturedImageVideo
+					popularPost
 				}
 			}
 		}

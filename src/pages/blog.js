@@ -1,12 +1,14 @@
-/* eslint-disable */
+/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
 import FlipMove from 'react-flip-move';
 import debounce from 'lodash/debounce';
-import SEO from '../components/SEO';
-import Newsletter from '../components/Newsletter';
-import BlogArticle from '../components/BlogArticleItem';
 import withSizes from 'react-sizes';
+import Link from 'gatsby-link';
+import SEO from '../components/SEO';
+import BlogArticle from '../components/BlogArticleItem';
+import getBlogLengthString from "../utils/getBlogLengthString";
+import PortfolioDelegate from "../utils/PortfolioDelegate";
 
 /**
  * IDEA FOR NEXT BLOG LIST PAGE:
@@ -32,17 +34,36 @@ import withSizes from 'react-sizes';
  * https://www.impactbnd.com/blog/blog-layout-best-practices-2016
  */
 
+export const BlogHighlights = ({ blogs, children }) => (
+	<div className="most-popular-posts">
+		<h3>Most Popular</h3>
+		{blogs.map(({ node }) => {
+			return (
+				<Link key={node.slug} to={`/blog/${node.slug}`} className="most-popular-post">
+					<h4>{node.title.title}</h4>
+					<p>{getBlogLengthString(node.body.body)}</p>
+				</Link>
+			)
+		})}
+		{children}
+	</div>
+)
+
 class BlogList extends Component {
 	constructor(props) {
 		super(props);
 
-		const blogs = props.data.allContentfulPost.edges.filter(edge => {
+		const allBlogs = props.data.allContentfulPost.edges.sort(edge => {
 			const blog = edge.node;
 			return new Date(blog.date) < Date.now();
 		});
+
+		const delegate = new PortfolioDelegate();
+
 		this.state = {
-			blogs,
-			filteredBlogs: blogs,
+			allBlogs,
+			mostPopularBlogs: delegate.getMostPopularBlogs(allBlogs),
+			filteredBlogs: allBlogs,
 			searchValue: '',
 		};
 	}
@@ -133,6 +154,7 @@ class BlogList extends Component {
 					</FlipMove>
 				</div>
 				<div className="more-info">
+					<BlogHighlights blogs={this.state.mostPopularBlogs} />
 					{!this.props.isTablet && (
 						<TextField
 							hintText="Enter a blog post title"
@@ -145,8 +167,6 @@ class BlogList extends Component {
 							value={this.state.searchValue}
 						/>
 					)}
-					<Newsletter />
-					{/* <div className="top-posts">Top Posts</div> */}
 				</div>
 			</div>
 		);
@@ -197,6 +217,7 @@ export const pageQuery = graphql`
 					date
 					comments
 					isFeaturedImageVideo
+					popularPost
 				}
 			}
 		}
