@@ -60,3 +60,6 @@ bundle-stats.json
 
 # Contentful Cleaning JSON file
 contentful-config.json
+
+# Project files
+.idea/*

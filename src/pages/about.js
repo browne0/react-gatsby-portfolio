@@ -34,7 +34,7 @@ class About extends Component {
 							<h1>
 								Hi, I'm <span>Malik.</span>
 							</h1>
-							<h2>I'm a Full Stack Engineer at Meetup,</h2>
+							<h2>I'm a Senior Web Engineer at Spotify,</h2>
 							<h2>and a UX/Mobile Development hobbyist.</h2>
 						</div>
 					</div>
