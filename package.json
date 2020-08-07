@@ -23,7 +23,7 @@
     "material-design-icons-iconfont": "^3.0.3",
     "material-ui": "^0.19.4",
     "moment": "^2.19.0",
-    "prismjs": "^1.8.1",
+    "prismjs": "^1.21.0",
     "prop-types": "^15.6.2",
     "react-flip-move": "^2.9.15",
     "react-markdown": "^2.5.0",
