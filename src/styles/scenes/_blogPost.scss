@@ -475,7 +475,7 @@
 					h3,
 					h4 {
 						font-family: Lato, -apple-system, system-ui, BlinkMacSystemFont,
-						'Helvetica Neue', Arial, sans-serif;
+							'Helvetica Neue', Arial, sans-serif;
 					}
 					pre {
 						background-color: #272822;
@@ -503,11 +503,6 @@
 				}
 				.blog-post-sidebar {
 					max-width: 300px;
-					position: -webkit-sticky;
-					position: -moz-sticky;
-					position: -ms-sticky;
-					position: -o-sticky;
-					position: sticky;
 					top: 132px;
 					height: 100%;
 					padding-bottom: 25px;

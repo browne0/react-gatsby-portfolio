@@ -3,6 +3,7 @@ import ProjectPage from '../components/ProjectPage';
 import ProjectSection from '../components/ProjectSection';
 import PortfolioDelegate from '../utils/PortfolioDelegate';
 import SEO from '../components/SEO';
+import { withLayout } from '../components/layout';
 
 class Spotter extends Component {
 	constructor(props) {
@@ -157,8 +158,9 @@ class Spotter extends Component {
 						Using{' '}
 						<a href="https://github.com/webmandesign/jquery.hoverdir">
 							jQuery HoverDir
-						</a>, I was also able to get the hover animation to track which side
-						of the image the user enters. This allows me to then and transition
+						</a>
+						, I was also able to get the hover animation to track which side of
+						the image the user enters. This allows me to then and transition
 						from that side. You can see the final result below:
 					</p>
 					<img
@@ -218,4 +220,4 @@ class Spotter extends Component {
 	}
 }
 
-export default Spotter;
+export default withLayout(Spotter);

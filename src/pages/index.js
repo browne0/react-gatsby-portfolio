@@ -1,9 +1,10 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 
 import SEO from '../components/SEO';
 
 import projects from '../data/projects';
+import { withLayout } from '../components/layout';
 
 const Home = () => {
 	const projectList = [];
@@ -94,4 +95,4 @@ const Home = () => {
 	);
 };
 
-export default Home;
+export default withLayout(Home);

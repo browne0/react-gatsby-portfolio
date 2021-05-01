@@ -3,8 +3,8 @@ import * as PropTypes from 'prop-types';
 import 'github-markdown-css';
 
 import MaterialTheme from './MainWrapper';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import Navbar from '../Navbar';
+import Footer from '../Footer';
 
 import './base.scss';
 
@@ -18,7 +18,7 @@ class DefaultLayout extends Component {
 			<MaterialTheme>
 				<div className="site">
 					<Navbar />
-					<main>{this.props.children()}</main>
+					<main>{this.props.children}</main>
 					<Footer />
 				</div>
 			</MaterialTheme>
@@ -29,3 +29,15 @@ class DefaultLayout extends Component {
 DefaultLayout.propTypes = propTypes;
 
 export default DefaultLayout;
+
+export const withLayout = (Page) => {
+	return class extends Component {
+		render() {
+			return (
+				<DefaultLayout>
+					<Page {...this.props} />
+				</DefaultLayout>
+			);
+		}
+	};
+};

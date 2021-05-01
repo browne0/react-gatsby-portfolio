@@ -6,6 +6,7 @@ import ProjectPage from '../components/ProjectPage';
 import ProjectSection from '../components/ProjectSection';
 import PortfolioDelegate from '../utils/PortfolioDelegate';
 import SEO from '../components/SEO';
+import { withLayout } from '../components/layout';
 
 class myChef extends Component {
 	constructor(props) {
@@ -144,9 +145,10 @@ class myChef extends Component {
 						Using a{' '}
 						<a href="http://www.jquery-backstretch.com/">
 							jQuery plugin I found
-						</a>, I set it up to fade through each image every second or so. I
-						made sure to choose rich imagery for the photos, as it was going to
-						be a service focused around food.
+						</a>
+						, I set it up to fade through each image every second or so. I made
+						sure to choose rich imagery for the photos, as it was going to be a
+						service focused around food.
 					</p>
 
 					<h6>Login & Registration Page</h6>
@@ -311,4 +313,4 @@ if(!empty($_POST))
 	}
 }
 
-export default myChef;
+export default withLayout(myChef);

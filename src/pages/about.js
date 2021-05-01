@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import Section from '../components/AboutSection';
 import Footer from '../components/AboutFooter';
 import SEO from '../components/SEO';
+import { graphql } from 'gatsby';
+import { withLayout } from '../components/layout';
 
 class About extends Component {
 	constructor(props) {
@@ -26,7 +28,7 @@ class About extends Component {
 				<div className="hero-wrapper">
 					<div
 						className="hero"
-						ref={elem => {
+						ref={(elem) => {
 							this.blurredEl = elem;
 						}}
 					>
@@ -49,10 +51,12 @@ class About extends Component {
 				</Section>
 				<Section title="A little about me">
 					<p>
-						I am currently a <b>Full Stack Engineer at Meetup</b>. I work on the
-						core Meetup product - aka the Groups team, and work on everything
-						from new product features to exploring new platform integrations for
-						our web engineers.
+						I am currently a <b>Web Engineer at Spotify</b>. I work on the{' '}
+						<a href="https://artists.spotify.com">Spotify for Artists</a>{' '}
+						application doing mainly web infrastructure work. This can be
+						anything from repository management and instrumenting telemetry
+						services, to fostering best practices and pairing with other
+						engineers to help them do their job more efficiently!
 					</p>
 					<p>
 						The story of how I came across web development is actually quite
@@ -110,7 +114,8 @@ class About extends Component {
 						<b>
 							the ease of access to your site for someone who's never visited
 							before
-						</b>.{' '}
+						</b>
+						.{' '}
 					</p>
 
 					<img
@@ -165,7 +170,7 @@ About.propTypes = {
 	data: PropTypes.object.isRequired,
 };
 
-export default About;
+export default withLayout(About);
 
 export const pageQuery = graphql`
 	query latestBlogQuery {

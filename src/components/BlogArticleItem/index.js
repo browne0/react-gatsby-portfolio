@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import Moment from 'react-moment';
 import ProgressiveImage from 'react-progressive-image';
 import cx from 'classnames';
-import getBlogLengthString from "../../utils/getBlogLengthString";
+import getBlogLengthString from '../../utils/getBlogLengthString';
 
 class BlogArticleItem extends Component {
 	static propTypes = {
@@ -88,9 +88,7 @@ class BlogArticleItem extends Component {
 		}
 
 		const twitterURI = encodeURI(
-			`"${blog.title.title}" by @${blog.author.twitter} \nhttps://malikbrowne.com/blog/${
-				blog.slug
-			}/`
+			`"${blog.title.title}" by @${blog.author.twitter} \nhttps://malikbrowne.com/blog/${blog.slug}/`
 		);
 		return (
 			<div
@@ -119,9 +117,7 @@ class BlogArticleItem extends Component {
 					<div className="share-links">
 						<a
 							className="link facebook"
-							href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//malikbrowne.com/blog/${
-								blog.slug
-							}/`}
+							href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//malikbrowne.com/blog/${blog.slug}/`}
 							target="_blank"
 							rel="noopener noreferrer"
 							aria-label="facebook"

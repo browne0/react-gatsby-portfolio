@@ -4,11 +4,13 @@ import TextField from 'material-ui/TextField';
 import FlipMove from 'react-flip-move';
 import debounce from 'lodash/debounce';
 import withSizes from 'react-sizes';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import SEO from '../components/SEO';
 import BlogArticle from '../components/BlogArticleItem';
-import getBlogLengthString from "../utils/getBlogLengthString";
-import PortfolioDelegate from "../utils/PortfolioDelegate";
+import getBlogLengthString from '../utils/getBlogLengthString';
+import PortfolioDelegate from '../utils/PortfolioDelegate';
+import { graphql } from 'gatsby';
+import { withLayout } from '../components/layout';
 
 /**
  * IDEA FOR NEXT BLOG LIST PAGE:
@@ -39,21 +41,25 @@ export const BlogHighlights = ({ blogs, children }) => (
 		<h3>Most Popular</h3>
 		{blogs.map(({ node }) => {
 			return (
-				<Link key={node.slug} to={`/blog/${node.slug}`} className="most-popular-post">
+				<Link
+					key={node.slug}
+					to={`/blog/${node.slug}`}
+					className="most-popular-post"
+				>
 					<h4>{node.title.title}</h4>
 					<p>{getBlogLengthString(node.body.body)}</p>
 				</Link>
-			)
+			);
 		})}
 		{children}
 	</div>
-)
+);
 
 class BlogList extends Component {
 	constructor(props) {
 		super(props);
 
-		const allBlogs = props.data.allContentfulPost.edges.sort(edge => {
+		const allBlogs = props.data.allContentfulPost.edges.sort((edge) => {
 			const blog = edge.node;
 			return new Date(blog.date) < Date.now();
 		});
@@ -68,15 +74,15 @@ class BlogList extends Component {
 		};
 	}
 
-	filterBlogs = debounce(search => {
+	filterBlogs = debounce((search) => {
 		const { blogs } = this.state;
-		const filteredBlogs = blogs.filter(blog =>
+		const filteredBlogs = blogs.filter((blog) =>
 			blog.node.title.title.toLowerCase().includes(search)
 		);
 		this.setState(() => ({ filteredBlogs }));
 	}, 200);
 
-	onFilterChange = e => {
+	onFilterChange = (e) => {
 		e.persist();
 
 		if (this.state.searchValue !== e.target.value) {
@@ -177,7 +183,7 @@ const mapSizesToProps = ({ width }) => ({
 	isTablet: width < 768,
 });
 
-export default withSizes(mapSizesToProps)(BlogList);
+export default withLayout(withSizes(mapSizesToProps)(BlogList));
 
 export const pageQuery = graphql`
 	query blogQuery {

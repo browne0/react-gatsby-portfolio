@@ -3,6 +3,7 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import { ToastContainer, ToastMessage } from 'react-toastr';
 import SEO from '../components/SEO';
+import { withLayout } from '../components/layout';
 
 const ToastMessageFactory = React.createFactory(ToastMessage.animation);
 
@@ -30,8 +31,8 @@ class Contact extends Component {
 				method: 'POST',
 				body: formData,
 			})
-				.then(response => response.json())
-				.then(result => {
+				.then((response) => response.json())
+				.then((result) => {
 					if (result.inputOK) {
 						this.container.success(result.message, 'Success!', {
 							timeOut: 5000,
@@ -60,7 +61,7 @@ class Contact extends Component {
 						});
 					}
 				})
-				.catch(err => {
+				.catch((err) => {
 					this.container.error(err, 'Error!', {
 						timeOut: 5000,
 						extendedTimeOut: 5000,
@@ -73,7 +74,7 @@ class Contact extends Component {
 		}
 	};
 
-	onChange = e => {
+	onChange = (e) => {
 		this.setState({ [e.target.name]: e.target.value });
 	};
 
@@ -216,7 +217,7 @@ class Contact extends Component {
 					</div>
 				</div>
 				<ToastContainer
-					ref={container => {
+					ref={(container) => {
 						this.container = container;
 					}}
 					toastMessageFactory={ToastMessageFactory}
@@ -227,4 +228,4 @@ class Contact extends Component {
 	}
 }
 
-export default Contact;
+export default withLayout(Contact);

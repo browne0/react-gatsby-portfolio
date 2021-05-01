@@ -6,6 +6,7 @@ import ProjectPage from '../components/ProjectPage/index';
 import ProjectSection from '../components/ProjectSection/index';
 import PortfolioDelegate from '../utils/PortfolioDelegate';
 import SEO from '../components/SEO';
+import { withLayout } from '../components/layout';
 
 class BeesDesign extends Component {
 	constructor(props) {
@@ -37,7 +38,7 @@ class BeesDesign extends Component {
 			autoplay: true,
 		};
 
-		const screenshots = this.state.project.image_urls.screenshots.map(img => (
+		const screenshots = this.state.project.image_urls.screenshots.map((img) => (
 			<div
 				key={img}
 				className="project-image"
@@ -264,4 +265,4 @@ if (!$isInputOK) {
 	}
 }
 
-export default BeesDesign;
+export default withLayout(BeesDesign);

@@ -1,25 +1,25 @@
-@import '../styles/reset.scss';
+@import '../../styles/reset.scss';
 
-@import '../styles/constants';
+@import '../../styles/constants';
 
-@import '../styles/lib/ion-icons';
-@import '../styles/lib/material-icons';
-@import '../styles/lib/slick-theme.min';
-@import '../styles/lib/slick.min';
+@import '../../styles/lib/ion-icons';
+@import '../../styles/lib/material-icons';
+@import '../../styles/lib/slick-theme.min';
+@import '../../styles/lib/slick.min';
 
-@import '../styles/components/navbar';
-@import '../styles/components/footer';
-@import '../styles/components/projectPage';
+@import '../../styles/components/navbar';
+@import '../../styles/components/footer';
+@import '../../styles/components/projectPage';
 
-@import '../styles/scenes/404';
-@import '../styles/scenes/home';
-@import '../styles/scenes/about';
-@import '../styles/scenes/contact';
-@import '../styles/scenes/beesdesign';
-@import '../styles/scenes/blogList';
-@import '../styles/scenes/blogPost';
+@import '../../styles/scenes/404';
+@import '../../styles/scenes/home';
+@import '../../styles/scenes/about';
+@import '../../styles/scenes/contact';
+@import '../../styles/scenes/beesdesign';
+@import '../../styles/scenes/blogList';
+@import '../../styles/scenes/blogPost';
 
-@import '../styles/misc/prism';
+@import '../../styles/misc/prism';
 
 .fade-enter {
 	opacity: 0.01;

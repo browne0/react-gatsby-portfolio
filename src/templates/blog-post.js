@@ -1,18 +1,21 @@
 /* eslint-disable react/prop-types */
 
 import React, { Component } from 'react';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
+
 import Moment from 'react-moment';
 import Prism from 'prismjs';
 import Markdown from 'react-markdown';
-import withSizes from "react-sizes";
+import withSizes from 'react-sizes';
 
 import PropTypes from 'prop-types';
 import DisqusThread from '../components/DisqusThread';
 import PortfolioDelegate from '../utils/PortfolioDelegate';
 import SEO from '../components/SEO';
-import getBlogLengthString from "../utils/getBlogLengthString";
-import {BlogHighlights} from "../pages/blog";
+import getBlogLengthString from '../utils/getBlogLengthString';
+import { BlogHighlights } from '../pages/blog';
+import { graphql } from 'gatsby';
+import { withLayout } from '../components/layout';
 
 const disclosureMessages = [
 	'Just a friendly neighborhood disclosure,',
@@ -50,7 +53,7 @@ const AffiliateDisclosureBanner = () => (
 	</div>
 );
 
-const generateDate = date => {
+const generateDate = (date) => {
 	const yearToday = new Date().getFullYear();
 	if (yearToday - Number(date.substr(0, 4)) > 0) {
 		return (
@@ -80,7 +83,9 @@ class blogPost extends Component {
 				this.props.data.blogs.edges,
 				this.props.data.blog.title.title
 			),
-			mostPopularBlogs: delegate.getMostPopularBlogs(this.props.data.blogs.edges),
+			mostPopularBlogs: delegate.getMostPopularBlogs(
+				this.props.data.blogs.edges
+			),
 			prevBlog: delegate.getPreviousBlog(
 				this.props.data.blogs.edges,
 				this.props.data.blog.title.title
@@ -98,9 +103,7 @@ class blogPost extends Component {
 
 		const date = generateDate(blog.date);
 		const twitterURI = encodeURI(
-			`"${blog.title.title}" by @${blog.author.twitter} \nhttps://malikbrowne.com/blog/${
-				blog.slug
-			}/`
+			`"${blog.title.title}" by @${blog.author.twitter} \nhttps://malikbrowne.com/blog/${blog.slug}/`
 		);
 
 		const prevButton = (
@@ -110,16 +113,17 @@ class blogPost extends Component {
 				</h2>
 				<p>{prevBlog.description.description}</p>
 				<p>
-					<span>By <a
+					<span>
+						By{' '}
+						<a
 							href={prevBlog.author.twitter}
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-						{prevBlog.author.name}
-					</a>{' '}
+							{prevBlog.author.name}
+						</a>{' '}
 						&middot; {generateDate(prevBlog.date)}
 					</span>
-
 				</p>
 			</div>
 		);
@@ -137,11 +141,10 @@ class blogPost extends Component {
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-						{nextBlog.author.name}
-					</a>{' '}
+							{nextBlog.author.name}
+						</a>{' '}
 						&middot; {generateDate(nextBlog.date)}
 					</span>
-
 				</p>
 			</div>
 		);
@@ -193,9 +196,7 @@ class blogPost extends Component {
 								<div className="share-links">
 									<a
 										className="link facebook"
-										href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//malikbrowne.com/blog/${
-											blog.slug
-										}/`}
+										href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//malikbrowne.com/blog/${blog.slug}/`}
 										target="_blank"
 										rel="noopener noreferrer"
 										aria-label="facebook"
@@ -252,7 +253,13 @@ class blogPost extends Component {
 						</div>
 
 						{blog.containsAffiliateLinks && <AffiliateDisclosureBanner />}
-						<div className={blog.containsAffiliateLinks ? "post-body post-body--with-margin" : "post-body"}>
+						<div
+							className={
+								blog.containsAffiliateLinks
+									? 'post-body post-body--with-margin'
+									: 'post-body'
+							}
+						>
 							<Markdown className="markdown-body" source={blog.body.body} />
 							{!this.props.isTablet && (
 								<div className="blog-post-sidebar">
@@ -269,7 +276,11 @@ class blogPost extends Component {
 												target="_blank"
 												rel="noopener noreferrer"
 												aria-label="twitter"
-												style={{ height: "30px", width: "calc(100% - 32px)", margin: "8px auto 0px auto"}}
+												style={{
+													height: '30px',
+													width: 'calc(100% - 32px)',
+													margin: '8px auto 0px auto',
+												}}
 											>
 												<i className="icon ion-social-twitter" />
 											</a>
@@ -302,7 +313,7 @@ const mapSizesToProps = ({ width }) => ({
 	isTablet: width < 768,
 });
 
-export default withSizes(mapSizesToProps)(blogPost);
+export default withLayout(withSizes(mapSizesToProps)(blogPost));
 
 export const pageQuery = graphql`
 	query blogPostQuery($id: String!) {

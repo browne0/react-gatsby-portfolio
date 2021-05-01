@@ -5,6 +5,7 @@ import ProjectPage from '../components/ProjectPage/index';
 import ProjectSection from '../components/ProjectSection/index';
 import PortfolioDelegate from '../utils/PortfolioDelegate';
 import SEO from '../components/SEO';
+import { withLayout } from '../components/layout';
 
 class FactsOfToday extends Component {
 	constructor(props) {
@@ -192,7 +193,8 @@ class FactsOfToday extends Component {
 						However, we had a backup:{' '}
 						<a href="http://history.muffinlabs.com/">
 							The Today In History API
-						</a>. Using this API as well as using parts of Wikipedia API to get
+						</a>
+						. Using this API as well as using parts of Wikipedia API to get
 						thumbnails, we established a History Model that for a single event
 						would contain:
 					</p>
@@ -657,4 +659,4 @@ extension UIColor {
 	}
 }
 
-export default FactsOfToday;
+export default withLayout(FactsOfToday);

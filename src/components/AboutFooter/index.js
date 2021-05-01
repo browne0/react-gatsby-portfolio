@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 
-const AboutFooter = props => {
+const AboutFooter = (props) => {
 	const style = {
 		container: {
 			backgroundColor: 'rgb(194, 77, 1)',

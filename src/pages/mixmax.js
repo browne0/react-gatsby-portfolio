@@ -6,6 +6,7 @@ import ProjectPage from '../components/ProjectPage/index';
 import ProjectSection from '../components/ProjectSection/index';
 import PortfolioDelegate from '../utils/PortfolioDelegate';
 import SEO from '../components/SEO';
+import { withLayout } from '../components/layout';
 
 class Mixmax extends Component {
 	constructor(props) {
@@ -579,4 +580,4 @@ request({
 	}
 }
 
-export default Mixmax;
+export default withLayout(Mixmax);
