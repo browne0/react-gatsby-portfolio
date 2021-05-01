@@ -4,7 +4,7 @@ This project was created with Gatsby and Contentful.
 
 ## Authors
 
-* **Malik Browne** - *Project Maintainer* - [Full Stack Engineer @ Meetup.](https://linkedin.com/in/malikbrowne)
+* **Malik Browne** - *Project Maintainer* - [Web Engineer @ Spotify.](https://linkedin.com/in/malikbrowne)
 
 ## License 
 
