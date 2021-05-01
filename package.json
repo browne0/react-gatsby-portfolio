@@ -22,7 +22,7 @@
     "gatsby-plugin-twitter": "^3.4.0",
     "gatsby-source-contentful": "^5.4.0",
     "github-markdown-css": "^4.0.0",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.19",
     "material-design-icons-iconfont": "^3.0.3",
     "material-ui": "^0.20.2",
     "moment": "^2.19.0",
