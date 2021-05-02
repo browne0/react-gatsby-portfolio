@@ -1,7 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const AboutSection = props => {
+const AboutSection: React.ComponentType<{
+	className?: string;
+	title: string;
+}> = (props) => {
 	const className = props.className
 		? `about-section ${props.className}`
 		: 'about-section';
@@ -17,9 +19,4 @@ AboutSection.defaultProps = {
 	className: '',
 };
 
-AboutSection.propTypes = {
-	className: PropTypes.string,
-	children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-	title: PropTypes.string,
-};
 export default AboutSection;

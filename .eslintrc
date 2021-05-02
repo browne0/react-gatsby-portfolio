@@ -1,6 +1,6 @@
 {
   "parser": "babel-eslint",
-  "extends": ["airbnb-base", "prettier", "plugin:react/recommended"],
+  "extends": ["prettier"],
   "env": {
     "browser": true,
     "es6": true
@@ -17,6 +17,13 @@
     "linebreak-style": 0,
     "import/no-extraneous-dependencies": 0,
     "react/no-unescaped-entities": 0,
-    "class-methods-use-this": "off"
-  }
+    "class-methods-use-this": "off",
+    "import/prefer-default-export": "off"
+  },
+  "overrides": [{
+    "files": [ "src/components/**/*.tsx"],
+    "rules": {
+    }
+    
+  }]
 }
