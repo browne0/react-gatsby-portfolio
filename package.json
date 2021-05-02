@@ -59,7 +59,7 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "build": "gatsby build",
     "start": "gatsby serve",
     "lint": "yarn eslint --fix src/",
