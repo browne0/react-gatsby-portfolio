@@ -1634,6 +1634,11 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-sizes@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@types/react-sizes/-/react-sizes-2.0.0.tgz#28dab82c402527cfdaf4ad933f844276412bbaf6"
+  integrity sha512-XS3lv09Hxmy6AMnnzoUoZcuPAinhVjYPa5dUwfKz5HnEKbeT4dv06xYtM/BKUVsFQmjnkSmegLcfBYK0cOc1aw==
+
 "@types/react@*":
   version "17.0.4"
   resolved "https://artifactory.spotify.net/artifactory/api/npm/virtual-npm/@types/react/-/react-17.0.4.tgz#a67c6f7a460d2660e950d9ccc1c2f18525c28220"

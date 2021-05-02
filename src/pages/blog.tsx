@@ -1,11 +1,10 @@
-/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
 import FlipMove from 'react-flip-move';
 import debounce from 'lodash/debounce';
 import withSizes from 'react-sizes';
 import { Link } from 'gatsby';
-import SEO from '../components/SEO';
+import { SEO } from '../components/SEO';
 import BlogArticle from '../components/BlogArticleItem';
 import getBlogLengthString from '../utils/getBlogLengthString';
 import PortfolioDelegate from '../utils/PortfolioDelegate';
