@@ -1,6 +1,7 @@
 import ProjectList from '../../data/projects';
+import { BlogPostType, BlogPostNode } from '../../pages/blog';
 
-const getRandomBlogIndex = (min, max) => {
+const getRandomBlogIndex = (min: number, max: number) => {
 	const newMin = Math.ceil(min);
 	const newMax = Math.floor(max);
 	return Math.floor(Math.random() * (newMax - newMin + 1)) + newMin;
@@ -9,12 +10,12 @@ const getRandomBlogIndex = (min, max) => {
 class PortfolioDelegate {
 	projects = ProjectList;
 
-	getProjectIndex = name => {
-		const index = this.projects.findIndex(item => item.name === name);
+	getProjectIndex = (name: string) => {
+		const index = this.projects.findIndex((item) => item.name === name);
 		return index;
 	};
 
-	getNextProject = project => {
+	getNextProject = (project: string) => {
 		const index = this.getProjectIndex(project);
 
 		if (index + 1 > this.projects.length - 1) {
@@ -24,13 +25,14 @@ class PortfolioDelegate {
 		return this.projects[index + 1];
 	};
 
-	getNextBlog = (blogArray, title) => {
+	getNextBlog = (blogArray: BlogPostNode[], title: string): BlogPostType => {
 		const sortedBlogArray = blogArray.sort(
-			(a, b) => new Date(b.node.date) - new Date(a.node.date)
+			(a, b) =>
+				new Date(b.node.date).getTime() - new Date(a.node.date).getTime()
 		);
 
 		const index = sortedBlogArray.findIndex(
-			blog => blog.node.title.title === title
+			(blog) => blog.node.title.title === title
 		);
 
 		if (index + 1 > sortedBlogArray.length - 1) {
@@ -44,13 +46,17 @@ class PortfolioDelegate {
 		return sortedBlogArray[index + 1].node;
 	};
 
-	getPreviousBlog = (blogArray, title) => {
+	getPreviousBlog = (
+		blogArray: BlogPostNode[],
+		title: string
+	): BlogPostType => {
 		const sortedBlogArray = blogArray.sort(
-			(a, b) => new Date(b.node.date) - new Date(a.node.date)
+			(a, b) =>
+				new Date(b.node.date).getTime() - new Date(a.node.date).getTime()
 		);
 
 		const index = sortedBlogArray.findIndex(
-			blog => blog.node.title.title === title
+			(blog) => blog.node.title.title === title
 		);
 
 		if (index - 1 < 0) {
@@ -64,9 +70,9 @@ class PortfolioDelegate {
 		return sortedBlogArray[index - 1].node;
 	};
 
-	getMostPopularBlogs = (blogArray) => {
-		return blogArray.filter(blog => blog.node.popularPost)
-	}
+	getMostPopularBlogs = (blogArray: BlogPostNode[]) => {
+		return blogArray.filter((blog) => blog.node.popularPost);
+	};
 }
 
 export default PortfolioDelegate;

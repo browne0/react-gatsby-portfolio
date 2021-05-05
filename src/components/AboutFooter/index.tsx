@@ -2,7 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
-const AboutFooter = (props) => {
+type Props = {
+	blog: {
+		slug: string;
+		title: {
+			title: string;
+		};
+		description: {
+			description: string;
+		};
+		featuredImage: {
+			file: {
+				url: string;
+			};
+		};
+	};
+};
+const AboutFooter = (props: Props) => {
 	const style = {
 		container: {
 			backgroundColor: 'rgb(194, 77, 1)',
