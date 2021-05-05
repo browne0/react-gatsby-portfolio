@@ -19,10 +19,10 @@ const DefaultLayout: React.ComponentType = (props) => {
 	);
 };
 
-export const withLayout = (Page: React.ComponentType) => {
-	return (props: any) => (
-		<DefaultLayout>
-			<Page {...props} />
-		</DefaultLayout>
-	);
-};
+export const withLayout = <P extends object>(Page: React.ComponentType<P>) => (
+	props: P
+) => (
+	<DefaultLayout>
+		<Page {...props} />
+	</DefaultLayout>
+);

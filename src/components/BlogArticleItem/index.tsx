@@ -4,36 +4,10 @@ import Moment from 'react-moment';
 import ProgressiveImage from 'react-progressive-image';
 import cx from 'classnames';
 import getBlogLengthString from '../../utils/getBlogLengthString';
-
-type ContentfulImage = {
-	file: {
-		url: string;
-	};
-};
+import { BlogPostType } from '../../pages/blog';
 type Props = {
-	blog: {
-		slug: string;
-		isFeaturedImageVideo: boolean;
-		title: {
-			title: string;
-		};
-		compressedFeaturedImage: ContentfulImage;
-		featuredImage: ContentfulImage;
-		date: string;
-		author: {
-			twitter: string;
-			profilePhoto: ContentfulImage;
-			name: string;
-		};
-		body: {
-			body: string;
-		};
-		description: {
-			description: string;
-		};
-		containsAffiliateLinks: boolean;
-	};
-	main: boolean;
+	blog: BlogPostType;
+	main?: boolean;
 };
 const BlogArticleItem = (props: Props) => {
 	const { blog, main } = props;

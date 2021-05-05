@@ -82,3 +82,5 @@ export const SEO = (props: Props) => {
 		</Helmet>
 	);
 };
+
+export default SEO;

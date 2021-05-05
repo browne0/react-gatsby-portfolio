@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import TextField from 'material-ui/TextField';
 import FlipMove from 'react-flip-move';
 import debounce from 'lodash/debounce';
@@ -10,6 +10,7 @@ import getBlogLengthString from '../utils/getBlogLengthString';
 import PortfolioDelegate from '../utils/PortfolioDelegate';
 import { graphql } from 'gatsby';
 import { withLayout } from '../components/layout';
+import styled from 'styled-components';
 
 /**
  * IDEA FOR NEXT BLOG LIST PAGE:
@@ -35,7 +36,46 @@ import { withLayout } from '../components/layout';
  * https://www.impactbnd.com/blog/blog-layout-best-practices-2016
  */
 
-export const BlogHighlights = ({ blogs, children }) => (
+type ContentfulImage = {
+	file: {
+		url: string;
+	};
+};
+export type BlogPostNode = {
+	node: BlogPostType;
+};
+
+export type BlogPostType = {
+	slug: string;
+	isFeaturedImageVideo: boolean;
+	title: {
+		title: string;
+	};
+	compressedFeaturedImage: ContentfulImage;
+	featuredImage: ContentfulImage;
+	date: string;
+	author: {
+		twitter: string;
+		profilePhoto: ContentfulImage;
+		name: string;
+		description: string;
+	};
+	body: {
+		body: string;
+	};
+	description: {
+		description: string;
+	};
+	containsAffiliateLinks: boolean;
+	popularPost: boolean;
+	updatedAt: string;
+	comments: boolean;
+};
+
+export const BlogHighlights: React.ComponentType<{ blogs: BlogPostNode[] }> = ({
+	blogs,
+	children,
+}) => (
 	<div className="most-popular-posts">
 		<h3>Most Popular</h3>
 		{blogs.map(({ node }) => {
@@ -54,134 +94,143 @@ export const BlogHighlights = ({ blogs, children }) => (
 	</div>
 );
 
-class BlogList extends Component {
-	constructor(props) {
-		super(props);
+const StyledTextField = styled(TextField)`
+	margin: 'auto';
+	color: '#c24d01';
+	border-color: '#c24d01';
+`;
 
-		const allBlogs = props.data.allContentfulPost.edges.sort((edge) => {
-			const blog = edge.node;
-			return new Date(blog.date) < Date.now();
-		});
-
-		const delegate = new PortfolioDelegate();
-
-		this.state = {
-			allBlogs,
-			mostPopularBlogs: delegate.getMostPopularBlogs(allBlogs),
-			filteredBlogs: allBlogs,
-			searchValue: '',
+type BlogListProps = {
+	data: {
+		allContentfulPost: {
+			edges: BlogPostNode[];
 		};
-	}
+	};
+	isTablet: boolean;
+};
 
-	filterBlogs = debounce((search) => {
-		const { blogs } = this.state;
-		const filteredBlogs = blogs.filter((blog) =>
+const BlogList: React.FunctionComponent<BlogListProps> = (props) => {
+	const allBlogs: BlogPostNode[] = props.data.allContentfulPost.edges.sort(
+		(edge: BlogPostNode) => {
+			const blog = edge.node;
+			if (new Date(blog.date).getTime() < Date.now()) {
+				return 1;
+			}
+			return 0;
+		}
+	);
+
+	const delegate = new PortfolioDelegate();
+
+	const [searchValue, setSearchValue] = useState('');
+	const [filteredBlogs, setFilteredBlogs] = useState<BlogPostNode[]>(allBlogs);
+	const [mostPopularBlogs] = useState<BlogPostNode[]>(
+		delegate.getMostPopularBlogs(allBlogs)
+	);
+
+	const filterBlogs = debounce((search) => {
+		const filteredBlogs = allBlogs.filter((blog) =>
 			blog.node.title.title.toLowerCase().includes(search)
 		);
-		this.setState(() => ({ filteredBlogs }));
+		setFilteredBlogs(filteredBlogs);
 	}, 200);
 
-	onFilterChange = (e) => {
+	const onFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		e.persist();
 
-		if (this.state.searchValue !== e.target.value) {
+		if (searchValue !== e.target.value) {
 			console.log('hi');
-			this.setState(() => ({
-				searchValue: e.target.value,
-			}));
+			setSearchValue(e.target.value);
 		}
 		const search = e.target.value.toLowerCase();
-		this.filterBlogs(search);
+		filterBlogs(search);
 	};
 
-	render() {
-		const style = {
-			blogFilter: {
-				margin: 'auto',
-				color: {
-					color: '#c24d01',
-				},
-				bgcolor: {
-					borderColor: '#c24d01',
-				},
+	const style = {
+		blogFilter: {
+			margin: 'auto',
+			color: {
+				color: '#c24d01',
 			},
-		};
+			bgcolor: {
+				borderColor: '#c24d01',
+			},
+		},
+	};
 
-		const blogs = this.state.filteredBlogs.map((item, index) => {
-			const blog = item.node;
-			return <BlogArticle key={index} blog={blog} />;
-		});
+	const blogs = filteredBlogs.map((item, index) => {
+		const blog = item.node;
+		return <BlogArticle key={index} blog={blog} />;
+	});
 
-		const blogPosts = [];
+	const blogPosts = [];
 
-		for (let i = this.state.searchValue ? 0 : 1; i < blogs.length; i += 2) {
-			blogPosts.push(
-				<div className="row" key={i}>
-					{blogs[i]}
-					{blogs[i + 1]}
-				</div>
-			);
-		}
-		return (
-			<div className="blog-wrapper">
-				<SEO
-					title="Blog | Malik Browne"
-					description="Check out the latest blog posts from front end developer, Malik Browne."
-					image="/selfie/about_bg3.jpg"
-					url="https://www.malikbrowne.com/blog"
-				/>
-				<div className="blog-posts">
-					{this.props.isTablet && (
-						<TextField
-							hintText="Enter a blog post title"
-							floatingLabelText="Filter blog by title"
-							className="blog-filter"
-							style={style.blogFilter}
-							floatingLabelFocusStyle={style.blogFilter.color}
-							underlineFocusStyle={style.blogFilter.bgcolor}
-							onChange={this.onFilterChange}
-							value={this.state.searchValue}
-						/>
-					)}
-					<FlipMove
-						duration={400}
-						enterAnimation="fade"
-						leaveAnimation="fade"
-						className="blog"
-						maintainContainerHeight
-					>
-						{!this.state.searchValue && (
-							<div className="row">
-								<BlogArticle main blog={this.state.filteredBlogs[0].node} />
-							</div>
-						)}
-						{blogPosts}
-					</FlipMove>
-				</div>
-				<div className="more-info">
-					<BlogHighlights blogs={this.state.mostPopularBlogs} />
-					{!this.props.isTablet && (
-						<TextField
-							hintText="Enter a blog post title"
-							floatingLabelText="Filter blog by title"
-							className="blog-filter"
-							style={style.blogFilter}
-							floatingLabelFocusStyle={style.blogFilter.color}
-							underlineFocusStyle={style.blogFilter.bgcolor}
-							onChange={this.onFilterChange}
-							value={this.state.searchValue}
-						/>
-					)}
-				</div>
+	for (let i = searchValue ? 0 : 1; i < blogs.length; i += 2) {
+		blogPosts.push(
+			<div className="row" key={i}>
+				{blogs[i]}
+				{blogs[i + 1]}
 			</div>
 		);
 	}
-}
+	return (
+		<div className="blog-wrapper">
+			<SEO
+				title="Blog | Malik Browne"
+				description="Check out the latest blog posts from front end developer, Malik Browne."
+				image="/selfie/about_bg3.jpg"
+				url="https://www.malikbrowne.com/blog"
+			/>
+			<div className="blog-posts">
+				{props.isTablet && (
+					<StyledTextField
+						hintText="Enter a blog post title"
+						floatingLabelText="Filter blog by title"
+						className="blog-filter"
+						floatingLabelFocusStyle={style.blogFilter.color}
+						underlineFocusStyle={style.blogFilter.bgcolor}
+						onChange={onFilterChange}
+						value={searchValue}
+					/>
+				)}
+				<FlipMove
+					duration={400}
+					enterAnimation="fade"
+					leaveAnimation="fade"
+					className="blog"
+					maintainContainerHeight
+				>
+					{!searchValue && (
+						<div className="row">
+							<BlogArticle main blog={filteredBlogs[0].node} />
+						</div>
+					)}
+					{blogPosts}
+				</FlipMove>
+			</div>
+			<div className="more-info">
+				<BlogHighlights blogs={mostPopularBlogs} />
+				{!props.isTablet && (
+					<StyledTextField
+						hintText="Enter a blog post title"
+						floatingLabelText="Filter blog by title"
+						className="blog-filter"
+						floatingLabelFocusStyle={style.blogFilter.color}
+						underlineFocusStyle={style.blogFilter.bgcolor}
+						onChange={onFilterChange}
+						value={searchValue}
+					/>
+				)}
+			</div>
+		</div>
+	);
+};
 
-const mapSizesToProps = ({ width }) => ({
+const mapSizesToProps = ({ width }: { width: number }) => ({
 	isTablet: width < 768,
 });
 
+// @ts-ignore TODO: Follow up and figure out type
 export default withLayout(withSizes(mapSizesToProps)(BlogList));
 
 export const pageQuery = graphql`
