@@ -5,6 +5,7 @@ import Footer from '../components/AboutFooter';
 import { SEO } from '../components/SEO';
 import { graphql } from 'gatsby';
 import { withLayout } from '../components/layout';
+import aboutBG from '../images/selfie/about_bg3.jpg';
 
 const About = (props: any) => {
 	const lastIndex = props.data.allContentfulPost.edges.length - 1;
@@ -14,7 +15,7 @@ const About = (props: any) => {
 			<SEO
 				title="About | Malik Browne"
 				description="Find out more about Malik Browne, a front end engineer with a strong desire to produce high quality websites and online tools, bundled with an exceptional user experience."
-				image="/selfie/about_bg3.jpg"
+				image={aboutBG}
 				url="https://www.malikbrowne.com/about"
 			/>
 			<div className="hero-wrapper">
