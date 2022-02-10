@@ -26,7 +26,7 @@
     "material-design-icons-iconfont": "^3.0.3",
     "material-ui": "^0.20.2",
     "moment": "^2.19.0",
-    "node-sass": "^5.0.0",
+    "node-sass": "^7.0.0",
     "prismjs": "^1.8.1",
     "prop-types": "^15.6.2",
     "react": "^17.0.1",
