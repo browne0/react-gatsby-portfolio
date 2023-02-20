@@ -4,7 +4,7 @@
   "description": "Malik Browne's gatsby portfolio",
   "version": "1.0.0",
   "engines": {
-    "node": "^14.6.1"
+    "node": "16"
   },
   "author": "Malik Browne <malik.browne3@gmail.com> (malikbrowne.com)",
   "dependencies": {
