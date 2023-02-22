@@ -110,18 +110,6 @@ module.exports = {
 				showSpinner: false,
 			},
 		},
-		{
-			resolve: `gatsby-plugin-netlify`,
-			options: {
-				headers: {
-					'/': [
-						'Link: </static/spotter.jpg>; rel=preload; as=image',
-						'Link: </static/mychef.jpg>; rel=preload; as=image',
-					],
-					'/about': ['Link: </static/about_bg3.jpg>; rel=preload; as=image'],
-				}, // option to add more headers. `Link` headers are transformed by the below criteria
-				allPageHeaders: ['Cache-Control: public, max-age=0, must-revalidate'], // option to add headers for all pages. `Link` headers are transformed by the below criteria
-			},
-		},
+		`gatsby-plugin-netlify`
 	],
 };
