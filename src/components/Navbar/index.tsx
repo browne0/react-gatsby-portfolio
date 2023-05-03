@@ -1,6 +1,8 @@
 import React from 'react';
 
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'mate... Remove this comment to see the full error message
 import AppBar from 'material-ui/AppBar';
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'mate... Remove this comment to see the full error message
 import { Tabs, Tab } from 'material-ui/Tabs';
 import { navigate } from 'gatsby';
 import { Location } from '@reach/router';
@@ -10,6 +12,7 @@ import logo from '../../images/logos/malikbrowne_logo.png';
 
 const Navbar: React.ComponentType = () => {
 	const title = (
+// @ts-expect-error TS(2786): 'Link' cannot be used as a JSX component.
 		<Link to="/" className="logo-wrapper">
 			<img className="logo" src={logo} alt="Malik Browne" />
 			<div className="title">

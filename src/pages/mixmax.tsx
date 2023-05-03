@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import SyntaxHighlighter from 'react-syntax-highlighter';
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import { obsidian } from 'react-syntax-highlighter/dist/styles';
 
 import ProjectPage from '../components/ProjectPage/index';
 import ProjectSection from '../components/ProjectSection/index';
 import PortfolioDelegate from '../utils/PortfolioDelegate';
-import SEO from '../components/SEO';
+import { SEO } from '../components/SEO';
 import { withLayout } from '../components/layout';
 
 class Mixmax extends Component {
+	// @ts-expect-error TS(7006): Parameter 'props' implicitly has an 'any' type.
 	constructor(props) {
 		super(props);
 
@@ -23,32 +26,47 @@ class Mixmax extends Component {
 	render() {
 		const style = {
 			title: {
+				// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 				color: this.state.project.background_color,
 				fontWeight: 'bold',
 			},
 		};
 		return (
 			<ProjectPage
+				// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 				name={this.state.project.name}
+				// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 				title={this.state.project.name}
+				// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 				technologies={this.state.project.technologies}
+				// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 				description={this.state.project.description}
+				// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 				github={this.state.project.github_url}
+				// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 				liveUrl={this.state.project.live_url}
+				// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 				bgColor={this.state.project.background_color}
+				// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 				images={this.state.project.image_urls.screenshots}
+				// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 				bigPicture={this.state.project.big_picture}
 			>
 				<SEO
+					// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 					title={`${this.state.project.name} | Malik Browne`}
+					// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 					description={this.state.project.description}
+					// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 					image={this.state.project.image_urls.screenshots[2]}
+					// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 					url={`https://www.malikbrowne.com/${this.state.project.path.substr(
 						1
 					)}`}
 				/>
 				<div className="container">
 					<img
+						// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 						src={this.state.project.image_urls.screenshots[2]}
 						alt="Three types of rich links"
 					/>
@@ -370,6 +388,7 @@ request({
 					</p>
 					<div className="container">
 						<img
+							// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 							src={this.state.project.image_urls.screenshots[0]}
 							alt="Mixmax typeahead"
 						/>
@@ -546,6 +565,7 @@ request({
 					</p>
 					<div className="container">
 						<img
+							// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 							src={this.state.project.image_urls.screenshots[1]}
 							alt="Mixmax Resolver"
 						/>

@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import SyntaxHighlighter from 'react-syntax-highlighter';
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import { obsidian } from 'react-syntax-highlighter/dist/styles';
 import ProjectPage from '../components/ProjectPage/index';
 import ProjectSection from '../components/ProjectSection/index';
 import PortfolioDelegate from '../utils/PortfolioDelegate';
-import SEO from '../components/SEO';
+// @ts-expect-error TS(2613): Module '"/Users/malikb/git/react-gatsby-portfolio/... Remove this comment to see the full error message
+import { SEO } from '../components/SEO';
 import { withLayout } from '../components/layout';
 
 class FactsOfToday extends Component {
+	// @ts-expect-error TS(7006): Parameter 'props' implicitly has an 'any' type.
 	constructor(props) {
 		super(props);
 
@@ -22,33 +26,49 @@ class FactsOfToday extends Component {
 	render() {
 		const style = {
 			title: {
+				// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 				color: this.state.project.color,
 				fontWeight: 'bold',
 			},
 		};
 		return (
 			<ProjectPage
+				// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 				name={this.state.project.name}
+				// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 				title={this.state.project.name}
+				// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 				color={this.state.project.color}
+				// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 				technologies={this.state.project.technologies}
+				// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 				description={this.state.project.description}
+				// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 				github={this.state.project.github_url}
+				// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 				liveUrl={this.state.project.live_url}
+				// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 				bgColor={this.state.project.background_color}
+				// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 				images={this.state.project.image_urls.screenshots}
+				// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 				bigPicture={this.state.project.big_picture}
 			>
 				<SEO
+					// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 					title={`${this.state.project.name} | Malik Browne`}
+					// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 					description={this.state.project.description}
+					// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 					image={this.state.project.image_urls.screenshots[0]}
+					// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 					url={`https://www.malikbrowne.com/${this.state.project.path.substr(
 						1
 					)}`}
 				/>
 				<div className="container">
 					<img
+						// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 						src={this.state.project.image_urls.screenshots[0]}
 						alt="Facts of Today"
 						className="pic"
@@ -175,6 +195,7 @@ class FactsOfToday extends Component {
 						user could navigate:
 					</p>
 					<img
+						// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 						src={this.state.project.image_urls.screenshots[3]}
 						alt="Wireframe"
 						className="pic"
@@ -295,6 +316,7 @@ task.resume()
 					<p>At the end of the first sprint, we made awesome progress:</p>
 					<div className="container">
 						<img
+							// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 							src={this.state.project.image_urls.screenshots[4]}
 							alt="Sprint #1 result"
 						/>
@@ -440,6 +462,7 @@ if defaults.objectForKey(SettingsViewController.notificationKey) != nil &&
 					</p>
 					<div className="container">
 						<img
+							// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 							src={this.state.project.image_urls.screenshots[5]}
 							alt="Sprint #2 result"
 						/>
@@ -584,6 +607,7 @@ extension UIColor {
 					</p>
 					<div className="container">
 						<img
+							// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 							src={this.state.project.image_urls.screenshots[6]}
 							alt="Sprint #2 result"
 						/>
@@ -597,6 +621,7 @@ extension UIColor {
 
 					<div className="container">
 						<img
+							// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 							src={this.state.project.image_urls.screenshots[0]}
 							alt="Facts of Today"
 						/>
@@ -614,20 +639,24 @@ extension UIColor {
 					</p>
 					<div className="container">
 						<img
+							// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 							src={this.state.project.image_urls.screenshots[1]}
 							alt="Facts of Today"
 						/>
 						<img
+							// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 							src={this.state.project.image_urls.screenshots[2]}
 							alt="Facts of Today"
 						/>
 					</div>
 					<div className="container">
 						<img
+							// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 							src={this.state.project.image_urls.screenshots[7]}
 							alt="Facts of Today"
 						/>
 						<img
+							// @ts-expect-error TS(2339): Property 'project' does not exist on type 'Readonl... Remove this comment to see the full error message
 							src={this.state.project.image_urls.screenshots[8]}
 							alt="Facts of Today"
 						/>

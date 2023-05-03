@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 class DisqusThread extends Component {
 	constructor() {
+// @ts-expect-error TS(2554): Expected 1-2 arguments, but got 0.
 		super();
 
 		this.state = {
@@ -69,10 +70,14 @@ class DisqusThread extends Component {
 		categoryId: null,
 	};
 
+// @ts-expect-error TS(7006): Parameter 'nextProps' implicitly has an 'any' type... Remove this comment to see the full error message
 	shouldComponentUpdate(nextProps) {
 		return (
+// @ts-expect-error TS(2339): Property 'identifier' does not exist on type 'Read... Remove this comment to see the full error message
 			this.props.identifier !== nextProps.identifier ||
+// @ts-expect-error TS(2339): Property 'title' does not exist on type 'Readonly<... Remove this comment to see the full error message
 			this.props.title !== nextProps.title ||
+// @ts-expect-error TS(2339): Property 'url' does not exist on type 'Readonly<{}... Remove this comment to see the full error message
 			this.props.url !== nextProps.url
 		);
 	}
@@ -87,9 +92,11 @@ class DisqusThread extends Component {
 
 	handleScroll() {
 		const rootHeight =
+// @ts-expect-error TS(2531): Object is possibly 'null'.
 			document.getElementById('___gatsby').scrollHeight -
 			document.body.clientHeight;
 		const windowHeight = window.pageYOffset;
+// @ts-expect-error TS(2339): Property 'flag' does not exist on type 'Readonly<{... Remove this comment to see the full error message
 		if (this.state.flag === false && windowHeight > rootHeight - 427) {
 			this.renderDisqus();
 			this.setState({
@@ -103,28 +110,38 @@ class DisqusThread extends Component {
 	}
 
 	renderDisqus() {
+// @ts-expect-error TS(2339): Property 'basename' does not exist on type 'Readon... Remove this comment to see the full error message
 		if (this.props.basename && this.props.identifier) {
+// @ts-expect-error TS(2339): Property 'DISQUS' does not exist on type 'Window &... Remove this comment to see the full error message
 			if (window.DISQUS === undefined) {
 				const script = document.createElement('script');
 				script.async = true;
+// @ts-expect-error TS(2339): Property 'shortname' does not exist on type 'Reado... Remove this comment to see the full error message
 				script.src = `https://${this.props.shortname}.disqus.com/embed.js`;
 				document.getElementsByTagName('head')[0].appendChild(script);
 			} else {
+// @ts-expect-error TS(2339): Property 'DISQUS' does not exist on type 'Window &... Remove this comment to see the full error message
 				window.DISQUS.reset({ reload: true });
 			}
 		}
 	}
 
 	render() {
+// @ts-expect-error TS(2339): Property 'identifier' does not exist on type 'Read... Remove this comment to see the full error message
 		const { identifier, title, url, shortname, className } = this.props;
 
 		if (process.env.BROWSER) {
+// @ts-expect-error TS(2339): Property 'disqus_shortname' does not exist on type... Remove this comment to see the full error message
 			window.disqus_shortname = shortname;
+// @ts-expect-error TS(2339): Property 'disqus_identifier' does not exist on typ... Remove this comment to see the full error message
 			window.disqus_identifier = identifier;
+// @ts-expect-error TS(2339): Property 'disqus_title' does not exist on type 'Wi... Remove this comment to see the full error message
 			window.disqus_title = title;
 			if (url) {
+// @ts-expect-error TS(2339): Property 'disqus_url' does not exist on type 'Wind... Remove this comment to see the full error message
 				window.disqus_url = url;
 			} else {
+// @ts-expect-error TS(2339): Property 'disqus_url' does not exist on type 'Wind... Remove this comment to see the full error message
 				window.disqus_url = window.location.href;
 			}
 		}

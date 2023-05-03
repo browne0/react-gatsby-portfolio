@@ -1,8 +1,9 @@
 import React from 'react';
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'mate... Remove this comment to see the full error message
 import RaisedButton from 'material-ui/RaisedButton';
 import PropTypes from 'prop-types';
 
-const ThemedButton = props => {
+const ThemedButton = (props: any) => {
 	const style = {
 		button: {
 			minWidth: '94px',

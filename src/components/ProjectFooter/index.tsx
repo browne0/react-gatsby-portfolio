@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
-const ProjectFooter = (props) => {
+const ProjectFooter = (props: any) => {
 	const style = {
 		container: {
 			backgroundColor: props.currentProject.color
@@ -24,8 +24,10 @@ const ProjectFooter = (props) => {
 				<div className="next-project-image">
 					<div className="inner">
 						<p>Up Next:</p>
+// @ts-expect-error TS(2786): 'Link' cannot be used as a JSX component.
 						<Link to={props.nextProject.path}>
 							<img
+// @ts-expect-error TS(2322): Type 'string | null' is not assignable to type 'st... Remove this comment to see the full error message
 								className={className}
 								src={props.nextProject.image_urls.screenshots[0]}
 								alt={props.nextProject.name}

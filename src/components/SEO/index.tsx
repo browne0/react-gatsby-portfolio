@@ -34,6 +34,7 @@ export const SEO = (props: Props) => {
 		articleModifiedTime,
 	} = props;
 	return (
+// @ts-expect-error TS(2769): No overload matches this call.
 		<Helmet>
 			{/* General tags */}
 			<title>{title}</title>

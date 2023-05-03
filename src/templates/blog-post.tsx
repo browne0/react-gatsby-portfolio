@@ -4,14 +4,16 @@ import React, { Component } from 'react';
 import { Link, graphql } from 'gatsby';
 
 import Moment from 'react-moment';
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'pris... Remove this comment to see the full error message
 import Prism from 'prismjs';
 import Markdown from 'react-markdown';
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import withSizes from 'react-sizes';
 
 import PropTypes from 'prop-types';
 import DisqusThread from '../components/DisqusThread';
 import PortfolioDelegate from '../utils/PortfolioDelegate';
-import SEO from '../components/SEO';
+import {SEO} from '../components/SEO';
 import getBlogLengthString from '../utils/getBlogLengthString';
 import { withLayout } from '../components/layout';
 import BlogHighlights from '../components/blog/BlogHighlights';
@@ -52,16 +54,19 @@ const AffiliateDisclosureBanner = () => (
 	</div>
 );
 
+// @ts-expect-error TS(7006): Parameter 'date' implicitly has an 'any' type.
 const generateDate = (date) => {
 	const yearToday = new Date().getFullYear();
 	if (yearToday - Number(date.substr(0, 4)) > 0) {
 		return (
+// @ts-expect-error TS(2786): 'Moment' cannot be used as a JSX component.
 			<Moment parse="YYYY-MM-DD" format="MMM YYYY">
 				{date}
 			</Moment>
 		);
 	}
 	return (
+// @ts-expect-error TS(2786): 'Moment' cannot be used as a JSX component.
 		<Moment parse="YYYY-MM-DD" format="MMM D">
 			{date}
 		</Moment>
@@ -72,22 +77,29 @@ class blogPost extends Component {
 		data: PropTypes.object,
 	};
 
+// @ts-expect-error TS(7006): Parameter 'props' implicitly has an 'any' type.
 	constructor(props) {
 		super(props);
 
 		const delegate = new PortfolioDelegate();
 
 		this.state = {
+// @ts-expect-error TS(2339): Property 'data' does not exist on type 'Readonly<{... Remove this comment to see the full error message
 			blog: this.props.data.blog,
 			nextBlog: delegate.getNextBlog(
+// @ts-expect-error TS(2339): Property 'data' does not exist on type 'Readonly<{... Remove this comment to see the full error message
 				this.props.data.blogs.edges,
+// @ts-expect-error TS(2339): Property 'data' does not exist on type 'Readonly<{... Remove this comment to see the full error message
 				this.props.data.blog.title.title
 			),
 			mostPopularBlogs: delegate.getMostPopularBlogs(
+// @ts-expect-error TS(2339): Property 'data' does not exist on type 'Readonly<{... Remove this comment to see the full error message
 				this.props.data.blogs.edges
 			),
 			prevBlog: delegate.getPreviousBlog(
+// @ts-expect-error TS(2339): Property 'data' does not exist on type 'Readonly<{... Remove this comment to see the full error message
 				this.props.data.blogs.edges,
+// @ts-expect-error TS(2339): Property 'data' does not exist on type 'Readonly<{... Remove this comment to see the full error message
 				this.props.data.blog.title.title
 			),
 		};
@@ -98,6 +110,7 @@ class blogPost extends Component {
 	}
 
 	render() {
+// @ts-expect-error TS(2339): Property 'blog' does not exist on type 'Readonly<{... Remove this comment to see the full error message
 		const { blog, nextBlog, prevBlog } = this.state;
 		const { isFeaturedImageVideo } = blog;
 
@@ -309,6 +322,7 @@ class blogPost extends Component {
 	}
 }
 
+// @ts-expect-error TS(7031): Binding element 'width' implicitly has an 'any' ty... Remove this comment to see the full error message
 const mapSizesToProps = ({ width }) => ({
 	isTablet: width < 768,
 });

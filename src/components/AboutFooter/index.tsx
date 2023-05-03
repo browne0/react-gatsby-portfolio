@@ -38,6 +38,7 @@ const AboutFooter = (props: Props) => {
 				<div className="next-post-image">
 					<div className="inner">
 						<p>Read More:</p>
+// @ts-expect-error TS(2786): 'Link' cannot be used as a JSX component.
 						<Link to={path}>
 							<img
 								className={className}

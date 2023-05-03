@@ -12,6 +12,7 @@ const Home = () => {
 	const projectListItems = projects.map((project, index) => {
 		if (project.big_picture) {
 			return (
+// @ts-expect-error TS(2786): 'Link' cannot be used as a JSX component.
 				<Link key={index} to={project.path} className="bigPicture">
 					<div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
 						<div
@@ -33,6 +34,7 @@ const Home = () => {
 			);
 		}
 		return (
+// @ts-expect-error TS(2786): 'Link' cannot be used as a JSX component.
 			<Link
 				key={index}
 				to={project.path}

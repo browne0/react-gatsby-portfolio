@@ -1,5 +1,6 @@
 import React from 'react';
 import 'github-markdown-css';
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'mate... Remove this comment to see the full error message
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import Navbar from '../Navbar';

@@ -28,6 +28,7 @@ const About = (props: any) => {
 					</div>
 				</div>
 			</div>
+// @ts-expect-error TS(2786): 'Section' cannot be used as a JSX component.
 			<Section title={`"Creativity is a breed of history and perspective."`}>
 				<p>
 					I've realized that anything innovative has stemmed from an original
@@ -36,6 +37,7 @@ const About = (props: any) => {
 					that's why I've fallen in love with web development.
 				</p>
 			</Section>
+// @ts-expect-error TS(2786): 'Section' cannot be used as a JSX component.
 			<Section title="A little about me">
 				<p>
 					I am currently a <b>Web Engineer at Spotify</b>. I work on the{' '}
@@ -64,6 +66,7 @@ const About = (props: any) => {
 					sports. As of late, I am exploring the daunting world of writing.
 				</p>
 			</Section>
+// @ts-expect-error TS(2786): 'Section' cannot be used as a JSX component.
 			<Section title="Technologies and Mantra">
 				<p>
 					My expertise and interests lie mostly in front-end technologies,
@@ -126,9 +129,11 @@ const About = (props: any) => {
 					</a>
 				</p>
 			</Section>
+// @ts-expect-error TS(2786): 'Section' cannot be used as a JSX component.
 			<Section className="about-section-last" title="Contact Me">
 				<p>
 					If you want to contact me, I'm pretty easy to reach, I mean,{' '}
+// @ts-expect-error TS(2786): 'Link' cannot be used as a JSX component.
 					<Link to="/contact">there is a contact page after all.</Link>
 				</p>
 				<p>

@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import { ToastContainer, ToastMessage } from 'react-toastr';
-import SEO from '../components/SEO';
+import {SEO} from '../components/SEO';
 import { withLayout } from '../components/layout';
 
 const ToastMessageFactory = React.createFactory(ToastMessage.animation);
 
 class Contact extends Component {
 	constructor() {
+// @ts-expect-error TS(2554): Expected 1-2 arguments, but got 0.
 		super();
 		this.state = {
 			name: '',
@@ -19,13 +21,19 @@ class Contact extends Component {
 
 	submitForm = () => {
 		if (
+// @ts-expect-error TS(2339): Property 'name' does not exist on type 'Readonly<{... Remove this comment to see the full error message
 			this.state.name !== '' &&
+// @ts-expect-error TS(2339): Property 'email' does not exist on type 'Readonly<... Remove this comment to see the full error message
 			this.state.email !== '' &&
+// @ts-expect-error TS(2339): Property 'message' does not exist on type 'Readonl... Remove this comment to see the full error message
 			this.state.message !== ''
 		) {
 			const formData = new FormData();
+// @ts-expect-error TS(2339): Property 'name' does not exist on type 'Readonly<{... Remove this comment to see the full error message
 			formData.append('name', this.state.name);
+// @ts-expect-error TS(2339): Property 'email' does not exist on type 'Readonly<... Remove this comment to see the full error message
 			formData.append('email', this.state.email);
+// @ts-expect-error TS(2339): Property 'message' does not exist on type 'Readonl... Remove this comment to see the full error message
 			formData.append('message', this.state.message);
 			fetch('http://dev.beesdesign.net/contact.php', {
 				method: 'POST',
@@ -34,6 +42,7 @@ class Contact extends Component {
 				.then((response) => response.json())
 				.then((result) => {
 					if (result.inputOK) {
+// @ts-expect-error TS(2339): Property 'container' does not exist on type 'Conta... Remove this comment to see the full error message
 						this.container.success(result.message, 'Success!', {
 							timeOut: 5000,
 							extendedTimeOut: 5000,
@@ -48,6 +57,7 @@ class Contact extends Component {
 							message: '',
 						});
 					} else {
+// @ts-expect-error TS(2339): Property 'container' does not exist on type 'Conta... Remove this comment to see the full error message
 						this.container.error(result.message, 'Error!', {
 							timeOut: 5000,
 							extendedTimeOut: 5000,
@@ -62,6 +72,7 @@ class Contact extends Component {
 					}
 				})
 				.catch((err) => {
+// @ts-expect-error TS(2339): Property 'container' does not exist on type 'Conta... Remove this comment to see the full error message
 					this.container.error(err, 'Error!', {
 						timeOut: 5000,
 						extendedTimeOut: 5000,
@@ -74,6 +85,7 @@ class Contact extends Component {
 		}
 	};
 
+// @ts-expect-error TS(7006): Parameter 'e' implicitly has an 'any' type.
 	onChange = (e) => {
 		this.setState({ [e.target.name]: e.target.value });
 	};
@@ -122,6 +134,7 @@ class Contact extends Component {
 								floatingLabelFocusStyle={style.contactFilter.color}
 								underlineFocusStyle={style.contactFilter.bgcolor}
 								onChange={this.onChange}
+// @ts-expect-error TS(2339): Property 'name' does not exist on type 'Readonly<{... Remove this comment to see the full error message
 								value={this.state.name}
 								name="name"
 							/>
@@ -134,6 +147,7 @@ class Contact extends Component {
 								floatingLabelFocusStyle={style.contactFilter.color}
 								underlineFocusStyle={style.contactFilter.bgcolor}
 								onChange={this.onChange}
+// @ts-expect-error TS(2339): Property 'email' does not exist on type 'Readonly<... Remove this comment to see the full error message
 								value={this.state.email}
 								name="email"
 							/>
@@ -149,6 +163,7 @@ class Contact extends Component {
 								floatingLabelFocusStyle={style.contactFilter.color}
 								underlineFocusStyle={style.contactFilter.bgcolor}
 								onChange={this.onChange}
+// @ts-expect-error TS(2339): Property 'message' does not exist on type 'Readonl... Remove this comment to see the full error message
 								value={this.state.message}
 								name="message"
 							/>
@@ -217,7 +232,9 @@ class Contact extends Component {
 					</div>
 				</div>
 				<ToastContainer
+// @ts-expect-error TS(7006): Parameter 'container' implicitly has an 'any' type... Remove this comment to see the full error message
 					ref={(container) => {
+// @ts-expect-error TS(2339): Property 'container' does not exist on type 'Conta... Remove this comment to see the full error message
 						this.container = container;
 					}}
 					toastMessageFactory={ToastMessageFactory}

@@ -5,6 +5,7 @@ class Newsletter extends PureComponent {
 		email: '',
 	};
 
+// @ts-expect-error TS(7006): Parameter 'e' implicitly has an 'any' type.
 	onEmailChange = e => {
 		e.persist();
 		this.setState(() => ({

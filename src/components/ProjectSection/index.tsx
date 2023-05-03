@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ProjectSection = props => {
+const ProjectSection = (props: any) => {
 	const className = props.className
 		? `project-section ${props.className}`
 		: 'project-section';

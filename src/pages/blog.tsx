@@ -3,9 +3,10 @@ import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
 import FlipMove from 'react-flip-move';
 import debounce from 'lodash/debounce';
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import withSizes from 'react-sizes';
 import { graphql } from 'gatsby';
-import SEO from '../components/SEO';
+import {SEO} from '../components/SEO';
 import BlogArticle from '../components/BlogArticleItem';
 import PortfolioDelegate from '../utils/PortfolioDelegate';
 import { withLayout } from '../components/layout';
@@ -36,11 +37,14 @@ import BlogHighlights from '../components/blog/BlogHighlights';
  */
 
 class BlogList extends Component {
+// @ts-expect-error TS(7006): Parameter 'props' implicitly has an 'any' type.
 	constructor(props) {
 		super(props);
 
+// @ts-expect-error TS(7006): Parameter 'edge' implicitly has an 'any' type.
 		const allBlogs = props.data.allContentfulPost.edges.sort((edge) => {
 			const blog = edge.node;
+// @ts-expect-error TS(2365): Operator '<' cannot be applied to types 'Date' and... Remove this comment to see the full error message
 			return new Date(blog.date) < Date.now();
 		});
 
@@ -55,16 +59,20 @@ class BlogList extends Component {
 	}
 
 	filterBlogs = debounce((search) => {
+// @ts-expect-error TS(2339): Property 'blogs' does not exist on type 'Readonly<... Remove this comment to see the full error message
 		const { blogs } = this.state;
+// @ts-expect-error TS(7006): Parameter 'blog' implicitly has an 'any' type.
 		const filteredBlogs = blogs.filter((blog) =>
 			blog.node.title.title.toLowerCase().includes(search)
 		);
 		this.setState(() => ({ filteredBlogs }));
 	}, 200);
 
+// @ts-expect-error TS(7006): Parameter 'e' implicitly has an 'any' type.
 	onFilterChange = (e) => {
 		e.persist();
 
+// @ts-expect-error TS(2339): Property 'searchValue' does not exist on type 'Rea... Remove this comment to see the full error message
 		if (this.state.searchValue !== e.target.value) {
 			this.setState(() => ({
 				searchValue: e.target.value,
@@ -87,6 +95,7 @@ class BlogList extends Component {
 			},
 		};
 
+// @ts-expect-error TS(2339): Property 'filteredBlogs' does not exist on type 'R... Remove this comment to see the full error message
 		const blogs = this.state.filteredBlogs.map((item, index) => {
 			const blog = item.node;
 			return <BlogArticle key={index} blog={blog} />;
@@ -94,6 +103,7 @@ class BlogList extends Component {
 
 		const blogPosts = [];
 
+// @ts-expect-error TS(2339): Property 'searchValue' does not exist on type 'Rea... Remove this comment to see the full error message
 		for (let i = this.state.searchValue ? 0 : 1; i < blogs.length; i += 2) {
 			blogPosts.push(
 				<div className="row" key={i}>
@@ -120,6 +130,7 @@ class BlogList extends Component {
 							floatingLabelFocusStyle={style.blogFilter.color}
 							underlineFocusStyle={style.blogFilter.bgcolor}
 							onChange={this.onFilterChange}
+// @ts-expect-error TS(2339): Property 'searchValue' does not exist on type 'Rea... Remove this comment to see the full error message
 							value={this.state.searchValue}
 						/>
 					)}
@@ -149,6 +160,7 @@ class BlogList extends Component {
 							floatingLabelFocusStyle={style.blogFilter.color}
 							underlineFocusStyle={style.blogFilter.bgcolor}
 							onChange={this.onFilterChange}
+// @ts-expect-error TS(2339): Property 'searchValue' does not exist on type 'Rea... Remove this comment to see the full error message
 							value={this.state.searchValue}
 						/>
 					)}
@@ -158,6 +170,7 @@ class BlogList extends Component {
 	}
 }
 
+// @ts-expect-error TS(7031): Binding element 'width' implicitly has an 'any' ty... Remove this comment to see the full error message
 const mapSizesToProps = ({ width }) => ({
 	isTablet: width < 768,
 });

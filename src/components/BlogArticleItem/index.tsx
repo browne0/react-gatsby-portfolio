@@ -12,17 +12,21 @@ class BlogArticleItem extends Component {
 		main: PropTypes.bool,
 	};
 
+// @ts-expect-error TS(7006): Parameter 'props' implicitly has an 'any' type.
 	constructor(props) {
 		super(props);
 		this.state = {
+// @ts-expect-error TS(2339): Property 'blog' does not exist on type 'Readonly<{... Remove this comment to see the full error message
 			url: this.props.blog.compressedFeaturedImage.file.url,
 		};
 	}
 
 	render() {
+// @ts-expect-error TS(2339): Property 'blog' does not exist on type 'Readonly<{... Remove this comment to see the full error message
 		const { blog, main } = this.props;
 
 		const blogHeader = blog.featuredImage ? (
+// @ts-expect-error TS(2786): 'Link' cannot be used as a JSX component.
 			<Link
 				to={`/blog/${blog.slug}`}
 				className={cx('post-header', {
@@ -42,8 +46,10 @@ class BlogArticleItem extends Component {
 						<source src={blog.featuredImage.file.url} type="video/webm" />
 					</video>
 				) : (
+// @ts-expect-error TS(2786): 'ProgressiveImage' cannot be used as a JSX compone... Remove this comment to see the full error message
 					<ProgressiveImage
 						src={blog.featuredImage.file.url}
+// @ts-expect-error TS(2339): Property 'url' does not exist on type 'Readonly<{}... Remove this comment to see the full error message
 						placeholder={this.state.url}
 					>
 						{(src, loading) => {
@@ -52,6 +58,7 @@ class BlogArticleItem extends Component {
 									<div
 										className="post-header-image"
 										style={{
+// @ts-expect-error TS(2339): Property 'url' does not exist on type 'Readonly<{}... Remove this comment to see the full error message
 											backgroundImage: `url(${this.state.url})`,
 										}}
 									/>
@@ -75,12 +82,14 @@ class BlogArticleItem extends Component {
 		let date;
 		if (yearToday - Number(blog.date.substr(0, 4)) > 0) {
 			date = (
+// @ts-expect-error TS(2786): 'Moment' cannot be used as a JSX component.
 				<Moment parse="YYYY-MM-DD" format="MMM YYYY">
 					{blog.date}
 				</Moment>
 			);
 		} else {
 			date = (
+// @ts-expect-error TS(2786): 'Moment' cannot be used as a JSX component.
 				<Moment parse="YYYY-MM-DD" format="MMM D">
 					{blog.date}
 				</Moment>
@@ -92,6 +101,7 @@ class BlogArticleItem extends Component {
 		);
 		return (
 			<div
+// @ts-expect-error TS(2322): Type '{ children: (Element | null)[]; to: string; ... Remove this comment to see the full error message
 				to={`/blog/${blog.slug}`}
 				className={cx('post', { 'post--main': main })}
 			>

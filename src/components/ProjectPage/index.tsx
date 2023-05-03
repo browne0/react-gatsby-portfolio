@@ -6,12 +6,14 @@ import ProjectSection from '../../components/ProjectSection';
 import ProjectFooter from '../../components/ProjectFooter';
 
 class ProjectPage extends Component {
+// @ts-expect-error TS(7006): Parameter 'props' implicitly has an 'any' type.
 	constructor(props) {
 		super(props);
 
 		const projects = new PortfolioDelegate();
 
 		this.state = {
+// @ts-expect-error TS(2339): Property 'name' does not exist on type 'Readonly<{... Remove this comment to see the full error message
 			nextProj: projects.getNextProject(this.props.name),
 		};
 	}
@@ -37,23 +39,34 @@ class ProjectPage extends Component {
 	};
 
 	componentDidMount() {
+// @ts-expect-error TS(2339): Property 'title' does not exist on type 'Readonly<... Remove this comment to see the full error message
 		document.title = `${this.props.title} | Malik Browne`;
 	}
 
 	render() {
 		const {
+// @ts-expect-error TS(2339): Property 'technologies' does not exist on type 'Re... Remove this comment to see the full error message
 			technologies,
+// @ts-expect-error TS(2339): Property 'github' does not exist on type 'Readonly... Remove this comment to see the full error message
 			github,
+// @ts-expect-error TS(2339): Property 'liveUrl' does not exist on type 'Readonl... Remove this comment to see the full error message
 			liveUrl,
+// @ts-expect-error TS(2339): Property 'bigPicture' does not exist on type 'Read... Remove this comment to see the full error message
 			bigPicture,
+// @ts-expect-error TS(2339): Property 'color' does not exist on type 'Readonly<... Remove this comment to see the full error message
 			color,
+// @ts-expect-error TS(2339): Property 'bgColor' does not exist on type 'Readonl... Remove this comment to see the full error message
 			bgColor,
+// @ts-expect-error TS(2339): Property 'description' does not exist on type 'Rea... Remove this comment to see the full error message
 			description,
+// @ts-expect-error TS(2339): Property 'name' does not exist on type 'Readonly<{... Remove this comment to see the full error message
 			name,
+// @ts-expect-error TS(2339): Property 'images' does not exist on type 'Readonly... Remove this comment to see the full error message
 			images,
 			children,
 		} = this.props;
 
+// @ts-expect-error TS(7006): Parameter 'tech' implicitly has an 'any' type.
 		const listOfTechnologies = technologies.map(tech => (
 			<li key={tech}>{tech}</li>
 		));
@@ -97,6 +110,7 @@ class ProjectPage extends Component {
 					</ProjectSection>
 					{bigPicture && (
 						<div
+// @ts-expect-error TS(2322): Type 'string | null' is not assignable to type 'st... Remove this comment to see the full error message
 							className={screenshotClass}
 							style={{ backgroundImage: `url(${images[0]})` }}
 						/>
@@ -114,6 +128,7 @@ class ProjectPage extends Component {
 					</ProjectSection>
 					<ProjectFooter
 						currentProject={this.props}
+// @ts-expect-error TS(2339): Property 'nextProj' does not exist on type 'Readon... Remove this comment to see the full error message
 						nextProject={this.state.nextProj}
 					/>
 				</div>
