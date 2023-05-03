@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import React, { Component } from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 
 import Moment from 'react-moment';
 import Prism from 'prismjs';
@@ -13,9 +13,8 @@ import DisqusThread from '../components/DisqusThread';
 import PortfolioDelegate from '../utils/PortfolioDelegate';
 import SEO from '../components/SEO';
 import getBlogLengthString from '../utils/getBlogLengthString';
-import { BlogHighlights } from '../pages/blog';
-import { graphql } from 'gatsby';
 import { withLayout } from '../components/layout';
+import BlogHighlights from '../components/blog/BlogHighlights';
 
 const disclosureMessages = [
 	'Just a friendly neighborhood disclosure,',
@@ -72,6 +71,7 @@ class blogPost extends Component {
 	static propTypes = {
 		data: PropTypes.object,
 	};
+
 	constructor(props) {
 		super(props);
 

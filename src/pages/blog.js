@@ -4,13 +4,12 @@ import TextField from 'material-ui/TextField';
 import FlipMove from 'react-flip-move';
 import debounce from 'lodash/debounce';
 import withSizes from 'react-sizes';
-import { Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import SEO from '../components/SEO';
 import BlogArticle from '../components/BlogArticleItem';
-import getBlogLengthString from '../utils/getBlogLengthString';
 import PortfolioDelegate from '../utils/PortfolioDelegate';
-import { graphql } from 'gatsby';
 import { withLayout } from '../components/layout';
+import BlogHighlights from '../components/blog/BlogHighlights';
 
 /**
  * IDEA FOR NEXT BLOG LIST PAGE:
@@ -35,25 +34,6 @@ import { withLayout } from '../components/layout';
  * Idea came from here:
  * https://www.impactbnd.com/blog/blog-layout-best-practices-2016
  */
-
-export const BlogHighlights = ({ blogs, children }) => (
-	<div className="most-popular-posts">
-		<h3>Most Popular</h3>
-		{blogs.map(({ node }) => {
-			return (
-				<Link
-					key={node.slug}
-					to={`/blog/${node.slug}`}
-					className="most-popular-post"
-				>
-					<h4>{node.title.title}</h4>
-					<p>{getBlogLengthString(node.body.body)}</p>
-				</Link>
-			);
-		})}
-		{children}
-	</div>
-);
 
 class BlogList extends Component {
 	constructor(props) {
@@ -86,7 +66,6 @@ class BlogList extends Component {
 		e.persist();
 
 		if (this.state.searchValue !== e.target.value) {
-			console.log('hi');
 			this.setState(() => ({
 				searchValue: e.target.value,
 			}));
@@ -186,46 +165,46 @@ const mapSizesToProps = ({ width }) => ({
 export default withLayout(withSizes(mapSizesToProps)(BlogList));
 
 export const pageQuery = graphql`
-	query blogQuery {
-		allContentfulPost(sort: { fields: [date], order: DESC }) {
-			edges {
-				node {
-					title {
-						title
-					}
-					containsAffiliateLinks
-					slug
-					author {
-						name
-						twitter
-						profilePhoto {
-							file {
-								url
-							}
-						}
-					}
-					description {
-						description
-					}
-					body {
-						body
-					}
-					featuredImage {
-						file {
-							url
-						}
-					}
-					compressedFeaturedImage {
-						file {
-							url
-						}
-					}
-					date
-					comments
-					isFeaturedImageVideo
-					popularPost
-				}
+query blogQuery {
+	allContentfulPost(sort: {date: DESC}) {
+	  edges {
+		node {
+		  title {
+			title
+		  }
+		  containsAffiliateLinks
+		  slug
+		  author {
+			name
+			twitter
+			profilePhoto {
+			  file {
+				url
+			  }
 			}
+		  }
+		  description {
+			description
+		  }
+		  body {
+			body
+		  }
+		  featuredImage {
+			file {
+			  url
+			}
+		  }
+		  compressedFeaturedImage {
+			file {
+			  url
+			}
+		  }
+		  date
+		  comments
+		  isFeaturedImageVideo
+		  popularPost
 		}
+	  }
 	}
+  }  
 `;
