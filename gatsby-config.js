@@ -110,6 +110,16 @@ module.exports = {
 				showSpinner: false,
 			},
 		},
-		`gatsby-plugin-netlify`
+		`gatsby-plugin-netlify`,
+		{
+			resolve: `gatsby-plugin-google-gtag`,
+			options: {
+				trackingIds: ['G-2Z3PKJFY1N'],
+			},
+			pluginConfig: {
+				head: true,
+				origin: 'https://malikbrowne.com',
+			},
+		},
 	],
 };
